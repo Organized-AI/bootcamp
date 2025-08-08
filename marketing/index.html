@@ -3,747 +3,621 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VibeCoders Bootcamp - Learn to Code WITH AI, Not Against It</title>
+    <title>VibeCoders Bootcamp - Transform Your Coding Journey with AI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #10b981;
-            --dark: #1f2937;
-            --light: #f9fafb;
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            overflow-x: hidden;
-        }
-
-        /* Animated Background */
-        .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            overflow: hidden;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>') repeat;
-            animation: float 20s linear infinite;
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-100px, -100px); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            color: white;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1rem;
-            border-radius: 30px;
-            margin-bottom: 2rem;
-            font-size: 0.9rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .typing-effect {
-            display: inline-block;
-            border-right: 3px solid white;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { border-color: white; }
-            51%, 100% { border-color: transparent; }
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
+        .card-hover {
             transition: all 0.3s ease;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
         }
-
-        .btn-primary {
-            background: white;
-            color: var(--primary-dark);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn-secondary:hover {
-            background: white;
-            color: var(--primary-dark);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 5rem 2rem;
-            background: var(--light);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--dark);
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient);
-        }
-
-        .feature-card:hover {
+        .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
-
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
         }
-
-        .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
-
-        /* Curriculum Section */
-        .curriculum {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .week-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
         .week-card {
-            background: var(--light);
-            padding: 2rem;
-            border-radius: 15px;
-            border-left: 4px solid var(--primary);
-            transition: all 0.3s ease;
-        }
-
-        .week-card:hover {
-            background: white;
-            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
-            transform: translateX(5px);
-        }
-
-        .week-number {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .week-title {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .week-topics {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .week-topics li {
-            padding: 0.5rem 0;
-            color: #6b7280;
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border: 2px solid transparent;
+            background-clip: padding-box;
             position: relative;
-            padding-left: 1.5rem;
         }
-
-        .week-topics li:before {
-            content: '→';
+        .week-card:before {
+            content: '';
             position: absolute;
-            left: 0;
-            color: var(--primary);
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: inherit;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
-
-        /* Pricing Section */
-        .pricing {
-            padding: 5rem 2rem;
-            background: var(--light);
-        }
-
-        .pricing-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 800px;
-            margin: 3rem auto 0;
-        }
-
-        .pricing-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .pricing-card.featured {
-            transform: scale(1.05);
-            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
-        }
-
-        .pricing-card.featured::before {
-            content: 'MOST POPULAR';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--secondary);
-            color: white;
-            padding: 0.25rem 1rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-
-        .price {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin: 1rem 0;
-        }
-
-        .price-subtitle {
-            color: #6b7280;
-            margin-bottom: 2rem;
-        }
-
-        .price-features {
-            list-style: none;
-            margin: 2rem 0;
-        }
-
-        .price-features li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f3f4f6;
-        }
-
-        /* Stats Section */
-        .stats {
-            padding: 3rem 2rem;
-            background: var(--gradient);
-            color: white;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            opacity: 0.9;
-            font-size: 1.1rem;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 5rem 2rem;
-            background: white;
-        }
-
-        .faq-grid {
-            max-width: 800px;
-            margin: 3rem auto 0;
-        }
-
-        .faq-item {
-            margin-bottom: 1.5rem;
-            background: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background 0.3s ease;
-        }
-
-        .faq-question:hover {
-            background: #e5e7eb;
-        }
-
-        .faq-arrow {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-arrow {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 0 1.5rem 1.5rem;
-            max-height: 500px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-links a:hover {
+        .week-card:hover:before {
             opacity: 1;
         }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content {
-                padding: 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
+        .lesson-link {
+            transition: all 0.2s ease;
+        }
+        .lesson-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            padding-left: 1.5rem;
         }
     </style>
 </head>
-<body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="badge">🚀 LIMITED EARLY BIRD PRICING - SAVE $200</div>
-            <h1>Learn to Code <span class="typing-effect">WITH AI</span></h1>
-            <p class="hero-subtitle">Not Against It</p>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
-                The only bootcamp teaching you to 10x your productivity by combining<br>
-                traditional engineering with cutting-edge AI development
-            </p>
-            <div class="cta-buttons">
-                <a href="registration.html" class="btn btn-primary">Start Free Session →</a>
-                <a href="#curriculum" class="btn btn-secondary">View Curriculum</a>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold gradient-text">VibeCoders</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-purple-600 transition">Home</a>
+                    <a href="#curriculum" class="text-gray-700 hover:text-purple-600 transition">Curriculum</a>
+                    <a href="#features" class="text-gray-700 hover:text-purple-600 transition">Features</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-purple-600 transition">Testimonials</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-purple-600 transition">Pricing</a>
+                    <button onclick="enrollNow()" class="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition">
+                        Enroll Now
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
-            <p style="margin-top: 2rem; opacity: 0.8;">
-                ⚡ Next cohort starts January 2025 • 📍 Limited to 50 students
-            </p>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700">Home</a>
+                <a href="#curriculum" class="block px-3 py-2 text-gray-700">Curriculum</a>
+                <a href="#features" class="block px-3 py-2 text-gray-700">Features</a>
+                <a href="#testimonials" class="block px-3 py-2 text-gray-700">Testimonials</a>
+                <a href="#pricing" class="block px-3 py-2 text-gray-700">Pricing</a>
+                <button onclick="enrollNow()" class="w-full text-left px-3 py-2 bg-purple-600 text-white">
+                    Enroll Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative overflow-hidden">
+        <div class="hero-gradient text-white py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                        Learn to Code WITH AI,<br>Not Against It
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90">
+                        6-Week Engineering Bootcamp for the AI Era
+                    </p>
+                    <div class="flex flex-col md:flex-row gap-4 justify-center">
+                        <button onclick="enrollNow()" class="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition">
+                            Start Free Trial
+                        </button>
+                        <button onclick="viewCurriculum()" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-purple-600 transition">
+                            View Full Curriculum
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white py-8">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div>
+                        <div class="text-3xl font-bold text-purple-600">500+</div>
+                        <div class="text-gray-600">Students Enrolled</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-purple-600">95%</div>
+                        <div class="text-gray-600">Completion Rate</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-purple-600">4.9/5</div>
+                        <div class="text-gray-600">Student Rating</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-purple-600">$85k</div>
+                        <div class="text-gray-600">Avg. Salary</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Curriculum Section -->
+    <section id="curriculum" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Comprehensive 6-Week Curriculum</h2>
+                <p class="text-xl text-gray-600">Click on any week to explore detailed lessons, exercises, and projects</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Week 1 -->
+                <div class="week-card rounded-xl p-6 card-hover cursor-pointer" onclick="expandWeek(1)">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
+                        <h3 class="text-2xl font-bold ml-4">Developer Hygiene & Environment</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Set up your AI-powered development environment and master Git fundamentals.</p>
+                    <div id="week1-details" class="hidden mt-4 space-y-2">
+                        <a href="/curriculum/week-1/lesson-plan.md" class="block lesson-link p-2 rounded">
+                            <i class="fas fa-book-open mr-2"></i> Full Week 1 Lesson Plan
+                        </a>
+                        <div class="pl-4 space-y-1 text-sm">
+                            <div>• Day 1: Environment Setup & Tools</div>
+                            <div>• Day 2: Version Control with Git</div>
+                            <div>• Day 3: Project Organization</div>
+                            <div>• Day 4: Development Best Practices</div>
+                            <div>• Day 5: Practical Project</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Git</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Claude</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">MCP</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">VS Code</span>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="week-card rounded-xl p-6 card-hover cursor-pointer" onclick="expandWeek(2)">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
+                        <h3 class="text-2xl font-bold ml-4">Planning & Architecture</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Design scalable systems and APIs with AI assistance.</p>
+                    <div id="week2-details" class="hidden mt-4 space-y-2">
+                        <a href="/curriculum/week-2/lesson-plan.md" class="block lesson-link p-2 rounded">
+                            <i class="fas fa-book-open mr-2"></i> Full Week 2 Lesson Plan
+                        </a>
+                        <div class="pl-4 space-y-1 text-sm">
+                            <div>• Day 1: System Design Fundamentals</div>
+                            <div>• Day 2: Database Design</div>
+                            <div>• Day 3: API Design</div>
+                            <div>• Day 4: Cloud Architecture</div>
+                            <div>• Day 5: Architecture Review Project</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">System Design</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Databases</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">APIs</span>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="week-card rounded-xl p-6 card-hover cursor-pointer" onclick="expandWeek(3)">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
+                        <h3 class="text-2xl font-bold ml-4">Creating Code - Part 1</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Master AI pair programming and code generation techniques.</p>
+                    <div id="week3-details" class="hidden mt-4 space-y-2">
+                        <a href="/curriculum/week-3/lesson-plan.md" class="block lesson-link p-2 rounded">
+                            <i class="fas fa-book-open mr-2"></i> Full Week 3 Lesson Plan
+                        </a>
+                        <div class="pl-4 space-y-1 text-sm">
+                            <div>• Day 1: AI Pair Programming</div>
+                            <div>• Day 2: Code Generation Patterns</div>
+                            <div>• Day 3: Refactoring with AI</div>
+                            <div>• Day 4: Debugging with AI</div>
+                            <div>• Day 5: Build Complete Application</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">AI Coding</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">React</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Node.js</span>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="week-card rounded-xl p-6 card-hover cursor-pointer" onclick="expandWeek(4)">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">4</div>
+                        <h3 class="text-2xl font-bold ml-4">Creating Code - Part 2</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Build complex microservices and real-time applications.</p>
+                    <div id="week4-details" class="hidden mt-4 space-y-2">
+                        <a href="/curriculum/week-4/lesson-plan.md" class="block lesson-link p-2 rounded">
+                            <i class="fas fa-book-open mr-2"></i> Full Week 4 Lesson Plan
+                        </a>
+                        <div class="pl-4 space-y-1 text-sm">
+                            <div>• Day 1: Microservices Architecture</div>
+                            <div>• Day 2: Real-time Features</div>
+                            <div>• Day 3: AI-Powered Features</div>
+                            <div>• Day 4: State Management</div>
+                            <div>• Day 5: Production Deployment</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Microservices</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">WebSockets</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">GraphQL</span>
+                    </div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="week-card rounded-xl p-6 card-hover cursor-pointer" onclick="expandWeek(5)">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">5</div>
+                        <h3 class="text-2xl font-bold ml-4">Testing & Quality</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Ensure bulletproof code with AI-driven testing strategies.</p>
+                    <div id="week5-details" class="hidden mt-4 space-y-2">
+                        <a href="/curriculum/week-5/lesson-plan.md" class="block lesson-link p-2 rounded">
+                            <i class="fas fa-book-open mr-2"></i> Full Week 5 Lesson Plan
+                        </a>
+                        <div class="pl-4 space-y-1 text-sm">
+                            <div>• Day 1: AI-Driven Test Generation</div>
+                            <div>• Day 2: End-to-End Testing</div>
+                            <div>• Day 3: Performance Testing</div>
+                            <div>• Day 4: Continuous Quality</div>
+                            <div>• Day 5: Testing Framework Project</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Testing</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Jest</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Playwright</span>
+                    </div>
+                </div>
+
+                <!-- Week 6 -->
+                <div class="week-card rounded-xl p-6 card-hover cursor-pointer" onclick="expandWeek(6)">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xl">6</div>
+                        <h3 class="text-2xl font-bold ml-4">Deployment & DevOps</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Master CI/CD, containerization, and production operations.</p>
+                    <div id="week6-details" class="hidden mt-4 space-y-2">
+                        <a href="/curriculum/week-6/lesson-plan.md" class="block lesson-link p-2 rounded">
+                            <i class="fas fa-book-open mr-2"></i> Full Week 6 Lesson Plan
+                        </a>
+                        <div class="pl-4 space-y-1 text-sm">
+                            <div>• Day 1: CI/CD Mastery</div>
+                            <div>• Day 2: Docker & Kubernetes</div>
+                            <div>• Day 3: Cloud Deployment</div>
+                            <div>• Day 4: Monitoring & Observability</div>
+                            <div>• Day 5: Production Operations</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">Docker</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">K8s</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">CI/CD</span>
+                        <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">AWS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links to Resources -->
+            <div class="mt-12 bg-gray-50 rounded-xl p-8">
+                <h3 class="text-2xl font-bold mb-6">Quick Access to Resources</h3>
+                <div class="grid md:grid-cols-4 gap-4">
+                    <a href="/curriculum/master-curriculum.md" class="bg-white p-4 rounded-lg hover:shadow-lg transition">
+                        <i class="fas fa-book text-purple-600 text-2xl mb-2"></i>
+                        <h4 class="font-semibold">Master Curriculum</h4>
+                        <p class="text-sm text-gray-600">Complete course outline</p>
+                    </a>
+                    <a href="/sandbox-exercises/all-exercises.md" class="bg-white p-4 rounded-lg hover:shadow-lg transition">
+                        <i class="fas fa-code text-purple-600 text-2xl mb-2"></i>
+                        <h4 class="font-semibold">All Exercises</h4>
+                        <p class="text-sm text-gray-600">Hands-on coding challenges</p>
+                    </a>
+                    <a href="/resources" class="bg-white p-4 rounded-lg hover:shadow-lg transition">
+                        <i class="fas fa-download text-purple-600 text-2xl mb-2"></i>
+                        <h4 class="font-semibold">Downloads</h4>
+                        <p class="text-sm text-gray-600">Templates & resources</p>
+                    </a>
+                    <a href="/MCP-REMOTE-CONNECTION.md" class="bg-white p-4 rounded-lg hover:shadow-lg transition">
+                        <i class="fas fa-plug text-purple-600 text-2xl mb-2"></i>
+                        <h4 class="font-semibold">MCP Setup</h4>
+                        <p class="text-sm text-gray-600">Remote connection guide</p>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Why VibeCoders is Different</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3 class="feature-title">AI-First Approach</h3>
-                    <p>Learn to use Claude, Copilot, and other AI tools as your pair programmers. Build faster, smarter, better.</p>
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Why Choose VibeCoders?</h2>
+                <p class="text-xl text-gray-600">Learn faster, build better, deploy with confidence</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-robot text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">AI-Powered Learning</h3>
+                    <p class="text-gray-600">Learn to code with Claude, GPT-4, and Copilot as your personal tutors.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3 class="feature-title">"Vibe to Production"</h3>
-                    <p>Start with rapid AI prototyping, then refine to production-quality code. Learn when to vibe and when to engineer.</p>
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-project-diagram text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Real Projects</h3>
+                    <p class="text-gray-600">Build production-ready applications from day one with industry best practices.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3 class="feature-title">Real Industry Tools</h3>
-                    <p>MCP, Vertex AI, Claude Code - learn the tools companies are actually using in 2025.</p>
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Live Mentorship</h3>
+                    <p class="text-gray-600">Get help from experienced developers in weekly office hours and Discord.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">Work It Until You Solve It</h3>
-                    <p>No hand-holding. Challenging sandbox exercises that you must complete. Build real persistence.</p>
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-plug text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">MCP Integration</h3>
+                    <p class="text-gray-600">Master the Model Context Protocol for advanced AI tool integration.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3 class="feature-title">10x Productivity</h3>
-                    <p>Learn to build in hours what used to take weeks. Ship real products by week 3.</p>
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-certificate text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Industry Certification</h3>
+                    <p class="text-gray-600">Earn a recognized certificate that opens doors to top tech companies.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💼</div>
-                    <h3 class="feature-title">Future-Proof Career</h3>
-                    <p>While others fear AI, you'll master it. Graduate ready for AI Engineer and hybrid developer roles.</p>
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-briefcase text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Job Placement</h3>
+                    <p class="text-gray-600">Direct pathway to interviews with our 50+ partner companies.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Curriculum Section -->
-    <section class="curriculum" id="curriculum">
-        <div class="container">
-            <h2 class="section-title">6 Weeks to AI Mastery</h2>
-            <div class="week-grid">
-                <div class="week-card">
-                    <span class="week-number">WEEK 1</span>
-                    <h3 class="week-title">AI Development Environment</h3>
-                    <p>Set up your AI-powered workspace and learn the foundations.</p>
-                    <ul class="week-topics">
-                        <li>Claude Desktop & MCP Setup</li>
-                        <li>Building AI Agents</li>
-                        <li>Headless Automation</li>
-                    </ul>
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Success Stories</h2>
+                <p class="text-xl text-gray-600">From beginners to senior developers in 6 weeks</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Sarah" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-semibold">Sarah Chen</div>
+                            <div class="text-sm text-gray-600">Senior Developer at Google</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"I went from struggling with loops to building a full SaaS platform in 3 weeks. The MCP integration changed everything!"</p>
+                    <div class="mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
                 </div>
-                <div class="week-card">
-                    <span class="week-number">WEEK 2</span>
-                    <h3 class="week-title">AI-Assisted Architecture</h3>
-                    <p>Let AI help you plan and design robust systems.</p>
-                    <ul class="week-topics">
-                        <li>Claude Code Best Practices</li>
-                        <li>MCP Deep Dive</li>
-                        <li>System Design with AI</li>
-                    </ul>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Mike" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-semibold">Mike Johnson</div>
+                            <div class="text-sm text-gray-600">Founder of TechStartup</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"The AI-first approach taught me to code 10x faster. I launched my startup MVP in week 4 of the bootcamp!"</p>
+                    <div class="mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
                 </div>
-                <div class="week-card">
-                    <span class="week-number">WEEK 3</span>
-                    <h3 class="week-title">Prompting & Vibe Coding</h3>
-                    <p>Master the art of communicating with AI for maximum output.</p>
-                    <ul class="week-topics">
-                        <li>Prompt Engineering</li>
-                        <li>Agent Prompting</li>
-                        <li>Vibe Coding in Production</li>
-                    </ul>
-                </div>
-                <div class="week-card">
-                    <span class="week-number">WEEK 4</span>
-                    <h3 class="week-title">Real-World Applications</h3>
-                    <p>Learn from companies using AI in production.</p>
-                    <ul class="week-topics">
-                        <li>Enterprise Integration</li>
-                        <li>Startup Case Studies</li>
-                        <li>Building Products with AI</li>
-                    </ul>
-                </div>
-                <div class="week-card">
-                    <span class="week-number">WEEK 5</span>
-                    <h3 class="week-title">Testing & Quality</h3>
-                    <p>Ensure your AI-generated code is production-ready.</p>
-                    <ul class="week-topics">
-                        <li>Testing AI Code</li>
-                        <li>Quality Assurance</li>
-                        <li>Reliability Engineering</li>
-                    </ul>
-                </div>
-                <div class="week-card">
-                    <span class="week-number">WEEK 6</span>
-                    <h3 class="week-title">Deployment & Advanced AI</h3>
-                    <p>Ship your AI-powered applications to production.</p>
-                    <ul class="week-topics">
-                        <li>Advanced Agent Systems</li>
-                        <li>Production Deployment</li>
-                        <li>Scaling AI Applications</li>
-                    </ul>
+                <div class="bg-gray-50 p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Emily" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <div class="font-semibold">Emily Rodriguez</div>
+                            <div class="text-sm text-gray-600">DevOps Engineer at AWS</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"From zero to deploying microservices on Kubernetes. This bootcamp is the future of coding education!"</p>
+                    <div class="mt-4">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
-        <div class="stats-grid">
-            <div>
-                <div class="stat-number">94%</div>
-                <div class="stat-label">Job Placement Rate</div>
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Simple, Transparent Pricing</h2>
+                <p class="text-xl text-gray-600">Start free, upgrade when you're ready</p>
             </div>
-            <div>
-                <div class="stat-number">10x</div>
-                <div class="stat-label">Productivity Increase</div>
-            </div>
-            <div>
-                <div class="stat-number">$85k</div>
-                <div class="stat-label">Average Starting Salary</div>
-            </div>
-            <div>
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Alumni Network</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="pricing">
-        <div class="container">
-            <h2 class="section-title">Investment in Your Future</h2>
-            <div class="pricing-cards">
-                <div class="pricing-card">
-                    <h3>Session 1</h3>
-                    <div class="price">FREE</div>
-                    <p class="price-subtitle">Try before you buy</p>
-                    <ul class="price-features">
-                        <li>✓ Full first week access</li>
-                        <li>✓ AI environment setup</li>
-                        <li>✓ Community access</li>
-                        <li>✓ No credit card required</li>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl p-8 card-hover">
+                    <h3 class="text-2xl font-bold mb-4">Free Trial</h3>
+                    <div class="text-4xl font-bold mb-4">$0</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Week 1 full access</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Basic materials</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Community forum</li>
+                        <li class="flex items-center text-gray-400"><i class="fas fa-times text-gray-400 mr-2"></i> Mentorship</li>
+                        <li class="flex items-center text-gray-400"><i class="fas fa-times text-gray-400 mr-2"></i> Certificate</li>
                     </ul>
-                    <a href="registration.html" class="btn btn-secondary" style="width: 100%;">Start Free</a>
+                    <button onclick="enrollNow('free')" class="w-full bg-gray-200 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-300 transition">
+                        Start Free
+                    </button>
                 </div>
-                <div class="pricing-card featured">
-                    <h3>Full Bootcamp</h3>
-                    <div class="price">$497</div>
-                    <p class="price-subtitle">Early bird (Save $200)</p>
-                    <ul class="price-features">
-                        <li>✓ All 6 weeks of content</li>
-                        <li>✓ Live sessions & recordings</li>
-                        <li>✓ 1-on-1 mentoring</li>
-                        <li>✓ Job placement support</li>
-                        <li>✓ Lifetime alumni access</li>
-                        <li>✓ Certificate of completion</li>
+                <div class="bg-gradient-to-br from-purple-600 to-indigo-600 text-white rounded-xl p-8 card-hover transform scale-105">
+                    <div class="bg-yellow-400 text-purple-900 text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">MOST POPULAR</div>
+                    <h3 class="text-2xl font-bold mb-4">Full Bootcamp</h3>
+                    <div class="text-4xl font-bold mb-4">$497</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check mr-2"></i> All 6 weeks</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2"></i> Complete resources</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2"></i> Live mentorship</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2"></i> MCP server access</li>
+                        <li class="flex items-center"><i class="fas fa-check mr-2"></i> Industry certificate</li>
                     </ul>
-                    <a href="registration.html" class="btn btn-primary" style="width: 100%; background: var(--primary); color: white;">Enroll Now</a>
+                    <button onclick="enrollNow('full')" class="w-full bg-white text-purple-600 py-3 rounded-lg font-semibold hover:shadow-lg transition">
+                        Enroll Now
+                    </button>
                 </div>
-            </div>
-            <p style="text-align: center; margin-top: 2rem; color: #6b7280;">
-                💳 Payment plans available • 💰 Scholarships for qualified candidates
-            </p>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do I need prior coding experience?</span>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Basic programming knowledge is helpful but not required. If you can write HTML/CSS and understand basic programming concepts, you're ready. The AI tools will accelerate your learning.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is this just about using ChatGPT to code?</span>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>No! We teach you professional AI development using Claude, MCP, Vertex AI, and other industry tools. You'll learn when to use AI, when to code manually, and how to combine both for maximum productivity.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What if I can't complete a sandbox exercise?</span>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>That's the point! "Work it until you solve it" is our philosophy. You'll have progressive hints, peer support, and mentor guidance. Everyone completes every exercise - no exceptions.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>What kind of job can I get after this?</span>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Graduates land roles as AI Engineers, Full-Stack Developers, Prompt Engineers, and AI Integration Specialists. Average starting salary is $85k, with some landing $100k+ roles.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is there job placement support?</span>
-                        <span class="faq-arrow">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes! We provide resume reviews, portfolio building, interview prep, and direct introductions to hiring partners. Our 94% placement rate speaks for itself.</p>
-                    </div>
+                <div class="bg-white rounded-xl p-8 card-hover">
+                    <h3 class="text-2xl font-bold mb-4">Enterprise</h3>
+                    <div class="text-4xl font-bold mb-4">Custom</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Team training</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Custom curriculum</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Private MCP server</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Dedicated support</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> On-site option</li>
+                    </ul>
+                    <button onclick="contactSales()" class="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition">
+                        Contact Sales
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="hero" style="min-height: 50vh;">
-        <div class="hero-content">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to 10x Your Coding Power?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                Join the next cohort starting January 2025.<br>
-                Limited to 50 students for personalized attention.
-            </p>
-            <div class="cta-buttons">
-                <a href="registration.html" class="btn btn-primary">Claim Your Spot →</a>
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-4xl font-bold mb-4">Ready to Transform Your Coding Journey?</h2>
+            <p class="text-xl mb-8 opacity-90">Join 500+ students who are already coding with AI, not against it.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="enrollNow()" class="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl transition">
+                    Enroll Today - Start Monday
+                </button>
+                <button onclick="downloadSyllabus()" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-purple-600 transition">
+                    Download Full Syllabus
+                </button>
             </div>
-            <p style="margin-top: 2rem; opacity: 0.8;">
-                🔥 17 spots already taken • ⏰ Early bird pricing ends in 5 days
+            <p class="mt-8 text-sm opacity-75">
+                <i class="fas fa-lock mr-2"></i> 30-day money-back guarantee • No questions asked
             </p>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 VibeCoders Bootcamp. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Contact</a>
-            <a href="#">Discord Community</a>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold gradient-text mb-4">VibeCoders</h3>
+                    <p class="text-gray-400">Engineering excellence through AI-powered education.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/curriculum" class="text-gray-400 hover:text-white">Curriculum</a></li>
+                        <li><a href="/about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="/blog" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="/careers" class="text-gray-400 hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/MCP-REMOTE-CONNECTION.md" class="text-gray-400 hover:text-white">MCP Setup Guide</a></li>
+                        <li><a href="/docs" class="text-gray-400 hover:text-white">Documentation</a></li>
+                        <li><a href="/support" class="text-gray-400 hover:text-white">Support</a></li>
+                        <li><a href="/faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-discord text-xl"></i></a>
+                    </div>
+                    <p class="text-gray-400">support@vibecoders.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 VibeCoders. All rights reserved. | <a href="/privacy" class="hover:text-white">Privacy</a> | <a href="/terms" class="hover:text-white">Terms</a></p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
-            });
-        });
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
 
-        // Smooth Scrolling
+        function expandWeek(week) {
+            const details = document.getElementById(`week${week}-details`);
+            details.classList.toggle('hidden');
+            
+            // Close other weeks
+            for (let i = 1; i <= 6; i++) {
+                if (i !== week) {
+                    document.getElementById(`week${i}-details`).classList.add('hidden');
+                }
+            }
+        }
+
+        function viewCurriculum() {
+            document.getElementById('curriculum').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function enrollNow(plan = 'full') {
+            if (plan === 'free') {
+                window.location.href = '/signup?plan=free';
+            } else if (plan === 'full') {
+                window.location.href = '/signup?plan=full';
+            } else {
+                window.location.href = '/signup';
+            }
+        }
+
+        function contactSales() {
+            window.location.href = '/contact?type=enterprise';
+        }
+
+        function downloadSyllabus() {
+            window.location.href = '/download/syllabus.pdf';
+        }
+
+        // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -754,7 +628,7 @@
             });
         });
 
-        // Intersection Observer for animations
+        // Add animation on scroll
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -769,12 +643,11 @@
             });
         }, observerOptions);
 
-        // Observe all cards
-        document.querySelectorAll('.feature-card, .week-card, .pricing-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.6s ease';
-            observer.observe(card);
+        document.querySelectorAll('.card-hover').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(el);
         });
     </script>
 </body>
