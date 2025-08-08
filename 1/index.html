@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeCoders Bootcamp - Presentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .slides-container {
+            height: 100vh;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            scroll-snap-align: start;
+            position: relative;
+        }
+        
+        .slide:nth-child(even) {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            animation: fadeInUp 1s ease;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #f0f0f0;
+        }
+        
+        p, li {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            margin: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        li:before {
+            content: "▶";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+        }
+        
+        .code-block {
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'Courier New', monospace;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .emoji {
+            font-size: 3rem;
+            margin: 1rem;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+        }
+        
+        .nav-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+        
+        .slide-number {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">← Back to Website</a>
+    
+    <div class="slides-container" id="slides">
+        <!-- Slide 1: Title -->
+        <div class="slide">
+            <span class="slide-number">1 / 20</span>
+            <div class="emoji">🚀</div>
+            <h1>VibeCoders Bootcamp</h1>
+            <h2>6-Week Engineering Principles</h2>
+            <p>Transform from Coder to Engineer with AI-Powered Learning</p>
+            <div class="emoji">💻</div>
+        </div>
+        
+        <!-- Slide 2: Overview -->
+        <div class="slide">
+            <span class="slide-number">2 / 20</span>
+            <h2>🎯 Bootcamp Overview</h2>
+            <ul>
+                <li>Duration: 6 weeks</li>
+                <li>Format: 2 in-person meetups + 6 online sessions</li>
+                <li>Target: Beginner VibeCoders → Professional Engineers</li>
+                <li>Methodology: "Work it until you solve it"</li>
+                <li>Structure: Progressive learning with AI assistance</li>
+            </ul>
+        </div>
+        
+        <!-- Slide 3: Philosophy -->
+        <div class="slide">
+            <span class="slide-number">3 / 20</span>
+            <h2>🧠 Our Philosophy</h2>
+            <h3 class="highlight">"Work it until you solve it"</h3>
+            <p>We're not replacing engineering fundamentals - we're augmenting them with AI capabilities.</p>
+            <br>
+            <p>Learn when to "vibe code" for rapid prototyping and when to engineer for production stability.</p>
+        </div>
+        
+        <!-- Slide 4: Week 1 -->
+        <div class="slide">
+            <span class="slide-number">4 / 20</span>
+            <h2>📅 Week 1: Developer Hygiene</h2>
+            <ul>
+                <li>Dev Containers & Docker Basics</li>
+                <li>File System Mastery</li>
+                <li>Git & Version Control</li>
+                <li>AI Tool Setup (Claude, MCP, Copilot)</li>
+                <li>Environment Configuration</li>
+            </ul>
+            <div class="code-block">
+git init && docker-compose up
+</div>
+        </div>
+        
+        <!-- Slide 5: Week 2 -->
+        <div class="slide">
+            <span class="slide-number">5 / 20</span>
+            <h2>🏗️ Week 2: Planning & Architecture</h2>
+            <ul>
+                <li>System Design Fundamentals</li>
+                <li>Database Schema Planning</li>
+                <li>API Design (REST & GraphQL)</li>
+                <li>Cloud Architecture</li>
+                <li>Documentation Standards</li>
+            </ul>
+        </div>
+        
+        <!-- Slide 6: Week 3 -->
+        <div class="slide">
+            <span class="slide-number">6 / 20</span>
+            <h2>✨ Week 3: Creating Code - Part 1</h2>
+            <ul>
+                <li>AI Pair Programming</li>
+                <li>Code Generation Patterns</li>
+                <li>Refactoring with AI</li>
+                <li>Clean Code Principles</li>
+                <li>Design Patterns</li>
+            </ul>
+            <div class="emoji">🤖</div>
+        </div>
+        
+        <!-- Slide 7: Week 4 -->
+        <div class="slide">
+            <span class="slide-number">7 / 20</span>
+            <h2>⚡ Week 4: Creating Code - Part 2</h2>
+            <ul>
+                <li>Microservices Architecture</li>
+                <li>Real-time Features (WebSockets)</li>
+                <li>AI-Powered Features</li>
+                <li>State Management</li>
+                <li>Performance Optimization</li>
+            </ul>
+        </div>
+        
+        <!-- Slide 8: Week 5 -->
+        <div class="slide">
+            <span class="slide-number">8 / 20</span>
+            <h2>🧪 Week 5: Testing & Quality</h2>
+            <ul>
+                <li>AI-Driven Test Generation</li>
+                <li>Unit & Integration Testing</li>
+                <li>End-to-End Testing</li>
+                <li>Performance Testing</li>
+                <li>Security Auditing</li>
+            </ul>
+        </div>
+        
+        <!-- Slide 9: Week 6 -->
+        <div class="slide">
+            <span class="slide-number">9 / 20</span>
+            <h2>🚢 Week 6: Deployment & DevOps</h2>
+            <ul>
+                <li>CI/CD Pipelines</li>
+                <li>Docker & Kubernetes</li>
+                <li>Cloud Deployment (AWS, GCP, Cloudflare)</li>
+                <li>Monitoring & Logging</li>
+                <li>Production Operations</li>
+            </ul>
+        </div>
+        
+        <!-- Slide 10: Tech Stack -->
+        <div class="slide">
+            <span class="slide-number">10 / 20</span>
+            <h2>🛠️ Tech Stack</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 800px;">
+                <div>
+                    <h3>Frontend</h3>
+                    <ul>
+                        <li>React/Next.js</li>
+                        <li>TypeScript</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Node.js/Express</li>
+                        <li>PostgreSQL</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>AI Tools</h3>
+                    <ul>
+                        <li>Claude Desktop</li>
+                        <li>GitHub Copilot</li>
+                        <li>MCP Protocol</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>DevOps</h3>
+                    <ul>
+                        <li>Docker</li>
+                        <li>GitHub Actions</li>
+                        <li>Cloudflare</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 11: Learning Outcomes -->
+        <div class="slide">
+            <span class="slide-number">11 / 20</span>
+            <h2>🎯 Learning Outcomes</h2>
+            <ul>
+                <li>Build production-ready applications</li>
+                <li>Master AI pair programming</li>
+                <li>Design scalable architectures</li>
+                <li>Write comprehensive tests</li>
+                <li>Deploy to cloud platforms</li>
+                <li>10x productivity with AI tools</li>
+            </ul>
+        </div>
+        
+        <!-- Slide 12: Sandbox Philosophy -->
+        <div class="slide">
+            <span class="slide-number">12 / 20</span>
+            <h2>🏖️ Sandbox Exercises</h2>
+            <h3>"Work it until you solve it"</h3>
+            <ul>
+                <li>No giving up - persistence is key</li>
+                <li>Progressive hints after time intervals</li>
+                <li>Real-world scenarios</li>
+                <li>Repeat until successful</li>
+            </ul>
+            <div class="emoji">💪</div>
+        </div>
+        
+        <!-- Slide 13: Assessment -->
+        <div class="slide">
+            <span class="slide-number">13 / 20</span>
+            <h2>📊 Assessment Structure</h2>
+            <ul>
+                <li>Weekly Quizzes: 20%</li>
+                <li>Sandbox Exercises: 30%</li>
+                <li>Hands-on Challenges: 30%</li>
+                <li>Final Project: 20%</li>
+            </ul>
+            <p style="margin-top: 2rem;">Success = Persistence + Practice + AI Partnership</p>
+        </div>
+        
+        <!-- Slide 14: Meetups -->
+        <div class="slide">
+            <span class="slide-number">14 / 20</span>
+            <h2>🤝 In-Person Meetups</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3>Meetup 1 (Week 2)</h3>
+                    <ul>
+                        <li>Collaborative Planning</li>
+                        <li>Peer Code Review</li>
+                        <li>Networking</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Meetup 2 (Week 5)</h3>
+                    <ul>
+                        <li>Demo Day Prep</li>
+                        <li>Project Presentations</li>
+                        <li>Certificate Ceremony</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 15: Pricing -->
+        <div class="slide">
+            <span class="slide-number">15 / 20</span>
+            <h2>💰 Pricing Model</h2>
+            <ul>
+                <li><span class="highlight">Week 1: FREE</span> - Try before you buy!</li>
+                <li>Weeks 2-6: $497 (Early bird discount available)</li>
+                <li>Payment plans offered</li>
+                <li>30-day money-back guarantee</li>
+                <li>Enterprise/Team pricing available</li>
+            </ul>
+        </div>
+        
+        <!-- Slide 16: Success Metrics -->
+        <div class="slide">
+            <span class="slide-number">16 / 20</span>
+            <h2>📈 Success Metrics</h2>
+            <ul>
+                <li>500+ Students Enrolled</li>
+                <li>95% Completion Rate</li>
+                <li>4.9/5 Student Rating</li>
+                <li>80% Job Placement Rate</li>
+                <li>$85k Average Starting Salary</li>
+            </ul>
+            <div class="emoji">🎉</div>
+        </div>
+        
+        <!-- Slide 17: Career Paths -->
+        <div class="slide">
+            <span class="slide-number">17 / 20</span>
+            <h2>🚀 Career Paths</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h3>New AI Roles</h3>
+                    <ul>
+                        <li>AI Integration Engineer</li>
+                        <li>Prompt Engineer</li>
+                        <li>AI Tool Developer</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Enhanced Roles</h3>
+                    <ul>
+                        <li>Full-Stack Developer</li>
+                        <li>DevOps Engineer</li>
+                        <li>Product Manager</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 18: Why Choose Us -->
+        <div class="slide">
+            <span class="slide-number">18 / 20</span>
+            <h2>❓ Why VibeCoders?</h2>
+            <ul>
+                <li>First bootcamp teaching WITH AI, not against it</li>
+                <li>Industry-relevant curriculum</li>
+                <li>Real projects, real deployments</li>
+                <li>Direct pathway to jobs</li>
+                <li>Lifetime community access</li>
+                <li>Continuous curriculum updates</li>
+            </ul>
+        </div>
+        
+        <!-- Slide 19: Call to Action -->
+        <div class="slide">
+            <span class="slide-number">19 / 20</span>
+            <h2>🎯 Ready to Transform?</h2>
+            <h3 class="highlight">Join 500+ students already coding with AI</h3>
+            <div style="margin: 3rem 0;">
+                <p>Next Cohort Starts: Monday</p>
+                <p>Limited Seats Available</p>
+            </div>
+            <div class="code-block">
+                npm install @your-future --save
+            </div>
+        </div>
+        
+        <!-- Slide 20: Contact -->
+        <div class="slide">
+            <span class="slide-number">20 / 20</span>
+            <h1>Thank You! 🙏</h1>
+            <h3>Let's Build the Future Together</h3>
+            <div style="margin-top: 3rem;">
+                <p>🌐 bootcamp.organizedai.vip</p>
+                <p>📧 support@vibecoders.com</p>
+                <p>💬 Discord: VibeCoders Community</p>
+            </div>
+            <div class="emoji">🚀</div>
+            <p style="margin-top: 2rem; font-style: italic;">"Stop fighting AI. Start building with it."</p>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <button class="nav-btn" onclick="previousSlide()">← Previous</button>
+        <button class="nav-btn" onclick="nextSlide()">Next →</button>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        
+        function showSlide(n) {
+            if (n >= totalSlides) currentSlide = 0;
+            if (n < 0) currentSlide = totalSlides - 1;
+            slides[currentSlide].scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+        
+        function previousSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                previousSlide();
+            }
+        });
+        
+        // Track current slide on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    currentSlide = Array.from(slides).indexOf(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        slides.forEach(slide => observer.observe(slide));
+    </script>
+</body>
+</html>
