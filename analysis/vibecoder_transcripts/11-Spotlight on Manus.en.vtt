@@ -1,0 +1,948 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:14.720 --> 00:00:20.000
+My name is Tao and my nick is hik you can just&nbsp;
+find me on any social network with medic high&nbsp;&nbsp;
+
+00:00:20.000 --> 00:00:26.720
+cloud and right now I'm the co-founder of manasai&nbsp;
+and I'm acting our chief product officer but you&nbsp;&nbsp;
+
+00:00:26.720 --> 00:00:33.360
+know I'm not just a product guy I coding for&nbsp;
+like 28 years from my very early age like when&nbsp;&nbsp;
+
+00:00:33.360 --> 00:00:38.320
+I was nine I I can't remember but you know for&nbsp;
+AI actually I'm very newbie I just into this&nbsp;&nbsp;
+
+00:00:38.320 --> 00:00:45.840
+industry for only two years and uh uh what I want&nbsp;
+to achieve in the AI industry is like I want to&nbsp;&nbsp;
+
+00:00:45.840 --> 00:00:52.720
+build a product that can you know influence 24&nbsp;
+hours for a single user that is two years ago&nbsp;&nbsp;
+
+00:00:52.720 --> 00:00:58.080
+that is my dream but right now I think with manus&nbsp;
+AI actually I can achieve that dream at end of&nbsp;&nbsp;
+
+00:00:58.080 --> 00:01:05.520
+this year right Now the maximum usage for our user&nbsp;
+there's one single user uh he can just consume the&nbsp;&nbsp;
+
+00:01:05.520 --> 00:01:13.040
+GPD GPU power two hours per day just for himself.&nbsp;
+So I think we can achieve this goal at end of this&nbsp;&nbsp;
+
+00:01:13.040 --> 00:01:20.240
+year and today uh what I want to talk about is&nbsp;
+about two things uh one is about manners and&nbsp;&nbsp;
+
+00:01:20.240 --> 00:01:25.760
+another thing is about cloud models. So the first&nbsp;
+talk is about what is manas. Yeah, man. Actually,&nbsp;&nbsp;
+
+00:01:25.760 --> 00:01:32.080
+you know, it's some not like an English word. Uh&nbsp;
+because really it isn't. Yeah, man. This name just&nbsp;&nbsp;
+
+00:01:32.080 --> 00:01:40.080
+comes from MIT's motto which is men's at manas.&nbsp;
+It's a old Latin words which means man and hand.&nbsp;&nbsp;
+
+00:01:40.080 --> 00:01:46.160
+Why we choose this name manas? Mess is the hand&nbsp;
+is because we think for like all the past two&nbsp;&nbsp;
+
+00:01:46.160 --> 00:01:52.800
+years all these frontier models they're already&nbsp;
+like very smart just like uh humans brain. Yeah.&nbsp;&nbsp;
+
+00:01:52.800 --> 00:01:58.800
+They're super smart. they are capable of like&nbsp;
+doing different kind of of tasks but you know&nbsp;&nbsp;
+
+00:01:58.800 --> 00:02:04.640
+even with this very very smart brain we can&nbsp;
+make a real impact into the real world because&nbsp;&nbsp;
+
+00:02:04.640 --> 00:02:11.680
+we don't build hands for it you know just like&nbsp;
+when I was nine at that time that is like 1996&nbsp;&nbsp;
+
+00:02:11.680 --> 00:02:17.040
+uh back in China and at that time our families&nbsp;
+are not you know we are not rich enough to have a&nbsp;&nbsp;
+
+00:02:17.040 --> 00:02:23.200
+computer in each of our family so I only have like&nbsp;
+two times a week uh to go to the computer room in&nbsp;&nbsp;
+
+00:02:23.200 --> 00:02:29.440
+our in my primary school and at that time even&nbsp;
+I was the best in the class of of of of coding&nbsp;&nbsp;
+
+00:02:29.440 --> 00:02:37.440
+but without going to the computer to like debug uh&nbsp;
+to to write the code on the on the real machine I&nbsp;&nbsp;
+
+00:02:37.440 --> 00:02:43.840
+can't get the code right just in one time with a&nbsp;
+pen and a paper but you know that's exactly what&nbsp;&nbsp;
+
+00:02:43.840 --> 00:02:51.520
+we did for the past two years we have a very smart&nbsp;
+man but we only give it a pen and a paper and we&nbsp;&nbsp;
+
+00:02:51.520 --> 00:02:59.120
+ask them to solve very complex programs for us. So&nbsp;
+we think that's a program. So in manas we we don't&nbsp;&nbsp;
+
+00:02:59.120 --> 00:03:05.200
+train models. We don't even like post training&nbsp;
+models. What we do is like we are building hands&nbsp;&nbsp;
+
+00:03:05.200 --> 00:03:12.800
+for these models. Yeah, that is you know the&nbsp;
+the concept be behind our lane manas. Yeah,&nbsp;&nbsp;
+
+00:03:12.800 --> 00:03:21.040
+I think like most of you maybe uh saw our product&nbsp;
+man on social or you already a man user and you&nbsp;&nbsp;
+
+00:03:21.040 --> 00:03:27.040
+must like saw some use cases on our website&nbsp;
+any like social network but today I also want&nbsp;&nbsp;
+
+00:03:27.040 --> 00:03:33.680
+to like just share like two uh new use cases one&nbsp;
+from our internal usage another is from our user.&nbsp;&nbsp;
+
+00:03:33.680 --> 00:03:39.200
+Yeah. So this one is actually from our internal&nbsp;
+usage. Yeah because we are expanding globally.&nbsp;&nbsp;
+
+00:03:39.200 --> 00:03:44.720
+We just opened our Singapore office three weeks&nbsp;
+ago and opened our Tokyo office two weeks ago and&nbsp;&nbsp;
+
+00:03:44.720 --> 00:03:51.040
+we will open our San Francisco office tomorrow.&nbsp;
+Yeah. So when we are choosing our Tokyo office,&nbsp;&nbsp;
+
+00:03:51.040 --> 00:03:56.960
+uh we are asking man to help us. It's like&nbsp;
+we will say okay we have like a 40 people&nbsp;&nbsp;
+
+00:03:56.960 --> 00:04:03.200
+uh we'll be relocating to Tokyo. So just find the&nbsp;
+office we can which can fit 40 people and also we&nbsp;&nbsp;
+
+00:04:03.200 --> 00:04:09.840
+have to solve their accommodation problem. So this&nbsp;
+is a this is a prompt we give to manus and after&nbsp;&nbsp;
+
+00:04:09.840 --> 00:04:16.080
+we give this prompt to manus manus just have&nbsp;
+its own plan and then executes the plan. It's&nbsp;&nbsp;
+
+00:04:16.080 --> 00:04:22.880
+like search browse all these websites around the&nbsp;
+internet doing a lot of browsing browsing browsing&nbsp;&nbsp;
+
+00:04:22.880 --> 00:04:31.040
+research research research and after 24 minutes&nbsp;
+man just uh uh deliver this website for us. Yeah,&nbsp;&nbsp;
+
+00:04:31.040 --> 00:04:37.040
+this website it says a Tokyo office accommodation&nbsp;
+recommendations. It first it comes with a very&nbsp;&nbsp;
+
+00:04:37.040 --> 00:04:43.680
+interactive map which comes all the 10 options&nbsp;
+matt found for us. The blue marker is for the&nbsp;&nbsp;
+
+00:04:43.680 --> 00:04:49.840
+offic's location and the green marker is the&nbsp;
+accommodation near that office. All these 10&nbsp;&nbsp;
+
+00:04:49.840 --> 00:04:55.680
+options just on this interactive map. Yeah. And&nbsp;
+if you keep scrolling down you can see the first&nbsp;&nbsp;
+
+00:04:55.680 --> 00:05:01.920
+pair is a Shibuya one. It choose the Shibuya&nbsp;
+scramble square. That's exactly the office we&nbsp;&nbsp;
+
+00:05:01.920 --> 00:05:06.800
+went to when when we are looking office there.&nbsp;
+But you know this office is kind of like very&nbsp;&nbsp;
+
+00:05:06.800 --> 00:05:12.160
+fancy but too expensive for startup like us. So&nbsp;
+we just choose our office dear this dear near de&nbsp;&nbsp;
+
+00:05:12.160 --> 00:05:13.440
+near de near de near de near de near de near de&nbsp;
+near de near de near de near this this one very&nbsp;&nbsp;
+
+00:05:13.440 --> 00:05:18.960
+very dear very very close like maybe 200 meters&nbsp;
+away and it has the price and why we should choose&nbsp;&nbsp;
+
+00:05:18.960 --> 00:05:25.920
+this office and if you we choose this office uh&nbsp;
+what the commenation uh options we can get also&nbsp;&nbsp;
+
+00:05:25.920 --> 00:05:32.640
+has the distance to the office which is very great&nbsp;
+comes with like 10 pairs of the and at the bottom&nbsp;&nbsp;
+
+00:05:32.640 --> 00:05:38.720
+there's like an overview table for all these&nbsp;
+options yeah so all these have been done just&nbsp;&nbsp;
+
+00:05:38.720 --> 00:05:45.040
+under 20 minutes. So you can imagine maybe like&nbsp;
+your your inter or your assistant can achieve&nbsp;&nbsp;
+
+00:05:45.040 --> 00:05:51.040
+such detailed quantity of uh of information uh&nbsp;
+in such a short time. Another thing I want to&nbsp;&nbsp;
+
+00:05:51.040 --> 00:05:58.080
+demo here is like yeah you can just maybe send&nbsp;
+an image to manus uh empty room and ask manus to&nbsp;&nbsp;
+
+00:05:58.080 --> 00:06:04.320
+analyze this rule style and go to EKS website&nbsp;
+to find some furnitureures for your room and&nbsp;&nbsp;
+
+00:06:04.320 --> 00:06:11.280
+then you can see the final result. Yeah. So look&nbsp;
+first manus will just analyze uh this empty rules&nbsp;&nbsp;
+
+00:06:11.280 --> 00:06:18.400
+image and come up with idea okay this uh what&nbsp;
+what what style of this of this rule and the&nbsp;&nbsp;
+
+00:06:18.400 --> 00:06:24.800
+layout and what kind of furnitureures I should&nbsp;
+look look up in the EKS website and then M just go&nbsp;&nbsp;
+
+00:06:24.800 --> 00:06:31.200
+to EKS website and start browsing browsing for all&nbsp;
+these furnitureures and save these furnitureures&nbsp;&nbsp;
+
+00:06:31.200 --> 00:06:40.720
+images and then at last man will just return an&nbsp;
+image just with the real EKA furniture and also&nbsp;&nbsp;
+
+00:06:40.720 --> 00:06:47.920
+with a document with all the furniture he choose&nbsp;
+to like uh comband in this image with the link so&nbsp;&nbsp;
+
+00:06:47.920 --> 00:06:53.280
+actually you can just click click the link to buy&nbsp;
+it yeah right now we can't buy things for you but&nbsp;&nbsp;
+
+00:06:53.280 --> 00:06:59.520
+who knows after three months yeah maybe we can do&nbsp;
+payment yeah so that is kind of the things mass&nbsp;&nbsp;
+
+00:06:59.520 --> 00:07:05.520
+can do yeah it's like a a general agent yeah they&nbsp;
+can solve a very long tale of different type of&nbsp;&nbsp;
+
+00:07:05.520 --> 00:07:13.040
+tasks for you. Yeah. So we can jump back to the uh&nbsp;
+slides. Yeah. So that is like kind of like what is&nbsp;&nbsp;
+
+00:07:13.040 --> 00:07:19.760
+manas and today I think the most I want to share&nbsp;
+is like how we built manas. Yeah. Cursor just&nbsp;&nbsp;
+
+00:07:19.760 --> 00:07:24.960
+inspired us a lot. We got a lot of inspirations&nbsp;
+from cursor. I think you may sound weird because&nbsp;&nbsp;
+
+00:07:24.960 --> 00:07:30.560
+cursor is kind of like a code editor you know.&nbsp;
+Yeah. So all three founders of manas like pig,&nbsp;&nbsp;
+
+00:07:30.560 --> 00:07:35.200
+red and I we're all coders for a lot of years.&nbsp;
+So when we are using cursor I think cursor is&nbsp;&nbsp;
+
+00:07:35.200 --> 00:07:40.960
+actually very great product. It can help us to&nbsp;
+write different language even we don't know how&nbsp;&nbsp;
+
+00:07:40.960 --> 00:07:46.880
+to code in this language and it's very like&nbsp;
+like efficiency but the most interesting part&nbsp;&nbsp;
+
+00:07:46.880 --> 00:07:54.080
+is not we coders using uh using cursor the&nbsp;
+most interesting part is when we watch our&nbsp;&nbsp;
+
+00:07:54.080 --> 00:08:00.080
+friends our colleagues which are long coders&nbsp;
+watching they using cursor to solve their daily&nbsp;&nbsp;
+
+00:08:00.080 --> 00:08:07.120
+tasks like doing data visualization batch file&nbsp;
+processing convert a video file into an audio file&nbsp;&nbsp;
+
+00:08:07.120 --> 00:08:12.720
+It's very fascinating because you know this is&nbsp;
+the the interface of cursor right when these long&nbsp;&nbsp;
+
+00:08:12.720 --> 00:08:19.040
+coders using cursor they don't care about the&nbsp;
+left side because they they can't evaluate the&nbsp;&nbsp;
+
+00:08:19.040 --> 00:08:26.720
+code at all they can do is just keep the accept&nbsp;
+accept accept accept accept you know yeah so it's&nbsp;&nbsp;
+
+00:08:26.720 --> 00:08:33.040
+very interesting when watching the those friends&nbsp;
+you know using cursor so we we just come up with&nbsp;&nbsp;
+
+00:08:33.040 --> 00:08:40.160
+idea which is that those l programmers just using&nbsp;
+cursor to deal with their daily tasks. Yeah. Not&nbsp;&nbsp;
+
+00:08:40.160 --> 00:08:45.360
+like us, you know, when we are using cursor,&nbsp;
+we really want to write some code, you know,&nbsp;&nbsp;
+
+00:08:45.360 --> 00:08:50.960
+that can run multiple times for the future. But&nbsp;
+for this friend, they just want cursor to solve&nbsp;&nbsp;
+
+00:08:50.960 --> 00:08:56.000
+their task. They don't care about the code. Next&nbsp;
+time when they have the same task, they will not&nbsp;&nbsp;
+
+00:08:56.000 --> 00:09:01.520
+run that code again. They will just ask a cursor&nbsp;
+to do that. Maybe generate a new code for them.&nbsp;&nbsp;
+
+00:09:01.520 --> 00:09:07.520
+So code is is like maybe not the ultimate goal.&nbsp;
+It's just you know just an intermediate step for&nbsp;&nbsp;
+
+00:09:07.520 --> 00:09:13.760
+solving problems. So we come up with idea is that&nbsp;
+maybe we should build the opposite. Yeah we should&nbsp;&nbsp;
+
+00:09:13.760 --> 00:09:20.000
+build the right panel of cursor and another thing&nbsp;
+we want to build is that we want the right panel&nbsp;&nbsp;
+
+00:09:20.000 --> 00:09:26.640
+to running in the cloud. Why is that? Because&nbsp;
+you know when we are using cursor on our computer&nbsp;&nbsp;
+
+00:09:26.640 --> 00:09:33.360
+there's it has to ask your permission to to&nbsp;
+continue because it is running on on your computer&nbsp;&nbsp;
+
+00:09:33.360 --> 00:09:40.720
+any action it perform on your computer is like&nbsp;
+will may be dangerous right after it maybe it will&nbsp;&nbsp;
+
+00:09:40.720 --> 00:09:47.840
+install some dependencies install some software&nbsp;
+it may break your computer but we think if it's&nbsp;&nbsp;
+
+00:09:47.840 --> 00:09:54.720
+running in the cloud it's much safer and also when&nbsp;
+it's running in the cloud you don't have to pay&nbsp;&nbsp;
+
+00:09:54.720 --> 00:10:00.000
+your attention to it you just you know assign&nbsp;
+a task to manus you can just close your laptop&nbsp;&nbsp;
+
+00:10:00.000 --> 00:10:05.760
+or just put your phone back to your pocket you&nbsp;
+can do other thing and after the task is done we&nbsp;&nbsp;
+
+00:10:05.760 --> 00:10:13.520
+will give you a notification and you will get the&nbsp;
+result yeah so that's the original idea of how we&nbsp;&nbsp;
+
+00:10:13.520 --> 00:10:21.760
+come up with idea of the manus that is happening&nbsp;
+last October so from last October to this March&nbsp;&nbsp;
+
+00:10:21.760 --> 00:10:28.880
+five months of work. This is what you saw today.&nbsp;
+Uh which is the manusi in fifth of March. Yeah. So&nbsp;&nbsp;
+
+00:10:28.880 --> 00:10:34.800
+that's the original idea. Yeah. Thank you guy. And&nbsp;
+also I want to share some details when we building&nbsp;&nbsp;
+
+00:10:34.800 --> 00:10:40.880
+manus. What kind of source we have in our man.&nbsp;
+The first is that the first key component of manus&nbsp;&nbsp;
+
+00:10:40.880 --> 00:10:48.320
+is that we give manus a computer which is super&nbsp;
+important when you compare to other chatbot usage&nbsp;&nbsp;
+
+00:10:48.320 --> 00:10:54.240
+because you know in manas each manus t will be&nbsp;
+assigned a fully functional virtual machine manus&nbsp;&nbsp;
+
+00:10:54.240 --> 00:11:01.120
+can use the file system terminal vs code and a&nbsp;
+real chromium browser you know it's not a headless&nbsp;&nbsp;
+
+00:11:01.120 --> 00:11:07.040
+browser yeah all these apps in a virtual machine&nbsp;
+which you know it it creates a lot of different&nbsp;&nbsp;
+
+00:11:07.040 --> 00:11:12.720
+opportunity for manus to solve different kinds&nbsp;
+of problem like you can just drag you can just&nbsp;&nbsp;
+
+00:11:12.720 --> 00:11:21.840
+send a zip compress file contains maybe hundreds&nbsp;
+of of PDFs and ask manus to un unzip it and then&nbsp;&nbsp;
+
+00:11:21.840 --> 00:11:28.080
+uh extract all these unstructured data from these&nbsp;
+hundreds of PDFs into a structured spreadsheet&nbsp;&nbsp;
+
+00:11:28.080 --> 00:11:33.920
+yeah that's the thing you can do so we think&nbsp;
+give it a computer is actually what make matters&nbsp;&nbsp;
+
+00:11:33.920 --> 00:11:39.600
+really different comparing to other agents or&nbsp;
+other chat bots and the second thing is that we&nbsp;&nbsp;
+
+00:11:39.600 --> 00:11:44.960
+think you know nowadays it's not it's not every&nbsp;
+information or data is on the public internet&nbsp;&nbsp;
+
+00:11:44.960 --> 00:11:51.280
+there are so many things under pay behind pay or&nbsp;
+in this private databases but users because man&nbsp;&nbsp;
+
+00:11:51.280 --> 00:11:55.920
+you know we are targeting to the consumer market&nbsp;
+we're not targeting to the enterprise market so&nbsp;&nbsp;
+
+00:11:55.920 --> 00:12:02.080
+for for an average user who is not very familiar&nbsp;
+of like how to call an API you know how to write&nbsp;&nbsp;
+
+00:12:02.080 --> 00:12:09.280
+code to access databases we think it's better for&nbsp;
+us to prepay all these like private databases APIs&nbsp;&nbsp;
+
+00:12:09.280 --> 00:12:15.440
+for the users then users want won't care how they&nbsp;
+can get maybe some real-time financial data yeah&nbsp;&nbsp;
+
+00:12:15.440 --> 00:12:21.520
+things like that so it's like we pre we prepare&nbsp;
+this uh private databases for our users and the&nbsp;&nbsp;
+
+00:12:21.520 --> 00:12:28.160
+third thing is that in manus actually you can&nbsp;
+just teach manus how to solve programs like&nbsp;&nbsp;
+
+00:12:28.160 --> 00:12:34.000
+uh one month before we release manus check GBT&nbsp;
+just released their deep research so there's a&nbsp;&nbsp;
+
+00:12:34.000 --> 00:12:39.280
+experience actually I don't like it's like you ask&nbsp;
+a question to deep research it will returns five&nbsp;&nbsp;
+
+00:12:39.280 --> 00:12:43.920
+or six questions for you know I don't I don't&nbsp;
+think that's a very good experience because I&nbsp;&nbsp;
+
+00:12:43.920 --> 00:12:49.280
+want you to solve task for me not asking me more&nbsp;
+questions but you know some of our colleagues&nbsp;&nbsp;
+
+00:12:49.280 --> 00:12:55.360
+someone in our team they like this experience so&nbsp;
+we have an internal discussion about whether we&nbsp;&nbsp;
+
+00:12:55.360 --> 00:13:00.640
+we should do something maybe like a workflow&nbsp;
+or maybe like a hard code things to deliver&nbsp;&nbsp;
+
+00:13:00.640 --> 00:13:07.280
+such experience but instead we didn't do that we&nbsp;
+implemented a personal logic system which is like&nbsp;&nbsp;
+
+00:13:07.280 --> 00:13:13.280
+you can just teach manus next time when you are&nbsp;
+go out to do some research before you do before&nbsp;&nbsp;
+
+00:13:13.280 --> 00:13:20.160
+you start just confirm all the details with me and&nbsp;
+then executes it then manus will once you accept&nbsp;&nbsp;
+
+00:13:20.160 --> 00:13:26.240
+that knowledge into your personal knowledge&nbsp;
+system man will remembers it and it will just&nbsp;&nbsp;
+
+00:13:26.240 --> 00:13:31.840
+uh acts like you know every time when it want to&nbsp;
+do some research it will confirm with you first&nbsp;&nbsp;
+
+00:13:31.840 --> 00:13:38.640
+and then exit it I think all these three just&nbsp;
+makes management really powerful but I think the&nbsp;&nbsp;
+
+00:13:38.640 --> 00:13:43.520
+most important part because if you want to build&nbsp;
+an agent all these three reasoning I think maybe&nbsp;&nbsp;
+
+00:13:43.520 --> 00:13:51.040
+you you definitely will give it a try but we think&nbsp;
+why the magic happens why man is such a a great&nbsp;&nbsp;
+
+00:13:51.040 --> 00:13:56.800
+experience the most important part is not about&nbsp;
+these three components we think the most important&nbsp;&nbsp;
+
+00:13:56.800 --> 00:14:04.640
+part is that at the fundamental concept of manners&nbsp;
+we have this less structure more intelligence&nbsp;&nbsp;
+
+00:14:04.640 --> 00:14:08.880
+you can defend this sentence at the bottom of&nbsp;
+our official website. We just you know we just&nbsp;&nbsp;
+
+00:14:08.880 --> 00:14:14.160
+believe in this. We we we take so much faith&nbsp;
+in in it. And how do we define net structure&nbsp;&nbsp;
+
+00:14:14.160 --> 00:14:21.200
+more intelligence is that when we release manus&nbsp;
+actually we put 42 use cases on our website and&nbsp;&nbsp;
+
+00:14:21.200 --> 00:14:28.160
+someone say okay man is is is not a saying you&nbsp;
+just uh uh predefine some workflows maybe you&nbsp;&nbsp;
+
+00:14:28.160 --> 00:14:34.320
+have like 42 predefined workflows but actually&nbsp;
+you know inside manus in the core of manus we have&nbsp;&nbsp;
+
+00:14:34.320 --> 00:14:41.760
+zero predefined workflows it's just a very simple&nbsp;
+but very robust structure very simple structure&nbsp;&nbsp;
+
+00:14:42.320 --> 00:14:48.000
+But we just left all the intelligence part to the&nbsp;
+foundational model. At that time it is cloud sol&nbsp;&nbsp;
+
+00:14:48.000 --> 00:14:55.520
+3.7 and now we have cloud 4 right. So what we are&nbsp;
+doing is like because we are building the hands&nbsp;&nbsp;
+
+00:14:55.520 --> 00:15:03.360
+right it's like we just compose all these context&nbsp;
+to build them into like a more good structure and&nbsp;&nbsp;
+
+00:15:03.360 --> 00:15:09.440
+then we provide more context to the model and we&nbsp;
+have less control. When I say license control,&nbsp;&nbsp;
+
+00:15:09.440 --> 00:15:15.520
+I mean multi-roll agent system, right? You have&nbsp;
+to specify this a coding agent, this is a search&nbsp;&nbsp;
+
+00:15:15.520 --> 00:15:21.360
+agent, this is blah blah blah agent. We think all&nbsp;
+these kind of phones are a control. It just limits&nbsp;&nbsp;
+
+00:15:21.360 --> 00:15:27.600
+the real potential of LMS. So for us, it's like we&nbsp;
+just provide more context to the to the model and&nbsp;&nbsp;
+
+00:15:27.600 --> 00:15:35.040
+the net the model uh to like improise by itself.&nbsp;
+And uh all this magic you get from manas just come&nbsp;&nbsp;
+
+00:15:35.040 --> 00:15:43.040
+from this very simple but very strong ideology is&nbsp;
+less structure more intelligence. Yeah. So that&nbsp;&nbsp;
+
+00:15:43.040 --> 00:15:51.840
+is the secret behind manas and why we choose cloud&nbsp;
+in the first place is for three reasons. The first&nbsp;&nbsp;
+
+00:15:51.840 --> 00:15:59.200
+one is about the long horizon planning. You know&nbsp;
+I think before cloud sol models because because&nbsp;&nbsp;
+
+00:15:59.200 --> 00:16:06.960
+chatbot is just so successful. So all these models&nbsp;
+out out there uh maybe before before this March&nbsp;&nbsp;
+
+00:16:06.960 --> 00:16:15.680
+are post train and align their alignments is for&nbsp;
+chatboard scenario and in chatboard scenario the&nbsp;&nbsp;
+
+00:16:15.680 --> 00:16:20.960
+model intends to answer your question in one&nbsp;
+turn is that you ask the question and you get&nbsp;&nbsp;
+
+00:16:20.960 --> 00:16:28.080
+the answer but you know in agentic scenarios&nbsp;
+like in manners an average task will take maybe&nbsp;&nbsp;
+
+00:16:28.080 --> 00:16:34.320
+30 or 50 steps and then get the final answer.&nbsp;
+So when we are building manus actually we try&nbsp;&nbsp;
+
+00:16:34.320 --> 00:16:43.680
+every model we can get our hands on but it finds&nbsp;
+out only sonet can know okay I imaging a very&nbsp;&nbsp;
+
+00:16:43.680 --> 00:16:50.640
+giant agentic loop so I should perform the action&nbsp;
+watch the observation and decide what's the action&nbsp;&nbsp;
+
+00:16:50.640 --> 00:16:57.360
+observation abs observation it's just a very giant&nbsp;
+agentic loop so just so know okay I'm in this loop&nbsp;&nbsp;
+
+00:16:57.360 --> 00:17:03.280
+so I have to gather more information before I&nbsp;
+delivers a final result. But you know for these&nbsp;&nbsp;
+
+00:17:03.280 --> 00:17:10.160
+five months we try all other models all of them&nbsp;
+failed after maybe only one two three iterations&nbsp;&nbsp;
+
+00:17:10.160 --> 00:17:16.640
+those models will think that okay I think it's&nbsp;
+enough I will answer your questions right now so I&nbsp;&nbsp;
+
+00:17:16.640 --> 00:17:23.680
+think that's a problem and right now what we found&nbsp;
+the best model to run a very long horizon planning&nbsp;&nbsp;
+
+00:17:23.680 --> 00:17:29.440
+sc is cloud solenance models that is the first&nbsp;
+thing why we choose cloud and for second part is&nbsp;&nbsp;
+
+00:17:29.440 --> 00:17:37.040
+about the tool use because you agent product just&nbsp;
+heavily relied on the tool use on the function&nbsp;&nbsp;
+
+00:17:37.040 --> 00:17:42.960
+calling. Yeah, like for us we just abstract&nbsp;
+all these tools in that virtual machine. We&nbsp;&nbsp;
+
+00:17:42.960 --> 00:17:49.120
+have like 27 tools in the virtual machine. So the&nbsp;
+agent framework has to decide what's the action&nbsp;&nbsp;
+
+00:17:49.120 --> 00:17:54.480
+should be performed into that virtual machine.&nbsp;
+So it's it's very important to call the right&nbsp;&nbsp;
+
+00:17:54.480 --> 00:18:02.720
+tool and write the tools parameters uh right. So&nbsp;
+at that time when we are building manus we don't&nbsp;&nbsp;
+
+00:18:02.720 --> 00:18:10.080
+have the sync tool in cloud models. So we kind&nbsp;
+of like implemented some mechanism by our own we&nbsp;&nbsp;
+
+00:18:10.080 --> 00:18:18.400
+call it coot injection which is like before every&nbsp;
+function call we just will use another specific we&nbsp;&nbsp;
+
+00:18:18.400 --> 00:18:23.120
+call the planner agent to do the reasoning at that&nbsp;
+time we don't have reasoning too. Yeah because&nbsp;&nbsp;
+
+00:18:23.120 --> 00:18:29.440
+that's that's the three 3.5. Yeah. So we have to&nbsp;
+do the reasoning by oursel and then we inject that&nbsp;&nbsp;
+
+00:18:29.440 --> 00:18:36.720
+reasoning that coot into the main agent and then&nbsp;
+we perform that function call and what we found&nbsp;&nbsp;
+
+00:18:36.720 --> 00:18:43.280
+out it's just boost the performance of function&nbsp;
+calling and also in an article anoroptical release&nbsp;&nbsp;
+
+00:18:43.280 --> 00:18:49.520
+at end of March with the sync tool they also&nbsp;
+found out this and in cloud 4 it kind of has&nbsp;&nbsp;
+
+00:18:49.520 --> 00:18:55.760
+some like a native support for the uh syncing in&nbsp;
+the tool use I think you you guys all say in this&nbsp;&nbsp;
+
+00:18:55.760 --> 00:19:02.080
+morning's session. Yeah. So that's the second one.&nbsp;
+And the for third one is like we think is model&nbsp;&nbsp;
+
+00:19:02.080 --> 00:19:07.600
+maybe the best they have the best alignment with&nbsp;
+agentic usage because you know in agentic usage&nbsp;&nbsp;
+
+00:19:07.600 --> 00:19:15.440
+we have to deal with the browser the computer I&nbsp;
+think as put so much resources on the alignment&nbsp;&nbsp;
+
+00:19:15.440 --> 00:19:22.640
+with the computer use the browser you see so which&nbsp;
+makes cloud model maybe the best model uh to build&nbsp;&nbsp;
+
+00:19:22.640 --> 00:19:30.160
+agents that's why we choose astropical models for&nbsp;
+manness and also you know we just spend a lot of&nbsp;&nbsp;
+
+00:19:30.160 --> 00:19:37.360
+tokens on M on cloud and the whistle. This is the&nbsp;
+t-shirt I wear in the GTC event. We just wear this&nbsp;&nbsp;
+
+00:19:37.360 --> 00:19:44.240
+this this shirt in a GTC event. Yeah, we spend&nbsp;
+like $1 million on cloud model in the first 14&nbsp;&nbsp;
+
+00:19:44.240 --> 00:19:49.440
+days. I think maybe that's why they they invited&nbsp;
+us here to to give the speed. Yeah, it cost us&nbsp;&nbsp;
+
+00:19:49.440 --> 00:19:56.240
+a lot to be on the stage, you know. Yeah. So,&nbsp;
+that's the whole story about the manner so far.&nbsp;&nbsp;
+
+00:19:56.240 --> 00:20:02.160
+Yeah. So if you have questions, you can just line&nbsp;
+up at the two mics. We gonna start from right to&nbsp;&nbsp;
+
+00:20:02.160 --> 00:20:22.160
+left. Yeah. Each by each. Yeah. Any questions?&nbsp;
+Yeah. [Applause] Cool. Oh yeah, there's one.
+
+00:20:22.160 --> 00:20:26.160
+Hello. Thanks for the presentation. Very&nbsp;
+interesting. So um I don't know how much&nbsp;&nbsp;
+
+00:20:26.160 --> 00:20:33.280
+you can share but uh I was just curious about&nbsp;
+uh in your uh agentic workflow uh especially the&nbsp;&nbsp;
+
+00:20:33.280 --> 00:20:41.760
+browser part how much is that uh vision and how&nbsp;
+much is that actually you know parsing the code of&nbsp;&nbsp;
+
+00:20:41.760 --> 00:20:48.160
+the web page right so how much of it is like the&nbsp;
+model looking at the browser like a person would&nbsp;&nbsp;
+
+00:20:48.160 --> 00:20:53.760
+uh and how much of that is that is more like&nbsp;
+text type of interaction if that makes sense.&nbsp;&nbsp;
+
+00:20:54.400 --> 00:21:01.520
+Uh sorry I I may I may to I may get the question.&nbsp;
+It's like a so when you when the the manus uses&nbsp;&nbsp;
+
+00:21:01.520 --> 00:21:06.480
+the web browser right? Oh yeah yeah yeah it goes&nbsp;
+on the on a website right and how much of the&nbsp;&nbsp;
+
+00:21:06.480 --> 00:21:11.200
+understanding of the web page oh is based on the&nbsp;
+vision yeah I got your question how much is based&nbsp;&nbsp;
+
+00:21:11.200 --> 00:21:15.200
+on the yeah yeah yeah that's a very good question&nbsp;
+I actually I can share it's it's not a secret&nbsp;&nbsp;
+
+00:21:15.200 --> 00:21:21.680
+because you know yeah uh um when we are building&nbsp;
+mass from last October there is an open open&nbsp;&nbsp;
+
+00:21:21.680 --> 00:21:26.160
+source project called browser use I think most of&nbsp;
+you guys maybe know that project so we just take&nbsp;&nbsp;
+
+00:21:26.160 --> 00:21:32.160
+a look at that project we think their way of how&nbsp;
+to talk to the browsers is actually very useful&nbsp;&nbsp;
+
+00:21:32.800 --> 00:21:38.080
+So we just use that part because you know two&nbsp;
+months is later browser use has its own agent&nbsp;&nbsp;
+
+00:21:38.080 --> 00:21:42.880
+framework. We don't use that part. We don't&nbsp;
+use that agent framework bar. We only use the&nbsp;&nbsp;
+
+00:21:42.880 --> 00:21:49.200
+protocol they talk to the browsers. So the&nbsp;
+thing we are sending to the uh the context&nbsp;&nbsp;
+
+00:21:49.200 --> 00:21:54.320
+we're sending to the foundational model when&nbsp;
+we when is browsing internet are three things.&nbsp;&nbsp;
+
+00:21:54.320 --> 00:22:02.560
+The first is the text in this viewport. We will&nbsp;
+send it to to uh cloud. And the second thing is a&nbsp;&nbsp;
+
+00:22:02.560 --> 00:22:08.880
+screenshot. Yeah. In in this viewport. And the&nbsp;
+third thing is a screenshot but with bounding&nbsp;&nbsp;
+
+00:22:08.880 --> 00:22:14.880
+boxes. You know then the model can decide which&nbsp;
+area he should click. Yeah. So right now we are&nbsp;&nbsp;
+
+00:22:14.880 --> 00:22:19.760
+just share this reason to the model. Yeah. I&nbsp;
+don't know if I answer your question. Yeah.&nbsp;&nbsp;
+
+00:22:19.760 --> 00:22:27.120
+Yeah. Yeah. Yeah. Yeah. Okay. Yeah. Cool. Oh yeah.&nbsp;
+Another one. Hi uh I have a slightly controversial&nbsp;&nbsp;
+
+00:22:27.120 --> 00:22:32.560
+question but I I want to kind of put put this out&nbsp;
+to you. Yeah. uh with the advancement of lot of&nbsp;&nbsp;
+
+00:22:32.560 --> 00:22:39.920
+these foundational model and the deep research&nbsp;
+capability, how do you see a rapper company kind&nbsp;&nbsp;
+
+00:22:39.920 --> 00:22:46.160
+of keeping their edge like what how do you see&nbsp;
+it sort of what are the research area what are&nbsp;&nbsp;
+
+00:22:46.160 --> 00:22:51.360
+the areas that you're concerned about what are you&nbsp;
+focused so that you can actually grow in parallel&nbsp;&nbsp;
+
+00:22:51.360 --> 00:22:56.560
+with these foundational model as their capability&nbsp;
+increases definitely I I kind of get your question&nbsp;&nbsp;
+
+00:22:56.560 --> 00:23:02.400
+because you know we answer this question for the&nbsp;
+past two months to a lot of investors you know&nbsp;&nbsp;
+
+00:23:02.400 --> 00:23:07.520
+yeah they are all asking okay what's your mode&nbsp;
+being as a rapper you know yeah things like that&nbsp;&nbsp;
+
+00:23:07.520 --> 00:23:14.640
+um we think you know there will be no mode just&nbsp;
+for some very specific technology or framework&nbsp;&nbsp;
+
+00:23:14.640 --> 00:23:20.640
+because technology will be out of data very very&nbsp;
+very fast even for models right so we think the&nbsp;&nbsp;
+
+00:23:20.640 --> 00:23:27.360
+only thing we can win this competition is about&nbsp;
+the pace of innovation like what you mentioned&nbsp;&nbsp;
+
+00:23:27.360 --> 00:23:32.480
+there's like a a use case like deep research&nbsp;
+deep deep research is one of the main use case&nbsp;&nbsp;
+
+00:23:32.480 --> 00:23:38.640
+in manus we have like maybe 20% of users are doing&nbsp;
+deep research every day on manas but you know&nbsp;&nbsp;
+
+00:23:38.640 --> 00:23:46.800
+actually we put zero effort on deep research use&nbsp;
+cases like I just mentioned we just build a very&nbsp;&nbsp;
+
+00:23:46.800 --> 00:23:53.440
+simple structure a very simple agent framework&nbsp;
+the deep research capability is just emergence&nbsp;&nbsp;
+
+00:23:53.440 --> 00:23:59.680
+from this framework which means you know maybe&nbsp;
+open AI they need maybe half a year to do the&nbsp;&nbsp;
+
+00:23:59.680 --> 00:24:04.560
+end to end training just for this specific use&nbsp;
+cases. But this capability just you know just&nbsp;&nbsp;
+
+00:24:04.560 --> 00:24:11.200
+emerges from from the whole structure. So in six&nbsp;
+months is maybe we will have like a hundreds of&nbsp;&nbsp;
+
+00:24:11.200 --> 00:24:18.720
+use cases like deep research and and also what we&nbsp;
+can do is like we can leverage the best model in&nbsp;&nbsp;
+
+00:24:18.720 --> 00:24:24.960
+the world. Yeah. You know I I I think these are&nbsp;
+two things. It's about the flexibility of your&nbsp;&nbsp;
+
+00:24:24.960 --> 00:24:30.160
+whole agent framework and the second thing is like&nbsp;
+we are really flexible of choosing the best model&nbsp;&nbsp;
+
+00:24:30.160 --> 00:24:37.280
+in the world. Yeah. All right. Thank you. Okay.&nbsp;
+Yeah. Hi. Hello. Hi. Hello. Question. Uh so uh&nbsp;&nbsp;
+
+00:24:37.280 --> 00:24:43.680
+right now maybe the last question. Sorry. Uh turn&nbsp;
+around. Yeah. Okay. Um so right now you build the&nbsp;&nbsp;
+
+00:24:43.680 --> 00:24:50.400
+uh browser in a virtual environment. Are you&nbsp;
+planning to put uh the browser in a docker in&nbsp;&nbsp;
+
+00:24:50.400 --> 00:24:55.440
+the local computer and later they can use the&nbsp;
+local cookie and access all the account? Yeah,&nbsp;&nbsp;
+
+00:24:55.440 --> 00:24:59.360
+actually we we don't have plan for local&nbsp;
+environment because as I just mentioned&nbsp;&nbsp;
+
+00:24:59.360 --> 00:25:06.240
+we think it's very important to like give the&nbsp;
+users attention back to users. We don't want to&nbsp;&nbsp;
+
+00:25:06.240 --> 00:25:10.560
+like user to pay attention still to his phone&nbsp;
+or to his computer. We want everything to run&nbsp;&nbsp;
+
+00:25:10.560 --> 00:25:16.000
+in the cloud. And we we we don't just have a a&nbsp;
+Linux virtual machine. We still we we also have&nbsp;&nbsp;
+
+00:25:16.000 --> 00:25:21.280
+plan to have a virtual Windows virtual Android&nbsp;
+for manus to to run in the future. So it's all&nbsp;&nbsp;
+
+00:25:21.280 --> 00:25:34.960
+about running in the cloud. Yeah. Okay. I think&nbsp;
+my time is up. Thanks for guys for today. Yeah. Uh
+

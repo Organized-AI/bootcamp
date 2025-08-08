@@ -1,0 +1,931 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:13.951 --> 00:00:19.280
+[Music] [Applause] Well, hello. Uh, my name&nbsp;
+is David. I'm a member of technical staff at&nbsp;&nbsp;
+
+00:00:19.280 --> 00:00:25.200
+Anthropic and one of the co-creators of uh, MCP.&nbsp;
+And today I'm going to tell you a little bit more&nbsp;&nbsp;
+
+00:00:25.200 --> 00:00:31.360
+about the protocol and the things you can do&nbsp;
+um just to give you an understanding of um what&nbsp;&nbsp;
+
+00:00:31.360 --> 00:00:37.920
+there's more to the protocol than what most people&nbsp;
+use it for at the moment which would be tools. So&nbsp;&nbsp;
+
+00:00:37.920 --> 00:00:44.000
+really the goal today is to showcase you what&nbsp;
+the protocol is capable of and how you can use&nbsp;&nbsp;
+
+00:00:44.000 --> 00:00:51.920
+it in ways to build richer interactions with MCP&nbsp;
+clients. um that goes beyond the tool call tool&nbsp;&nbsp;
+
+00:00:51.920 --> 00:00:57.840
+calling that most people are used to. And I will&nbsp;
+first go through all the different like what we&nbsp;&nbsp;
+
+00:00:57.840 --> 00:01:04.800
+call primitives like ways for the servers to&nbsp;
+expose information to a client before we go&nbsp;&nbsp;
+
+00:01:04.800 --> 00:01:10.880
+into some of the bit more lesser known aspects of&nbsp;
+the protocol and then I want to talk a little bit&nbsp;&nbsp;
+
+00:01:10.880 --> 00:01:16.320
+about like how to build a really rich interaction&nbsp;
+before we take a little stab of what's coming next&nbsp;&nbsp;
+
+00:01:16.320 --> 00:01:24.000
+for MCP and how we bring MCP to the web. But to&nbsp;
+just get you started, I want to talk about one of&nbsp;&nbsp;
+
+00:01:24.000 --> 00:01:31.440
+the MCP primitives um that servers can expose to&nbsp;
+MCP clients that very few people know. And those&nbsp;&nbsp;
+
+00:01:31.440 --> 00:01:39.840
+are called prompts. And what a prompts are really&nbsp;
+are predefined templates for AI interactions.&nbsp;&nbsp;
+
+00:01:39.840 --> 00:01:47.120
+And that's to say it's a way for an MCP server&nbsp;
+to expose a set of text, you know, like a prompt&nbsp;&nbsp;
+
+00:01:47.120 --> 00:01:57.440
+in a way um that allows um users to directly um&nbsp;
+add this to the context window and see how they&nbsp;&nbsp;
+
+00:01:57.440 --> 00:02:04.320
+would use for example the MCP uh server uh you're&nbsp;
+building. And there are really the two main use&nbsp;&nbsp;
+
+00:02:04.320 --> 00:02:14.480
+cases here is for you as an MCP server author to&nbsp;
+provide an example for um that you can showcase&nbsp;&nbsp;
+
+00:02:14.480 --> 00:02:21.440
+to the user so that they know how to use the MCP&nbsp;
+server in the best way because realistically you&nbsp;&nbsp;
+
+00:02:21.440 --> 00:02:26.560
+are the one who has built it. You are the one&nbsp;
+who knows how to use it in the best possible&nbsp;&nbsp;
+
+00:02:26.560 --> 00:02:31.600
+way and probably at the time you would release&nbsp;
+it are the one who has used it the most time.&nbsp;&nbsp;
+
+00:02:32.400 --> 00:02:39.200
+But since MCP uh prompts are also dynamic in&nbsp;
+a way, they're just code under the hood that&nbsp;&nbsp;
+
+00:02:39.200 --> 00:02:46.560
+are executed in MCP server, they allow you to do&nbsp;
+even richer things than that. What you can do and&nbsp;&nbsp;
+
+00:02:46.560 --> 00:02:55.440
+I want to showcase this in this scenario is an MCP&nbsp;
+prompt that a user invokes um in this uh Z editor&nbsp;&nbsp;
+
+00:02:55.440 --> 00:03:04.640
+here that will fetch directly GitHub comments&nbsp;
+that um into my context window. And so what you&nbsp;&nbsp;
+
+00:03:04.640 --> 00:03:12.000
+see me here doing is just basically um put into&nbsp;
+the context window um the comments from my pull&nbsp;&nbsp;
+
+00:03:12.000 --> 00:03:17.200
+request that is that you know I've written so that&nbsp;
+I can go and interact with it and have then the&nbsp;&nbsp;
+
+00:03:17.200 --> 00:03:23.920
+model go and help me you know apply the changes&nbsp;
+that has been requested to me or whatever I want&nbsp;&nbsp;
+
+00:03:23.920 --> 00:03:32.240
+to do. And so this is really a way for exposing&nbsp;
+things that the user should directly interact&nbsp;&nbsp;
+
+00:03:32.240 --> 00:03:38.480
+and the user should directly wants to put into the&nbsp;
+context window before it interacts with the yellow&nbsp;&nbsp;
+
+00:03:38.480 --> 00:03:43.200
+lamb. So it's different from that from tools where&nbsp;
+the model decides when to do it. This is what that&nbsp;&nbsp;
+
+00:03:43.200 --> 00:03:50.240
+the user decides um I want to add this um to&nbsp;
+the context window. And if you look carefully,&nbsp;&nbsp;
+
+00:03:50.240 --> 00:03:56.560
+there's one additional thing that very very few&nbsp;
+people know um that you can do and that is prompt&nbsp;&nbsp;
+
+00:03:56.560 --> 00:04:03.040
+completion. So if you have looked carefully, there&nbsp;
+was a way where it showcased quickly a popup of me&nbsp;&nbsp;
+
+00:04:03.040 --> 00:04:09.840
+selecting the poll requests that are available&nbsp;
+to myself. And that is a way that you can that&nbsp;&nbsp;
+
+00:04:09.840 --> 00:04:16.480
+is a thing that you can provide as an MCP server&nbsp;
+author to build richer parameterized templates&nbsp;&nbsp;
+
+00:04:16.480 --> 00:04:21.680
+for example. And this is exceptionally easy to&nbsp;
+do in the code. Like if you're in Typescript,&nbsp;&nbsp;
+
+00:04:21.680 --> 00:04:28.480
+building a prompt that provides users with um&nbsp;
+like such a template and have parameters for it&nbsp;&nbsp;
+
+00:04:28.480 --> 00:04:36.160
+and like autocomp completion is nothing more than&nbsp;
+a few lines of code that cloud code together with&nbsp;&nbsp;
+
+00:04:36.160 --> 00:04:42.560
+cloud 4 can most of the time write basically&nbsp;
+for you. And it's just that simple. It's a&nbsp;&nbsp;
+
+00:04:42.560 --> 00:04:47.200
+function for the completion. It's a function for&nbsp;
+generating the prompt. And so this is already like&nbsp;&nbsp;
+
+00:04:47.200 --> 00:04:51.680
+one of these primitives you can use to build&nbsp;
+an interaction for users with an MCP server,&nbsp;&nbsp;
+
+00:04:51.680 --> 00:04:59.040
+but it's just a little bit more richer than a tool&nbsp;
+call. And a second one of these is something that&nbsp;&nbsp;
+
+00:04:59.040 --> 00:05:04.960
+we call resources. It's another primitive than&nbsp;
+an MCP server can expose to an MCP client. And&nbsp;&nbsp;
+
+00:05:04.960 --> 00:05:12.160
+while prompts are really focused on text snippets&nbsp;
+that a user can add uh into the context window,&nbsp;&nbsp;
+
+00:05:12.160 --> 00:05:20.000
+resources are about exposing raw data or content&nbsp;
+from a server. And why would you want to do this?&nbsp;&nbsp;
+
+00:05:20.000 --> 00:05:25.760
+There are two ways why you want to do this. So&nbsp;
+one thing is most of the clients today would&nbsp;&nbsp;
+
+00:05:25.760 --> 00:05:30.640
+allow you to add this raw content directly to the&nbsp;
+context window. So in that way they're not that&nbsp;&nbsp;
+
+00:05:30.640 --> 00:05:40.560
+different from context uh from prompts but it also&nbsp;
+allows application to do additional things to that&nbsp;&nbsp;
+
+00:05:40.560 --> 00:05:47.760
+raw data and that could be for example building&nbsp;
+embeddings around this data the server exposes and&nbsp;&nbsp;
+
+00:05:47.760 --> 00:05:55.360
+then do retrieval augmented uh generation um by&nbsp;
+adding to the context window the most appropriate&nbsp;&nbsp;
+
+00:05:55.360 --> 00:06:02.160
+things. And so this is an area that at the moment&nbsp;
+I feel is a bit underexplored. And I just want&nbsp;&nbsp;
+
+00:06:02.160 --> 00:06:09.840
+to quickly showcase you uh how resources work.&nbsp;
+In this case, this is again uh one of these um&nbsp;&nbsp;
+
+00:06:09.840 --> 00:06:17.680
+uh ways where an MCP client exposes a resource um&nbsp;
+as a file like object. And in this scenario here,&nbsp;&nbsp;
+
+00:06:17.680 --> 00:06:25.200
+we are exposing the database schema for apostra&nbsp;
+database um as resources and then you can add them&nbsp;&nbsp;
+
+00:06:25.200 --> 00:06:30.960
+in cloud desktop just like files and that way&nbsp;
+you can tell claude this is the tables I care&nbsp;&nbsp;
+
+00:06:30.960 --> 00:06:36.080
+about and now please go ahead and visualize them.&nbsp;
+And so in this scenario, what you're going to see&nbsp;&nbsp;
+
+00:06:36.080 --> 00:06:41.760
+is Claude is going to go uh and write a beautiful&nbsp;
+diagram that visualizes the database schema for&nbsp;&nbsp;
+
+00:06:41.760 --> 00:06:49.280
+me. And I've exposed the schema via resources.&nbsp;
+There's a lot of unexport space still here. Again,&nbsp;&nbsp;
+
+00:06:49.280 --> 00:06:54.960
+if you go beyond just like adding it file and&nbsp;
+think about like retrieval augmentation or any&nbsp;&nbsp;
+
+00:06:54.960 --> 00:07:02.720
+other thing the application might want to do. And&nbsp;
+so those are two primitives. one is prompts again&nbsp;&nbsp;
+
+00:07:02.720 --> 00:07:08.640
+the things that the user interacts with there's&nbsp;
+the second one is resources that the application&nbsp;&nbsp;
+
+00:07:08.640 --> 00:07:14.640
+interact with then of course there should be a&nbsp;
+third one that you all are very familiar with&nbsp;&nbsp;
+
+00:07:14.640 --> 00:07:18.880
+um that I don't want to get into too much depth&nbsp;
+because if you have built an MCP server you&nbsp;&nbsp;
+
+00:07:18.880 --> 00:07:26.560
+probably have built it for exposing a tool and&nbsp;
+so tools are really these actions of course that&nbsp;&nbsp;
+
+00:07:26.560 --> 00:07:34.320
+can be invoked that's like one of the I think&nbsp;
+most magical moment I feel when you build an&nbsp;&nbsp;
+
+00:07:34.320 --> 00:07:38.320
+MCP server is when the model for the first&nbsp;
+time invokes something that you care about&nbsp;&nbsp;
+
+00:07:38.320 --> 00:07:43.120
+that you have built for and has this little&nbsp;
+impact on you know it might be like quing a&nbsp;&nbsp;
+
+00:07:43.120 --> 00:07:49.120
+database for you or whatever it might be. Um but&nbsp;
+this is again the thing that the model decides&nbsp;&nbsp;
+
+00:07:49.120 --> 00:08:02.080
+when to call to an action. And so these are three&nbsp;
+very basic primitives that the protocol exposes.
+
+00:08:02.080 --> 00:08:07.680
+And if you think carefully about these three&nbsp;
+primitives that I just showcased you to to you,&nbsp;&nbsp;
+
+00:08:07.680 --> 00:08:13.360
+there's a little bit of overlap about like&nbsp;
+how do you use like they could like when do&nbsp;&nbsp;
+
+00:08:13.360 --> 00:08:18.400
+you use what really and so there's something&nbsp;
+that very that we don't talk enough about and&nbsp;&nbsp;
+
+00:08:18.400 --> 00:08:23.680
+it's somewhere buried in the specification&nbsp;
+language of the model context protocol is&nbsp;&nbsp;
+
+00:08:23.680 --> 00:08:30.960
+what I call the interaction model and I think&nbsp;
+showcasing it hopefully makes clear when you use&nbsp;&nbsp;
+
+00:08:30.960 --> 00:08:38.320
+What? Because the interaction model is built in&nbsp;
+such a way that you can expose the same data in&nbsp;&nbsp;
+
+00:08:38.320 --> 00:08:44.800
+three different ways depending on when you&nbsp;
+want to have it show up. And prompts again&nbsp;&nbsp;
+
+00:08:44.800 --> 00:08:50.000
+are these userdriven things. It's the thing&nbsp;
+the user invokes adds to the context window.&nbsp;&nbsp;
+
+00:08:50.000 --> 00:08:56.640
+And the most common scenario where how you see&nbsp;
+these pop up is a slash command, an add command,&nbsp;&nbsp;
+
+00:08:56.640 --> 00:09:03.760
+something like that. Resources on the other hand&nbsp;
+are all applicationdriven. The application that&nbsp;&nbsp;
+
+00:09:03.760 --> 00:09:11.360
+uses the LLM be it cloud desktop be it VS code&nbsp;
+something like that fully is decides what it&nbsp;&nbsp;
+
+00:09:11.360 --> 00:09:18.560
+wants to do with that. And then lastly tools&nbsp;
+are driven by the model. in between, you know,&nbsp;&nbsp;
+
+00:09:18.560 --> 00:09:26.480
+an AI application using a model and a user, we&nbsp;
+have all three parts that we eventually cover&nbsp;&nbsp;
+
+00:09:26.480 --> 00:09:31.440
+using these three basic primitives. And that&nbsp;
+allows you already to go to a little bit of a&nbsp;&nbsp;
+
+00:09:31.440 --> 00:09:39.280
+richer application and experience than what most&nbsp;
+people can currently do with tools because you&nbsp;&nbsp;
+
+00:09:39.280 --> 00:09:46.000
+just have a way to interact with the user a bit&nbsp;
+more nuanced um than if you just wait for this&nbsp;&nbsp;
+
+00:09:46.000 --> 00:09:53.840
+model to call the tool. But we can even go beyond&nbsp;
+that because while these basic primitives get us&nbsp;&nbsp;
+
+00:09:53.840 --> 00:10:01.920
+a little bit further than what we see most MCP&nbsp;
+servers do at the moment, there are even richer&nbsp;&nbsp;
+
+00:10:01.920 --> 00:10:06.080
+interactions that we want to enable. And to make&nbsp;
+this a bit more understandable, here's a really&nbsp;&nbsp;
+
+00:10:06.080 --> 00:10:13.920
+an example I want to give you um that showcases&nbsp;
+this problem. So how can you build an MCP server&nbsp;&nbsp;
+
+00:10:13.920 --> 00:10:19.760
+for example that summarizes a discussion from an&nbsp;
+issue tracker? So on one hand side I can build&nbsp;&nbsp;
+
+00:10:19.760 --> 00:10:26.320
+an MCP server that exposes this kind of data very&nbsp;
+simple and that's quite clear but how do I do the&nbsp;&nbsp;
+
+00:10:26.320 --> 00:10:34.480
+summarization step because for the summarization&nbsp;
+step I obviously need a model and so there in one&nbsp;&nbsp;
+
+00:10:34.480 --> 00:10:40.640
+way to go and build this is you can build an&nbsp;
+MCP server that is this issue tracker server&nbsp;&nbsp;
+
+00:10:40.640 --> 00:10:47.760
+and you have a choice here you can bring your own&nbsp;
+SDK and call the model have the model summarizes&nbsp;&nbsp;
+
+00:10:48.400 --> 00:10:53.520
+But then there's a little problem to that and the&nbsp;
+problem is that the client has a model selected&nbsp;&nbsp;
+
+00:10:53.520 --> 00:11:02.640
+be it like clawed or whatever else but the server&nbsp;
+the MCP server that you've built doesn't know what&nbsp;&nbsp;
+
+00:11:02.640 --> 00:11:08.640
+model the client has configured and so you bring&nbsp;
+your own SDK like of of a model provider and be&nbsp;&nbsp;
+
+00:11:08.640 --> 00:11:14.320
+it the anthropic SDK you still need then like&nbsp;
+a API key that this user needs to provide and&nbsp;&nbsp;
+
+00:11:14.320 --> 00:11:22.640
+gets very quickly very awkward and so MCP has&nbsp;
+a little hidden feature or a little primitive&nbsp;&nbsp;
+
+00:11:22.640 --> 00:11:29.920
+called sampling that allows a server to request&nbsp;
+a completion from the client. What does this&nbsp;&nbsp;
+
+00:11:29.920 --> 00:11:37.680
+mean? It means that the server can use a model&nbsp;
+independently from like don't having to provide an&nbsp;&nbsp;
+
+00:11:37.680 --> 00:11:46.400
+SDK itself but in but asks the client which model&nbsp;
+you have configured and the client is the one&nbsp;&nbsp;
+
+00:11:46.400 --> 00:11:52.880
+providing the completion to the server. And what&nbsp;
+does this do? It does two things. First of all,&nbsp;&nbsp;
+
+00:11:52.880 --> 00:11:58.880
+it allows the client to get full control over&nbsp;
+the security, privacy and the cost. So instead of&nbsp;&nbsp;
+
+00:11:58.880 --> 00:12:03.280
+having to provide an additional API key, you might&nbsp;
+tap into the subscription that your client might&nbsp;&nbsp;
+
+00:12:03.280 --> 00:12:17.520
+already have. But it allows also um a second part&nbsp;
+which is that if you take multiple um if you chain&nbsp;&nbsp;
+
+00:12:17.520 --> 00:12:26.560
+MCP servers in an interesting way, it makes this&nbsp;
+whole pattern very recursive. And what do I mean&nbsp;&nbsp;
+
+00:12:26.560 --> 00:12:33.600
+by that? It's a bit abstract. You can take an MCP&nbsp;
+server that exposes a tool, but during the tool&nbsp;&nbsp;
+
+00:12:33.600 --> 00:12:40.800
+execution, you might want to use more MCP servers&nbsp;
+downstream. And somewhere downstream in this like&nbsp;&nbsp;
+
+00:12:40.800 --> 00:12:47.680
+system, there might be then your Asia Tracker&nbsp;
+server that wants to go and have a completion.&nbsp;&nbsp;
+
+00:12:47.680 --> 00:12:54.320
+But using sampling you can bubble up the requests&nbsp;
+such that the client always stays in full control&nbsp;&nbsp;
+
+00:12:54.320 --> 00:12:58.720
+over the cost of the subscription whatever&nbsp;
+you want to use. It stays in full control of&nbsp;&nbsp;
+
+00:12:58.720 --> 00:13:06.160
+the privacy over the cost of this interaction and&nbsp;
+basically manages every interaction um that an MCP&nbsp;&nbsp;
+
+00:13:06.160 --> 00:13:14.480
+server wants to do with a model. And that allows&nbsp;
+for very powerful chaining and it allows for like&nbsp;&nbsp;
+
+00:13:14.480 --> 00:13:25.120
+more complex patterns that go already into like&nbsp;
+ways of how you can build little MCP agents.
+
+00:13:25.120 --> 00:13:30.640
+But that's sampling. Sampling at the moment is&nbsp;
+sadly I think one of the more exciting features&nbsp;&nbsp;
+
+00:13:30.640 --> 00:13:37.760
+but also one of the features that's the least&nbsp;
+supported in clients. for our first party projects&nbsp;&nbsp;
+
+00:13:37.760 --> 00:13:48.160
+uh products. We will bring um sampling somewhere&nbsp;
+this year. Um and so then you can hopefully start&nbsp;&nbsp;
+
+00:13:48.160 --> 00:13:54.160
+building more exciting MCP servers. And then&nbsp;
+there's the last primitive that I want to touch&nbsp;&nbsp;
+
+00:13:54.160 --> 00:14:00.000
+on that's also a bit more interesting and it's&nbsp;
+one of these things that in retrospective as one&nbsp;&nbsp;
+
+00:14:00.000 --> 00:14:06.160
+of the person who has built the protocol um I've&nbsp;
+probably named terribly to be fair I'm not a very&nbsp;&nbsp;
+
+00:14:06.160 --> 00:14:10.880
+not not very good at naming and you will see this&nbsp;
+throughout the talk probably but there's a thing&nbsp;&nbsp;
+
+00:14:10.880 --> 00:14:17.440
+called roots and roots is also an interesting&nbsp;
+aspect because let's imagine I want to build today&nbsp;&nbsp;
+
+00:14:17.440 --> 00:14:22.720
+an MCP server that deals with my git commands I&nbsp;
+don't want to deal with git. I don't want to do&nbsp;&nbsp;
+
+00:14:22.720 --> 00:14:27.520
+source control commands. I don't remember any of&nbsp;
+that. I want to have MCP deal like an MCP server&nbsp;&nbsp;
+
+00:14:27.520 --> 00:14:33.280
+deal with this. So now I'm going to hook up an&nbsp;
+MCP server into my favorite IDE. But how does the&nbsp;&nbsp;
+
+00:14:33.280 --> 00:14:41.280
+IDE know how does the MC sorry, how does the MCP&nbsp;
+server know what are the open projects in the IDE?&nbsp;&nbsp;
+
+00:14:41.280 --> 00:14:47.520
+Because obviously I want to run the git commands&nbsp;
+in the workspaces I have open, right? And so roots&nbsp;&nbsp;
+
+00:14:47.520 --> 00:14:56.960
+is a way for the server to inquire from the client&nbsp;
+such as VS code for example what are the projects&nbsp;&nbsp;
+
+00:14:56.960 --> 00:15:04.400
+you have open so that I can operate within only&nbsp;
+those directories that the server has opened and I&nbsp;&nbsp;
+
+00:15:04.400 --> 00:15:10.480
+know where I want to execute my git commands and&nbsp;
+this again is a feature that's not that widely&nbsp;&nbsp;
+
+00:15:10.480 --> 00:15:16.960
+used but for example VS code currently does&nbsp;
+support this and so these These are, you know,&nbsp;&nbsp;
+
+00:15:16.960 --> 00:15:24.560
+just all the big primitives that MCP offers. So,&nbsp;
+we have five primitives, three on the server side,&nbsp;&nbsp;
+
+00:15:24.560 --> 00:15:30.080
+two on the client side. But how you put it all&nbsp;
+together to actually build a rich interaction&nbsp;&nbsp;
+
+00:15:30.080 --> 00:15:33.680
+because that's what we want. We want to build&nbsp;
+something for users that's a bit richer than&nbsp;&nbsp;
+
+00:15:33.680 --> 00:15:41.280
+just tool calling. And so, let's take a look at&nbsp;
+how you will build a hypothetical MCP server that&nbsp;&nbsp;
+
+00:15:41.280 --> 00:15:48.240
+interacts with your favorite chat application, be&nbsp;
+that Discord, be it Slack. You could use prompts&nbsp;&nbsp;
+
+00:15:48.240 --> 00:15:55.040
+to give examples to users such as like summarize&nbsp;
+this discussion and you can use completions with&nbsp;&nbsp;
+
+00:15:55.040 --> 00:16:01.840
+recent threads, users or whatever you want them&nbsp;
+to expose. You can have additional prompts like&nbsp;&nbsp;
+
+00:16:01.840 --> 00:16:08.240
+what's new, what happened since yesterday. And so&nbsp;
+that's one way the user can just kickstart right&nbsp;&nbsp;
+
+00:16:08.240 --> 00:16:17.120
+away into using the server you have provided and&nbsp;
+get the ideas. um that you how you intended it to&nbsp;&nbsp;
+
+00:16:17.120 --> 00:16:25.760
+be used and then you can use resources to directly&nbsp;
+list the channels to expose recent threats that&nbsp;&nbsp;
+
+00:16:25.760 --> 00:16:33.680
+happened in the in the you know chat application&nbsp;
+such that the MCP client can index it deal with&nbsp;&nbsp;
+
+00:16:33.680 --> 00:16:40.080
+it in ways um that it that it wants. And then&nbsp;
+of course last but not least we still have our&nbsp;&nbsp;
+
+00:16:40.080 --> 00:16:46.160
+tools. We have search, we have read channels, we&nbsp;
+have reading a threads and we would use sampling&nbsp;&nbsp;
+
+00:16:46.160 --> 00:16:52.080
+to summarize a thread for example and really&nbsp;
+expose this. And that's a way to really build a&nbsp;&nbsp;
+
+00:16:52.080 --> 00:17:01.600
+much much much richer experience with MCP to use&nbsp;
+the full power that the protocol has to offer.
+
+00:17:01.600 --> 00:17:08.560
+But this is just the the beginning because most&nbsp;
+of these experiences if we build MCP servers so&nbsp;&nbsp;
+
+00:17:08.560 --> 00:17:15.120
+far have been experiences that stayed local. Out&nbsp;
+of the 10,000 MCP servers the community has built&nbsp;&nbsp;
+
+00:17:15.120 --> 00:17:21.360
+over the last six to seven months. The vast&nbsp;
+majority are local experiences. But I think we&nbsp;&nbsp;
+
+00:17:21.360 --> 00:17:30.560
+can take the next step and I think this is MCP's&nbsp;
+really big next thing is bringing MCP servers away&nbsp;&nbsp;
+
+00:17:30.560 --> 00:17:36.560
+from the local experience to the web. And so what&nbsp;
+does this mean? It means that instead of having&nbsp;&nbsp;
+
+00:17:36.560 --> 00:17:42.640
+an MCP server that is, you know, a Docker&nbsp;
+container or some form of local executable,&nbsp;&nbsp;
+
+00:17:42.640 --> 00:17:49.520
+it is nothing else but a website that your client&nbsp;
+can connect to and exposes MCP and you talk to.
+
+00:17:53.600 --> 00:18:03.520
+But for that we need two critical components.&nbsp;
+We need authorization and we need scaling.
+
+00:18:03.520 --> 00:18:09.840
+And in the most recent specification of&nbsp;
+MCP, we made a ton of changes towards&nbsp;&nbsp;
+
+00:18:09.840 --> 00:18:14.480
+this from the lessons we've learned and&nbsp;
+the feedback we honestly got from the&nbsp;&nbsp;
+
+00:18:14.480 --> 00:18:21.200
+community as well as like key partners.&nbsp;
+And we work closely for example with like&nbsp;&nbsp;
+
+00:18:21.200 --> 00:18:30.000
+people in the industry that worked on&nbsp;
+and other aspects to get this right.
+
+00:18:30.000 --> 00:18:36.960
+And so with authorization in MCP, what you can do&nbsp;
+is you can basically provide the private context&nbsp;&nbsp;
+
+00:18:36.960 --> 00:18:44.160
+of a user that might be behind an online&nbsp;
+account or something directly to the LLM&nbsp;&nbsp;
+
+00:18:44.160 --> 00:18:52.000
+application. And it really enables MCP authors to&nbsp;
+bind the capability of the MCP servers to a user,&nbsp;&nbsp;
+
+00:18:52.000 --> 00:18:58.240
+an online account, something like that. And in&nbsp;
+order to do that, the way this currently has to&nbsp;&nbsp;
+
+00:18:58.240 --> 00:19:06.320
+work in MCP is that you do this by providing&nbsp;
+OOTH as the authorization layer. And the MCP&nbsp;&nbsp;
+
+00:19:06.320 --> 00:19:11.600
+specification basically says you need to do O 2.1.&nbsp;
+And that's a bit daunting because very few people&nbsp;&nbsp;
+
+00:19:11.600 --> 00:19:19.360
+know what OOTH 2.1 is. But OA 2.1 is usually&nbsp;
+just O 2.0 with all the basic things you would&nbsp;&nbsp;
+
+00:19:19.360 --> 00:19:24.880
+do anyway. all these security considerations that&nbsp;
+people that have done a wall telling you anyway to&nbsp;&nbsp;
+
+00:19:24.880 --> 00:19:29.920
+do. So it's just OS 2.0 zero a little bit cleaned&nbsp;
+up and you're probably already doing it if you're&nbsp;&nbsp;
+
+00:19:29.920 --> 00:19:38.080
+doing a wall and if you do implement this wall&nbsp;
+flow you get two interesting patterns out of that&nbsp;&nbsp;
+
+00:19:38.080 --> 00:19:45.200
+and the first one is the scenario of an MCP&nbsp;
+server in the web and a good example of this&nbsp;&nbsp;
+
+00:19:45.200 --> 00:19:54.160
+is if you for example a payment provider and you&nbsp;
+have you know website payment.com and I as a user&nbsp;&nbsp;
+
+00:19:54.160 --> 00:20:00.880
+have an online account there now I as the payment&nbsp;
+provider can expose mcp.payment.com that the user&nbsp;&nbsp;
+
+00:20:00.880 --> 00:20:08.640
+can put into an MCP client and the MCP client will&nbsp;
+do the or flow. I log in as my account and I know&nbsp;&nbsp;
+
+00:20:08.640 --> 00:20:15.600
+this is payment.com. I know this is the the person&nbsp;
+that is my online account with the provider that I&nbsp;&nbsp;
+
+00:20:15.600 --> 00:20:20.800
+trust. I don't trust some random Docker container&nbsp;
+running locally built by a third party developer&nbsp;&nbsp;
+
+00:20:20.800 --> 00:20:26.400
+anymore. I trust the person I already trust with&nbsp;
+the data anyway and their developers. And on the&nbsp;&nbsp;
+
+00:20:26.400 --> 00:20:32.640
+their development side, they can just ex like&nbsp;
+ex like update this server as they want and they&nbsp;&nbsp;
+
+00:20:32.640 --> 00:20:37.840
+don't have to wait for me to download a new like&nbsp;
+docker image. And so this is I think will be a&nbsp;&nbsp;
+
+00:20:37.840 --> 00:20:46.800
+really really big step for enabling MCP servers to&nbsp;
+be exposed on the web and MCP clients to interact&nbsp;&nbsp;
+
+00:20:46.800 --> 00:20:53.040
+basically with all the online interactions&nbsp;
+that you already have. And here's just a small&nbsp;&nbsp;
+
+00:20:53.040 --> 00:20:59.520
+little example of this. In this scenario, we use&nbsp;
+Cloud AAI integrations which we launched earlier&nbsp;&nbsp;
+
+00:20:59.520 --> 00:21:09.600
+um this month to connect to a remote server and&nbsp;
+use this oath flow to log in our user to then have&nbsp;&nbsp;
+
+00:21:09.600 --> 00:21:17.760
+tools available that are aware of my data that I&nbsp;
+care about it are for it is for me. But it enables&nbsp;&nbsp;
+
+00:21:17.760 --> 00:21:27.280
+another aspect. It enables enterprises to smoothly&nbsp;
+integrate MCP into their ecosystem how they&nbsp;&nbsp;
+
+00:21:27.280 --> 00:21:33.280
+usually build applications. And what does this&nbsp;
+mean? It means that internally they can deploy an&nbsp;&nbsp;
+
+00:21:33.280 --> 00:21:43.200
+MCP server to their internet or whatever like they&nbsp;
+use and use an identity provider like Azure ID or&nbsp;&nbsp;
+
+00:21:43.200 --> 00:21:50.640
+Octar or whatever that central identity provider&nbsp;
+that you usually use for single sign on and you&nbsp;&nbsp;
+
+00:21:50.640 --> 00:21:58.320
+can have that still exist and it will be the one&nbsp;
+that um gives you the tokens that you require to&nbsp;&nbsp;
+
+00:21:58.320 --> 00:22:03.600
+interact with the MCP server. And that has a lot&nbsp;
+to say that what it ends up with is a very smooth&nbsp;&nbsp;
+
+00:22:03.600 --> 00:22:09.040
+integration. You as a development team internally,&nbsp;
+you're going to build an MCP server that you&nbsp;&nbsp;
+
+00:22:09.040 --> 00:22:13.760
+control that you could control the deployment and&nbsp;
+the user just logs in in the morning with their&nbsp;&nbsp;
+
+00:22:13.760 --> 00:22:20.080
+normal SSO like you always would do and anytime&nbsp;
+they use an MCP server from them on on out,&nbsp;&nbsp;
+
+00:22:20.080 --> 00:22:26.320
+they will just be logged in and have access to the&nbsp;
+data that you know the that is their data that the&nbsp;&nbsp;
+
+00:22:26.320 --> 00:22:32.720
+company has for them. And so this I think enables&nbsp;
+a new way that I've already seen some of the big&nbsp;&nbsp;
+
+00:22:32.720 --> 00:22:40.400
+enterprises do to build really vast systems of&nbsp;
+MCP servers that allow um part of the company&nbsp;&nbsp;
+
+00:22:40.400 --> 00:22:47.440
+to build a server um while the other part deals&nbsp;
+about the integrations really nicely separates&nbsp;&nbsp;
+
+00:22:47.440 --> 00:22:54.240
+uh integration builder and platform builders. And&nbsp;
+then the second part that we require is scaling.&nbsp;&nbsp;
+
+00:22:54.240 --> 00:23:00.240
+And we just added a new thing called streamable&nbsp;
+HTTP which is just to say it's a lot of lot of&nbsp;&nbsp;
+
+00:23:00.240 --> 00:23:07.280
+words to say basically we want MCP servers&nbsp;
+to scale similar to normal APIs. And it's as&nbsp;&nbsp;
+
+00:23:07.280 --> 00:23:13.440
+simple as that. you have as a server author you&nbsp;
+can choose to either return results directly as&nbsp;&nbsp;
+
+00:23:13.440 --> 00:23:20.000
+you would be in in a REST API except that it's not&nbsp;
+quite just REST or if you need to you can open a&nbsp;&nbsp;
+
+00:23:20.000 --> 00:23:25.840
+stream and get richer interactions. So in the most&nbsp;
+simple way, you just want to provide a tool call&nbsp;&nbsp;
+
+00:23:25.840 --> 00:23:32.000
+result. You get a request, you return application&nbsp;
+JSON and off you go. End of the story. You close&nbsp;&nbsp;
+
+00:23:32.000 --> 00:23:37.840
+the connection and the next connection come in&nbsp;
+and uh you know get served by yet another Lambda&nbsp;&nbsp;
+
+00:23:37.840 --> 00:23:44.160
+function. But if you need richer interactions&nbsp;
+such as notification or features we talked&nbsp;&nbsp;
+
+00:23:44.160 --> 00:23:50.800
+about like sampling, a request comes in, you&nbsp;
+start a stream, the client accepts the stream,&nbsp;&nbsp;
+
+00:23:50.800 --> 00:23:55.680
+and now you're being able to send additional&nbsp;
+things to the client before you're returning&nbsp;&nbsp;
+
+00:23:55.680 --> 00:24:02.800
+finally the result. And those authorization&nbsp;
+and scaling together is really the foundation&nbsp;&nbsp;
+
+00:24:02.800 --> 00:24:10.960
+to make MCP go from this local experience now to&nbsp;
+be truly a standard for how LLM applications will&nbsp;&nbsp;
+
+00:24:10.960 --> 00:24:16.480
+interact with the web. And just to finish it all&nbsp;
+up, I just want to show you quickly about like&nbsp;&nbsp;
+
+00:24:16.480 --> 00:24:23.360
+what's coming for MCP in the next few months&nbsp;
+of some of the the most important highlights.&nbsp;&nbsp;
+
+00:24:23.360 --> 00:24:32.000
+And the most important part is that um we are&nbsp;
+starting to think more and more about agents and&nbsp;&nbsp;
+
+00:24:32.000 --> 00:24:37.520
+there's a lot to do there. There are a synchronous&nbsp;
+task that you of course want to run things that&nbsp;&nbsp;
+
+00:24:37.520 --> 00:24:44.800
+are longer running that are not just like a minute&nbsp;
+long but maybe a few few like hours long task that&nbsp;&nbsp;
+
+00:24:44.800 --> 00:24:48.880
+an agent takes and that eventually I want to&nbsp;
+have a result for. So we think a lot about&nbsp;&nbsp;
+
+00:24:48.880 --> 00:24:55.360
+that and we're going to work to build primitives&nbsp;
+for that into MCP in the near future. The second&nbsp;&nbsp;
+
+00:24:55.360 --> 00:25:02.480
+part of that is elicitation. So really MCP server&nbsp;
+authors being able to ask for input from the user&nbsp;&nbsp;
+
+00:25:02.480 --> 00:25:07.360
+and that is something that's going to land just&nbsp;
+about today or on Monday in the in the protocol.&nbsp;&nbsp;
+
+00:25:07.360 --> 00:25:11.280
+And then we're doing two additional things. We&nbsp;
+first and foremost going to build an official&nbsp;&nbsp;
+
+00:25:11.280 --> 00:25:17.680
+registry to make sure there's a central place&nbsp;
+where you can find and publish to MCP servers.&nbsp;&nbsp;
+
+00:25:17.680 --> 00:25:23.200
+um so that we can really have one common place&nbsp;
+where we're going to look for these servers but&nbsp;&nbsp;
+
+00:25:23.200 --> 00:25:31.440
+also allow agents to dynamically download servers&nbsp;
+and install them and use them and then of course&nbsp;&nbsp;
+
+00:25:31.440 --> 00:25:36.960
+we're thinking more about multimodality and&nbsp;
+that can be for example streaming of results&nbsp;&nbsp;
+
+00:25:36.960 --> 00:25:42.320
+but that can have other aspects that I just don't&nbsp;
+want to go into details yet and that's just the&nbsp;&nbsp;
+
+00:25:42.320 --> 00:25:48.800
+specification part on the e on the ecosystem part&nbsp;
+we going and having a more things to go that we're&nbsp;&nbsp;
+
+00:25:48.800 --> 00:25:55.280
+doing at the moment. We're adding a Ruby SDK that&nbsp;
+is uh donated by Shopify uh in the next few weeks&nbsp;&nbsp;
+
+00:25:55.280 --> 00:26:01.520
+and the Google uh folks, the Google Go team is&nbsp;
+currently building an official Go SDK for MCP. And&nbsp;&nbsp;
+
+00:26:01.520 --> 00:26:07.360
+so I just hope that I was able to give you a bit&nbsp;
+of a more in-depth view of what you could do with&nbsp;&nbsp;
+
+00:26:07.360 --> 00:26:13.040
+MCP if you use the full power of the protocol.&nbsp;
+And with that, I think I'm bit low on time,&nbsp;&nbsp;
+
+00:26:13.040 --> 00:26:18.160
+so I can't ask question. We can't ask questions.&nbsp;
+We can't do Q&amp;A, but just grab me afterwards&nbsp;&nbsp;
+
+00:26:18.160 --> 00:26:26.240
+and I can happy to answer on the hallway any&nbsp;
+questions you might have. So, thank you so much.
+
+00:26:26.240 --> 00:26:26.730
+[Music]
+

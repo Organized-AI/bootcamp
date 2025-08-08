@@ -1,0 +1,914 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:06.320 --> 00:00:12.080
+Hello. Hi everyone.
+
+00:00:12.080 --> 00:00:17.280
+Hello. Hello. Thank you. Thank you all so&nbsp;
+much for joining me today. My name is Danny.&nbsp;&nbsp;
+
+00:00:17.280 --> 00:00:23.120
+Danny Woo. I'm head of AI products at Canva&nbsp;
+and we're a visual communications platform.&nbsp;&nbsp;
+
+00:00:23.120 --> 00:00:29.120
+Today I'm really excited to share a bit about&nbsp;
+how how we've have built camera claude and how&nbsp;&nbsp;
+
+00:00:29.120 --> 00:00:34.480
+we've been working with um anthropic and using the&nbsp;
+amazing claude models. Um I'll be first starting&nbsp;&nbsp;
+
+00:00:34.480 --> 00:00:40.000
+by giving an intro to Canva as well as taking you&nbsp;
+behind the story of Canva code like what gave us&nbsp;&nbsp;
+
+00:00:40.000 --> 00:00:46.240
+the idea why we built it as well as the things&nbsp;
+we learned and finish up by sharing sharing a&nbsp;&nbsp;
+
+00:00:46.240 --> 00:00:52.480
+few lessons that will hopefully be helpful and&nbsp;
+some time in Q&amp;A. So, I'm incredibly excited and&nbsp;&nbsp;
+
+00:00:52.480 --> 00:00:59.680
+let's jump right in. Firstly, just a little bit&nbsp;
+of context about Canva in case um you don't know&nbsp;&nbsp;
+
+00:00:59.680 --> 00:01:06.080
+what we are. Um what we do is we really bring&nbsp;
+the entire design journey and experience in to&nbsp;&nbsp;
+
+00:01:06.080 --> 00:01:11.920
+one simple page and one simple experience. Um a&nbsp;
+decade ago, design used to be quite inaccessible&nbsp;&nbsp;
+
+00:01:11.920 --> 00:01:18.000
+and it was just quite quite hard. You had to you&nbsp;
+had to learn how to use fairly complex tools.&nbsp;&nbsp;
+
+00:01:18.000 --> 00:01:23.280
+um they could cost a lot of money and you&nbsp;
+had to go to so many different platforms and&nbsp;&nbsp;
+
+00:01:23.280 --> 00:01:28.800
+services to complete a design like finding&nbsp;
+stock photos, getting the right fonts,&nbsp;&nbsp;
+
+00:01:28.800 --> 00:01:34.320
+um starting with a template or publishing. And&nbsp;
+what we do is we really have integrated all&nbsp;&nbsp;
+
+00:01:34.320 --> 00:01:39.840
+the different steps of this journey into just&nbsp;
+one page and one platform. So you can create a&nbsp;&nbsp;
+
+00:01:39.840 --> 00:01:45.840
+presentation or you can create a poster, use one&nbsp;
+of the templates, generate some amazing AI images,&nbsp;&nbsp;
+
+00:01:45.840 --> 00:01:52.240
+um create some text and publish to a website,&nbsp;
+publish to or print it out, um and get delivered&nbsp;&nbsp;
+
+00:01:52.240 --> 00:01:58.160
+to your door. Um that's that's really what we&nbsp;
+do. Um and so we have a pretty simple mission&nbsp;&nbsp;
+
+00:01:58.160 --> 00:02:03.600
+and we've had the same mission for the past&nbsp;
+decade and a bit and it's really to empower the&nbsp;&nbsp;
+
+00:02:03.600 --> 00:02:09.920
+world to design. When we think about this, like we&nbsp;
+really think about empowering absolutely everyone,&nbsp;&nbsp;
+
+00:02:09.920 --> 00:02:14.880
+whether you are a student, whether you're a&nbsp;
+teacher, whether you are a nonprofit, or whether&nbsp;&nbsp;
+
+00:02:14.880 --> 00:02:21.040
+you are a marketer and creative um creative in a&nbsp;
+large enterprise um to design just about anything,&nbsp;&nbsp;
+
+00:02:21.040 --> 00:02:27.120
+publish it anywhere with every ingredient like&nbsp;
+photos, video, music, and more supporting every&nbsp;&nbsp;
+
+00:02:27.120 --> 00:02:34.320
+language as well as every single device. And the&nbsp;
+thing about AI is that like we really see it as&nbsp;&nbsp;
+
+00:02:34.320 --> 00:02:40.400
+something that absolutely supercharges the core&nbsp;
+premise of what Canva was um built to do, which is&nbsp;&nbsp;
+
+00:02:40.400 --> 00:02:47.360
+to allow everyone to to make designs really simply&nbsp;
+and really easily and make it take less time&nbsp;&nbsp;
+
+00:02:47.360 --> 00:02:52.560
+instead of this being time consuming and tedious.&nbsp;
+Let you create amazing outputs really really&nbsp;&nbsp;
+
+00:02:52.560 --> 00:02:58.720
+quickly. And the as I'm sure you all know like the&nbsp;
+power of generative AI is just really helping us&nbsp;&nbsp;
+
+00:02:58.720 --> 00:03:04.960
+helping us accelerate on all of those fronts.&nbsp;
+So when it comes to our AI strategy, we have&nbsp;&nbsp;
+
+00:03:04.960 --> 00:03:10.720
+a three-pronged approach. When it comes to things&nbsp;
+like really to things like specialized things like&nbsp;&nbsp;
+
+00:03:10.720 --> 00:03:16.240
+design generation and rich understanding, that's&nbsp;
+where we're really investing our efforts into&nbsp;&nbsp;
+
+00:03:16.240 --> 00:03:22.480
+developing our own models for our unique needs. Uh&nbsp;
+we're also really huge fans of a flexible approach&nbsp;&nbsp;
+
+00:03:22.480 --> 00:03:28.160
+where we add magic everywhere to the Canva product&nbsp;
+through the best commercial commercially available&nbsp;&nbsp;
+
+00:03:28.160 --> 00:03:35.520
+and open source models. And this really helps us&nbsp;
+deliver AI powered features and workflows to users&nbsp;&nbsp;
+
+00:03:35.520 --> 00:03:42.480
+um much faster much more scalably and also much&nbsp;
+cheaper. And finally to round things off um we&nbsp;&nbsp;
+
+00:03:42.480 --> 00:03:48.720
+have our app ecosystem where any developer can&nbsp;
+build apps including AI apps um for all of our 300&nbsp;&nbsp;
+
+00:03:48.720 --> 00:03:57.040
+million plus users. Um and just a bit of a short&nbsp;
+timeline of our AI journey. We started in 2017&nbsp;&nbsp;
+
+00:03:57.040 --> 00:04:02.880
+using machine learning for search rankings and&nbsp;
+color recommendations and that was already really&nbsp;&nbsp;
+
+00:04:02.880 --> 00:04:08.240
+cool. Uh we launched background remover which&nbsp;
+lets you take any image and would use computer&nbsp;&nbsp;
+
+00:04:08.240 --> 00:04:13.280
+vision to remove um the background from it and&nbsp;
+that continues to be one of our most popular and&nbsp;&nbsp;
+
+00:04:13.280 --> 00:04:20.000
+highest revenue driving features uh with diffusion&nbsp;
+models and the geni wave. Um, we launched texture&nbsp;&nbsp;
+
+00:04:20.000 --> 00:04:26.320
+image, magic write, magic edit, magic design,&nbsp;
+and so much more as part of canvas magic studio,&nbsp;&nbsp;
+
+00:04:26.320 --> 00:04:32.320
+which is a collection of integrated and native AI&nbsp;
+features that help you with just about every step&nbsp;&nbsp;
+
+00:04:32.320 --> 00:04:38.800
+of design. Um, and actually just a month ago&nbsp;
+in LA, uh, we had, um, we had Canva create uh,&nbsp;&nbsp;
+
+00:04:38.800 --> 00:04:43.600
+and we had some very exciting launches.&nbsp;
+We launched Canva AI, we launched, um,&nbsp;&nbsp;
+
+00:04:43.600 --> 00:04:49.680
+Canva sheet, and of course, Cana code, which I'm&nbsp;
+here to talk about. So what is Canva code? Let me&nbsp;&nbsp;
+
+00:04:49.680 --> 00:04:57.520
+play a little video. If you have an idea, a dream&nbsp;
+of what you want to create, just um in camera AI,&nbsp;&nbsp;
+
+00:04:57.520 --> 00:05:04.240
+just prompt it, describe what you want, and we use&nbsp;
+Claude to generate amazing interactive prototypes&nbsp;&nbsp;
+
+00:05:04.240 --> 00:05:09.920
+that really understand you and really help just&nbsp;
+about everyone, especially non-technical folks&nbsp;&nbsp;
+
+00:05:09.920 --> 00:05:16.160
+and non-engineers create their dreams. And then&nbsp;
+with a one with a one click you can including a&nbsp;&nbsp;
+
+00:05:16.160 --> 00:05:21.600
+camera design you can publish your website get a&nbsp;
+custom domain everything without touching a single&nbsp;&nbsp;
+
+00:05:21.600 --> 00:05:29.600
+line of code or knowing what CLI is. So what's&nbsp;
+the story behind it? And you might also think,&nbsp;&nbsp;
+
+00:05:29.600 --> 00:05:35.280
+you know, design and code, they don't seem like&nbsp;
+they naturally mix, right? So why did we I guess&nbsp;&nbsp;
+
+00:05:35.280 --> 00:05:42.080
+um why did we make Canva code? So I actually want&nbsp;
+to zoom out a little bit and um when we build&nbsp;&nbsp;
+
+00:05:42.080 --> 00:05:48.880
+products at Canva, we like to describe as going&nbsp;
+from the chaos to clarity spectrum. So at the very&nbsp;&nbsp;
+
+00:05:48.880 --> 00:05:53.920
+start, like in it might just be a little idea.&nbsp;
+It might just be like a simple um simple like&nbsp;&nbsp;
+
+00:05:53.920 --> 00:05:58.560
+vision deck that's not really thought through of&nbsp;
+something that's really really cool. And there's&nbsp;&nbsp;
+
+00:05:58.560 --> 00:06:04.240
+a stage where there's just a lot of openness, but&nbsp;
+also a lot of a lot of confusion and chaos and&nbsp;&nbsp;
+
+00:06:04.240 --> 00:06:08.960
+just what what do we actually want to build? How&nbsp;
+should the flows work? Like who is this for? Like&nbsp;&nbsp;
+
+00:06:08.960 --> 00:06:14.960
+how might how might we build it? And um as we as&nbsp;
+we answer those questions and um get more designs,&nbsp;&nbsp;
+
+00:06:14.960 --> 00:06:20.720
+really refine them, we navigate through those&nbsp;
+stages and get to extreme clarity on the other&nbsp;&nbsp;
+
+00:06:20.720 --> 00:06:27.760
+end, which is definitely all of our happy happy&nbsp;
+place. We found that interactive prototypes are&nbsp;&nbsp;
+
+00:06:27.760 --> 00:06:34.720
+just so so so incredibly helpful at the earliest&nbsp;
+stages of chaos. They're so much more expressive.&nbsp;&nbsp;
+
+00:06:34.720 --> 00:06:40.480
+They allow they allow teams they allow teams&nbsp;
+product engineering design leads to communicate&nbsp;&nbsp;
+
+00:06:40.480 --> 00:06:46.640
+ideas using the highest fidelity. They allow&nbsp;
+stakeholders to actually try through try and click&nbsp;&nbsp;
+
+00:06:46.640 --> 00:06:53.760
+through all the different um the actual experience&nbsp;
+and give feedback um test with users. And this is&nbsp;&nbsp;
+
+00:06:53.760 --> 00:07:00.400
+this really helps us like go from go from one to&nbsp;
+the very very end. But the thing about interactive&nbsp;&nbsp;
+
+00:07:00.400 --> 00:07:05.440
+prototypes is that they can actually take a bit&nbsp;
+of engineering time, very precious engineering&nbsp;&nbsp;
+
+00:07:05.440 --> 00:07:09.680
+time while we're working on so many different&nbsp;
+plans, so many different goals. Um, closing&nbsp;&nbsp;
+
+00:07:09.680 --> 00:07:14.960
+the loop with our users and fixing bugs from&nbsp;
+our past launchers. Um, so so they can there's&nbsp;&nbsp;
+
+00:07:14.960 --> 00:07:20.960
+a resource cost to making really amazing high&nbsp;
+fidelity prototypes. Um and oftentimes, you know,&nbsp;&nbsp;
+
+00:07:20.960 --> 00:07:26.800
+if you have um if you have a triad of a product&nbsp;
+manager, a designer, engineer like jammy on this,&nbsp;&nbsp;
+
+00:07:26.800 --> 00:07:32.320
+there can also be a lot of back and forth to get&nbsp;
+something really right and really capture it,&nbsp;&nbsp;
+
+00:07:32.320 --> 00:07:40.000
+especially for very wild ideas. We actually&nbsp;
+discovered um just how amazing it is to be&nbsp;&nbsp;
+
+00:07:40.000 --> 00:07:46.400
+prototyping using claude internally and a lot of&nbsp;
+our teams have started um actually using claude to&nbsp;&nbsp;
+
+00:07:46.400 --> 00:07:51.680
+make interact with artifacts is artifacts really&nbsp;
+changed how we do product development and dreaming&nbsp;&nbsp;
+
+00:07:51.680 --> 00:07:56.480
+at Canva. So when we had new ideas and new&nbsp;
+features that we want to build or new flows like&nbsp;&nbsp;
+
+00:07:56.480 --> 00:08:01.520
+um we're making active prototype and putting&nbsp;
+up and share it around and that that really&nbsp;&nbsp;
+
+00:08:01.520 --> 00:08:07.760
+accelerated things and enabled us to make way&nbsp;
+more prototypes. Um so we started prototyping&nbsp;&nbsp;
+
+00:08:07.760 --> 00:08:14.400
+with cord and we started embedding them in camera&nbsp;
+designs. You can actually see like a super early&nbsp;&nbsp;
+
+00:08:14.400 --> 00:08:20.400
+claude artifact. we were trying we're trying&nbsp;
+to is to update our search box um and include&nbsp;&nbsp;
+
+00:08:20.400 --> 00:08:26.160
+um include our latest AI features. So we did a&nbsp;
+very very low fidelity like tailwind um prototype&nbsp;&nbsp;
+
+00:08:26.160 --> 00:08:31.120
+and um if you've used camera recently um you see&nbsp;
+that um you see that we've launched we call this&nbsp;&nbsp;
+
+00:08:31.120 --> 00:08:37.840
+internally the wonder box but then we also kind&nbsp;
+of realized this is so cool this is absolutely&nbsp;&nbsp;
+
+00:08:37.840 --> 00:08:45.440
+amazing power the just using for internal&nbsp;
+prototypes that's like 1% of the way there we&nbsp;&nbsp;
+
+00:08:45.440 --> 00:08:52.320
+realized just how much like bringing the power of&nbsp;
+coding to everyday people and nontechnical users&nbsp;&nbsp;
+
+00:08:52.320 --> 00:08:57.840
+unlocks. It's a whole whole world of possibility.&nbsp;
+So whether you're say like a teacher creating&nbsp;&nbsp;
+
+00:08:57.840 --> 00:09:02.720
+an educational game or whether you're like a&nbsp;
+wedding planner creating a seating channel tool&nbsp;&nbsp;
+
+00:09:02.720 --> 00:09:09.920
+or like a marketer building interactive activation&nbsp;
+experiences, the possibilities are truly endless.&nbsp;&nbsp;
+
+00:09:09.920 --> 00:09:15.760
+And internally in Canva across all our teams, we&nbsp;
+really started using this functionality more and&nbsp;&nbsp;
+
+00:09:15.760 --> 00:09:23.200
+more for just about everything. But just like on&nbsp;
+you know just like kind of canvas like DNA we also&nbsp;&nbsp;
+
+00:09:23.200 --> 00:09:31.040
+realize that this this power is something that is&nbsp;
+very broadly inaccessible. Um just about one just&nbsp;&nbsp;
+
+00:09:31.040 --> 00:09:37.760
+about half a% of internet users are engineers and&nbsp;
+know how to code which is a pretty small number.&nbsp;&nbsp;
+
+00:09:37.760 --> 00:09:46.160
+Um, so what if we could bring this amazing power&nbsp;
+to the whole world, the n the rest of the 99.5 and&nbsp;&nbsp;
+
+00:09:46.160 --> 00:09:53.760
+that's really where like the idea the idea and the&nbsp;
+vision for camera code was born. We really want&nbsp;&nbsp;
+
+00:09:53.760 --> 00:09:59.440
+to we really wanted to make it incredibly easy&nbsp;
+for people to create entirely new interactive&nbsp;&nbsp;
+
+00:09:59.440 --> 00:10:04.560
+experiences like whether it's, you know, like a&nbsp;
+lovely thank you card to the team, whether it's a&nbsp;&nbsp;
+
+00:10:04.560 --> 00:10:11.280
+checklist for closing out the office, whether it's&nbsp;
+um a meal plan generator or even something like a&nbsp;&nbsp;
+
+00:10:11.280 --> 00:10:17.360
+timeline in a Canva presentation. There's so many&nbsp;
+possibilities and these actually real examples&nbsp;&nbsp;
+
+00:10:17.360 --> 00:10:23.600
+um that our team has been creating. So what did&nbsp;
+we do? We did something that was actually pretty&nbsp;&nbsp;
+
+00:10:23.600 --> 00:10:28.640
+pretty new to how we do product um back then&nbsp;
+which was just maybe two or three months ago&nbsp;&nbsp;
+
+00:10:28.640 --> 00:10:34.240
+and we started making a functional prototype&nbsp;
+using using claude um claude code wasn't out&nbsp;&nbsp;
+
+00:10:34.240 --> 00:10:40.400
+yet so we just used um yeah we just used um that&nbsp;
+sonet 3.5 back then and what we did what we did&nbsp;&nbsp;
+
+00:10:40.400 --> 00:10:45.120
+with a functional prototype was um it was a fully&nbsp;
+working and hooked up experience that's um not&nbsp;&nbsp;
+
+00:10:45.120 --> 00:10:51.120
+part of the main camera code base and just really&nbsp;
+allowed us to test like test different ideas test&nbsp;&nbsp;
+
+00:10:51.120 --> 00:10:57.440
+different UI and concepts um and do that much&nbsp;
+faster and actually play around with it and use&nbsp;&nbsp;
+
+00:10:57.440 --> 00:11:04.400
+it every day. So it let it let us test ideas and&nbsp;
+test concepts including really dreamy and really&nbsp;&nbsp;
+
+00:11:04.400 --> 00:11:09.840
+wacky ones very quickly. It also allowed us to&nbsp;
+get real user feedback. So we did user testing&nbsp;&nbsp;
+
+00:11:09.840 --> 00:11:15.280
+sessions and we put this in front of users and&nbsp;
+gave them very little guidance and just saw what&nbsp;&nbsp;
+
+00:11:15.280 --> 00:11:20.720
+the use cases were, saw how they use it, saw where&nbsp;
+they got confused, saw where the magic moment was&nbsp;&nbsp;
+
+00:11:20.720 --> 00:11:26.240
+and it was also a really efficient ground for us&nbsp;
+to be experimenting with all the different models&nbsp;&nbsp;
+
+00:11:26.240 --> 00:11:33.120
+that are out there. And um so we started building&nbsp;
+it in Canva uh for reals um because we after we&nbsp;&nbsp;
+
+00:11:33.120 --> 00:11:38.800
+got really confident about it. We did um we hooked&nbsp;
+up to the camera code base. We handle things like&nbsp;&nbsp;
+
+00:11:38.800 --> 00:11:45.600
+responsiveness um nine slicing and editing and&nbsp;
+camera design. But we also continue to iterate&nbsp;&nbsp;
+
+00:11:45.600 --> 00:11:50.400
+um um our prototype and basically that was&nbsp;
+essentially the next version where we did things&nbsp;&nbsp;
+
+00:11:50.400 --> 00:11:57.920
+like um div based support which is um coming&nbsp;
+very very soon. And um we that that's also when&nbsp;&nbsp;
+
+00:11:57.920 --> 00:12:03.680
+we tested this experience across all the different&nbsp;
+canvas surfaces uh can code can end up in like you&nbsp;&nbsp;
+
+00:12:03.680 --> 00:12:08.560
+know whether it's in the editor whether it's on&nbsp;
+mobile or whether you're on a presentation mode.&nbsp;&nbsp;
+
+00:12:08.560 --> 00:12:14.080
+We actually even printed out a t-shirt um with&nbsp;
+a can code um just to make sure that it actually&nbsp;&nbsp;
+
+00:12:14.080 --> 00:12:18.400
+worked which was um pretty fun. Like obviously&nbsp;
+it wasn't interactive. It was like more of just&nbsp;&nbsp;
+
+00:12:18.400 --> 00:12:24.000
+a static screenshot but you can print it on a mug&nbsp;
+or a t-shirt. Um and the way it works is that we&nbsp;&nbsp;
+
+00:12:24.000 --> 00:12:30.000
+put kind of code creations um in iframe since it&nbsp;
+is really arbitrary um arbitrary user generated&nbsp;&nbsp;
+
+00:12:30.000 --> 00:12:37.840
+content um and we just use a similar approach&nbsp;
+to how we support um embeds in hammer designs.&nbsp;&nbsp;
+
+00:12:37.840 --> 00:12:42.640
+um when it comes to choosing the model and why&nbsp;
+we ended up with um right now with Claude's&nbsp;&nbsp;
+
+00:12:42.640 --> 00:12:47.920
+um Claude's um sonet models um this is this is a&nbsp;
+definitely a really really fun question to explore&nbsp;&nbsp;
+
+00:12:47.920 --> 00:12:53.120
+and the first thought you all probably have is you&nbsp;
+know evals evals and evals and that's definitely&nbsp;&nbsp;
+
+00:12:53.120 --> 00:12:58.080
+really important especially for correctness but&nbsp;
+when we looked at um the model choice for camera&nbsp;&nbsp;
+
+00:12:58.080 --> 00:13:04.960
+code we had a few additional considerations as&nbsp;
+well we really value how magical it is and you&nbsp;&nbsp;
+
+00:13:04.960 --> 00:13:10.880
+really like the delightfulness as we like to call&nbsp;
+it. And when we tested across real user requests,&nbsp;&nbsp;
+
+00:13:10.880 --> 00:13:17.680
+the ability for models to handle very short and&nbsp;
+very underspecified user prompts, things like,&nbsp;&nbsp;
+
+00:13:17.680 --> 00:13:22.960
+hey, can you like make me can you make me a&nbsp;
+game that does blah or hey, can you make me like&nbsp;&nbsp;
+
+00:13:22.960 --> 00:13:28.720
+um a menu planner where the user isn't really&nbsp;
+giving you like very very specific specific&nbsp;&nbsp;
+
+00:13:28.720 --> 00:13:32.880
+requirements and the LM just has to infer&nbsp;
+it. That was really really important to&nbsp;&nbsp;
+
+00:13:32.880 --> 00:13:39.600
+us. Um the model's ability to make amazing web&nbsp;
+designs was also super important. We are we're&nbsp;&nbsp;
+
+00:13:39.600 --> 00:13:44.560
+a visual communication platform after all.&nbsp;
+And finally of course um things like latency&nbsp;&nbsp;
+
+00:13:44.560 --> 00:13:52.880
+as well as scalability and capacity were also&nbsp;
+very very real very very important factors.&nbsp;&nbsp;
+
+00:13:53.520 --> 00:13:59.680
+So back around um yeah back around March we tested&nbsp;
+um a series of tested a lot of different models um&nbsp;&nbsp;
+
+00:13:59.680 --> 00:14:06.000
+across not just not just whether it generated&nbsp;
+valid um valid code but also how subjectively&nbsp;&nbsp;
+
+00:14:06.000 --> 00:14:11.920
+how good was our web design um at following the&nbsp;
+instructions we have in the prompt around things&nbsp;&nbsp;
+
+00:14:11.920 --> 00:14:18.560
+like UI UX the information hierarchy um all that&nbsp;
+kind of stuff um how good is how good is at things&nbsp;&nbsp;
+
+00:14:18.560 --> 00:14:24.160
+like SVG generations which is something that we're&nbsp;
+like always really impressed test by with um CL&nbsp;&nbsp;
+
+00:14:24.160 --> 00:14:29.520
+family of models things like animations like um&nbsp;
+it's able to set things like C index correctly&nbsp;&nbsp;
+
+00:14:29.520 --> 00:14:35.200
+it's able to you know do colors do timings really&nbsp;
+really well and we were just really delighted with&nbsp;&nbsp;
+
+00:14:35.200 --> 00:14:42.640
+um we were already really delighted with Sonet&nbsp;
+3.5 V2 uh 3.7 was a huge huge step up and&nbsp;&nbsp;
+
+00:14:42.640 --> 00:14:47.120
+um with today's announcement of clot 4&nbsp;
+like that's something that's really a&nbsp;&nbsp;
+
+00:14:47.120 --> 00:14:52.480
+transformational leap in intelligence for coding&nbsp;
+and we're also super excited about that as Well,&nbsp;&nbsp;
+
+00:14:52.480 --> 00:14:57.520
+but I guess like my takeaway here is like&nbsp;
+um really think about especially when you're&nbsp;&nbsp;
+
+00:14:57.520 --> 00:15:03.280
+launching to users like think about the complete&nbsp;
+user experience and what they care about. Don't&nbsp;&nbsp;
+
+00:15:03.280 --> 00:15:08.560
+don't be super academical and just focus um just&nbsp;
+focus on you know things like how good it does&nbsp;&nbsp;
+
+00:15:08.560 --> 00:15:13.840
+at benchmarks or how good it does at um you know&nbsp;
+like large code base or really big requests like&nbsp;&nbsp;
+
+00:15:13.840 --> 00:15:20.560
+um does it actually do the things like generating&nbsp;
+icons and SVGs really well too because those are&nbsp;&nbsp;
+
+00:15:20.560 --> 00:15:29.280
+those are really important to all of our users.&nbsp;
+And finally um three lessons we've learned. The&nbsp;&nbsp;
+
+00:15:29.280 --> 00:15:34.080
+first one, and this is a pretty interesting one&nbsp;
+to us, was just how important it is to actually&nbsp;&nbsp;
+
+00:15:34.080 --> 00:15:40.960
+communicate AI's limitations in all the different&nbsp;
+places where there are AI limitations. So, one of&nbsp;&nbsp;
+
+00:15:40.960 --> 00:15:45.920
+the product principles that we have at Canva is&nbsp;
+that everything should just work. It should just&nbsp;&nbsp;
+
+00:15:45.920 --> 00:15:52.400
+do what it says um on the tin. And when when&nbsp;
+coding and building interfaces with LLMs like&nbsp;&nbsp;
+
+00:15:52.400 --> 00:15:59.920
+um generative yeah LMS can be uh can make very&nbsp;
+beautiful things but they might not actually&nbsp;&nbsp;
+
+00:15:59.920 --> 00:16:06.080
+work. And so when when we did some in real life&nbsp;
+user testing sessions um we had users like make&nbsp;&nbsp;
+
+00:16:06.080 --> 00:16:11.440
+things like portfolio pages um just kind of uh&nbsp;
+galleries and things like that. that they included&nbsp;&nbsp;
+
+00:16:11.440 --> 00:16:16.800
+contact forms but since chemical code right now&nbsp;
+is uh just front end only um those contact forms&nbsp;&nbsp;
+
+00:16:16.800 --> 00:16:22.160
+didn't work and users thought it was broken um&nbsp;
+they don't really understand like you know it's&nbsp;&nbsp;
+
+00:16:22.160 --> 00:16:27.200
+just front end only like you needs destination&nbsp;
+needs to hook it up to um you know like an email&nbsp;&nbsp;
+
+00:16:27.200 --> 00:16:33.280
+sender and things like that. So one of the things&nbsp;
+we did is we made sure to prompt the prompt the&nbsp;&nbsp;
+
+00:16:33.280 --> 00:16:40.160
+model to actually very visibly communicate things&nbsp;
+that wouldn't work so that they don't so that&nbsp;&nbsp;
+
+00:16:40.160 --> 00:16:46.000
+they at least understand that it's the limitations&nbsp;
+and that it's intentional and it's not them doing&nbsp;&nbsp;
+
+00:16:46.000 --> 00:16:53.280
+something wrong. Uh the second lesson is uh we&nbsp;
+are absolutely in love with the power of building&nbsp;&nbsp;
+
+00:16:53.280 --> 00:16:59.840
+functional prototypes. Uh so if you don't know um&nbsp;
+so we have a mon repo at Canva with um just about&nbsp;&nbsp;
+
+00:16:59.840 --> 00:17:06.000
+half a million commits over the past decade.&nbsp;
+We support more than 100 languages um um many&nbsp;&nbsp;
+
+00:17:06.000 --> 00:17:10.960
+different platforms. There's also there's also&nbsp;
+global laws and regulations in all environments&nbsp;&nbsp;
+
+00:17:10.960 --> 00:17:15.840
+we operate. We have enterprise customers with a&nbsp;
+lot of contracts SLAs and all that kind of stuff.&nbsp;&nbsp;
+
+00:17:15.840 --> 00:17:21.600
+So building things like um in canvas repository&nbsp;
+um it enables to scale and serve all of our&nbsp;&nbsp;
+
+00:17:21.600 --> 00:17:27.760
+customers but it's not really the fastest place&nbsp;
+to be experimenting and testing new concepts&nbsp;&nbsp;
+
+00:17:27.760 --> 00:17:34.960
+especially in the fast moving world of AI. So by&nbsp;
+building and by starting to build and um iterate&nbsp;&nbsp;
+
+00:17:34.960 --> 00:17:40.560
+and develop and test and walking prototypes we&nbsp;
+could move so much more faster and dream heaps&nbsp;&nbsp;
+
+00:17:40.560 --> 00:17:45.840
+and heaps of ahead. What we found really useful&nbsp;
+was that our team was really actively using these&nbsp;&nbsp;
+
+00:17:45.840 --> 00:17:51.920
+prototypes dayto-day for real work and real tasks&nbsp;
+and that really gave us a lot of learnings and&nbsp;&nbsp;
+
+00:17:51.920 --> 00:17:57.600
+understanding. Um the live user testing helps&nbsp;
+identify issues, bugs and really inform our&nbsp;&nbsp;
+
+00:17:57.600 --> 00:18:04.000
+road map before we even started actually building&nbsp;
+building it for real. And um it's kind of it was&nbsp;&nbsp;
+
+00:18:04.000 --> 00:18:10.160
+kind of entirely closing the loop. We've built&nbsp;
+it um very very heavily with um with claw models&nbsp;&nbsp;
+
+00:18:10.160 --> 00:18:16.320
+um and just allowed us to move just how to make&nbsp;
+make magic. Uh the last lesson I want to share&nbsp;&nbsp;
+
+00:18:16.320 --> 00:18:23.920
+is like the importance of really differentiating&nbsp;
+and playing to your strengths. So in this AI world&nbsp;&nbsp;
+
+00:18:23.920 --> 00:18:28.480
+like there's so many products um and the barrier&nbsp;
+to entry like especially with things like cloud&nbsp;&nbsp;
+
+00:18:28.480 --> 00:18:33.760
+code and AI coding can be really really low. So&nbsp;
+it's really important to be thinking about what&nbsp;&nbsp;
+
+00:18:33.760 --> 00:18:38.240
+are your unique strengths? What are our unique&nbsp;
+strengths in this market and the product that&nbsp;&nbsp;
+
+00:18:38.240 --> 00:18:44.080
+we're building when it comes to Canva code um is&nbsp;
+two things but the first one the most important&nbsp;&nbsp;
+
+00:18:44.080 --> 00:18:50.400
+is really we're explicitly not building Canva&nbsp;
+code for technical users or engineers. Right now,&nbsp;&nbsp;
+
+00:18:50.400 --> 00:18:54.880
+we're starting bottoms up with nontechnical&nbsp;
+users because we want to basically bring the&nbsp;&nbsp;
+
+00:18:54.880 --> 00:19:00.640
+superpower to just about everyone to the&nbsp;
+billions of internet users out there and&nbsp;&nbsp;
+
+00:19:00.640 --> 00:19:06.960
+then move bottoms up and get to get to higher&nbsp;
+and higher levels of sophistication. So for us,&nbsp;&nbsp;
+
+00:19:06.960 --> 00:19:13.200
+things like how easy it is to start, um how guided&nbsp;
+it can be and how well how well it turns people's&nbsp;&nbsp;
+
+00:19:13.200 --> 00:19:18.480
+dreams or screenshots of mocks in reality is&nbsp;
+really important as we move up and up into more&nbsp;&nbsp;
+
+00:19:18.480 --> 00:19:23.040
+advanced functionality. And I think this a really&nbsp;
+important thing to think about. You might not not&nbsp;&nbsp;
+
+00:19:23.040 --> 00:19:29.920
+necessarily start bottoms up, but definitely have&nbsp;
+a focus for what you target and leveraging your&nbsp;&nbsp;
+
+00:19:29.920 --> 00:19:35.040
+unique strengths and what you what you what you&nbsp;
+already have and what your users already use is&nbsp;&nbsp;
+
+00:19:35.040 --> 00:19:40.880
+really important. So here's a preview for example&nbsp;
+like we are working on integrating the camera code&nbsp;&nbsp;
+
+00:19:40.880 --> 00:19:46.000
+creations with canvas editor. You can do things&nbsp;
+like change the colors using our color picker,&nbsp;&nbsp;
+
+00:19:46.000 --> 00:19:51.040
+apply your brand fonts or drag and drop your&nbsp;
+photos um from your asset library and get what&nbsp;&nbsp;
+
+00:19:51.040 --> 00:19:57.920
+you see is what you get editing experience. And&nbsp;
+of course, we're we're spiking this um on our&nbsp;&nbsp;
+
+00:19:57.920 --> 00:20:03.360
+interactive um prototype. finding and figuring out&nbsp;
+just what's the best way to leverage your unique&nbsp;&nbsp;
+
+00:20:03.360 --> 00:20:09.600
+strengths is definitely really really important&nbsp;
+um for not just for building something that offers&nbsp;&nbsp;
+
+00:20:09.600 --> 00:20:15.360
+value to your users that other people can't. And&nbsp;
+we're just really we're just so excited about this&nbsp;&nbsp;
+
+00:20:15.360 --> 00:20:22.720
+era that we're now in and all the possibilities&nbsp;
+that we can unlock. So yeah, that is um that's&nbsp;&nbsp;
+
+00:20:22.720 --> 00:20:28.800
+everything I have. Um hope you um we do have time&nbsp;
+for some Q&amp;A if you want to if you want to chat&nbsp;&nbsp;
+
+00:20:28.800 --> 00:20:33.760
+and I think there's microphones up there and there&nbsp;
+the hope you thanks for having me and I hope you&nbsp;&nbsp;
+
+00:20:33.760 --> 00:20:44.240
+found the session useful. [Applause] Thanks so&nbsp;
+much. Could you share some tips on how you get&nbsp;&nbsp;
+
+00:20:44.240 --> 00:20:50.160
+the models to produce such beautiful front ends?&nbsp;
+Oh yeah, absolutely. So we had um we had a lot of&nbsp;&nbsp;
+
+00:20:50.160 --> 00:20:56.560
+our designers actually just um really experiment a&nbsp;
+lot like um really just trip engineering but some&nbsp;&nbsp;
+
+00:20:56.560 --> 00:21:02.800
+examples are really simple like one is we instruct&nbsp;
+claude to you know never have like a white gray or&nbsp;&nbsp;
+
+00:21:02.800 --> 00:21:07.840
+black background unless it's requested to always&nbsp;
+pick you know say a nice color another one is&nbsp;&nbsp;
+
+00:21:07.840 --> 00:21:12.400
+we've incorporated things like just basically&nbsp;
+our product design principles like you know&nbsp;&nbsp;
+
+00:21:12.400 --> 00:21:17.360
+like like we have just a set of guidelines on how&nbsp;
+information hierarchy should be where controls and&nbsp;&nbsp;
+
+00:21:17.360 --> 00:21:22.880
+where buttons should be um and we just basically&nbsp;
+summarize and put that in there as um as defaults&nbsp;&nbsp;
+
+00:21:22.880 --> 00:21:30.080
+it tries to follow. So yeah, everything's more or&nbsp;
+less like just in the prompt. Thank you. Hello. Um&nbsp;&nbsp;
+
+00:21:30.080 --> 00:21:35.840
+I'm interested in what is your perspective on like&nbsp;
+the future of AI and design more broadly and how&nbsp;&nbsp;
+
+00:21:35.840 --> 00:21:41.280
+should people who design be thinking about that&nbsp;
+is a great AI. That's a really great question.&nbsp;&nbsp;
+
+00:21:41.280 --> 00:21:47.520
+Like what we what we're really excited about is&nbsp;
+how how AI like can unlock and supercharge human&nbsp;&nbsp;
+
+00:21:47.520 --> 00:21:52.560
+creativity. Like um this technology is allowing&nbsp;
+people who normally like you know you would&nbsp;&nbsp;
+
+00:21:52.560 --> 00:21:59.200
+normally take like say weeks or days um to get to&nbsp;
+some output like you can now use AI to to firstly&nbsp;&nbsp;
+
+00:21:59.200 --> 00:22:04.160
+like clean up all your tedious to not do all your&nbsp;
+tedious tasks but it also allows you to dream and&nbsp;&nbsp;
+
+00:22:04.160 --> 00:22:10.000
+prototype. I think a good example is when we were&nbsp;
+planning our event um kind of create event like um&nbsp;&nbsp;
+
+00:22:10.000 --> 00:22:15.200
+our creative and motion teams were using diffusion&nbsp;
+models to really quickly make story boards for&nbsp;&nbsp;
+
+00:22:15.200 --> 00:22:20.480
+different talks and different activations and&nbsp;
+experiences. Um and that allowed us to to just&nbsp;&nbsp;
+
+00:22:20.480 --> 00:22:25.920
+like get an impression of those ideas, get some&nbsp;
+inspiration and um make the actual make the actual&nbsp;&nbsp;
+
+00:22:25.920 --> 00:22:31.840
+creative process like basically give superpowers&nbsp;
+to the creative process. I think like what we're&nbsp;&nbsp;
+
+00:22:31.840 --> 00:22:38.640
+really excited about is just how much like um how&nbsp;
+much air can actually help like um exponentially&nbsp;&nbsp;
+
+00:22:38.640 --> 00:22:48.640
+increase human creativity. Cool. Well, thank&nbsp;
+you. Thank you all so much for having me. Bye.
+
+00:22:48.640 --> 00:22:49.070
+[Music]
+

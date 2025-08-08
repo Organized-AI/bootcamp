@@ -1,0 +1,834 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:10.933 --> 00:00:11.600
+[Applause]
+
+00:00:11.600 --> 00:00:17.920
+good morning everyone welcome to Taking&nbsp;
+Claude to the next level i'm Lisa Crowoot&nbsp;&nbsp;
+
+00:00:17.920 --> 00:00:23.680
+i'm a research product manager here at Anthropic&nbsp;
+and today I have the pleasure of introducing you&nbsp;&nbsp;
+
+00:00:23.680 --> 00:00:30.320
+to our newest models Claude for Sonnet and Opus&nbsp;
+so we're going to start by talking about what&nbsp;&nbsp;
+
+00:00:30.320 --> 00:00:36.560
+the next level of AI agents looks like i'll&nbsp;
+go through new capabilities in the Claude 4&nbsp;&nbsp;
+
+00:00:36.560 --> 00:00:41.680
+family and then we'll talk through some practical&nbsp;
+tips for how to get the most out of Sonnet and
+
+00:00:41.680 --> 00:00:52.960
+Opus before we dive deep on Claude 4 I wanted&nbsp;
+to paint a picture of what we think our next&nbsp;&nbsp;
+
+00:00:52.960 --> 00:00:58.320
+generation next generation agents really&nbsp;
+look like we really want Claude to be great&nbsp;&nbsp;
+
+00:00:58.320 --> 00:01:04.160
+at three things claude should be able to&nbsp;
+work alongside you and adapt to the ways&nbsp;&nbsp;
+
+00:01:04.160 --> 00:01:10.560
+you work claude should be able to work entirely&nbsp;
+independently on tasks that require many steps&nbsp;&nbsp;
+
+00:01:10.560 --> 00:01:15.840
+and in both of these cases Claude needs to&nbsp;
+sustain performance over hours of continuous
+
+00:01:15.840 --> 00:01:24.400
+work imagine this you've been assigned a new&nbsp;
+project to refactor your O system to support&nbsp;&nbsp;
+
+00:01:24.400 --> 00:01:31.760
+OOTH 2.0 so you decide to work with claude&nbsp;
+on this to make faster progress you might&nbsp;&nbsp;
+
+00:01:31.760 --> 00:01:38.400
+choose to write the requirements and the plan and&nbsp;
+update the documents but decide to delegate the&nbsp;&nbsp;
+
+00:01:38.400 --> 00:01:44.320
+implementation to Claude what is most interesting&nbsp;
+in this collaborative mode is that we don't&nbsp;&nbsp;
+
+00:01:44.320 --> 00:01:50.480
+envision this being like clear human AI handoffs&nbsp;
+we really want you to be able to work with Claude&nbsp;&nbsp;
+
+00:01:50.480 --> 00:01:56.000
+so for example when Claude is reviewing the&nbsp;
+codebase and documents it might find out that&nbsp;&nbsp;
+
+00:01:56.000 --> 00:02:01.680
+you missed a requirement in your PRD so Claude&nbsp;
+should challenge your assumptions just like&nbsp;&nbsp;
+
+00:02:01.680 --> 00:02:07.840
+working with a great engineer together you can&nbsp;
+achieve a higher quality outcome faster than you&nbsp;&nbsp;
+
+00:02:07.840 --> 00:02:17.040
+would have on your own this is what augmentation&nbsp;
+not automation will look like we do also envision&nbsp;&nbsp;
+
+00:02:17.040 --> 00:02:23.760
+that Claude will be able to operate on tasks&nbsp;
+like this entirely independently so take that&nbsp;&nbsp;
+
+00:02:23.760 --> 00:02:29.520
+same refactor and imagine that you just assign&nbsp;
+the whole thing to Claude even without tight&nbsp;&nbsp;
+
+00:02:29.520 --> 00:02:36.640
+human oversight Claude will create comprehensive&nbsp;
+plans for the refactor it will use tools like web&nbsp;&nbsp;
+
+00:02:36.640 --> 00:02:43.360
+search and document search to make sure that it's&nbsp;
+up operating from the most up-to-date information&nbsp;&nbsp;
+
+00:02:43.360 --> 00:02:49.120
+and it will use your company standards and best&nbsp;
+practices to write production ready code claude&nbsp;&nbsp;
+
+00:02:49.120 --> 00:02:55.920
+writes tests recognizes and fixes its mistakes it&nbsp;
+can take feedback and remember your feedback so&nbsp;&nbsp;
+
+00:02:55.920 --> 00:03:01.520
+it doesn't make the same mistake twice so when&nbsp;
+models work independently like this we really&nbsp;&nbsp;
+
+00:03:01.520 --> 00:03:06.720
+think trust and communication are paramount so&nbsp;
+Cloud needs to follow your instructions it also&nbsp;&nbsp;
+
+00:03:06.720 --> 00:03:12.400
+needs to communicate its decisions with you in a&nbsp;
+way that you can review them it needs to be able&nbsp;&nbsp;
+
+00:03:12.400 --> 00:03:19.680
+to adapt to changing inputs and new information&nbsp;
+so in both of these examples Claude would need to&nbsp;&nbsp;
+
+00:03:19.680 --> 00:03:26.560
+work over many hours to complete the task if you&nbsp;
+use Cloud.AI or Claude Code regularly you might&nbsp;&nbsp;
+
+00:03:26.560 --> 00:03:31.680
+be familiar with Claude doing in seconds what&nbsp;
+takes you minutes or hours but our vision goes&nbsp;&nbsp;
+
+00:03:31.680 --> 00:03:36.800
+beyond that we want Claude to be able to take&nbsp;
+on tasks that will take it hours to complete&nbsp;&nbsp;
+
+00:03:36.800 --> 00:03:44.880
+and we think that when this is possible it will&nbsp;
+dramatically expand what AI agents can do so this&nbsp;&nbsp;
+
+00:03:44.880 --> 00:03:50.720
+is our vision an AI that works alongside you&nbsp;
+builds trust while working independently and&nbsp;&nbsp;
+
+00:03:50.720 --> 00:03:57.840
+can take on complex tasks that require sustained&nbsp;
+focus so let's dive in on how Cloud 4 is making&nbsp;&nbsp;
+
+00:03:57.840 --> 00:04:04.480
+this a reality as you heard earlier from&nbsp;
+Daario we launched two new models today&nbsp;&nbsp;
+
+00:04:04.480 --> 00:04:11.200
+claude Opus for and Claude sonnet for and I'm&nbsp;
+going to talk through four main improvement areas&nbsp;&nbsp;
+
+00:04:11.200 --> 00:04:19.520
+thinking and tool use memory instruction following&nbsp;
+and reduced reward hacking we'll discuss how these&nbsp;&nbsp;
+
+00:04:19.520 --> 00:04:27.440
+improvements contribute towards our agent vision&nbsp;
+let's start with extended thinking and tool use&nbsp;&nbsp;
+
+00:04:27.440 --> 00:04:32.800
+earlier this year we launched Claude 3.7 Sonnet&nbsp;
+which was our first hybrid reasoning model and&nbsp;&nbsp;
+
+00:04:32.800 --> 00:04:39.680
+what that means is the model can respond nearly&nbsp;
+to your request or think deeply before responding&nbsp;&nbsp;
+
+00:04:39.680 --> 00:04:44.880
+with Cloud 4 we're expanding on thinking by&nbsp;
+introducing a new beta capability for Claude&nbsp;&nbsp;
+
+00:04:44.880 --> 00:04:51.760
+to alternate between thinking and tool use let me&nbsp;
+walk you through an example so here I've provided&nbsp;&nbsp;
+
+00:04:51.760 --> 00:04:58.080
+Claude with a CSV of bike rental data and I gave&nbsp;
+it a very open-ended prompt i told it to just tell&nbsp;&nbsp;
+
+00:04:58.080 --> 00:05:03.760
+me the most the three most interesting things&nbsp;
+about this data claude has access to a ripple&nbsp;&nbsp;
+
+00:05:03.760 --> 00:05:09.680
+tool which lets it run code autonomously to&nbsp;
+analyze the data but it's never seen this&nbsp;&nbsp;
+
+00:05:09.680 --> 00:05:15.200
+data before so when it first thinks it's actually&nbsp;
+thinking quite tactically about how to handle the&nbsp;&nbsp;
+
+00:05:15.200 --> 00:05:20.720
+large file and the first thing it does is print&nbsp;
+itself out the headers so that it can understand&nbsp;&nbsp;
+
+00:05:20.720 --> 00:05:25.920
+the data structure and like what is even in this&nbsp;
+data it's only in the second and third thinking&nbsp;&nbsp;
+
+00:05:25.920 --> 00:05:32.640
+block that it starts to actually think about the&nbsp;
+prompt and the problem at hand so um it starts&nbsp;&nbsp;
+
+00:05:32.640 --> 00:05:38.240
+to plan where it's going to find interesting&nbsp;
+patterns it decides to look for hourly patterns&nbsp;&nbsp;
+
+00:05:38.240 --> 00:05:44.960
+in bike rentals different patterns for casual&nbsp;
+versus registered users and seasonal and weather
+
+00:05:44.960 --> 00:05:51.920
+patterns oops sorry
+
+00:05:53.760 --> 00:05:59.600
+it runs through its plan completing the analysis&nbsp;
+and Claude was able to find interesting patterns&nbsp;&nbsp;
+
+00:05:59.600 --> 00:06:03.760
+like the fact that ca casual versus&nbsp;
+registered users have different time of&nbsp;&nbsp;
+
+00:06:03.760 --> 00:06:09.440
+day usage it found a clear evening commuting&nbsp;
+pattern and kind of no surprise to any of us&nbsp;&nbsp;
+
+00:06:09.440 --> 00:06:16.800
+it found that bike rentals were 1.8 times&nbsp;
+more common on sunny days versus rainy days
+
+00:06:18.720 --> 00:06:24.960
+the next capability I want to talk about is memory&nbsp;
+we think memory is critically important for our&nbsp;&nbsp;
+
+00:06:24.960 --> 00:06:32.000
+next generation agents vision for two reasons&nbsp;
+first no one wants to work with an agent that&nbsp;&nbsp;
+
+00:06:32.000 --> 00:06:37.840
+you have to keep reminding the same things over&nbsp;
+and over again but secondly and more tactically&nbsp;&nbsp;
+
+00:06:37.840 --> 00:06:43.680
+if Claude is working over hours it can't keep&nbsp;
+every single detail in its context window&nbsp;&nbsp;
+
+00:06:43.680 --> 00:06:49.680
+it needs to be smarter and only remember the&nbsp;
+most salient and important facts claude Opus&nbsp;&nbsp;
+
+00:06:49.680 --> 00:06:56.000
+4 demonstrates remarkably better memor memory&nbsp;
+capabilities so when given an external file&nbsp;&nbsp;
+
+00:06:56.000 --> 00:07:00.560
+system with which it can read and write&nbsp;
+memories Claude Opus is able to come&nbsp;&nbsp;
+
+00:07:00.560 --> 00:07:07.440
+up with a plan remember that plan and track&nbsp;
+progress against that plan over hours of work&nbsp;&nbsp;
+
+00:07:08.560 --> 00:07:13.840
+so we're going to take a slight detour and&nbsp;
+talk about the game of Pokemon as a way to&nbsp;&nbsp;
+
+00:07:13.840 --> 00:07:22.160
+illustrate uh this memory capability so if you're&nbsp;
+we've been using Pokemon as a practical prototype&nbsp;&nbsp;
+
+00:07:22.160 --> 00:07:26.800
+for testing Claude's agent capabilities for&nbsp;
+a while if you're interested in learning more&nbsp;&nbsp;
+
+00:07:26.800 --> 00:07:32.240
+about this my colleague David will be giving a&nbsp;
+talk later today and I recommend checking it out&nbsp;&nbsp;
+
+00:07:32.240 --> 00:07:38.240
+uh for the purpose of this talk today I want&nbsp;
+to talk about uh how Claude is using memory in&nbsp;&nbsp;
+
+00:07:38.240 --> 00:07:44.560
+Pokemon so if you think back to your game boy days&nbsp;
+uh the game of Pokemon is really you go around and&nbsp;&nbsp;
+
+00:07:44.560 --> 00:07:49.760
+catch Pokemon and then you train them up so that&nbsp;
+they can win battles and this concept of training&nbsp;&nbsp;
+
+00:07:49.760 --> 00:07:54.480
+is like really core to the game you need to teach&nbsp;
+your Pokemon how to win battles and that takes&nbsp;&nbsp;
+
+00:07:54.480 --> 00:08:01.200
+time where you go around and uh have the Pokemon&nbsp;
+battle other Pokemon to level up prior Claude&nbsp;&nbsp;
+
+00:08:01.200 --> 00:08:06.480
+models would recognize this and decide that they&nbsp;
+had to go train their Pokemon but would quickly&nbsp;&nbsp;
+
+00:08:06.480 --> 00:08:12.560
+like lose track of their plan uh and start doing&nbsp;
+something else before their Pokemon were able to&nbsp;&nbsp;
+
+00:08:12.560 --> 00:08:21.760
+level up opus 4 on the other hand is meticulously&nbsp;
+tracking its Pokemon's training progress so here&nbsp;&nbsp;
+
+00:08:21.760 --> 00:08:28.880
+in its memory file it keeps track of the fact&nbsp;
+that it has uh played 64 battles and to put that&nbsp;&nbsp;
+
+00:08:28.880 --> 00:08:37.040
+into context 64 battles would take Claude about 12&nbsp;
+hours of continuous gameplay claude Opus remains&nbsp;&nbsp;
+
+00:08:37.040 --> 00:08:45.120
+focused on its training goals logging Pokemon&nbsp;
+level improvements in this file so memory is a new&nbsp;&nbsp;
+
+00:08:45.120 --> 00:08:52.880
+model capability we're excited about because of&nbsp;
+how it will unlock longer arc agentic trajectories
+
+00:08:54.560 --> 00:09:00.960
+a third improvement I want to highlight is&nbsp;
+improvements in complex instruction following&nbsp;&nbsp;
+
+00:09:00.960 --> 00:09:05.680
+this one is near and dear to me because I've&nbsp;
+spent many hours working on Claude's system&nbsp;&nbsp;
+
+00:09:05.680 --> 00:09:11.120
+prompt and we're finding that as agent&nbsp;
+systems become more complex the system&nbsp;&nbsp;
+
+00:09:11.120 --> 00:09:16.880
+prompts and sets of instructions that govern&nbsp;
+Claude's behavior are getting longer so for&nbsp;&nbsp;
+
+00:09:16.880 --> 00:09:22.080
+example our own CloudAI system prompt is&nbsp;
+about 16,000 tokens right now so that's&nbsp;&nbsp;
+
+00:09:22.080 --> 00:09:28.640
+16,000 tokens of instructions that Claude needs&nbsp;
+to be able to follow for Claude to work in these&nbsp;&nbsp;
+
+00:09:28.640 --> 00:09:33.840
+systems it's important that its behaviors are&nbsp;
+steerable by you the developer so you're each&nbsp;&nbsp;
+
+00:09:33.840 --> 00:09:38.480
+building different applications that may have&nbsp;
+different requirements and principles that&nbsp;&nbsp;
+
+00:09:38.480 --> 00:09:44.320
+govern Claude's behavior we've trained Cloud&nbsp;
+4 models to specifically to be able to follow&nbsp;&nbsp;
+
+00:09:44.320 --> 00:09:50.400
+instructions within long and complex system&nbsp;
+prompts longer than 10,000 tokens for example&nbsp;&nbsp;
+
+00:09:51.520 --> 00:09:57.760
+it's easier to steer Claude when to use tools and&nbsp;
+when not to use tools and in our own system prompt&nbsp;&nbsp;
+
+00:09:57.760 --> 00:10:02.640
+this improved instruction following has actually&nbsp;
+allowed us to reduce the size of the prompt by
+
+00:10:02.640 --> 00:10:13.120
+70% finally I want to highlight improvements&nbsp;
+on a behavior we call reward hacking so reward&nbsp;&nbsp;
+
+00:10:13.120 --> 00:10:18.800
+hacking is when models take shortcuts to achieve&nbsp;
+an outcome or a result without actually solving&nbsp;&nbsp;
+
+00:10:18.800 --> 00:10:25.360
+the problem at hand you can think of it like hard&nbsp;
+coding tests or commenting them out this behavior&nbsp;&nbsp;
+
+00:10:25.360 --> 00:10:30.160
+is extremely trust busting for users so when you&nbsp;
+see it happen it makes you feel like you have to&nbsp;&nbsp;
+
+00:10:30.160 --> 00:10:37.040
+meticulously review everything Claude does and&nbsp;
+every line of code while we don't consider this&nbsp;&nbsp;
+
+00:10:37.040 --> 00:10:44.160
+an entirely solved problem Cloud4 models show&nbsp;
+significantly reduced tendency to reward hack on&nbsp;&nbsp;
+
+00:10:44.160 --> 00:10:50.640
+an evaluation set of problems that were selected&nbsp;
+due to this tendency in past models claude 4 shows&nbsp;&nbsp;
+
+00:10:50.640 --> 00:10:56.320
+more than 80% less tendency towards the behavior&nbsp;
+and this means you can better trust Claude to&nbsp;&nbsp;
+
+00:10:56.320 --> 00:11:03.280
+complete your task the right way while being&nbsp;
+honest about its limitations and uncertainties
+
+00:11:05.280 --> 00:11:13.040
+so these four improvements thinking and tool use&nbsp;
+memory improved steering and reward hacking work&nbsp;&nbsp;
+
+00:11:13.040 --> 00:11:21.120
+together to create a claude that is more capable&nbsp;
+coherent and trustworthy over longer time horizons&nbsp;&nbsp;
+
+00:11:21.120 --> 00:11:26.160
+now I want to spend the last few minutes getting&nbsp;
+practical and providing you and your team's tips&nbsp;&nbsp;
+
+00:11:26.160 --> 00:11:32.480
+to get the most out of these models when you get&nbsp;
+back to the office tomorrow the first decision&nbsp;&nbsp;
+
+00:11:32.480 --> 00:11:38.400
+you'll have to make is which model to use and our&nbsp;
+recommendation is always to test the models within&nbsp;&nbsp;
+
+00:11:38.400 --> 00:11:44.000
+your evaluations and your product to ultimately&nbsp;
+make this decision but to give you some highle&nbsp;&nbsp;
+
+00:11:44.000 --> 00:11:50.000
+guidance here Opus is our most capable model with&nbsp;
+frontier intelligence it will be best for the&nbsp;&nbsp;
+
+00:11:50.000 --> 00:11:57.360
+most complex tasks you have so think coding within&nbsp;
+large and complex code bases ch uh code migrations&nbsp;&nbsp;
+
+00:11:57.360 --> 00:12:05.040
+or refactors long horizon agentic tasks and&nbsp;
+planning and orchestration a good rule of thumb&nbsp;&nbsp;
+
+00:12:05.040 --> 00:12:12.400
+here is that if sonnet 3.7 is getting 60 or 70%&nbsp;
+on your evaluation it will be a great use case for&nbsp;&nbsp;
+
+00:12:12.400 --> 00:12:21.120
+testing opus sonnet 4 is fast and efficient and&nbsp;
+is great for use cases that sonnet 3 is excel 3.7&nbsp;&nbsp;
+
+00:12:21.120 --> 00:12:30.000
+is excelling at today it spikes at agentic coding&nbsp;
+and will be awesome for app development and green&nbsp;&nbsp;
+
+00:12:30.000 --> 00:12:36.000
+field coding generation kind of vibe coding um&nbsp;
+as well as any use case that has humans in the
+
+00:12:36.000 --> 00:12:45.600
+loop when upgrading to the new models you may need&nbsp;
+to adjust your prompts to get the best performance&nbsp;&nbsp;
+
+00:12:45.600 --> 00:12:52.000
+so those of you familiar with Sonnet 3.7 might&nbsp;
+be aware of its ability to go above and beyond&nbsp;&nbsp;
+
+00:12:52.000 --> 00:12:57.840
+the given user request i've seen this described&nbsp;
+as something like you ask it to change the color&nbsp;&nbsp;
+
+00:12:57.840 --> 00:13:04.320
+on a button and it codes you an entire new app uh&nbsp;
+we call this behavior overeagerness and cloud for&nbsp;&nbsp;
+
+00:13:04.320 --> 00:13:10.480
+models are much less overeager by default so what&nbsp;
+this means is if you have language in your prompt&nbsp;&nbsp;
+
+00:13:10.480 --> 00:13:16.640
+that aims to dampen sonnet 3.7's proclivity&nbsp;
+towards overeagerness you'll want to remove&nbsp;&nbsp;
+
+00:13:16.640 --> 00:13:21.280
+that language we don't think it's needed anymore&nbsp;
+and if you have an application where you think&nbsp;&nbsp;
+
+00:13:21.280 --> 00:13:26.320
+this above and beyond behavior is beneficial&nbsp;
+to users you should just tell the model to go&nbsp;&nbsp;
+
+00:13:26.320 --> 00:13:32.080
+above and beyond in the prompt cloud for models&nbsp;
+are more than capable of delivering that as well&nbsp;&nbsp;
+
+00:13:33.040 --> 00:13:37.280
+we are also finding the models have better&nbsp;
+attention to detail in the prompt this goes&nbsp;&nbsp;
+
+00:13:37.280 --> 00:13:42.160
+along with the improved instruction following but&nbsp;
+you might need to audit your prompt to make sure&nbsp;&nbsp;
+
+00:13:42.160 --> 00:13:46.560
+that you're actually encouraging the behaviors&nbsp;
+you want to see so for example when we were&nbsp;&nbsp;
+
+00:13:46.560 --> 00:13:52.160
+testing this model on claw.ai we couldn't figure&nbsp;
+out why occasionally it was using the wrong XML&nbsp;&nbsp;
+
+00:13:52.160 --> 00:14:00.000
+tag for citations and we root caused it to&nbsp;
+one single typo in our prompt with examples
+
+00:14:01.840 --> 00:14:06.160
+if you're using Cloud 4 with tool use&nbsp;
+you can prompt Cloud 4 models to call&nbsp;&nbsp;
+
+00:14:06.160 --> 00:14:11.680
+tools in parallel so this lets Claude&nbsp;
+parallelize tasks uh running more than&nbsp;&nbsp;
+
+00:14:11.680 --> 00:14:17.600
+one thing simultaneously when using interleaf&nbsp;
+thinking and tool use you can actually tell&nbsp;&nbsp;
+
+00:14:17.600 --> 00:14:22.480
+Claude specifically what to think about&nbsp;
+in between tool calls so you might tell&nbsp;&nbsp;
+
+00:14:22.480 --> 00:14:28.960
+Claude to carefully reflect on search result&nbsp;
+quality and plan next steps before proceeding&nbsp;&nbsp;
+
+00:14:30.240 --> 00:14:35.360
+and finally if you're using tools it's a good&nbsp;
+idea to tell Claude when and when it should not&nbsp;&nbsp;
+
+00:14:35.360 --> 00:14:41.840
+invoke those tools within your prompt we found the&nbsp;
+improved instruction quality instruction following&nbsp;&nbsp;
+
+00:14:41.840 --> 00:14:49.280
+qualities of Claude 4 have been very effective&nbsp;
+at addressing tool overt triggering problems
+
+00:14:50.960 --> 00:14:57.120
+so to recap we're building towards a long-term&nbsp;
+vision where Claude can work alongside you&nbsp;&nbsp;
+
+00:14:57.120 --> 00:15:03.440
+complete work for you over long sustained&nbsp;
+durations we think you'll find Cloud 4 models&nbsp;&nbsp;
+
+00:15:03.440 --> 00:15:09.840
+great for agents because of interleaf thinking&nbsp;
+and tool use memory improved instruction following&nbsp;&nbsp;
+
+00:15:09.840 --> 00:15:15.760
+and reduced reward hacking so what can you do&nbsp;
+tomorrow when you get back to the office start&nbsp;&nbsp;
+
+00:15:15.760 --> 00:15:22.160
+experimenting try building with both models using&nbsp;
+Opus for your most complex and ambitious tasks and&nbsp;&nbsp;
+
+00:15:22.160 --> 00:15:27.520
+Sonnet for everything else invest some time in&nbsp;
+prompt engineering very small changes to your&nbsp;&nbsp;
+
+00:15:27.520 --> 00:15:32.960
+prompt can make a large difference to performance&nbsp;
+all of these models are slightly different and&nbsp;&nbsp;
+
+00:15:32.960 --> 00:15:39.760
+share your feedback with us because it will help&nbsp;
+us make the next generations of Claude even better&nbsp;&nbsp;
+
+00:15:39.760 --> 00:15:44.400
+thanks for joining me today we're really excited&nbsp;
+to see what you build with these new models and&nbsp;&nbsp;
+
+00:15:44.400 --> 00:15:48.960
+I'm happy to take any questions you'll need&nbsp;
+to walk over to the microphones in the aisles
+
+00:15:48.960 --> 00:15:55.120
+[Applause]
+
+00:15:55.120 --> 00:16:06.800
+here no questions you're all good to go awesome
+
+00:16:09.920 --> 00:16:18.160
+so uh both uh Opus 4 and Sonnet 4 are doing&nbsp;
+really well on Sweetbench and some of the&nbsp;&nbsp;
+
+00:16:18.160 --> 00:16:25.440
+other benchmarks however most folks realize&nbsp;
+that like benchmarks and practical use is not&nbsp;&nbsp;
+
+00:16:25.440 --> 00:16:31.600
+really comparable are you also developing&nbsp;
+new benchmarks for software development as&nbsp;&nbsp;
+
+00:16:31.600 --> 00:16:38.160
+these things get better and are there things&nbsp;
+like uh evaluations for overeagerness and&nbsp;&nbsp;
+
+00:16:38.160 --> 00:16:44.400
+things like that where we can get a sense of it&nbsp;
+beforehand before the product actually releases&nbsp;&nbsp;
+
+00:16:44.400 --> 00:16:49.600
+yeah great question we test these models quite&nbsp;
+extensively before we release them through what&nbsp;&nbsp;
+
+00:16:49.600 --> 00:16:55.440
+we call like a Swiss cheese of testing methods&nbsp;
+so benchmarks are only one thing we look at um&nbsp;&nbsp;
+
+00:16:55.440 --> 00:17:01.600
+we also use them internally quite extensively&nbsp;
+before launch so anthropic employees have been&nbsp;&nbsp;
+
+00:17:01.600 --> 00:17:06.240
+using these models on cloud code for weeks for&nbsp;
+example and that helps us better understand how&nbsp;&nbsp;
+
+00:17:06.240 --> 00:17:11.760
+they perform in practical use we do some&nbsp;
+testing with early access customers and&nbsp;&nbsp;
+
+00:17:11.760 --> 00:17:16.640
+so we do we like are interested in developing&nbsp;
+more and more benchmarks but we don't think&nbsp;&nbsp;
+
+00:17:16.640 --> 00:17:22.160
+that benchmarks are the only way to look&nbsp;
+at how good these models are let's go on&nbsp;&nbsp;
+
+00:17:22.160 --> 00:17:27.920
+this side yeah so I was curious uh in all of the&nbsp;
+demons and use cases that you presented so far&nbsp;&nbsp;
+
+00:17:27.920 --> 00:17:34.400
+uh it seems to be very centered on text right&nbsp;
+uh coding and text in general so uh I wanted to&nbsp;&nbsp;
+
+00:17:34.400 --> 00:17:40.720
+ask you if you can comment on uh you know your the&nbsp;
+multimodel capabilities of the model in particular&nbsp;&nbsp;
+
+00:17:40.720 --> 00:17:48.880
+uh images and and audio yeah we actually think&nbsp;
+images um uh the models can see images and respond&nbsp;&nbsp;
+
+00:17:48.880 --> 00:17:54.400
+to images we think it's pretty important for agent&nbsp;
+capabilities we see image use even within coding&nbsp;&nbsp;
+
+00:17:54.400 --> 00:17:59.200
+for example when people share with the model the&nbsp;
+front end that the model designed then the model&nbsp;&nbsp;
+
+00:17:59.200 --> 00:18:05.440
+can go back and fix things so we're continuing&nbsp;
+to improve on our multimodal input capabilities&nbsp;&nbsp;
+
+00:18:05.440 --> 00:18:09.520
+um because we we think it's going to be&nbsp;
+really critical for um cla to be able to&nbsp;&nbsp;
+
+00:18:09.520 --> 00:18:18.800
+do these complex tasks on on its own hello um&nbsp;
+hey so sometimes uh I use cloud tool calling&nbsp;&nbsp;
+
+00:18:18.800 --> 00:18:24.000
+not as an execution mechanism but more so as a&nbsp;
+survey mechanism for instance I'm like analyze&nbsp;&nbsp;
+
+00:18:24.000 --> 00:18:30.560
+the situation here and the tools are like option&nbsp;
+A option B option C uh have you guys factored that&nbsp;&nbsp;
+
+00:18:30.560 --> 00:18:37.680
+use case for tool calling like into your training&nbsp;
+for instance um that is not something I've heard&nbsp;&nbsp;
+
+00:18:37.680 --> 00:18:41.840
+of before but sounds really interesting we if&nbsp;
+you find me after the break I'd like love to&nbsp;&nbsp;
+
+00:18:41.840 --> 00:18:51.040
+learn more about how how you think about that&nbsp;
+yeah absolutely it's a great use case thanks
+
+00:18:51.040 --> 00:18:56.800
+so I'm I'm really enjoying all the focus&nbsp;
+on practical software engineering tasks&nbsp;&nbsp;
+
+00:18:56.800 --> 00:19:05.760
+one thing that is difficulty with LLMs on a large&nbsp;
+legacy codebase is no matter how good it is at&nbsp;&nbsp;
+
+00:19:05.760 --> 00:19:12.160
+reading just a blob of text the actual structure&nbsp;
+of the situation that it's involved in is is just&nbsp;&nbsp;
+
+00:19:12.160 --> 00:19:18.000
+so vast that like you kind of need to represent&nbsp;
+it some other way in order to navigate around so I&nbsp;&nbsp;
+
+00:19:18.000 --> 00:19:23.440
+wonder what kind of patterns you have found useful&nbsp;
+in navigating these these larger legacy contexts&nbsp;&nbsp;
+
+00:19:24.240 --> 00:19:30.000
+i think our general philosophy is that um we're&nbsp;
+trying to improve Cloud's ability to do agentic&nbsp;&nbsp;
+
+00:19:30.000 --> 00:19:34.800
+search so you can think of agentic search like you&nbsp;
+search for something and then you can think about&nbsp;&nbsp;
+
+00:19:34.800 --> 00:19:40.480
+it a little bit more and then search again um and&nbsp;
+use the information over time to like inform what&nbsp;&nbsp;
+
+00:19:40.480 --> 00:19:44.960
+you're doing and that applies to both code and&nbsp;
+like the deep research capabilities which we have&nbsp;&nbsp;
+
+00:19:44.960 --> 00:19:51.600
+on cloud.ai um and so uh that combined with this&nbsp;
+memory capability where maybe Claude can write&nbsp;&nbsp;
+
+00:19:51.600 --> 00:19:58.720
+down where certain information is in the codebase&nbsp;
+we think will help solve that problem hello um&nbsp;&nbsp;
+
+00:19:58.720 --> 00:20:04.080
+so in your presentation you mentioned something&nbsp;
+about uh being able to specify like what the model&nbsp;&nbsp;
+
+00:20:04.080 --> 00:20:09.520
+should be thinking about in between tool calls how&nbsp;
+controllable is like the length of thinking tokens&nbsp;&nbsp;
+
+00:20:09.520 --> 00:20:14.320
+in terms of like how much the model should&nbsp;
+be thinking or like being able to specify&nbsp;&nbsp;
+
+00:20:14.320 --> 00:20:19.600
+um yeah like length of that or also like specific&nbsp;
+tool calls within the actual like chain of thought&nbsp;&nbsp;
+
+00:20:19.600 --> 00:20:24.000
+process is that possible with the model so&nbsp;
+you have control over the maximum thinking&nbsp;&nbsp;
+
+00:20:24.000 --> 00:20:28.480
+length but the model adapts its thinking length&nbsp;
+to how much it actually needs to think to solve&nbsp;&nbsp;
+
+00:20:28.480 --> 00:20:32.480
+the task so you kind of have like a thinking&nbsp;
+budget which you give the model and the model&nbsp;&nbsp;
+
+00:20:32.480 --> 00:20:37.120
+won't go over that budget but might be under&nbsp;
+that budget okay okay so if I wanted it if I&nbsp;&nbsp;
+
+00:20:37.120 --> 00:20:40.960
+wanted to ask the model to think for like a&nbsp;
+specific number of tokens that's not possible&nbsp;&nbsp;
+
+00:20:40.960 --> 00:20:48.480
+right now you can tell it to think for less than a&nbsp;
+certain number of less than a certain number okay
+
+00:20:48.480 --> 00:20:53.360
+two questions the first one is a gimme what is&nbsp;
+the preferred mechanism for feedback because there&nbsp;&nbsp;
+
+00:20:53.360 --> 00:20:58.560
+are lots of ways to get in touch with you and then&nbsp;
+the second is does the increased steerability mean&nbsp;&nbsp;
+
+00:20:58.560 --> 00:21:04.240
+that we can finally ask um Claude not to generate&nbsp;
+insane numbers of inane comments when it writes&nbsp;&nbsp;
+
+00:21:04.240 --> 00:21:14.160
+code um I hope so um actually I hope that they're&nbsp;
+better at that by default because of this like&nbsp;&nbsp;
+
+00:21:14.160 --> 00:21:20.720
+less overeager tendency um and it should also&nbsp;
+follow your instructions better um on feedback&nbsp;&nbsp;
+
+00:21:20.720 --> 00:21:26.080
+uh I think like we love just talking to people&nbsp;
+so if you find an anthropic employee today that&nbsp;&nbsp;
+
+00:21:26.080 --> 00:21:30.240
+would be excellent um and would love to hear&nbsp;
+more about your experiences and then I think&nbsp;&nbsp;
+
+00:21:30.240 --> 00:21:37.360
+we have some like online uh uh feedback&nbsp;
+forms as well awesome i think we'll call&nbsp;&nbsp;
+
+00:21:37.360 --> 00:21:42.880
+it here but thanks everyone for joining me&nbsp;
+i hope you're excited about Cloud 4 uh and&nbsp;&nbsp;
+
+00:21:42.880 --> 00:22:24.111
+uh come find us after the break uh to chat more&nbsp;
+about these great new models [Applause] [Music]
+
+00:22:24.111 --> 00:22:34.720
+[Music]&nbsp;&nbsp;
+
+00:22:34.720 --> 00:22:34.880
+nobody
+

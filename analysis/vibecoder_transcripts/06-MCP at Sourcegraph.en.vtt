@@ -1,0 +1,1047 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:09.360 --> 00:00:16.880
+All right. How's everyone doing today? Cool.&nbsp;
+Awesome. So, my name is uh Byang. I'm the CTO&nbsp;&nbsp;
+
+00:00:16.880 --> 00:00:20.960
+and co-founder of a company called SourceCap.&nbsp;
+Uh there might be some of you who have used our&nbsp;&nbsp;
+
+00:00:20.960 --> 00:00:26.160
+products inside your development organizations. We&nbsp;
+build developer tools for professional engineers&nbsp;&nbsp;
+
+00:00:26.160 --> 00:00:31.600
+working in large complex code bases. And for those&nbsp;
+of you who haven't heard of us, we actually serve&nbsp;&nbsp;
+
+00:00:31.600 --> 00:00:36.640
+uh I think it's like seven of the top 10 software&nbsp;
+engineering companies by market cap and six of&nbsp;&nbsp;
+
+00:00:36.640 --> 00:00:42.000
+the top 10 US banks and just multitudes of&nbsp;
+companies building software and writing code&nbsp;&nbsp;
+
+00:00:42.000 --> 00:00:49.120
+uh across basically every industry vertical. And&nbsp;
+today I'm here to talk about uh our journey with&nbsp;&nbsp;
+
+00:00:49.120 --> 00:00:55.840
+uh MCP and in particular uh you know how we're&nbsp;
+integrating the model context protocol deeply&nbsp;&nbsp;
+
+00:00:55.840 --> 00:01:01.760
+into the fabric of our uh architecture. So our&nbsp;
+journey actually began uh quite some time ago.&nbsp;&nbsp;
+
+00:01:01.760 --> 00:01:07.680
+It was actually summer of last year when this&nbsp;
+fell uh David uh at Enthroic uh maybe you've&nbsp;&nbsp;
+
+00:01:07.680 --> 00:01:13.200
+heard of him. He's now one of the the co-creators&nbsp;
+of MCP. he reached out and said, "Hey, uh, I heard&nbsp;&nbsp;
+
+00:01:13.200 --> 00:01:18.400
+you you guys are doing a lot with uh, you know,&nbsp;
+retrieval augmented code generation and fetching&nbsp;&nbsp;
+
+00:01:18.400 --> 00:01:23.280
+the appropriate context in the context window&nbsp;
+and getting models to perform better on coding&nbsp;&nbsp;
+
+00:01:23.280 --> 00:01:28.000
+and technical question answering. We're working on&nbsp;
+a thing that uh, you might find interesting." And&nbsp;&nbsp;
+
+00:01:28.000 --> 00:01:33.040
+we're like, "Huh, that sounds interesting. What is&nbsp;
+it?" And he was like, "It's kind of like LSP uh,&nbsp;&nbsp;
+
+00:01:33.040 --> 00:01:37.600
+but for model context." And we're like, "Wow,&nbsp;
+that does sound interesting." And so we started&nbsp;&nbsp;
+
+00:01:37.600 --> 00:01:44.320
+chatting and we ended up becoming one of the early&nbsp;
+design partners uh for the the the MCP protocol&nbsp;&nbsp;
+
+00:01:44.320 --> 00:01:50.080
+um and and gave a lot of feedback and it was&nbsp;
+really a privilege to work with David and the team&nbsp;&nbsp;
+
+00:01:50.080 --> 00:01:58.560
+uh to to kind of guide the evolution of that&nbsp;
+protocol and in in in these conversations as&nbsp;&nbsp;
+
+00:01:58.560 --> 00:02:03.200
+we're playing more around with the protocol and&nbsp;
+experimenting with tools in conjunction with the&nbsp;&nbsp;
+
+00:02:03.200 --> 00:02:09.200
+uh you know developer tools that we're building&nbsp;
+uh we soon came to this realization that holy&nbsp;&nbsp;
+
+00:02:09.200 --> 00:02:15.360
+crap like you know AI is changing everything&nbsp;
+but everything is about to change again. Um&nbsp;&nbsp;
+
+00:02:15.360 --> 00:02:22.720
+and specifically we felt that uh tool&nbsp;
+calling models in conjunction with MCP&nbsp;&nbsp;
+
+00:02:22.720 --> 00:02:28.560
+uh was going to lead to another paradigm shift in&nbsp;
+the standard like AI application architecture and&nbsp;&nbsp;
+
+00:02:28.560 --> 00:02:34.320
+I think we've been through uh I would say like&nbsp;
+three waves of AI application architecture uh so&nbsp;&nbsp;
+
+00:02:34.320 --> 00:02:40.320
+far the first wave was sort of the co-pilot wave&nbsp;
+where uh basically the the architecture of those&nbsp;&nbsp;
+
+00:02:40.320 --> 00:02:44.880
+applications was dictated by the capabilities of&nbsp;
+the first LMS that were pushed into production.&nbsp;&nbsp;
+
+00:02:44.880 --> 00:02:52.560
+So if you go back to the ancient year of uh&nbsp;
+2022 and remember what AI was like back then,&nbsp;&nbsp;
+
+00:02:52.560 --> 00:02:58.320
+uh all the models then hadn't yet been tuned&nbsp;
+to respond in a chat fashion or use tools.&nbsp;&nbsp;
+
+00:02:58.320 --> 00:03:02.880
+They were just these kind of like text completion&nbsp;
+models. And so all the big applications that you&nbsp;&nbsp;
+
+00:03:02.880 --> 00:03:07.760
+saw built on top of AI followed this paradigm. You&nbsp;
+know, the human would type some stuff and then the&nbsp;&nbsp;
+
+00:03:07.760 --> 00:03:11.440
+model would complete the next couple of tokens and&nbsp;
+the human would type some more. And that was kind&nbsp;&nbsp;
+
+00:03:11.440 --> 00:03:18.800
+of the interaction paradigm. And then chat GBT&nbsp;
+came along and that ushered in a new modality. So&nbsp;&nbsp;
+
+00:03:18.800 --> 00:03:22.480
+uh everyone soon realized like wow like being&nbsp;
+able to chat with this thing and make explicit&nbsp;&nbsp;
+
+00:03:22.480 --> 00:03:26.320
+asks is really powerful. And one of the things&nbsp;
+that we soon realized in that world was like&nbsp;&nbsp;
+
+00:03:26.320 --> 00:03:30.560
+hey if you copy and paste relevance code snippets&nbsp;
+into the context window and then ask it to answer&nbsp;&nbsp;
+
+00:03:30.560 --> 00:03:34.800
+the question. It gets a lot better in terms of&nbsp;
+quality and usefulness on production code bases.&nbsp;&nbsp;
+
+00:03:34.800 --> 00:03:40.160
+And that's what I like to call the kind of like&nbsp;
+rag chat era of AI. And I think you know a lot&nbsp;&nbsp;
+
+00:03:40.160 --> 00:03:44.800
+of folks are still living uh in this world to&nbsp;
+a certain extent but you all the folks at this&nbsp;&nbsp;
+
+00:03:44.800 --> 00:03:51.760
+conference uh I think we are all aware that we're&nbsp;
+kind of entering have already entered into a new&nbsp;&nbsp;
+
+00:03:51.760 --> 00:03:58.480
+era which is the era of agents and just as the&nbsp;
+two generations before uh this era is really being&nbsp;&nbsp;
+
+00:03:58.480 --> 00:04:04.720
+dictated by the capabilities at the model layer&nbsp;
+and so when we took a look at our tooling suite&nbsp;&nbsp;
+
+00:04:04.720 --> 00:04:11.360
+that we had built so far um the more we looked&nbsp;
+the more we realized like my gosh like the a&nbsp;&nbsp;
+
+00:04:11.360 --> 00:04:15.280
+lot of the underlying assumptions of building on&nbsp;
+top of LMS have changed with tool calling agents&nbsp;&nbsp;
+
+00:04:15.280 --> 00:04:23.200
+and MCP we might have to rethink you know this&nbsp;
+application uh from the ground up uh to to to&nbsp;&nbsp;
+
+00:04:23.200 --> 00:04:29.760
+build truly agentically and so that's essentially&nbsp;
+what we did we built a completely new coding agent&nbsp;&nbsp;
+
+00:04:29.760 --> 00:04:36.560
+called AMP from the ground up uh and I'll show uh&nbsp;
+off to you uh what it's able to do and I think the&nbsp;&nbsp;
+
+00:04:36.560 --> 00:04:44.400
+best way to talk about um how we're uh how how&nbsp;
+we've been building with uh the tool calling uh&nbsp;&nbsp;
+
+00:04:44.400 --> 00:04:48.400
+models anthropics have been shipping shipping&nbsp;
+in conjunction with the model context protocol&nbsp;&nbsp;
+
+00:04:48.400 --> 00:04:54.160
+is to show you AMP in action and show you it&nbsp;
+using a bunch of tools to complete tasks. So&nbsp;&nbsp;
+
+00:04:54.160 --> 00:04:58.720
+uh this demo I think is going to be I've been&nbsp;
+watching all the talks and I think this is this&nbsp;&nbsp;
+
+00:04:58.720 --> 00:05:03.520
+might be the longest uh live demo of the day. So&nbsp;
+everything that you all the prayers that you said&nbsp;&nbsp;
+
+00:05:03.520 --> 00:05:09.360
+for Brad and other folks please uh say for me this&nbsp;
+is a live AI demo. What we're going to do is we're&nbsp;&nbsp;
+
+00:05:09.360 --> 00:05:14.640
+going to make a live change to AMP itself. So I&nbsp;
+have sort of described the change I want uh in&nbsp;&nbsp;
+
+00:05:14.640 --> 00:05:22.160
+this linear issue. Um it's simple because this is&nbsp;
+a demo and I want to make it easy to gro. Um and&nbsp;&nbsp;
+
+00:05:22.160 --> 00:05:27.680
+basically all we're going to do is we're going to&nbsp;
+change the background panel of uh AMP to the color&nbsp;&nbsp;
+
+00:05:27.680 --> 00:05:33.280
+red. I've described it in that linear issue. I've&nbsp;
+given some instructions just as I would in like a&nbsp;&nbsp;
+
+00:05:33.280 --> 00:05:38.880
+uh an actual linear issue that I handed off to an&nbsp;
+engineering uh member of my team and uh I'm just&nbsp;&nbsp;
+
+00:05:38.880 --> 00:05:50.160
+going to have it implement the issue. So implement&nbsp;
+I'll just paste in the URL of the issue and the&nbsp;&nbsp;
+
+00:05:50.160 --> 00:05:55.520
+first thing it does is it actually uses a linear&nbsp;
+tool that it has provided through an MCP server&nbsp;&nbsp;
+
+00:05:55.520 --> 00:06:00.480
+to fetch the contents of that linear issue. So the&nbsp;
+issue that we're just looking at now the model has&nbsp;&nbsp;
+
+00:06:00.480 --> 00:06:05.040
+access to. I didn't have to atmention it or prompt&nbsp;
+it in any special way. It just knew to use that&nbsp;&nbsp;
+
+00:06:05.040 --> 00:06:11.200
+tool to fetch uh that piece of context. And it's&nbsp;
+going to do a couple more agentic steps here to&nbsp;&nbsp;
+
+00:06:11.200 --> 00:06:15.360
+find the appropriate context within the codebase.&nbsp;
+But I just want to point out that you know this&nbsp;&nbsp;
+
+00:06:15.360 --> 00:06:21.040
+linear uh tool is it's not a firstparty tool. It&nbsp;
+is actually the official linear MCP server which I&nbsp;&nbsp;
+
+00:06:21.040 --> 00:06:26.160
+currently think is one of the best MCP servers out&nbsp;
+there. Um the way we've implemented it is you just&nbsp;&nbsp;
+
+00:06:26.160 --> 00:06:32.240
+plug in the the URL. Uh we actually have this uh&nbsp;
+remote MCP proxy uh that I'll talk about a little&nbsp;&nbsp;
+
+00:06:32.240 --> 00:06:37.760
+bit later that kind of secures the connection&nbsp;
+and handles the the the secret exchange uh with&nbsp;&nbsp;
+
+00:06:37.760 --> 00:06:42.400
+linear or whatever upstream service you're talking&nbsp;
+to. Uh and that's how we're integrating uh this&nbsp;&nbsp;
+
+00:06:42.400 --> 00:06:47.280
+capability into our coding agent. So it's going&nbsp;
+to do a bunch more things. It's going to search&nbsp;&nbsp;
+
+00:06:47.280 --> 00:06:53.120
+around. We'll just let it go uh for a bit. In the&nbsp;
+meantime, I thought what we could do is talk a&nbsp;&nbsp;
+
+00:06:53.120 --> 00:06:59.120
+little bit more about the AMP architecture and how&nbsp;
+MCP plays into that. And I could just, you know,&nbsp;&nbsp;
+
+00:06:59.120 --> 00:07:03.840
+share some slides about how that architecture&nbsp;
+looks, but I thought maybe let's just use AMP to&nbsp;&nbsp;
+
+00:07:03.840 --> 00:07:10.000
+tell you about the AMP architecture. So, here I'm&nbsp;
+going to open up the AMP CLI. Uh, this has access&nbsp;&nbsp;
+
+00:07:10.000 --> 00:07:14.640
+to all the same tools. It integrates MCP servers&nbsp;
+in the same way as uh the editor integration that&nbsp;&nbsp;
+
+00:07:14.640 --> 00:07:23.360
+you just saw. And let me just ask it, you know,&nbsp;
+what are the main arc uh textural components of&nbsp;&nbsp;
+
+00:07:23.360 --> 00:07:34.320
+AMP? How does MCP play into this? So, we're going&nbsp;
+to let that run. And then while that's running, uh&nbsp;&nbsp;
+
+00:07:34.320 --> 00:07:39.120
+I actually just became aware of this phenomenon.&nbsp;
+I don't know u if any of you are aware that like&nbsp;&nbsp;
+
+00:07:39.120 --> 00:07:44.800
+there's this thing people do now where they watch&nbsp;
+like two unrelated uh YouTube videos side by side.&nbsp;&nbsp;
+
+00:07:44.800 --> 00:07:49.440
+It's like a Gen Z thing maybe. Sometimes it's like&nbsp;
+a Tik Tok, sometimes like free videos. I thought&nbsp;&nbsp;
+
+00:07:49.440 --> 00:07:54.160
+like what is the coding equivalent of that that&nbsp;
+like agents unlock? And so I was thinking, okay,&nbsp;&nbsp;
+
+00:07:54.160 --> 00:07:58.480
+instead of playing a game or watching a video, why&nbsp;
+don't we just make a game on the side while, uh,&nbsp;&nbsp;
+
+00:07:58.480 --> 00:08:04.800
+we're figuring out all that other stuff out. So,&nbsp;
+uh, let's use MCP again and say, you know, find&nbsp;&nbsp;
+
+00:08:04.800 --> 00:08:13.840
+the linear issue about 3D flappy bird. I wrote a&nbsp;
+very detailed spec ahead of ahead of time. Uh, and&nbsp;&nbsp;
+
+00:08:13.840 --> 00:08:17.440
+we're going to we're going to we're going to try&nbsp;
+to vibe code 3D Flappy Bird on the side while all&nbsp;&nbsp;
+
+00:08:17.440 --> 00:08:25.200
+this happens. So, over here, uh, we got a pretty&nbsp;
+detailed, uh, textual explanation of how MCP,&nbsp;&nbsp;
+
+00:08:25.200 --> 00:08:31.760
+uh, is integrated into AMP. Um, but a picture&nbsp;
+is worth many more words than just text. So why&nbsp;&nbsp;
+
+00:08:31.760 --> 00:08:44.000
+don't we ask it uh can you draw a diagram showing&nbsp;
+me how these components connect and communicate
+
+00:08:44.000 --> 00:08:52.720
+and we'll have it do that in the meantime. Let's&nbsp;
+check back over here to see uh how our agent is&nbsp;&nbsp;
+
+00:08:52.720 --> 00:08:58.240
+doing. Um it's making some changes to the code&nbsp;
+still. One of the things I want to point out&nbsp;&nbsp;
+
+00:08:58.240 --> 00:09:02.960
+here is that another tool that it's integrating.&nbsp;
+So it's it's using a lot of tool calls along the&nbsp;&nbsp;
+
+00:09:02.960 --> 00:09:07.040
+way. Uh each one of these long text things is&nbsp;
+a tool call. It's interacting with the browser.&nbsp;&nbsp;
+
+00:09:07.040 --> 00:09:13.840
+It actually uses uh this other MCP server uh the&nbsp;
+playright MCP server to interact with the browser&nbsp;&nbsp;
+
+00:09:13.840 --> 00:09:18.000
+and take screenshots. And it's going to use that&nbsp;
+as part of its feedback loop to verify that it&nbsp;&nbsp;
+
+00:09:18.000 --> 00:09:24.400
+actually made uh the change that uh we're telling&nbsp;
+it to make. So let me just reload the window here&nbsp;&nbsp;
+
+00:09:24.400 --> 00:09:30.960
+to see if it's done yet. Nope. Still working&nbsp;
+on that. Um, here. Let me actually just restart&nbsp;&nbsp;
+
+00:09:30.960 --> 00:09:37.680
+this. Sometimes it gets confused. Uh, but the&nbsp;
+beauty of agents is if it messes up, it's not&nbsp;&nbsp;
+
+00:09:37.680 --> 00:09:41.440
+it's most of the times it's not worth it diving&nbsp;
+in to see where it kind of screwed up. I just ask&nbsp;&nbsp;
+
+00:09:41.440 --> 00:09:46.960
+it to rerun and most of the time it just works.&nbsp;
+Uh, okay. Okay, over here. Let's take a look at&nbsp;&nbsp;
+
+00:09:46.960 --> 00:09:58.400
+the architectural diagram that it generated&nbsp;
+and see how MCP relates to these components.
+
+00:09:58.400 --> 00:10:02.560
+If this were in the editor, it would just show&nbsp;
+this. And uh the text is a little bit hard to&nbsp;&nbsp;
+
+00:10:02.560 --> 00:10:07.920
+read, but as you can see, it's it's got the&nbsp;
+core pieces of the the AMP architecture here.&nbsp;&nbsp;
+
+00:10:07.920 --> 00:10:11.440
+um everything's routed through this&nbsp;
+kind of like servers thread component&nbsp;&nbsp;
+
+00:10:11.440 --> 00:10:15.760
+uh which talks to the MCP integration and&nbsp;
+which in turn talks to all the services that&nbsp;&nbsp;
+
+00:10:15.760 --> 00:10:19.840
+we're integrating through the model context&nbsp;
+protocol. Uh so that's that's pretty cool,&nbsp;&nbsp;
+
+00:10:19.840 --> 00:10:25.040
+right? Um streamline onboarding makes it&nbsp;
+really easy to gro what's happening in in&nbsp;&nbsp;
+
+00:10:25.040 --> 00:10:32.080
+a large scale codebase. Um okay, now let's&nbsp;
+see if 3D Flappy Bird is done here. So,&nbsp;&nbsp;
+
+00:10:32.080 --> 00:10:45.440
+it looks like it got as far as running uh&nbsp;
+uh Python web server. So, let's go over uh
+
+00:10:45.440 --> 00:10:52.880
+and copy this port.
+
+00:10:52.880 --> 00:10:59.760
+All right. So, we got 3D Flappy Bird. Um that's&nbsp;
+pretty cool. Successfully, uh wrote an app on&nbsp;&nbsp;
+
+00:10:59.760 --> 00:11:05.200
+the side. And then let's finally check back in&nbsp;
+on the first thing, which is did it turn the&nbsp;&nbsp;
+
+00:11:05.200 --> 00:11:12.480
+thing red? Uh, and there we go. So, uh, while&nbsp;
+I was explaining to you how AMP worked, AMP,&nbsp;&nbsp;
+
+00:11:12.480 --> 00:11:18.400
+uh, use tools and MCP servers to basically make&nbsp;
+a change to itself, explain its architecture, and&nbsp;&nbsp;
+
+00:11:18.400 --> 00:11:28.240
+code up a miniame on on the side. Um, so yeah. Oh,&nbsp;
+and and also it marked the linear issue as done,&nbsp;&nbsp;
+
+00:11:28.240 --> 00:11:34.640
+which is cool. use that MCP server again. So, uh&nbsp;
+that's just kind of a brief illustration of the&nbsp;&nbsp;
+
+00:11:34.640 --> 00:11:38.480
+power of MCP and and the sort of results we're&nbsp;
+getting in building this coding agent. Uh can&nbsp;&nbsp;
+
+00:11:38.480 --> 00:11:46.000
+we go back to the slides? And we've really&nbsp;
+incorporated MCP in a very uh deep way. So,&nbsp;&nbsp;
+
+00:11:46.000 --> 00:11:49.440
+um one of the things about AMP's architecture&nbsp;
+is if you look at the different components,&nbsp;&nbsp;
+
+00:11:49.440 --> 00:11:54.240
+you know, we have an AMP client and there's an AMP&nbsp;
+server and then there's these external services&nbsp;&nbsp;
+
+00:11:54.240 --> 00:12:00.080
+and local tools that we want to talk to. It turns&nbsp;
+out uh the way to effectively connect to all these&nbsp;&nbsp;
+
+00:12:00.080 --> 00:12:05.920
+different types of tools and services uh it can be&nbsp;
+done through MCP. So when we're talking to local&nbsp;&nbsp;
+
+00:12:05.920 --> 00:12:12.240
+tools like playright or postgress uh that's going&nbsp;
+over MCP or standard IO uh when we're talking&nbsp;&nbsp;
+
+00:12:12.240 --> 00:12:17.680
+to external services uh whether it be firstparty&nbsp;
+services like source graph or code search engine&nbsp;&nbsp;
+
+00:12:17.680 --> 00:12:22.640
+which is really good at searching over you know&nbsp;
+uh large scale code bases uh or other services&nbsp;&nbsp;
+
+00:12:22.640 --> 00:12:29.760
+such as your issue tracker or your observability&nbsp;
+tool uh that talks MCP as well and part of the&nbsp;&nbsp;
+
+00:12:29.760 --> 00:12:35.600
+work that we've done well which I'll touch upon&nbsp;
+in a little bit is also connect uh these MCP&nbsp;&nbsp;
+
+00:12:35.600 --> 00:12:42.000
+connections through a way that securely handles uh&nbsp;
+secrets and uh forwards the identity of the user&nbsp;&nbsp;
+
+00:12:42.000 --> 00:12:46.160
+uh to the appropriate external services. One of&nbsp;
+the things that we've realized in in building&nbsp;&nbsp;
+
+00:12:46.160 --> 00:12:51.760
+this is that there is kind of like a new emerging&nbsp;
+recipe for AI applications or AI agents. Um, so&nbsp;&nbsp;
+
+00:12:51.760 --> 00:12:57.120
+just like you know, rag chat was kind of the model&nbsp;
+for the previous era, uh, I think this is the the&nbsp;&nbsp;
+
+00:12:57.120 --> 00:13:01.760
+rough formula for the new era. And we actually&nbsp;
+wrote a blog post about how this is not like,&nbsp;&nbsp;
+
+00:13:01.760 --> 00:13:07.920
+uh, arcane magic. Really, anyone can write an&nbsp;
+agent, uh, probably in the time it takes to&nbsp;&nbsp;
+
+00:13:07.920 --> 00:13:13.280
+listen to this talk. And so, uh, if any any of&nbsp;
+you want try your own hand at writing a simple&nbsp;&nbsp;
+
+00:13:13.280 --> 00:13:18.000
+coding agent, just go to that blog post and it&nbsp;
+shows you how. But the recipe we found is you&nbsp;&nbsp;
+
+00:13:18.000 --> 00:13:22.720
+need maybe like four things. Uh, one is you&nbsp;
+need a really strong tool use LLM, which the&nbsp;&nbsp;
+
+00:13:22.720 --> 00:13:28.160
+latest cloud model provides. We're really excited&nbsp;
+about Cloud 4 cap cloud 4's capabilities. We've&nbsp;&nbsp;
+
+00:13:28.160 --> 00:13:32.160
+been playing around with it for the past couple&nbsp;
+weeks. Uh, all the stuff that I just demoed was&nbsp;&nbsp;
+
+00:13:32.160 --> 00:13:38.160
+running off of Cloud4. Um, in conjunction uh&nbsp;
+with that tool calling model, you need a way&nbsp;&nbsp;
+
+00:13:38.160 --> 00:13:43.920
+to provide a bunch of tools. Uh, and MCP just so&nbsp;
+happens to be the perfect solution for that. Uh,&nbsp;&nbsp;
+
+00:13:43.920 --> 00:13:49.440
+so tool use LLM MCP. And then when it comes down&nbsp;
+to thinking about the the actual user experience,&nbsp;&nbsp;
+
+00:13:49.440 --> 00:13:54.560
+what we found is really important is to really&nbsp;
+focus on the feedback loops. So as you saw with&nbsp;&nbsp;
+
+00:13:54.560 --> 00:13:59.440
+the uh AMP agent as it was like making a change&nbsp;
+to itself, what it was doing was it was using&nbsp;&nbsp;
+
+00:13:59.440 --> 00:14:04.720
+the Playright MCP server to take screenshots&nbsp;
+uh of changes it was making to the app along&nbsp;&nbsp;
+
+00:14:04.720 --> 00:14:09.200
+the way and using those screenshots to validate&nbsp;
+whether it was doing uh the thing it was doing.&nbsp;&nbsp;
+
+00:14:09.200 --> 00:14:13.040
+And that change was actually pretty non-trivial&nbsp;
+because the component hierarchy has a lot of like&nbsp;&nbsp;
+
+00:14:13.040 --> 00:14:18.080
+containers and sometimes the change looks right&nbsp;
+but doesn't actually change the colors uh uh in&nbsp;&nbsp;
+
+00:14:18.080 --> 00:14:23.200
+the actual application. And so that feedback cycle&nbsp;
+is is really essential to making agents work in&nbsp;&nbsp;
+
+00:14:23.200 --> 00:14:31.280
+practice. Um and part of this too is if you design&nbsp;
+the feedback loops properly um our thesis is that&nbsp;&nbsp;
+
+00:14:31.280 --> 00:14:36.480
+the UX becomes a lot more imperative. So I think&nbsp;
+like the previous era of AI applications there&nbsp;&nbsp;
+
+00:14:36.480 --> 00:14:40.880
+were a lot of like there was a lot of UX Chrome&nbsp;
+and a lot of UI built around figuring out how&nbsp;&nbsp;
+
+00:14:40.880 --> 00:14:46.560
+to invoke uh the the chatbased models sort of in&nbsp;
+situ in the right situation in the application.&nbsp;&nbsp;
+
+00:14:46.560 --> 00:14:54.320
+and a lot of like manual context selection um&nbsp;
+tool calling uh LMS plus tool use uh it it's a&nbsp;&nbsp;
+
+00:14:54.320 --> 00:14:59.200
+really powerful paradigm and often times the the&nbsp;
+best interaction we found is just ask the agent&nbsp;&nbsp;
+
+00:14:59.200 --> 00:15:06.080
+to do it and then refine the feedback loops so&nbsp;
+that it's able to get those things done reliably
+
+00:15:06.080 --> 00:15:11.600
+in terms of tool usage in AMP some of our top uh&nbsp;
+tools are provided through MCP servers so our most&nbsp;&nbsp;
+
+00:15:11.600 --> 00:15:16.480
+popular tools are probably the ones I listed&nbsp;
+above there's some local ones like playright&nbsp;&nbsp;
+
+00:15:16.480 --> 00:15:23.440
+um and Postgress. There's also uh a great tool to&nbsp;
+uh integrate web search. Uh so you can either use&nbsp;&nbsp;
+
+00:15:23.440 --> 00:15:28.560
+uh Anthropics web search API. There's also Brave&nbsp;
+web search which is really nice. Uh context 7 is&nbsp;&nbsp;
+
+00:15:28.560 --> 00:15:33.840
+a popular MCP server that pulls in different&nbsp;
+documentation uh corpuses. Uh and of course&nbsp;&nbsp;
+
+00:15:33.840 --> 00:15:39.600
+linear which I just showed which uh allows you&nbsp;
+to do this kind of like issue to PR uh workflow.&nbsp;&nbsp;
+
+00:15:39.600 --> 00:15:44.400
+Uh and then finally I want to call out Sentry as&nbsp;
+being just a really strong MCP server. they really&nbsp;&nbsp;
+
+00:15:44.400 --> 00:15:48.880
+uh focused in on the quality of the description of&nbsp;
+the tools and that ends up being really essential&nbsp;&nbsp;
+
+00:15:48.880 --> 00:15:53.840
+to making MCP servers work well in practice. Uh&nbsp;
+and that actually leads me to one of the pitfalls&nbsp;&nbsp;
+
+00:15:53.840 --> 00:16:02.080
+that we found in uh integrating MCP servers into&nbsp;
+our agent which is um one of the the the the traps&nbsp;&nbsp;
+
+00:16:02.080 --> 00:16:07.040
+that we see some people fall into is what I like&nbsp;
+to call tool magdon. So it's this practice of like&nbsp;&nbsp;
+
+00:16:07.040 --> 00:16:12.400
+you know MCP MC MCP MCP everyone's excited about&nbsp;
+MCP right now. So you just want to go plug in like&nbsp;&nbsp;
+
+00:16:12.400 --> 00:16:19.280
+two dozen MCP servers each of which provides like&nbsp;
+a dozen tools. Um, and that sometimes like when&nbsp;&nbsp;
+
+00:16:19.280 --> 00:16:22.880
+you think about how it's implemented underneath&nbsp;
+the hood, each one of those tool descriptions gets&nbsp;&nbsp;
+
+00:16:22.880 --> 00:16:28.160
+shoved into the context window and can confuse uh&nbsp;
+the model. And the model's always getting better,&nbsp;&nbsp;
+
+00:16:28.160 --> 00:16:33.760
+but the more irrelevant stuff that goes into&nbsp;
+context, the less intelligent it is about making&nbsp;&nbsp;
+
+00:16:33.760 --> 00:16:39.120
+selection among those tools and uh it is about&nbsp;
+sort of like general reasoning and and getting the&nbsp;&nbsp;
+
+00:16:39.120 --> 00:16:45.440
+job done. And so in terms of how we've baked MCP&nbsp;
+into our application architecture, uh in certain&nbsp;&nbsp;
+
+00:16:45.440 --> 00:16:51.600
+cases, we've actually limited uh the set of tools&nbsp;
+that a particular MCP server provides to uh a&nbsp;&nbsp;
+
+00:16:51.600 --> 00:16:55.600
+smaller subset that we think are really essential&nbsp;
+to the workflows that we want to enable. And and&nbsp;&nbsp;
+
+00:16:55.600 --> 00:16:58.960
+roughly speaking, there's kind of three buckets of&nbsp;
+tools we find really useful. There's the ones that&nbsp;&nbsp;
+
+00:16:58.960 --> 00:17:05.360
+are devoted to finding relevant context. There's&nbsp;
+the ones that uh can provide high quality feedback&nbsp;&nbsp;
+
+00:17:05.360 --> 00:17:10.000
+such as like invoking unit tests or invoking the&nbsp;
+compiler. Uh and then finally the ones that are&nbsp;&nbsp;
+
+00:17:10.000 --> 00:17:15.680
+involved in like submitting uh done or declaring&nbsp;
+success like marking the issue as done uh or or&nbsp;&nbsp;
+
+00:17:15.680 --> 00:17:24.000
+pinging a user to say uh hey I'm ready to uh uh&nbsp;
+for for your feedback on this. I also want to talk&nbsp;&nbsp;
+
+00:17:24.000 --> 00:17:28.480
+a little bit about securing MCP. So that's a high&nbsp;
+priority for us given how many of our customers&nbsp;&nbsp;
+
+00:17:28.480 --> 00:17:34.080
+are in kind of like large scale production code&nbsp;
+bases. So the original MCP spec didn't have&nbsp;&nbsp;
+
+00:17:34.080 --> 00:17:39.200
+anything around O. They've since integrated OOTH 2&nbsp;
+as the kind of designated authentication protocol,&nbsp;&nbsp;
+
+00:17:39.200 --> 00:17:42.400
+which I think was a really smart decision. It's&nbsp;
+what we've used in the past to integrate a lot of&nbsp;&nbsp;
+
+00:17:42.400 --> 00:17:47.200
+external services, but that's just the protocol,&nbsp;
+right? There's still the implementation and you&nbsp;&nbsp;
+
+00:17:47.200 --> 00:17:52.080
+still have to worry about like where you store the&nbsp;
+secrets. And I think a lot of what you see in the&nbsp;&nbsp;
+
+00:17:52.080 --> 00:17:56.720
+wild in terms of how people are integrating MCP&nbsp;
+servers. I think the vast majority of tools out&nbsp;&nbsp;
+
+00:17:56.720 --> 00:18:03.440
+there are still using largely like MCP or standard&nbsp;
+IO even uh with the existence of like remote MCP&nbsp;&nbsp;
+
+00:18:03.440 --> 00:18:09.600
+servers. Uh there someone made like this npm uh&nbsp;
+plugin that just converts a remote MCP uh to a&nbsp;&nbsp;
+
+00:18:09.600 --> 00:18:14.800
+local MCP. So it feels like uh the application&nbsp;
+feels like it's still talking over standard IO&nbsp;&nbsp;
+
+00:18:14.800 --> 00:18:18.960
+uh and it handles the off handshake, but as&nbsp;
+a consequence it just like shoves the secrets&nbsp;&nbsp;
+
+00:18:18.960 --> 00:18:25.360
+uh like your secret tokens to your other services&nbsp;
+in some like random plain text directory. Uh and&nbsp;&nbsp;
+
+00:18:25.360 --> 00:18:30.160
+that's that's kind of like a no-go for a lot of&nbsp;
+our customers. And so as part of this handshake,&nbsp;&nbsp;
+
+00:18:30.160 --> 00:18:34.800
+we actually implemented a secure secret store&nbsp;
+where the AMP server takes care of the OOTH&nbsp;&nbsp;
+
+00:18:34.800 --> 00:18:39.280
+handshake and it proxies the MCP connection&nbsp;
+from the client to these external services&nbsp;&nbsp;
+
+00:18:39.280 --> 00:18:47.040
+and ensures that no secret ever gets stored&nbsp;
+unencrypted uh on your local machine. Okay,&nbsp;&nbsp;
+
+00:18:47.040 --> 00:18:51.360
+in the last couple minutes I just want to you&nbsp;
+know take take some time and speculate about&nbsp;&nbsp;
+
+00:18:51.360 --> 00:18:54.480
+where the future is headed. So there's been&nbsp;
+a lot of like great talk at this conference&nbsp;&nbsp;
+
+00:18:54.480 --> 00:18:58.480
+about you know what's next after tool calling.&nbsp;
+Tool calling is such a powerful paradigm. Uh,&nbsp;&nbsp;
+
+00:18:58.480 --> 00:19:02.400
+one of the things that we think a lot about is,&nbsp;
+you know, the extent to which sub agents can be&nbsp;&nbsp;
+
+00:19:02.400 --> 00:19:06.320
+the way that a lot of tools are implemented.&nbsp;
+So, um, I didn't point this out earlier,&nbsp;&nbsp;
+
+00:19:06.320 --> 00:19:11.200
+but the way that AMP was actually gathering&nbsp;
+context about the the the codebase was actually&nbsp;&nbsp;
+
+00:19:11.200 --> 00:19:16.560
+a sub agent. It wasn't just a deterministic uh,&nbsp;
+search tool. It was actually like its own mini&nbsp;&nbsp;
+
+00:19:16.560 --> 00:19:22.720
+agent that's going in and invoking different uh&nbsp;
+low-level search tools and iterating on itself,&nbsp;&nbsp;
+
+00:19:22.720 --> 00:19:28.000
+reasoning about the context of gatherers, refining&nbsp;
+queries uh to to gather the appropriate context.&nbsp;&nbsp;
+
+00:19:28.000 --> 00:19:35.200
+And we found that approach works just super super&nbsp;
+well. And uh I think the the uh the potential for&nbsp;&nbsp;
+
+00:19:35.200 --> 00:19:39.440
+sub agents to become really good tools were&nbsp;
+we're only scratching the surface right now.&nbsp;&nbsp;
+
+00:19:40.160 --> 00:19:46.560
+Um there's also this notion of like you know what&nbsp;
+does it mean to dynamically synthesize a tool and&nbsp;&nbsp;
+
+00:19:46.560 --> 00:19:50.960
+I think uh we touched upon this in some of the&nbsp;
+earlier talks when we were talking about code&nbsp;&nbsp;
+
+00:19:50.960 --> 00:19:55.760
+execution. So uh right now the the tool calling&nbsp;
+paradigm is largely you have a static list of&nbsp;&nbsp;
+
+00:19:55.760 --> 00:20:00.720
+tools and the model will go and invoke each one&nbsp;
+one by one look at the output and then decide&nbsp;&nbsp;
+
+00:20:00.720 --> 00:20:05.040
+what to do next. Um, a lot of people, not just&nbsp;
+us, have pointed out, hey, it might be useful&nbsp;&nbsp;
+
+00:20:05.040 --> 00:20:11.120
+if we incorporated a notion of output schema into&nbsp;
+MCP, which, you know, that just got merged in. Uh,&nbsp;&nbsp;
+
+00:20:11.120 --> 00:20:14.560
+and then the model can sort of like plan out&nbsp;
+how to invoke these tools and compose them and&nbsp;&nbsp;
+
+00:20:14.560 --> 00:20:20.080
+chain them in different ways. And if you squint&nbsp;
+at some point, you're basically programming,&nbsp;&nbsp;
+
+00:20:20.080 --> 00:20:23.840
+right? Like you have these functions, you have&nbsp;
+these tools, you're composing them, uh, you're&nbsp;&nbsp;
+
+00:20:23.840 --> 00:20:29.200
+combining them in interesting ways. And so, uh,&nbsp;
+I think it's it's a really good time to revisit,&nbsp;&nbsp;
+
+00:20:29.200 --> 00:20:34.080
+uh, code interp code interpreters. um which was&nbsp;
+a thing that you know at first was a thing in in&nbsp;&nbsp;
+
+00:20:34.080 --> 00:20:39.040
+2023 but uh sort of went away for a little bit.&nbsp;
+I think with the advent of tool calling agents&nbsp;&nbsp;
+
+00:20:39.040 --> 00:20:42.400
+there's a lot more potential to explore there&nbsp;
+and something that we're actively considering as&nbsp;&nbsp;
+
+00:20:42.400 --> 00:20:48.160
+well. I was talking with uh David from Enthropic&nbsp;
+earlier this week. He stopped by our office and&nbsp;&nbsp;
+
+00:20:48.160 --> 00:20:54.400
+we're talking about a lot of the parallels&nbsp;
+between uh tool calling LLMs and agents and&nbsp;&nbsp;
+
+00:20:54.400 --> 00:21:00.160
+uh the kind of discourse that uh was active when&nbsp;
+highle programming languages first became a thing.&nbsp;&nbsp;
+
+00:21:00.160 --> 00:21:05.520
+So before you know programming languages settled&nbsp;
+on uh you know the the the abstractions that kind&nbsp;&nbsp;
+
+00:21:05.520 --> 00:21:09.520
+of dominate today there's a lot of discussion&nbsp;
+around like what's the proper abstraction for a&nbsp;&nbsp;
+
+00:21:09.520 --> 00:21:15.360
+subruine is it a function is it message passing&nbsp;
+uh do uh is there a way to manage concurrent&nbsp;&nbsp;
+
+00:21:15.360 --> 00:21:20.320
+communication uh effectively there's different&nbsp;
+models for that and I think we're just going to&nbsp;&nbsp;
+
+00:21:20.320 --> 00:21:26.560
+revisit all of that now because the analogies to&nbsp;
+uh you know programming languages now with you&nbsp;&nbsp;
+
+00:21:26.560 --> 00:21:30.800
+know agents and sub aents and how they interact&nbsp;
+with each other and also with deterministic&nbsp;&nbsp;
+
+00:21:30.800 --> 00:21:37.840
+systems uh it's just very strong and then the last&nbsp;
+point here is um I think the way that most people&nbsp;&nbsp;
+
+00:21:37.840 --> 00:21:42.480
+integrate MCP right now if you look at the part&nbsp;
+of the spec that the vast majority of MCP clients&nbsp;&nbsp;
+
+00:21:42.480 --> 00:21:48.400
+implement versus the protocol itself the entire&nbsp;
+protocol I think the protocol designers here were&nbsp;&nbsp;
+
+00:21:48.400 --> 00:21:52.560
+very very forward thinking there is a lot baked&nbsp;
+into the protocol like stateful session management&nbsp;&nbsp;
+
+00:21:52.560 --> 00:21:58.400
+two-way communication um and uh sampling which&nbsp;
+is when the MCP server calls the client to do&nbsp;&nbsp;
+
+00:21:58.400 --> 00:22:02.640
+LM inference that's frankly just not being used.&nbsp;
+Like the vast majority of MCP connections right&nbsp;&nbsp;
+
+00:22:02.640 --> 00:22:07.680
+now are stateless uh tool calls that don't&nbsp;
+even take advantage of streaming. Uh and so&nbsp;&nbsp;
+
+00:22:07.680 --> 00:22:12.640
+this is such early days like we're we're literally&nbsp;
+scratching the tip of the iceberg for what we can&nbsp;&nbsp;
+
+00:22:12.640 --> 00:22:19.840
+do with tool calling uh LLM and and tools provided&nbsp;
+through the model context protocol. And uh I don't&nbsp;&nbsp;
+
+00:22:19.840 --> 00:22:26.800
+know the next year I think it's it's going to get&nbsp;
+really weird. Um so I I guess you know we're super&nbsp;&nbsp;
+
+00:22:26.800 --> 00:22:32.080
+excited to be here today. Uh it's been a great&nbsp;
+partnership uh with Enthropic uh for the past&nbsp;&nbsp;
+
+00:22:32.080 --> 00:22:37.200
+I'd say uh almost like three years now. I think&nbsp;
+we're one of the earliest adopters of Claude for&nbsp;&nbsp;
+
+00:22:37.200 --> 00:22:42.720
+coding purposes. I think we we started using it in&nbsp;
+January 2023. It's been an amazing journey. Um and&nbsp;&nbsp;
+
+00:22:42.720 --> 00:22:48.240
+we're we're trying to build AMP from the ground&nbsp;
+up into this kind of like tool calling native&nbsp;&nbsp;
+
+00:22:48.240 --> 00:22:53.760
+uh coding agent. And so if that's of interest&nbsp;
+of you, check us out. and uh we look forward&nbsp;&nbsp;
+
+00:22:53.760 --> 00:22:59.360
+to all the things that people kind of build on&nbsp;
+top of it, build with it. Uh and also a lot of&nbsp;&nbsp;
+
+00:22:59.360 --> 00:23:02.720
+the MCP servers that people will build that we&nbsp;
+can then integrate. So if you're doing that,&nbsp;&nbsp;
+
+00:23:02.720 --> 00:23:07.200
+please get in touch with us as well. We'd love to&nbsp;
+hear from you and figure out how this can fit into&nbsp;&nbsp;
+
+00:23:07.200 --> 00:23:14.320
+the kind of new way of doing software development&nbsp;
+that we're all discovering together. That do I&nbsp;&nbsp;
+
+00:23:14.320 --> 00:23:22.800
+have time for questions or one question? Any&nbsp;
+questions? I'll kick us off. Um you have source&nbsp;&nbsp;
+
+00:23:22.800 --> 00:23:29.200
+Kodi as well. So how are you thinking about Kodi&nbsp;
+and AMP uh playing together? Yeah, that's a great&nbsp;&nbsp;
+
+00:23:29.200 --> 00:23:35.360
+question. So um our we we also have this AI coding&nbsp;
+assistant called Kodi that was one of the first&nbsp;&nbsp;
+
+00:23:35.360 --> 00:23:42.720
+uh rag chat uh contextaware uh coding assistants.&nbsp;
+Recall the earlier picture where it was kind of&nbsp;&nbsp;
+
+00:23:42.720 --> 00:23:50.000
+like the three eras of AI. I think Kodi was close&nbsp;
+to uh Cody was an awesome AI application built for&nbsp;&nbsp;
+
+00:23:50.000 --> 00:23:53.680
+the rag chat era of models and I think there's&nbsp;
+still a lot of organizations that will find a&nbsp;&nbsp;
+
+00:23:53.680 --> 00:23:57.840
+lot of value from that paradigm and still a lot&nbsp;
+of workflows that can benefit from that. Um,&nbsp;&nbsp;
+
+00:23:57.840 --> 00:24:02.160
+but because the underlying assumptions&nbsp;
+of what LLMs can do have changed so much,&nbsp;&nbsp;
+
+00:24:02.160 --> 00:24:07.840
+we think that the best uh sort of like user&nbsp;
+experience for the agentic world is going to come&nbsp;&nbsp;
+
+00:24:07.840 --> 00:24:12.960
+from an application that was designed from the&nbsp;
+ground up to take advantage of uh tool calling in&nbsp;&nbsp;
+
+00:24:12.960 --> 00:24:22.000
+MCP. And that's why we built AMP as a separate uh&nbsp;
+sort of like application and thing uh from Kodi.&nbsp;&nbsp;
+
+00:24:22.000 --> 00:24:26.960
+And if I'm being like a little bit snarky, I think&nbsp;
+like if you're not rethinking that architecture,&nbsp;&nbsp;
+
+00:24:26.960 --> 00:24:31.920
+I think as an application developer, you're at&nbsp;
+risk of falling behind and missing the kind of&nbsp;&nbsp;
+
+00:24:31.920 --> 00:24:39.280
+like next wave of AI development. All right,&nbsp;
+I think that's my time. Thank you so much.
+

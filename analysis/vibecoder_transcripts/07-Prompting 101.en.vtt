@@ -1,0 +1,1136 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:05.040 --> 00:00:10.480
+Hi everyone. Thank you for joining us today for&nbsp;
+prompting 101. Uh my name is Hannah. I'm part&nbsp;&nbsp;
+
+00:00:10.480 --> 00:00:15.280
+of the applied AI team here at Anthropic. And&nbsp;
+with me is Christian, also part of the applied&nbsp;&nbsp;
+
+00:00:15.280 --> 00:00:19.680
+AI team. And what we're going to do today is&nbsp;
+take you through a little bit of prompting best&nbsp;&nbsp;
+
+00:00:19.680 --> 00:00:25.440
+practices. And we're going to use a real world&nbsp;
+scenario and build up a prompt together. Uh so&nbsp;&nbsp;
+
+00:00:25.440 --> 00:00:30.480
+a little bit about what prompt engineering is. uh&nbsp;
+prompt engineering. You're all probably a little&nbsp;&nbsp;
+
+00:00:30.480 --> 00:00:34.880
+bit familiar with this. This is the way that we&nbsp;
+communicate with a language model and try to get&nbsp;&nbsp;
+
+00:00:34.880 --> 00:00:39.520
+it to do what we want. So, this is the practice of&nbsp;
+writing clear instructions for the model, giving&nbsp;&nbsp;
+
+00:00:39.520 --> 00:00:44.320
+the model the context that it needs to complete&nbsp;
+the task, and thinking through how we want to&nbsp;&nbsp;
+
+00:00:44.320 --> 00:00:49.360
+arrange that information in order to get the&nbsp;
+best result. Um, so there's a lot of detail here,&nbsp;&nbsp;
+
+00:00:49.360 --> 00:00:53.760
+a lot of different ways you might want to think&nbsp;
+about building out a prompt. Um, and as always,&nbsp;&nbsp;
+
+00:00:53.760 --> 00:00:58.160
+the best way to learn this is just to practice&nbsp;
+doing it. Um, so today we're going to go through&nbsp;&nbsp;
+
+00:00:58.160 --> 00:01:03.840
+a hands-on scenario. Uh, we're going to use an&nbsp;
+example inspired by a real customer that we worked&nbsp;&nbsp;
+
+00:01:03.840 --> 00:01:08.480
+with. So, we've modified what the actual customer&nbsp;
+asked us to do, but this is a really interesting&nbsp;&nbsp;
+
+00:01:08.480 --> 00:01:14.080
+case of trying to analyze some images and get uh&nbsp;
+factual information out of the images and have&nbsp;&nbsp;
+
+00:01:14.080 --> 00:01:20.400
+Claude make a judgment about what content it finds&nbsp;
+there. And I actually do not speak the language&nbsp;&nbsp;
+
+00:01:20.400 --> 00:01:25.120
+that this content is in, but luckily Christian and&nbsp;
+Claude both do. Uh so I'm going to pass it over&nbsp;&nbsp;
+
+00:01:25.120 --> 00:01:30.320
+to Christian to talk about the scenario and the&nbsp;
+content. So for this example that we have here,&nbsp;&nbsp;
+
+00:01:30.320 --> 00:01:35.840
+it's uh intended so so to set the stage, imagine&nbsp;
+you're working for a Swedish insurance company&nbsp;&nbsp;
+
+00:01:35.840 --> 00:01:41.520
+and you deal with uh car insurance claims on a&nbsp;
+daily manner. Um and the purpose of this is that&nbsp;&nbsp;
+
+00:01:41.520 --> 00:01:45.920
+you have two pieces of information. Um we're going&nbsp;
+to these in detail as well, but visually you can&nbsp;&nbsp;
+
+00:01:45.920 --> 00:01:52.480
+see on the left hand side we have a car accident&nbsp;
+report form. um just detailing out what transpired&nbsp;&nbsp;
+
+00:01:52.480 --> 00:01:57.600
+before the action accident actually took place.&nbsp;
+And then finally, we have a sort of human drawn&nbsp;&nbsp;
+
+00:01:57.600 --> 00:02:03.520
+um sketch of how the accident took place as well.&nbsp;
+So these two pieces of information is what we're&nbsp;&nbsp;
+
+00:02:03.520 --> 00:02:08.400
+going to try to pass on to cloud. And to begin&nbsp;
+with, we could just take these two and throw them&nbsp;&nbsp;
+
+00:02:08.400 --> 00:02:13.120
+into a console and just see what what happens.&nbsp;
+So if we transition over to console as well,&nbsp;&nbsp;
+
+00:02:13.120 --> 00:02:17.680
+we can actually do this in a real manner. And&nbsp;
+in this case here, you can see we have our&nbsp;&nbsp;
+
+00:02:17.680 --> 00:02:24.560
+shiny beautiful entropic console. We're using the&nbsp;
+new claw for solid model as well. In this case,&nbsp;&nbsp;
+
+00:02:24.560 --> 00:02:30.000
+setting temperature zero and having a a huge max&nbsp;
+token budget as well. Just helping us make sure&nbsp;&nbsp;
+
+00:02:30.000 --> 00:02:34.960
+that there's no limitations to what CL can do. In&nbsp;
+this case, you can see I have a very simple prompt&nbsp;&nbsp;
+
+00:02:34.960 --> 00:02:38.960
+just setting the stage of what Cloud's supposed&nbsp;
+to do. in this case mentioning that this is&nbsp;&nbsp;
+
+00:02:38.960 --> 00:02:45.600
+um intend to review a an accident report form uh&nbsp;
+and eventually also determine um what happened&nbsp;&nbsp;
+
+00:02:45.600 --> 00:02:49.760
+in an accident and who's at fault. So you can&nbsp;
+see here with this very simple prompt if I just&nbsp;&nbsp;
+
+00:02:49.760 --> 00:02:58.960
+run this let me go to preview. Uh we can see here&nbsp;
+that Claude thinks that this is in relation to a&nbsp;&nbsp;
+
+00:02:58.960 --> 00:03:05.040
+skiing accident that happened on a street called&nbsp;
+Chappangan. It's a very common street in Sweden.&nbsp;&nbsp;
+
+00:03:05.040 --> 00:03:10.000
+Um and in many ways you can sort of understand&nbsp;
+this innocent mistake in the sense that in our&nbsp;&nbsp;
+
+00:03:10.000 --> 00:03:15.360
+prompt we actually haven't done anything to set&nbsp;
+the stage on what is actually taking place here.&nbsp;&nbsp;
+
+00:03:15.360 --> 00:03:20.160
+So this sort of first guess is not too bad but&nbsp;
+we still notice a lot of intuition that we can&nbsp;&nbsp;
+
+00:03:20.160 --> 00:03:27.360
+bake into cloud. So if we switch back to the&nbsp;
+slides you can see here that um in many ways&nbsp;&nbsp;
+
+00:03:27.360 --> 00:03:32.240
+prompt engineering is a very iterative empirical&nbsp;
+science. Uh in this case here, we could almost&nbsp;&nbsp;
+
+00:03:32.240 --> 00:03:38.160
+have a test case where Claude is supposed to make&nbsp;
+sure it understands it's in a car or vehicular&nbsp;&nbsp;
+
+00:03:38.160 --> 00:03:43.760
+environment, nothing to do with skiing. Uh and in&nbsp;
+that way, you iteratively build upon your prompt&nbsp;&nbsp;
+
+00:03:43.760 --> 00:03:48.560
+to make sure it's actually tackling the problem&nbsp;
+you're intending to solve. Um and to do so,&nbsp;&nbsp;
+
+00:03:48.560 --> 00:03:54.320
+we'll go through some best practices of how we we&nbsp;
+at Anthropic break this down internally and how we&nbsp;&nbsp;
+
+00:03:54.320 --> 00:03:59.040
+recommend others to do so as well. So, we're going&nbsp;
+to talk about some best practices for developing&nbsp;&nbsp;
+
+00:03:59.040 --> 00:04:04.000
+a great prompt. Uh, first we want to talk a&nbsp;
+little bit about what a great prompt structure&nbsp;&nbsp;
+
+00:04:04.000 --> 00:04:09.120
+looks like. So you might be familiar with kind of&nbsp;
+interacting with a chatbot with Claude going back&nbsp;&nbsp;
+
+00:04:09.120 --> 00:04:14.000
+and forth having a more kind of conversational&nbsp;
+style interaction. When we're working with a task&nbsp;&nbsp;
+
+00:04:14.000 --> 00:04:19.120
+like this, we're probably using the API and we&nbsp;
+kind of want to send one single message to Claude&nbsp;&nbsp;
+
+00:04:19.120 --> 00:04:24.800
+and have it nail the task the first time around&nbsp;
+without needing to uh kind of move back and forth.&nbsp;&nbsp;
+
+00:04:24.800 --> 00:04:30.080
+Uh, so the kind of structure that we recommend is&nbsp;
+setting the task description up front. So telling&nbsp;&nbsp;
+
+00:04:30.080 --> 00:04:34.000
+Claude, "What are you here to do? What's your&nbsp;
+role? What task are you trying to accomplish&nbsp;&nbsp;
+
+00:04:34.000 --> 00:04:38.240
+today?" Then we provide content. So in this&nbsp;
+case, it's the images that Christian was showing,&nbsp;&nbsp;
+
+00:04:38.240 --> 00:04:43.840
+the form and the drawing of the accident and how&nbsp;
+they occurred. That's our dynamic content. This&nbsp;&nbsp;
+
+00:04:43.840 --> 00:04:47.360
+might also be something you're retrieving from&nbsp;
+another system, depending on what your use case&nbsp;&nbsp;
+
+00:04:47.360 --> 00:04:52.720
+is. We're going to give some detailed instructions&nbsp;
+to Claude, so almost like a step-by-step list of&nbsp;&nbsp;
+
+00:04:52.720 --> 00:04:58.320
+how we want Claude to go through the task and how&nbsp;
+we want it to um tackle the reasoning. We may give&nbsp;&nbsp;
+
+00:04:58.320 --> 00:05:03.280
+some examples to Claude. Here's an example of some&nbsp;
+piece of content you might receive. Here's how you&nbsp;&nbsp;
+
+00:05:03.280 --> 00:05:08.000
+should respond when given that content. And at&nbsp;
+the end, we usually recommend repeating anything&nbsp;&nbsp;
+
+00:05:08.000 --> 00:05:12.800
+that's really important for Claude to understand&nbsp;
+about this task. Kind of uh reviewing the&nbsp;&nbsp;
+
+00:05:12.800 --> 00:05:17.600
+information with Claude, emphasizing things that&nbsp;
+are extra critical and then telling Claude, "Okay,&nbsp;&nbsp;
+
+00:05:17.600 --> 00:05:23.120
+go ahead and do your work." So, here's another&nbsp;
+view. This has a little bit more detail, a little&nbsp;&nbsp;
+
+00:05:23.120 --> 00:05:27.840
+bit more of a breakdown, and we're going to walk&nbsp;
+through each of these 10 points individually and&nbsp;&nbsp;
+
+00:05:27.840 --> 00:05:33.040
+show you how we build this up, um, in the console.&nbsp;
+So, the first couple things, um, Christian's&nbsp;&nbsp;
+
+00:05:33.040 --> 00:05:38.720
+going to talk about the task context and the tone&nbsp;
+context. Perfect. So, yeah, if we begin with the&nbsp;&nbsp;
+
+00:05:38.720 --> 00:05:43.520
+task context, as you realized when I went through&nbsp;
+a little demo there, um, we didn't have much&nbsp;&nbsp;
+
+00:05:43.520 --> 00:05:48.960
+elaborating what what scenario Chlo was actually&nbsp;
+working within. And because of that, you can also&nbsp;&nbsp;
+
+00:05:48.960 --> 00:05:53.200
+tell that claw doesn't necessarily need to guess a&nbsp;
+lot more on what you actually want from it. So in&nbsp;&nbsp;
+
+00:05:53.200 --> 00:05:57.200
+our case, we really want to break that down, make&nbsp;
+sure we can give more clear-cut instructions. Um,&nbsp;&nbsp;
+
+00:05:57.200 --> 00:06:02.880
+and also make sure we understand what's the&nbsp;
+task that we're asking Claw to do. Um, secondly,&nbsp;&nbsp;
+
+00:06:02.880 --> 00:06:08.160
+as well, we also make sure we add a little bit of&nbsp;
+tone into it all. Um, key thing here is we want&nbsp;&nbsp;
+
+00:06:08.160 --> 00:06:14.480
+Claw to stay factual and to stay confident. So if&nbsp;
+uh, Claw can't understand what it's looking at,&nbsp;&nbsp;
+
+00:06:14.480 --> 00:06:19.040
+we don't want to guess and just sort of mislead&nbsp;
+us. We want to make sure that any assessment&nbsp;&nbsp;
+
+00:06:19.040 --> 00:06:23.360
+and in our case we want to make sure that we can&nbsp;
+understand who's at fault here. We want to make&nbsp;&nbsp;
+
+00:06:23.360 --> 00:06:27.920
+sure that assessment is as clear and as confident&nbsp;
+as possible. If not, we're sort of losing track of&nbsp;&nbsp;
+
+00:06:27.920 --> 00:06:34.400
+what we're doing. So if we transition back to the&nbsp;
+the console, um we can jump to a V2 that we have&nbsp;&nbsp;
+
+00:06:34.400 --> 00:06:41.760
+here. So I'll just navigate to V2. And you can see&nbsp;
+here um I'll also just illustrate the data because&nbsp;&nbsp;
+
+00:06:41.760 --> 00:06:45.120
+we didn't really do that last time around just&nbsp;
+to really highlight what we're looking at. So,&nbsp;&nbsp;
+
+00:06:45.120 --> 00:06:51.520
+what we're seeing here, this is the car accident&nbsp;
+report form, and it's just 17 different checkboxes&nbsp;&nbsp;
+
+00:06:51.520 --> 00:06:55.360
+going through what actually happened. You&nbsp;
+can see there's a vehicle A and vehicle B,&nbsp;&nbsp;
+
+00:06:55.360 --> 00:06:58.880
+both on the left and right hand side. And the main&nbsp;
+purpose of this is that we want to make sure that&nbsp;&nbsp;
+
+00:06:58.880 --> 00:07:05.840
+Claude can understand this manually generated data&nbsp;
+to assess what's actually going on. And that is&nbsp;&nbsp;
+
+00:07:05.840 --> 00:07:11.600
+uh corroborated by if I navigate back here to this&nbsp;
+sketch that we can highlight here as well. In this&nbsp;&nbsp;
+
+00:07:11.600 --> 00:07:18.240
+case, the form is just a different um data point&nbsp;
+for the same scenario. Um and in this case here, I&nbsp;&nbsp;
+
+00:07:18.240 --> 00:07:24.080
+want to bake in more information into our version&nbsp;
+two. Uh and by doing so, I'm actually elaborating&nbsp;&nbsp;
+
+00:07:24.080 --> 00:07:29.200
+a lot more on what's going on. So, you can see&nbsp;
+here I'm specifying that uh this AI assistant is&nbsp;&nbsp;
+
+00:07:29.200 --> 00:07:34.560
+supposed to help a human's claim claims adjuster&nbsp;
+that's reviewing car accident report forms in&nbsp;&nbsp;
+
+00:07:34.560 --> 00:07:39.120
+Swedish as well. Um, you can see here we're also&nbsp;
+elaborating that it's a human-driven sketch of&nbsp;&nbsp;
+
+00:07:39.120 --> 00:07:45.120
+the incident and that you should not um make an&nbsp;
+assessment if it's not actually fully confident.&nbsp;&nbsp;
+
+00:07:45.120 --> 00:07:49.520
+And that's really key because if we run this,&nbsp;
+you'll see that and you can see it's the same&nbsp;&nbsp;
+
+00:07:49.520 --> 00:07:54.960
+settings as well. Clo my new shiny model zero&nbsp;
+temperature as well. If we run this, we can see&nbsp;&nbsp;
+
+00:07:54.960 --> 00:08:02.480
+here what actually happens in this case. Um, CL is&nbsp;
+able to pick up that uh now it's relating to car&nbsp;&nbsp;
+
+00:08:02.480 --> 00:08:08.000
+accidents, not skiing accidents, which is great.&nbsp;
+We can see it's able to pick up that vehicle A was&nbsp;&nbsp;
+
+00:08:08.000 --> 00:08:13.760
+marked on on checkbox one and then vehicle B was&nbsp;
+on 12. Um, and if we scroll down though, we can&nbsp;&nbsp;
+
+00:08:13.760 --> 00:08:19.280
+still tell that there's some information missing&nbsp;
+for claw to make a fully confident determination&nbsp;&nbsp;
+
+00:08:19.280 --> 00:08:24.000
+of who's at fault here. And this is great. This&nbsp;
+is pertaining to a task set. Make sure you don't&nbsp;&nbsp;
+
+00:08:24.000 --> 00:08:30.000
+make anything any claims that aren't um uh factual&nbsp;
+and make sure you you only sort of assess things&nbsp;&nbsp;
+
+00:08:30.000 --> 00:08:33.840
+when you're when you're confident. But there's&nbsp;
+a lot of information we're still missing here.&nbsp;&nbsp;
+
+00:08:33.840 --> 00:08:39.520
+um regarding the form uh what the form actually&nbsp;
+entails and a lot of that information is what&nbsp;&nbsp;
+
+00:08:39.520 --> 00:08:44.640
+we want to want to bake into this LM application&nbsp;
+as well and the best way of doing so is actually&nbsp;&nbsp;
+
+00:08:44.640 --> 00:08:50.720
+adding it to the system prompt which Hannah will&nbsp;
+elaborate on. Um so back in the slides uh we have&nbsp;&nbsp;
+
+00:08:50.720 --> 00:08:56.720
+the next item we're going to add to the prompt&nbsp;
+and this is um background detail data documents&nbsp;&nbsp;
+
+00:08:56.720 --> 00:09:01.600
+and images and here as Christian was saying we&nbsp;
+actually know a lot about this form. the form is&nbsp;&nbsp;
+
+00:09:01.600 --> 00:09:06.000
+going to be the same every single time. The form&nbsp;
+will never change. And so this is a really great&nbsp;&nbsp;
+
+00:09:06.000 --> 00:09:10.560
+type of information to provide to Claude to tell&nbsp;
+Claude, here's the structure of the form you'll&nbsp;&nbsp;
+
+00:09:10.560 --> 00:09:15.920
+be looking at. We know that will not ever alter&nbsp;
+between different queries. The way the form is&nbsp;&nbsp;
+
+00:09:15.920 --> 00:09:20.880
+filled out will change, but the form itself is not&nbsp;
+going to change. And so this is a great type of&nbsp;&nbsp;
+
+00:09:20.880 --> 00:09:25.280
+um information to put into the system prompt. Also&nbsp;
+a great thing to use prompt caching for if you're&nbsp;&nbsp;
+
+00:09:25.280 --> 00:09:29.520
+considering using prompt caching. This will always&nbsp;
+be the same. And what this will help Claude do is&nbsp;&nbsp;
+
+00:09:29.520 --> 00:09:35.360
+spend less time trying to figure out what the form&nbsp;
+is the first time it sees the form each time. And&nbsp;&nbsp;
+
+00:09:35.360 --> 00:09:41.520
+it's going to do a better job of reading the form&nbsp;
+because it already knows um what to expect there.&nbsp;&nbsp;
+
+00:09:41.520 --> 00:09:47.280
+So another thing I want to touch on here is how we&nbsp;
+like to organize information in prompts. So Claude&nbsp;&nbsp;
+
+00:09:47.280 --> 00:09:51.680
+really loves structure, loves organization.&nbsp;
+That's why we recommend following kind of a&nbsp;&nbsp;
+
+00:09:51.680 --> 00:09:56.640
+standard structure in your prompts. And there's&nbsp;
+a couple other tools you can use to help Claude&nbsp;&nbsp;
+
+00:09:56.640 --> 00:10:01.440
+understand the information better. I also just&nbsp;
+want to mention all of this is in our docs with a&nbsp;&nbsp;
+
+00:10:01.440 --> 00:10:05.760
+lot of really great examples. So definitely take&nbsp;
+pictures, but if you forget to take a picture,&nbsp;&nbsp;
+
+00:10:05.760 --> 00:10:10.640
+don't worry. All of this content is online with&nbsp;
+lots of examples and definitely encourage you&nbsp;&nbsp;
+
+00:10:10.640 --> 00:10:17.920
+guys to check it out there too. Um anyway the uh&nbsp;
+so some things you can use delimiters like XML&nbsp;&nbsp;
+
+00:10:17.920 --> 00:10:23.120
+tags also markdown is pretty useful to Claude&nbsp;
+but XML tags are nice because you can actually&nbsp;&nbsp;
+
+00:10:23.120 --> 00:10:29.200
+specify what's inside those tags. So we can tell&nbsp;
+Claude here's here's user preferences. Now you're&nbsp;&nbsp;
+
+00:10:29.200 --> 00:10:33.040
+going to read some content and these XML tags are&nbsp;
+letting you know that everything wrapped in those&nbsp;&nbsp;
+
+00:10:33.040 --> 00:10:38.080
+tags is related to the user's preferences and&nbsp;
+it helps Claude refer back to that information&nbsp;&nbsp;
+
+00:10:38.080 --> 00:10:44.560
+maybe at later points in the prompt. Um, so I&nbsp;
+want to show in the back in the console how we&nbsp;&nbsp;
+
+00:10:44.560 --> 00:10:49.840
+actually do this in this case. And Christian's&nbsp;
+going to pull up our version three. So we're&nbsp;&nbsp;
+
+00:10:49.840 --> 00:10:54.800
+keeping everything about the other part of the&nbsp;
+user prompt the same. And we've decided in this&nbsp;&nbsp;
+
+00:10:54.800 --> 00:10:59.280
+case to put this information in the system prompt.&nbsp;
+You could try this different ways. Uh, we're doing&nbsp;&nbsp;
+
+00:10:59.280 --> 00:11:03.280
+it in the system prompt here. And we're going&nbsp;
+to tell Claude everything it needs to know about&nbsp;&nbsp;
+
+00:11:03.280 --> 00:11:07.760
+this form. So this is a Swedish car accident&nbsp;
+form. The form will be in Swedish. It'll have&nbsp;&nbsp;
+
+00:11:07.760 --> 00:11:13.120
+this title. It'll have two columns. The columns&nbsp;
+represent different vehicles. We'll tell Claude&nbsp;&nbsp;
+
+00:11:13.120 --> 00:11:18.400
+about each of the 17 rows and what they mean.&nbsp;
+You might have noticed when we ran it before,&nbsp;&nbsp;
+
+00:11:18.400 --> 00:11:23.840
+Claude was reading individually each of the lines&nbsp;
+to understand what they are. We can provide all of&nbsp;&nbsp;
+
+00:11:23.840 --> 00:11:27.760
+that information up front. And we're also going&nbsp;
+to give Claude a little bit of information about&nbsp;&nbsp;
+
+00:11:27.760 --> 00:11:32.880
+how this form should be filled out. This is also&nbsp;
+really useful for Claude. We can tell it things&nbsp;&nbsp;
+
+00:11:32.880 --> 00:11:37.120
+like, you know, humans are filling this form&nbsp;
+out basically. So, it's not going to be perfect.&nbsp;&nbsp;
+
+00:11:37.120 --> 00:11:42.160
+People might put a circle. They might scribble.&nbsp;
+They might not put an X in the box. There could&nbsp;&nbsp;
+
+00:11:42.160 --> 00:11:47.680
+be many types of markings that you need to look&nbsp;
+for when you're reading this form. Uh we can also&nbsp;&nbsp;
+
+00:11:47.680 --> 00:11:51.520
+give Claude a little bit of information about how&nbsp;
+to interpret this or what the purpose or meaning&nbsp;&nbsp;
+
+00:11:51.520 --> 00:11:56.720
+of this form is. And all of this is context&nbsp;
+that is hopefully really going to help Claude&nbsp;&nbsp;
+
+00:11:56.720 --> 00:12:02.560
+um do a better job analyzing the form. So if&nbsp;
+we run it, everything else is still the same.&nbsp;&nbsp;
+
+00:12:02.560 --> 00:12:08.880
+So we've kept the same user prompt down here.&nbsp;
+Oh, your scroll is backwards from mine. Uh,&nbsp;&nbsp;
+
+00:12:08.880 --> 00:12:14.560
+the we have the same user prompt here. Still&nbsp;
+asking Claude to do the same task, same context.&nbsp;&nbsp;
+
+00:12:14.560 --> 00:12:19.360
+And we'll see here that it's spending less time.&nbsp;
+It's kind of narrating to us a little bit less&nbsp;&nbsp;
+
+00:12:19.360 --> 00:12:23.680
+about what the form is because it already knows&nbsp;
+what that is. And it's not concerned with kind&nbsp;&nbsp;
+
+00:12:23.680 --> 00:12:28.640
+of bringing us that information back. It's going&nbsp;
+to give us a whole list of what it found to be&nbsp;&nbsp;
+
+00:12:28.640 --> 00:12:33.680
+checked, what the sketch shows. And here Claude&nbsp;
+is now becoming much more confident with this&nbsp;&nbsp;
+
+00:12:33.680 --> 00:12:39.520
+additional context that we gave to Claude. Claude&nbsp;
+now feels it's appropriate to say vehicle B was&nbsp;&nbsp;
+
+00:12:39.520 --> 00:12:44.320
+at fault in this case based on this drawing and&nbsp;
+based on this sketch. So already we're seeing some&nbsp;&nbsp;
+
+00:12:44.320 --> 00:12:49.440
+improvement in the way Claude is analyzing these.&nbsp;
+I think we could probably all agree if we looked&nbsp;&nbsp;
+
+00:12:49.440 --> 00:12:54.480
+at the drawing and at the list that vehicle&nbsp;
+B is at fault. Um so we'd like to see that.&nbsp;&nbsp;
+
+00:12:55.040 --> 00:12:59.920
+Uh so we're going to go back to the slides and&nbsp;
+talk about a couple of other items that we're not&nbsp;&nbsp;
+
+00:12:59.920 --> 00:13:06.000
+really using in this prompt um but can be really&nbsp;
+helpful to building up uh building up your prompt&nbsp;&nbsp;
+
+00:13:06.000 --> 00:13:11.520
+and making it work better. Exactly. I think um&nbsp;
+one thing that we really highlight is examples.&nbsp;&nbsp;
+
+00:13:11.520 --> 00:13:18.720
+I think examples or few shot is a mechanism that&nbsp;
+really is powerful in steering cloud. So you can&nbsp;&nbsp;
+
+00:13:18.720 --> 00:13:25.120
+imagine this um in in quite a non-trivial way as&nbsp;
+well. So imagine you have scenarios, situations,&nbsp;&nbsp;
+
+00:13:25.120 --> 00:13:31.120
+even in this case concrete accidents that have&nbsp;
+happened that are um tricky for claw to get right.&nbsp;&nbsp;
+
+00:13:31.120 --> 00:13:37.440
+But you with your human intuition and your human&nbsp;
+label data um is able to actually get to the right&nbsp;&nbsp;
+
+00:13:37.440 --> 00:13:42.560
+conclusion. Then you can bake that information&nbsp;
+into the system problem itself by having clear-cut&nbsp;&nbsp;
+
+00:13:42.560 --> 00:13:47.200
+examples of a the data that that it's supposed&nbsp;
+to look at. So you can have visual examples.&nbsp;&nbsp;
+
+00:13:47.200 --> 00:13:53.680
+you can just base 64 encode a a an image and have&nbsp;
+that as part of the data that you're passing along&nbsp;&nbsp;
+
+00:13:53.680 --> 00:13:58.080
+into the examples and then on top of that you can&nbsp;
+have the sort of depiction or description rather&nbsp;&nbsp;
+
+00:13:58.080 --> 00:14:02.800
+of how to break that down and understand it. This&nbsp;
+is something we really highlight and and emphasize&nbsp;&nbsp;
+
+00:14:02.800 --> 00:14:08.480
+in how you can sort of push the limits of your&nbsp;
+LLM application is by baking in these examples&nbsp;&nbsp;
+
+00:14:08.480 --> 00:14:12.720
+into system prompt. And this again is sort of the&nbsp;
+empirical science of prompt engineering that you&nbsp;&nbsp;
+
+00:14:12.720 --> 00:14:17.120
+sort of always want to push the limits of your&nbsp;
+application and get that feedback loop in where&nbsp;&nbsp;
+
+00:14:17.120 --> 00:14:21.760
+it's going wrong and try to add that into system&nbsp;
+prompt so that next time when example that sort&nbsp;&nbsp;
+
+00:14:21.760 --> 00:14:27.760
+of mimics that u takes place it's able to actually&nbsp;
+reference it in its example set. You can see here&nbsp;&nbsp;
+
+00:14:27.760 --> 00:14:34.000
+as well, this is just a little example of how we&nbsp;
+do this. Again, really emphasizing the sort of XML&nbsp;&nbsp;
+
+00:14:34.000 --> 00:14:38.880
+structure that we we um we enjoy. It's it gives a&nbsp;
+lot of structure to the clone. It's what it's been&nbsp;&nbsp;
+
+00:14:38.880 --> 00:14:43.280
+fine-tuned on as well. Um and it works perfectly&nbsp;
+well for this example. And in our case, we're not&nbsp;&nbsp;
+
+00:14:43.280 --> 00:14:47.280
+doing this just because it's a simple demo,&nbsp;
+but you can realistically imagine if you were&nbsp;&nbsp;
+
+00:14:47.280 --> 00:14:52.400
+building this for an insurance company, you'd have&nbsp;
+tens, maybe even hundreds of examples are quite&nbsp;&nbsp;
+
+00:14:52.400 --> 00:14:57.280
+difficult, maybe in the gray, that you'd like to&nbsp;
+make sure that Claude actually has some basis in&nbsp;&nbsp;
+
+00:14:57.280 --> 00:15:02.720
+to make the verdict next time. Um, another topic&nbsp;
+we really want to highlight, which we're not doing&nbsp;&nbsp;
+
+00:15:02.720 --> 00:15:08.640
+in this demo, is conversation history. It's in the&nbsp;
+same vein as examples. uh we use this to make sure&nbsp;&nbsp;
+
+00:15:08.640 --> 00:15:15.680
+that the enough context rich information is at&nbsp;
+close disposal when it when when closing on on on&nbsp;&nbsp;
+
+00:15:15.680 --> 00:15:21.520
+your behalf. Um in our case now this isn't really&nbsp;
+a userfacing LLM application. It's more something&nbsp;&nbsp;
+
+00:15:21.520 --> 00:15:25.280
+happening in the background. You can imagine for&nbsp;
+this insurance company they have this automated&nbsp;&nbsp;
+
+00:15:25.280 --> 00:15:29.520
+system some data is generated out of this and then&nbsp;
+you might have a human in the loop at towards the&nbsp;&nbsp;
+
+00:15:29.520 --> 00:15:34.800
+end. If you were have to build something much more&nbsp;
+userf facing where you'd have a long conversation&nbsp;&nbsp;
+
+00:15:34.800 --> 00:15:40.560
+history that would be um relevant to bring in this&nbsp;
+is a perfect place in the system prompt to include&nbsp;&nbsp;
+
+00:15:40.560 --> 00:15:47.760
+because it enriches the context that Claude works&nbsp;
+within. Um in our case we haven't done so but what&nbsp;&nbsp;
+
+00:15:47.760 --> 00:15:54.720
+we do is and the next step is try to make sure&nbsp;
+we give a concrete reminder of the task at hand.&nbsp;&nbsp;
+
+00:15:55.760 --> 00:15:59.200
+So, now we're going to build out the&nbsp;
+final part of this prompt for Claude,&nbsp;&nbsp;
+
+00:15:59.200 --> 00:16:03.760
+and that's coming back to the reminder of what&nbsp;
+the immediate task is and giving Claude a reminder&nbsp;&nbsp;
+
+00:16:03.760 --> 00:16:09.200
+about any important guidelines that we want it&nbsp;
+to follow. Some reasons that we may do this are&nbsp;&nbsp;
+
+00:16:09.200 --> 00:16:16.640
+a preventing hallucinations. Um, so we want Claude&nbsp;
+to uh not invent details that it's not finding in&nbsp;&nbsp;
+
+00:16:16.640 --> 00:16:21.200
+this prompt, right? Or not finding in the data.&nbsp;
+If Claude can't tell which form is checked,&nbsp;&nbsp;
+
+00:16:21.200 --> 00:16:26.560
+we don't want Claude to take its best guess or&nbsp;
+invent the idea that a box might be checked when&nbsp;&nbsp;
+
+00:16:26.560 --> 00:16:32.240
+it's not. If the sketch is unintelligible, the&nbsp;
+person did a really bad job drawing this drawing&nbsp;&nbsp;
+
+00:16:32.240 --> 00:16:36.320
+and even a human would not be able to figure it&nbsp;
+out. We want Claude to be able to say that. And&nbsp;&nbsp;
+
+00:16:36.320 --> 00:16:41.360
+so these are some of the things we'll include in&nbsp;
+this final reminder and kind of wrap up step for&nbsp;&nbsp;
+
+00:16:41.360 --> 00:16:46.400
+Claude. Uh remind it to do things like answer only&nbsp;
+if it's very confident. We could even ask it to&nbsp;&nbsp;
+
+00:16:46.400 --> 00:16:52.000
+refer back to what it has seen in the form anytime&nbsp;
+it's making a factual claim. So if it wants to say&nbsp;&nbsp;
+
+00:16:52.000 --> 00:16:57.760
+vehicle B turned right, it should say I know this&nbsp;
+based on the fact that box two is clearly checked&nbsp;&nbsp;
+
+00:16:57.760 --> 00:17:01.920
+or whatever it might be. We can kind of give&nbsp;
+Claude some guidelines about that. So if we go&nbsp;&nbsp;
+
+00:17:01.920 --> 00:17:09.680
+back to the console, we can see the next version&nbsp;
+of the prompt and we're going to keep uh we're&nbsp;&nbsp;
+
+00:17:09.680 --> 00:17:13.360
+going to keep everything the same here in the&nbsp;
+system prompt. So, we're not changing any of that&nbsp;&nbsp;
+
+00:17:13.360 --> 00:17:17.200
+background context that we gave to Claude about&nbsp;
+the form, about how it's going to fill everything&nbsp;&nbsp;
+
+00:17:17.200 --> 00:17:22.000
+out. We're not changing anything else about the&nbsp;
+context and the role. We're just adding this&nbsp;&nbsp;
+
+00:17:22.000 --> 00:17:27.120
+detailed list of tasks. And this is how we want&nbsp;
+Claude to go about analyzing this. And a really&nbsp;&nbsp;
+
+00:17:27.120 --> 00:17:31.440
+key thing that we found here as we were building&nbsp;
+this demo and when we were working on the customer&nbsp;&nbsp;
+
+00:17:31.440 --> 00:17:36.880
+example is that the order in which Claude analyzes&nbsp;
+this information is very important. And this is&nbsp;&nbsp;
+
+00:17:36.880 --> 00:17:41.280
+analogous to way you might think about doing this.&nbsp;
+If you were a human, you would probably not look&nbsp;&nbsp;
+
+00:17:41.280 --> 00:17:45.680
+at the drawing first and try to understand what&nbsp;
+was going on, right? It's pretty unclear. It's&nbsp;&nbsp;
+
+00:17:45.680 --> 00:17:50.480
+a bunch of boxes and lines. We don't really know&nbsp;
+what that drawing is supposed to mean without any&nbsp;&nbsp;
+
+00:17:50.480 --> 00:17:55.280
+additional context. But if we have the form and we&nbsp;
+can read the form first and understand that we're&nbsp;&nbsp;
+
+00:17:55.280 --> 00:17:59.920
+talking about a car accident and that we're seeing&nbsp;
+some checkboxes that indicate what vehicles we're&nbsp;&nbsp;
+
+00:17:59.920 --> 00:18:04.400
+doing at certain times, then we know a little&nbsp;
+bit more about how to understand what might be&nbsp;&nbsp;
+
+00:18:04.400 --> 00:18:08.240
+in the drawing. And so that's the kind of detail&nbsp;
+that we're going to give Claude here is to say,&nbsp;&nbsp;
+
+00:18:08.240 --> 00:18:13.200
+"Hey, first go look at the form. Look at it very&nbsp;
+carefully. Make sure you can tell what boxes are&nbsp;&nbsp;
+
+00:18:13.200 --> 00:18:19.040
+checked. Make sure you're not missing anything&nbsp;
+here. Um, make a list for yourself of what you see&nbsp;&nbsp;
+
+00:18:19.040 --> 00:18:24.160
+in that. And then move on to the sketch. So after&nbsp;
+you've kind of confidently gotten information&nbsp;&nbsp;
+
+00:18:24.160 --> 00:18:30.480
+out of the form and you can say what's factually&nbsp;
+true, then you can go on and think about what you&nbsp;&nbsp;
+
+00:18:30.480 --> 00:18:36.400
+can gain from that sketch. keeping in mind your&nbsp;
+understanding of the accident so far. So, whatever&nbsp;&nbsp;
+
+00:18:36.400 --> 00:18:40.080
+you've learned from the form, you're trying to&nbsp;
+match that up with the sketch. And that's how&nbsp;&nbsp;
+
+00:18:40.080 --> 00:18:52.320
+you're going to arrive um at your final uh at your&nbsp;
+final assessment of the form. And we'll run it.
+
+00:18:52.320 --> 00:18:56.880
+And here you can see one behavior that&nbsp;
+this produced for Claude because I told&nbsp;&nbsp;
+
+00:18:56.880 --> 00:19:01.680
+it to very carefully examine the form. It's&nbsp;
+showing me its work as it does that. So,&nbsp;&nbsp;
+
+00:19:01.680 --> 00:19:06.960
+it's telling me each individual box. Is the box&nbsp;
+checked? Is it not checked? And so, this is one&nbsp;&nbsp;
+
+00:19:06.960 --> 00:19:11.360
+thing you'll notice as you do prompt engineering.&nbsp;
+In our previous prompts, we were kind of letting&nbsp;&nbsp;
+
+00:19:11.360 --> 00:19:16.320
+claw decide how much it wanted to tell us about&nbsp;
+what it saw on the form here. Because I've told&nbsp;&nbsp;
+
+00:19:16.320 --> 00:19:21.920
+it carefully examine each and every box, it's very&nbsp;
+carefully examining each and every box. And that&nbsp;&nbsp;
+
+00:19:21.920 --> 00:19:26.480
+might not be what we want in the end. So, that's&nbsp;
+something we might change. Um, but it's also going&nbsp;&nbsp;
+
+00:19:26.480 --> 00:19:32.400
+to give me these other things that I asked for&nbsp;
+in XML tags. So, a nice analysis of the form, the&nbsp;&nbsp;
+
+00:19:32.400 --> 00:19:37.440
+accident summary so far. It's going to give me a&nbsp;
+sketch analysis, and it's going to continue to say&nbsp;&nbsp;
+
+00:19:37.440 --> 00:19:42.880
+that vehicle B appears to be clearly at fault. In&nbsp;
+this in this example, it's pretty simple example&nbsp;&nbsp;
+
+00:19:42.880 --> 00:19:48.640
+with more complicated drawings, more uh less&nbsp;
+clarity in the forms. This kind of step-by-step&nbsp;&nbsp;
+
+00:19:48.640 --> 00:19:54.080
+thinking for Claude is really impactful in&nbsp;
+its ability to make a correct assessment here.&nbsp;&nbsp;
+
+00:19:54.720 --> 00:19:59.280
+Uh, so I think we'll go back to the slides and&nbsp;
+Christian's going to talk about a last kind of&nbsp;&nbsp;
+
+00:19:59.280 --> 00:20:05.040
+piece that we might add to this um to really make&nbsp;
+it useful for a real world task. Indeed. Thank&nbsp;&nbsp;
+
+00:20:05.040 --> 00:20:11.520
+you so much. So, as Hannah mentioned, uh, we sort&nbsp;
+of set the stage in this prompt to make sure that&nbsp;&nbsp;
+
+00:20:11.520 --> 00:20:16.880
+really acting on our behalf in a right manner.&nbsp;
+Um, and a key step that we also add towards the&nbsp;&nbsp;
+
+00:20:16.880 --> 00:20:21.600
+end of this prompt that I'm going to show you in a&nbsp;
+second is a simple sort of guidelines or reminder&nbsp;&nbsp;
+
+00:20:21.600 --> 00:20:26.000
+part as well. just strengthening and reinforcing&nbsp;
+exactly what we want to get out of it. And one&nbsp;&nbsp;
+
+00:20:26.000 --> 00:20:30.560
+important piece is actually output formatting.&nbsp;
+You can imagine if you're a data engineer working&nbsp;&nbsp;
+
+00:20:30.560 --> 00:20:35.360
+on this LM application, all the sort of fancy&nbsp;
+preamble is great, but at the end of the day,&nbsp;&nbsp;
+
+00:20:35.360 --> 00:20:39.760
+you want your piece of information to to&nbsp;
+be stored in, let's say, your SQL database,&nbsp;&nbsp;
+
+00:20:39.760 --> 00:20:44.800
+wherever you want to store that data. And the rest&nbsp;
+of it that is necessary for cloud to sort of give&nbsp;&nbsp;
+
+00:20:44.800 --> 00:20:49.520
+its verdict isn't really that necessary for your&nbsp;
+application. You want the nitty-gritty information&nbsp;&nbsp;
+
+00:20:49.520 --> 00:20:54.880
+for your application. So if we transition back to&nbsp;
+the console, you'll see here that we just added&nbsp;&nbsp;
+
+00:20:54.880 --> 00:21:01.680
+a simple importance guidelines part. And again,&nbsp;
+this is just reinforcing the sort of mechanical&nbsp;&nbsp;
+
+00:21:01.680 --> 00:21:06.000
+behavior that we want out of cloud here. Want&nbsp;
+to make sure that the summary is clear, concise,&nbsp;&nbsp;
+
+00:21:06.000 --> 00:21:11.360
+and accurate. Want to make sure that nothing&nbsp;
+is sort of impeding in in in Claw's assessment&nbsp;&nbsp;
+
+00:21:11.360 --> 00:21:15.680
+apart from the data it's analyzing. And then&nbsp;
+finally, when it comes to output formatting,&nbsp;&nbsp;
+
+00:21:15.680 --> 00:21:20.480
+in my case here, I'm just going to ask Claude&nbsp;
+to wrap its final verdict. All other stuff I'm&nbsp;&nbsp;
+
+00:21:20.480 --> 00:21:24.080
+actually going to ignore for my application and&nbsp;
+just look at what it's actually assessing. And&nbsp;&nbsp;
+
+00:21:24.080 --> 00:21:29.280
+that is I can I can use this if I want to build&nbsp;
+some sort of analytics tool afterwards as well.&nbsp;&nbsp;
+
+00:21:29.280 --> 00:21:35.200
+Or if I just want a clearcut um uh determination,&nbsp;
+this is a way I can do so. So if I just run this&nbsp;&nbsp;
+
+00:21:35.200 --> 00:21:39.360
+here, you'll see it's going through the same sort&nbsp;
+of process that we've seen before. In this case,&nbsp;&nbsp;
+
+00:21:39.360 --> 00:21:43.520
+it's much more succinct because we've asked&nbsp;
+to be to summarize its findings in a much&nbsp;&nbsp;
+
+00:21:43.520 --> 00:21:48.480
+more straightforward manner. And then finally&nbsp;
+towards the end you'll see that it'll wrap my&nbsp;&nbsp;
+
+00:21:48.480 --> 00:21:54.080
+output in these final verdict XML tags. So you&nbsp;
+can see that during this demo we've gone from&nbsp;&nbsp;
+
+00:21:54.080 --> 00:22:01.680
+a skiing accident to sort of unconfident insecure&nbsp;
+outputs from perhaps a car accident in the second&nbsp;&nbsp;
+
+00:22:01.680 --> 00:22:08.320
+version to now a much more strictly formatted&nbsp;
+confident output that we can actually build an&nbsp;&nbsp;
+
+00:22:08.320 --> 00:22:15.680
+application around and actually help you know a&nbsp;
+real world um car insurance company for example.&nbsp;&nbsp;
+
+00:22:15.680 --> 00:22:24.320
+U finally if we transition back to the um slides&nbsp;
+another key way of shaping CL's output is actually&nbsp;&nbsp;
+
+00:22:24.320 --> 00:22:30.240
+putting words in CL's mouth or as we call it&nbsp;
+pre-filled responses. You could imagine that&nbsp;&nbsp;
+
+00:22:30.240 --> 00:22:36.320
+parsing XML tags is nice and all but maybe you&nbsp;
+want a structured JSON output to make sure that&nbsp;&nbsp;
+
+00:22:36.320 --> 00:22:42.080
+uh it's JSON serializable and you can use this&nbsp;
+in a subse subsequent call for example. Um this&nbsp;&nbsp;
+
+00:22:42.080 --> 00:22:48.160
+is quite simple to do. You could just add that um&nbsp;
+claude needs to begin its output with a certain&nbsp;&nbsp;
+
+00:22:48.160 --> 00:22:53.360
+format. This could be for example a uh open&nbsp;
+square bracket squarely bracket for example&nbsp;&nbsp;
+
+00:22:53.360 --> 00:22:58.080
+or even in this case that we see in front of us&nbsp;
+this would be an XML tag for itinerary. In our&nbsp;&nbsp;
+
+00:22:58.080 --> 00:23:04.080
+case it could also be that final verdict XML tag.&nbsp;
+Um, and this is just a great way of again shaping&nbsp;&nbsp;
+
+00:23:04.080 --> 00:23:09.680
+how Claude is supposed to respond. Um, without all&nbsp;
+the preamble if you don't want that, even though&nbsp;&nbsp;
+
+00:23:09.680 --> 00:23:14.000
+that is also key in shaping his output to make&nbsp;
+sure that Claude is reasoning through the steps&nbsp;&nbsp;
+
+00:23:14.000 --> 00:23:18.720
+that we wanted. So in our case here, we would just&nbsp;
+wrap it in the final verdict and then parse it&nbsp;&nbsp;
+
+00:23:18.720 --> 00:23:24.960
+afterwards. But you can use prefill as well. Now&nbsp;
+finally one step that I would like to highlight&nbsp;&nbsp;
+
+00:23:24.960 --> 00:23:31.680
+here as well is that both cloud 3.7 and especially&nbsp;
+cloud 4 of course is a sort of hybrid reasoning&nbsp;&nbsp;
+
+00:23:31.680 --> 00:23:36.240
+model meaning that there's extended thinking at&nbsp;
+your disposal. Um and this is something we want&nbsp;&nbsp;
+
+00:23:36.240 --> 00:23:41.920
+to highlight because you can use extended thinking&nbsp;
+as a crutch for your prompt engineering. Basically&nbsp;&nbsp;
+
+00:23:41.920 --> 00:23:45.600
+you can enable this to make sure that Claude&nbsp;
+actually has time to think. It adds his thinking&nbsp;&nbsp;
+
+00:23:45.600 --> 00:23:50.080
+tags and the scratch pad. Um and the beauty of&nbsp;
+that is you can actually analyze that transcript&nbsp;&nbsp;
+
+00:23:50.080 --> 00:23:55.040
+to understand how claude is going about that data.&nbsp;
+So as we mentioned we have these check boxes where&nbsp;&nbsp;
+
+00:23:55.040 --> 00:24:00.160
+it goes through step by step of the scenario&nbsp;
+that transpired for the accident. And in many&nbsp;&nbsp;
+
+00:24:00.160 --> 00:24:04.640
+ways there you can actually try to help claude in&nbsp;
+building this into the system prompt itself. It's&nbsp;&nbsp;
+
+00:24:04.640 --> 00:24:10.000
+not only more token efficient but it's a good way&nbsp;
+of understanding how these intelligent models that&nbsp;&nbsp;
+
+00:24:10.000 --> 00:24:14.320
+don't have our intuition actually go about the&nbsp;
+data that we provide them. And because of that,&nbsp;&nbsp;
+
+00:24:14.320 --> 00:24:19.680
+it's quite key in actually trying to break down&nbsp;
+how your system prompt can get a lot better. Um,&nbsp;&nbsp;
+
+00:24:19.680 --> 00:24:24.560
+and with that said, I think uh I'd like to thank&nbsp;
+all you for coming today. We'll be around as well.&nbsp;&nbsp;
+
+00:24:24.560 --> 00:24:29.040
+So if you have any questions on prompting, please&nbsp;
+uh please go ahead. I know there's a prompting.&nbsp;&nbsp;
+
+00:24:29.040 --> 00:24:34.000
+You want to learn more about prompting in an hour.&nbsp;
+We have prompting for agents and right now we&nbsp;&nbsp;
+
+00:24:34.000 --> 00:24:39.200
+have an amazing demo of Claude plays Pokemon. So&nbsp;
+don't go anywhere for that. And as Christian said,&nbsp;&nbsp;
+
+00:24:39.200 --> 00:24:42.160
+we'll be around all day. So, I know we&nbsp;
+didn't have time for Q&amp;A in this session,&nbsp;&nbsp;
+
+00:24:42.160 --> 00:24:49.280
+but uh please come find us if you want to chat.&nbsp;
+And thank you guys for coming. Thank you so much.
+

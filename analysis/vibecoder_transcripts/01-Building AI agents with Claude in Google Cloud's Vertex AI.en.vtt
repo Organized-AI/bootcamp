@@ -1,0 +1,1174 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:08.480 --> 00:00:13.600
+Hello everyone. Uh thank you for joining this uh&nbsp;
+this session. So in this session we are going to&nbsp;&nbsp;
+
+00:00:13.600 --> 00:00:21.120
+talk about how you can build uh AI agents uh using&nbsp;
+uh cloud on vertex AI. So before to start let's&nbsp;&nbsp;
+
+00:00:21.120 --> 00:00:27.840
+see the uh let's set the scene. So as you probably&nbsp;
+know like building AI agent is very powerful.&nbsp;&nbsp;
+
+00:00:27.840 --> 00:00:32.800
+with the II agents you can build such a cool&nbsp;
+applications but the reality is after you start&nbsp;&nbsp;
+
+00:00:32.800 --> 00:00:37.680
+developing and you know prototyping agents and&nbsp;
+let's assume that you are happy with what you&nbsp;&nbsp;
+
+00:00:37.680 --> 00:00:42.400
+built it's so hard to productionalize&nbsp;
+these agents right and the reason are&nbsp;&nbsp;
+
+00:00:42.400 --> 00:00:48.480
+essentially three uh so first of all you need to&nbsp;
+because uh right now to build agent you have so&nbsp;&nbsp;
+
+00:00:48.480 --> 00:00:53.760
+many frameworks that provides you know tools&nbsp;
+that provides uh capabilities that you can&nbsp;&nbsp;
+
+00:00:53.760 --> 00:00:59.040
+uh that you can use to enhance your agents like&nbsp;
+the landscape is so fragmented. So you need&nbsp;&nbsp;
+
+00:00:59.040 --> 00:01:03.840
+to figure it out how to integrate the different&nbsp;
+frameworks and different tools to make the system&nbsp;&nbsp;
+
+00:01:03.840 --> 00:01:10.400
+work. So the the other the other reason is let's&nbsp;
+assume that you are capable of building one agent&nbsp;&nbsp;
+
+00:01:10.400 --> 00:01:15.760
+or a multi- aent system with one framework but at&nbsp;
+the same time you want to use different framework&nbsp;&nbsp;
+
+00:01:15.760 --> 00:01:22.560
+together. It's not easy to um like make um make&nbsp;
+the communication happen between these two set of&nbsp;&nbsp;
+
+00:01:22.560 --> 00:01:28.320
+uh you know different agents. And then even let's&nbsp;
+assume that even if you're able to you know build&nbsp;&nbsp;
+
+00:01:28.320 --> 00:01:35.200
+agents uh create this network of of agents that&nbsp;
+are capable of communicating between them it's so&nbsp;&nbsp;
+
+00:01:35.200 --> 00:01:40.000
+hard to manage uh them in production because you&nbsp;
+need to take care of all the operation around the&nbsp;&nbsp;
+
+00:01:40.000 --> 00:01:45.760
+agents and the relative governance. So all the&nbsp;
+monitoring capabilities the logging capabilities&nbsp;&nbsp;
+
+00:01:45.760 --> 00:01:52.000
+that you need to implement on your agent they are&nbsp;
+very hard to uh be managed. Uh in this sense uh&nbsp;&nbsp;
+
+00:01:52.000 --> 00:01:59.200
+let's imagine that uh you we you will be able to&nbsp;
+have a toolkit that will allows you to standardize&nbsp;&nbsp;
+
+00:01:59.200 --> 00:02:05.120
+and develop your agent in a very efficient way&nbsp;
+and then together with this toolkit you you get&nbsp;&nbsp;
+
+00:02:05.120 --> 00:02:12.000
+a set of protocols that will allows your agent to&nbsp;
+consume uh tool and context with the M but at the&nbsp;&nbsp;
+
+00:02:12.000 --> 00:02:18.560
+same time connect with other agent in a seamless&nbsp;
+way. And third you will you will get an u agent&nbsp;&nbsp;
+
+00:02:18.560 --> 00:02:24.880
+platform that will allows you to deploy at scale&nbsp;
+these uh agent system and you know manage all the&nbsp;&nbsp;
+
+00:02:24.880 --> 00:02:30.400
+uh operations that are around these uh this new&nbsp;
+kind of application. So with these challenges&nbsp;&nbsp;
+
+00:02:30.400 --> 00:02:39.040
+in mind and these three you know um three main&nbsp;
+um reason that we want to address that's why we&nbsp;&nbsp;
+
+00:02:39.040 --> 00:02:45.520
+define our own agent stack on Google cloud and our&nbsp;
+agent stack is composed by four main components.&nbsp;&nbsp;
+
+00:02:45.520 --> 00:02:52.080
+So the first one is agent development kit which is&nbsp;
+a an open-source code first and developer friendly&nbsp;&nbsp;
+
+00:02:52.080 --> 00:02:59.360
+uh framework that will allows you to build&nbsp;
+evaluate and deploy your agent uh at scale. But&nbsp;&nbsp;
+
+00:02:59.360 --> 00:03:04.720
+in order to enhance your agent you have a you need&nbsp;
+a way to standardize the agent communicate with&nbsp;&nbsp;
+
+00:03:04.720 --> 00:03:11.280
+different tools as I saw you before. So to address&nbsp;
+these challenges of protocols, one one thing that&nbsp;&nbsp;
+
+00:03:11.280 --> 00:03:16.880
+we did when we designed agent development&nbsp;
+kit is made and is making it compatible with&nbsp;&nbsp;
+
+00:03:16.880 --> 00:03:24.640
+um um MCP. So probably you know what is MCP uh you&nbsp;
+already uh heard about it but with MCP essentially&nbsp;&nbsp;
+
+00:03:24.640 --> 00:03:31.920
+you will make the agent compatible uh with uh&nbsp;
+several tools and in general application will be&nbsp;&nbsp;
+
+00:03:31.920 --> 00:03:39.200
+uh you will provide your context to your&nbsp;
+application using LLMs on top of MCP.&nbsp;&nbsp;
+
+00:03:39.200 --> 00:03:46.320
+So we also introduce like this Vert.x AI engine&nbsp;
+engine which is essentially a managed platform&nbsp;&nbsp;
+
+00:03:46.320 --> 00:03:53.360
+that has been designed to deploy, manage and scale&nbsp;
+your AI agent in production and uh it takes care&nbsp;&nbsp;
+
+00:03:53.360 --> 00:04:00.720
+of all the those operational challenges and uh&nbsp;
+you know possible capabilities that you need&nbsp;&nbsp;
+
+00:04:00.720 --> 00:04:07.440
+uh in order to uh deploy your agent in production.&nbsp;
+And finally to address the challenges of&nbsp;&nbsp;
+
+00:04:07.440 --> 00:04:15.600
+uh allow communication between different agent um&nbsp;
+build with different frameworks we also introduce&nbsp;&nbsp;
+
+00:04:15.600 --> 00:04:21.600
+uh agentto agent protocol. So which is essentially&nbsp;
+you know uh open source uh an open source protocol&nbsp;&nbsp;
+
+00:04:21.600 --> 00:04:26.800
+that will allows you to create this seamless&nbsp;
+communication and collaboration between agents&nbsp;&nbsp;
+
+00:04:26.800 --> 00:04:33.120
+in whatever framework you build. So with this&nbsp;
+talk we so today we are going to use this talk to&nbsp;&nbsp;
+
+00:04:33.120 --> 00:04:38.960
+uh build uh multi- aent systems and but before&nbsp;
+to do that let me to introduce myself I'm Ian&nbsp;&nbsp;
+
+00:04:38.960 --> 00:04:43.920
+Ardini I'm a developer advocate at the Google&nbsp;
+cloud I'm based in sunny and uh today I want to&nbsp;&nbsp;
+
+00:04:43.920 --> 00:04:50.000
+go through this journey with you and the journey&nbsp;
+will starts with building a very simple ADK agents&nbsp;&nbsp;
+
+00:04:50.000 --> 00:04:56.800
+uh using cloud and then we are going to enhance&nbsp;
+these agents using uh some uh pre-built tools and&nbsp;&nbsp;
+
+00:04:56.800 --> 00:05:02.880
+MCP and finally Finally, we will deploy&nbsp;
+the agents on agent engine. As a bonus,&nbsp;&nbsp;
+
+00:05:02.880 --> 00:05:08.160
+we will try to cover which I will try also to show&nbsp;
+you how you can connect multiple agent using agent&nbsp;&nbsp;
+
+00:05:08.160 --> 00:05:12.880
+to agent protocol. Uh but in case we are not&nbsp;
+we we will not able to do that. Don't worry,&nbsp;&nbsp;
+
+00:05:12.880 --> 00:05:18.800
+we are going to have a live webinar at the end&nbsp;
+of the month. So we will show you how to do that&nbsp;&nbsp;
+
+00:05:18.800 --> 00:05:25.040
+later. With that being said, we want to build an&nbsp;
+agent. But to build an agent, we need an an LLM.&nbsp;&nbsp;
+
+00:05:25.040 --> 00:05:31.600
+So let me show you how you can get access to cloud&nbsp;
+models on vertex AI. So cloud model cloud models&nbsp;&nbsp;
+
+00:05:31.600 --> 00:05:37.280
+on vert.xai are accessible through vert.xi model&nbsp;
+garden which is essentially a centralized hub&nbsp;&nbsp;
+
+00:05:37.280 --> 00:05:44.640
+where you can discover, deploy and manage a wide&nbsp;
+variety of foundational and open models including&nbsp;&nbsp;
+
+00:05:44.640 --> 00:05:51.200
+uh cloud. So on uh on um model garden you will&nbsp;
+find the latest and greatest cloud model. This&nbsp;&nbsp;
+
+00:05:51.200 --> 00:05:58.080
+morning we just rolled out uh cloud uh 4. So I&nbsp;
+will show you and um after you simply you know&nbsp;&nbsp;
+
+00:05:58.080 --> 00:06:02.560
+fill um you know you provide some credential and&nbsp;
+everything you will get access to the model and&nbsp;&nbsp;
+
+00:06:02.560 --> 00:06:07.680
+you will able to use it through API or through the&nbsp;
+console. So without further ado let me show you&nbsp;&nbsp;
+
+00:06:07.680 --> 00:06:15.280
+how you can get access to cloud. So let's switch&nbsp;
+on the yes so for people that doesn't know vertex&nbsp;&nbsp;
+
+00:06:15.280 --> 00:06:21.440
+AI this is how the vertexi console looks like.&nbsp;
+So you vert.xi provide a set of services to build&nbsp;&nbsp;
+
+00:06:21.440 --> 00:06:28.000
+both generative AI and predictive AI application&nbsp;
+and model garden as I said is a centralized app&nbsp;&nbsp;
+
+00:06:28.000 --> 00:06:34.080
+that provides you several model from different you&nbsp;
+know model providers including cloud in including&nbsp;&nbsp;
+
+00:06:34.080 --> 00:06:40.480
+entropic. In fact in the uh partner session you&nbsp;
+will find the entropy models and here you can see&nbsp;&nbsp;
+
+00:06:40.480 --> 00:06:46.240
+all the entropy models that we provide including&nbsp;
+the latest that we released this morning. So in&nbsp;&nbsp;
+
+00:06:46.240 --> 00:06:54.880
+order to you can use model garden to test this&nbsp;
+model. So uh here is u the vert.xi um vert.xi&nbsp;&nbsp;
+
+00:06:54.880 --> 00:07:00.960
+studio which is our prompt UI that you can use for&nbsp;
+test this model. As you see I already select cloud&nbsp;&nbsp;
+
+00:07:00.960 --> 00:07:07.680
+3.7 sonet which is the model that we are going to&nbsp;
+use today to build our agent. Uh we are already&nbsp;&nbsp;
+
+00:07:07.680 --> 00:07:14.560
+integrating cloud uh 4 with ADK. So stay tuned&nbsp;
+in the coming weeks. But through this UI what you&nbsp;&nbsp;
+
+00:07:14.560 --> 00:07:20.880
+can do you can test the model and uh you know you&nbsp;
+can start you can start interacting with it and uh&nbsp;&nbsp;
+
+00:07:20.880 --> 00:07:29.120
+using the API that you can get here to integrate&nbsp;
+with your uh application. So with that being said&nbsp;&nbsp;
+
+00:07:29.120 --> 00:07:34.640
+now that you know more or less how you know to get&nbsp;
+access to cloud through vertex AI let's go back&nbsp;&nbsp;
+
+00:07:34.640 --> 00:07:39.920
+to the presentation and let's start building&nbsp;
+agents using this model. So for the in this&nbsp;&nbsp;
+
+00:07:39.920 --> 00:07:45.840
+uh in this um in this demo we are going to build&nbsp;
+a very simple agent which is a birth uh birthday&nbsp;&nbsp;
+
+00:07:45.840 --> 00:07:52.480
+a birthday birthday planner agent. So uh we will u&nbsp;
+we will it's an agent that essentially will allows&nbsp;&nbsp;
+
+00:07:52.480 --> 00:08:00.240
+you to organize a birthday party such as in teams&nbsp;
+and you know getting the guest list and so on and&nbsp;&nbsp;
+
+00:08:00.240 --> 00:08:05.360
+uh in before to start this uh before to build this&nbsp;
+agent you need to know some concept related to&nbsp;&nbsp;
+
+00:08:05.360 --> 00:08:12.640
+ADK. Uh just one thing I know this uh this uh this&nbsp;
+session is supposed to be a workshop but because&nbsp;&nbsp;
+
+00:08:12.640 --> 00:08:20.400
+all the Wi-Fi issue that you've already faced I&nbsp;
+will uh I know we will uh we will already give you&nbsp;&nbsp;
+
+00:08:20.400 --> 00:08:25.760
+some credits and I will share the repository with&nbsp;
+you. So after this session you will be able to&nbsp;&nbsp;
+
+00:08:25.760 --> 00:08:29.840
+reproduce this code I'm going to show you at home&nbsp;
+and if you have question you can always come back&nbsp;&nbsp;
+
+00:08:29.840 --> 00:08:35.120
+to me. Okay, with that being said, these are the&nbsp;
+core concept that you need to know about ADK in&nbsp;&nbsp;
+
+00:08:35.120 --> 00:08:40.160
+order to build an agent with the agent development&nbsp;
+kit. First of all, agent development kit provides&nbsp;&nbsp;
+
+00:08:40.160 --> 00:08:44.880
+several type of agents that you can use. Uh&nbsp;
+you already pre-built some you know pattern&nbsp;&nbsp;
+
+00:08:44.880 --> 00:08:50.400
+uh so aenting pattern including sequential agents&nbsp;
+that you can use in order to implement your&nbsp;&nbsp;
+
+00:08:50.400 --> 00:08:56.480
+application. But the simplest pattern that you can&nbsp;
+find is the the one that we use with the LLM agent&nbsp;&nbsp;
+
+00:08:56.480 --> 00:09:03.840
+which essentially used just an LLM to feed uh to&nbsp;
+you know um build to use the agent to build the&nbsp;&nbsp;
+
+00:09:03.840 --> 00:09:10.080
+agent. And so uh the this this class represent&nbsp;
+the brain of the agent and it supports several&nbsp;&nbsp;
+
+00:09:10.080 --> 00:09:15.840
+models including claude uh claude and essentially&nbsp;
+it allowed uh it requires you to set the model&nbsp;&nbsp;
+
+00:09:15.840 --> 00:09:20.640
+give it uh the agent a name some instructions&nbsp;
+and define the tool that you want to use and&nbsp;&nbsp;
+
+00:09:20.640 --> 00:09:25.520
+then after you have done this you get your agent&nbsp;
+already up and running with respect of tools you&nbsp;&nbsp;
+
+00:09:25.520 --> 00:09:30.720
+know what is a tool is it's essentially a mean&nbsp;
+that you can use to you know assign some skills&nbsp;&nbsp;
+
+00:09:30.720 --> 00:09:38.240
+to the agent and um uh ADK A we provide some&nbsp;
+pre-build tools that you can use but you also can&nbsp;&nbsp;
+
+00:09:38.240 --> 00:09:43.040
+you can also define your own tools and integrate&nbsp;
+with the with the framework. So you have the&nbsp;&nbsp;
+
+00:09:43.040 --> 00:09:47.920
+agents, you have the tool in ADK. You have this&nbsp;
+concept of runner that puts together everything&nbsp;&nbsp;
+
+00:09:47.920 --> 00:09:54.800
+and coordinates um you know execute the agents. So&nbsp;
+it manage the session. So the conversation state&nbsp;&nbsp;
+
+00:09:54.800 --> 00:10:01.360
+along the uh while you're running the agents and&nbsp;
+it is integrated with a very nice CLI that you can&nbsp;&nbsp;
+
+00:10:01.360 --> 00:10:08.000
+see here uh ADK run and ADK web that will allows&nbsp;
+you to interact with the agent programmatically&nbsp;&nbsp;
+
+00:10:08.000 --> 00:10:13.600
+or you know through a web UI that I will show you&nbsp;
+later. And then uh last last important thing that&nbsp;&nbsp;
+
+00:10:13.600 --> 00:10:19.040
+I want to mention you have this concept of session&nbsp;
+which essentially will allows you to store uh the&nbsp;&nbsp;
+
+00:10:19.040 --> 00:10:24.400
+conversation and interact with the agent in a&nbsp;
+way that you know it remembers what uh what you&nbsp;&nbsp;
+
+00:10:24.400 --> 00:10:31.680
+already discussed with him before. Okay. So with&nbsp;
+that being said, I told you ADK support cloud how&nbsp;&nbsp;
+
+00:10:31.680 --> 00:10:37.920
+it is support cloud with two you can use cloud&nbsp;
+in two ways with ADK through the LL light LLM&nbsp;&nbsp;
+
+00:10:37.920 --> 00:10:42.720
+integration which is something that I will assume&nbsp;
+you're familiar with or you can use the pre-build&nbsp;&nbsp;
+
+00:10:42.720 --> 00:10:48.320
+integration that we provide as a vertx team uh&nbsp;
+using cloud and the LLM registry which is the&nbsp;&nbsp;
+
+00:10:48.320 --> 00:10:53.840
+one that I will show you uh today. It's just a&nbsp;
+nice way you know to integrate the model with the&nbsp;&nbsp;
+
+00:10:53.840 --> 00:11:01.200
+with the interface. So with that being said, let&nbsp;
+me show you how you can build um an agent using u&nbsp;&nbsp;
+
+00:11:01.200 --> 00:11:08.560
+using ADK. So this is the repository that uh&nbsp;
+you will u you will get once you uh download&nbsp;&nbsp;
+
+00:11:08.560 --> 00:11:13.040
+from once you get once you clone the repo from&nbsp;
+GitHub. So in the repository you will have three&nbsp;&nbsp;
+
+00:11:13.040 --> 00:11:17.600
+agents. We are going to cover them uh today. And&nbsp;
+the first one as I said is the birthday planner.&nbsp;&nbsp;
+
+00:11:17.600 --> 00:11:22.720
+So in order to build an agent with ADK all you&nbsp;
+need to do is providing essentially three file&nbsp;&nbsp;
+
+00:11:22.720 --> 00:11:28.640
+uh the agent.py PI which contain the agent logics&nbsp;
+uh the environment variable file which contains&nbsp;&nbsp;
+
+00:11:28.640 --> 00:11:33.680
+all the environment variable that you want to use&nbsp;
+for your agent and an init file as you probably&nbsp;&nbsp;
+
+00:11:33.680 --> 00:11:38.480
+are familiar with. So just these three file will&nbsp;
+allows you to run the agent and as you can see&nbsp;&nbsp;
+
+00:11:38.480 --> 00:11:44.560
+we designed ADK to be so close uh to software&nbsp;
+engineering best practices. So this is something&nbsp;&nbsp;
+
+00:11:44.560 --> 00:11:49.520
+that you should be capable of running easily. With&nbsp;
+that being said here you can see how you can use&nbsp;&nbsp;
+
+00:11:49.520 --> 00:11:56.000
+ADK. So you need to import the LLM agent class,&nbsp;
+the cloud class which is going to represent the&nbsp;&nbsp;
+
+00:11:56.000 --> 00:12:01.920
+cloud model that we are going to use today and uh&nbsp;
+then you can introduce uh you can also use some&nbsp;&nbsp;
+
+00:12:01.920 --> 00:12:07.280
+other classes related to memory the runner that&nbsp;
+I already explained. But with that being said&nbsp;&nbsp;
+
+00:12:07.280 --> 00:12:12.320
+once you get this uh once you import this class&nbsp;
+this is all the bullet plate code that you need&nbsp;&nbsp;
+
+00:12:12.320 --> 00:12:17.680
+to write in order to create your first agent. So&nbsp;
+you use the LLM agent class. You define a name,&nbsp;&nbsp;
+
+00:12:17.680 --> 00:12:23.680
+the model that you want to use, in this case the&nbsp;
+cloth 3.7, the description, so what the agent is&nbsp;&nbsp;
+
+00:12:23.680 --> 00:12:28.160
+going to do and the instruction that you want to&nbsp;
+give to the agent. That's it. Once you have this,&nbsp;&nbsp;
+
+00:12:28.160 --> 00:12:33.840
+you are ready to go. So all you need to do is that&nbsp;
+running if you want to interact with the agent in&nbsp;&nbsp;
+
+00:12:33.840 --> 00:12:40.400
+a programmatic way, you can run ad run and then&nbsp;
+behind the scene it will start a session with&nbsp;&nbsp;
+
+00:12:40.400 --> 00:12:47.760
+your agent. Oh, sorry, I forgot one thing. NDK&nbsp;
+run birthday and then uh it will run a session&nbsp;&nbsp;
+
+00:12:47.760 --> 00:12:52.880
+uh an interactive session with your agent. So from&nbsp;
+here you can start interacting with your agent and&nbsp;&nbsp;
+
+00:12:52.880 --> 00:12:58.000
+you can start you know understanding how it works&nbsp;
+and so in this way you can iteratively develop&nbsp;&nbsp;
+
+00:12:58.000 --> 00:13:02.320
+develop the agents. So and you can improve the&nbsp;
+agent depending on the task that you are trying&nbsp;&nbsp;
+
+00:13:02.320 --> 00:13:08.000
+to achieve. So again three files one CLI and&nbsp;
+you're done and you can you can start you know&nbsp;&nbsp;
+
+00:13:08.000 --> 00:13:16.160
+uh improving your agents. So let's go back to&nbsp;
+the slide. Okay. So let's assume that uh you&nbsp;&nbsp;
+
+00:13:16.160 --> 00:13:20.800
+know you clone the repo, you get your agent up and&nbsp;
+running. Uh let's make things a little bit more&nbsp;&nbsp;
+
+00:13:20.800 --> 00:13:27.120
+complicated. So we want to extend our agents uh in&nbsp;
+a way that it becomes a multi- aent system. So we&nbsp;&nbsp;
+
+00:13:27.120 --> 00:13:31.840
+have this agent that it will give us suggestion&nbsp;
+for the birthday party. But then once we get the&nbsp;&nbsp;
+
+00:13:31.840 --> 00:13:37.520
+birthday party, we want also you know to schedule&nbsp;
+some time in our agenda for example for going and&nbsp;&nbsp;
+
+00:13:37.520 --> 00:13:44.080
+buy the gift for the party or you know just&nbsp;
+setting a reminder of the birthday day. So&nbsp;&nbsp;
+
+00:13:44.080 --> 00:13:50.800
+how you do that you do uh you introduce you know&nbsp;
+tools and uh the cool thing of ADK is that we we&nbsp;&nbsp;
+
+00:13:50.800 --> 00:13:57.440
+didn't want to reinvent the wheel. So we uh we by&nbsp;
+day zero we introduced this integration with MCP.&nbsp;&nbsp;
+
+00:13:57.440 --> 00:14:02.640
+So again I'm not going to explain you what uh it&nbsp;
+is MCP and the difference between you know the&nbsp;&nbsp;
+
+00:14:02.640 --> 00:14:10.560
+language specific tools or the API. The idea is&nbsp;
+essentially with MCP you standardize the way LLM&nbsp;&nbsp;
+
+00:14:10.560 --> 00:14:17.440
+u get access to the context not only LLM but&nbsp;
+also but also agents. Uh with ADK you have two&nbsp;&nbsp;
+
+00:14:17.440 --> 00:14:25.840
+ways to use uh MCP. So you can use MCP uh some MCP&nbsp;
+existing uh server and uh you know integrate them&nbsp;&nbsp;
+
+00:14:25.840 --> 00:14:31.120
+as a tool with ADK. This is something that we are&nbsp;
+going to do today. So whatever MCP server is out&nbsp;&nbsp;
+
+00:14:31.120 --> 00:14:37.920
+there you can use just uh like you can use today&nbsp;
+already with the ADK without you reinventing you&nbsp;&nbsp;
+
+00:14:37.920 --> 00:14:45.680
+know the wheel in that sense or if you have a ADK&nbsp;
+and you build some tool in ADK you can use MCP to&nbsp;&nbsp;
+
+00:14:45.680 --> 00:14:51.280
+deploy this tool and interact with other agents.&nbsp;
+So these are the two ways that you have uh that&nbsp;&nbsp;
+
+00:14:51.280 --> 00:14:57.680
+you can use to leverage NCP with ADK. So with that&nbsp;
+being said uh let me show you how you can use uh&nbsp;&nbsp;
+
+00:14:57.680 --> 00:15:11.280
+ADK with MCP. So let's go back here. Let me exit&nbsp;
+to this agent and then let's go to So this is the&nbsp;&nbsp;
+
+00:15:11.280 --> 00:15:18.000
+second agent. So again as I said now we want to&nbsp;
+what we want to do is that we want to introduce&nbsp;&nbsp;
+
+00:15:18.000 --> 00:15:23.680
+um a calendar service agent which will allows&nbsp;
+me to schedule some time in my in my agenda and&nbsp;&nbsp;
+
+00:15:23.680 --> 00:15:28.800
+because now we have two agents the birthday one&nbsp;
+and the calendar one we want to also introduce&nbsp;&nbsp;
+
+00:15:28.800 --> 00:15:34.560
+an orchestrator which route my you know request&nbsp;
+to the right agent depending on what uh I want to&nbsp;&nbsp;
+
+00:15:34.560 --> 00:15:40.160
+achieve. So in this particular case the birthday&nbsp;
+planner is exactly the same agent that we defined&nbsp;&nbsp;
+
+00:15:40.160 --> 00:15:46.720
+before except that now I want to create an IB&nbsp;
+system um because for example like for scheduling&nbsp;&nbsp;
+
+00:15:46.720 --> 00:15:52.320
+for some for getting some birthday idea I can use&nbsp;
+also a very you know I can use also a different&nbsp;&nbsp;
+
+00:15:52.320 --> 00:15:59.680
+model like Gemini but then I have these calendar&nbsp;
+agents that in this case we use again cloud 3.5&nbsp;&nbsp;
+
+00:15:59.680 --> 00:16:07.520
+with an NCP server to schedule some time in my&nbsp;
+agenda. So in order to use an MCP server with ADK,&nbsp;&nbsp;
+
+00:16:07.520 --> 00:16:13.520
+these are the two line of codes that you need&nbsp;
+to uh introduce. So you get um you you get to&nbsp;&nbsp;
+
+00:16:13.520 --> 00:16:19.040
+the MCP server that you already have out there&nbsp;
+or you already created right or deployed as a&nbsp;&nbsp;
+
+00:16:19.040 --> 00:16:24.240
+as a serverless service and then you create a&nbsp;
+connection with it and then what happened behind&nbsp;&nbsp;
+
+00:16:24.240 --> 00:16:28.960
+the scene when you start building your agent when&nbsp;
+you run this command and you start building your&nbsp;&nbsp;
+
+00:16:28.960 --> 00:16:36.000
+agent what it does it like get all the information&nbsp;
+all the requirements to run your MCP server it&nbsp;&nbsp;
+
+00:16:36.000 --> 00:16:40.720
+converts these MCP servers as a tool and he&nbsp;
+use these MCP servers as a tool of the agent&nbsp;&nbsp;
+
+00:16:41.280 --> 00:16:46.560
+That's it. But again, the the cool thing, what I&nbsp;
+really believe is powerful of ADK is that it will&nbsp;&nbsp;
+
+00:16:46.560 --> 00:16:51.280
+allows me with two line of codes to integrate&nbsp;
+any kind of NCP tool that you have already.&nbsp;&nbsp;
+
+00:16:51.280 --> 00:16:56.080
+Once you have this MCP tool, you integrate it&nbsp;
+as a tool again in the our agent and you're&nbsp;&nbsp;
+
+00:16:56.080 --> 00:17:02.320
+done. Same similar things. Uh so now we have the&nbsp;
+birthday agent, we have the calendar agent. This&nbsp;&nbsp;
+
+00:17:02.320 --> 00:17:09.680
+is how the or the organizer look like. So look&nbsp;
+at how easy it is to pass multiple agents in a&nbsp;&nbsp;
+
+00:17:09.680 --> 00:17:15.280
+uh in an orchestrator like this one. Again you all&nbsp;
+you need to do is defining a better instruction&nbsp;&nbsp;
+
+00:17:15.280 --> 00:17:20.560
+because in this case this agent is going to&nbsp;
+orchestrate a multi- aent system. So you will&nbsp;&nbsp;
+
+00:17:20.560 --> 00:17:27.440
+define what agent like what what each agent is&nbsp;
+capable of doing and then you pass all the agent&nbsp;&nbsp;
+
+00:17:27.440 --> 00:17:33.200
+as a tool in this orchestrator. So again it will&nbsp;
+figure it out what agent to use depending on your&nbsp;&nbsp;
+
+00:17:33.200 --> 00:17:44.080
+request. Once you have done this, you are good&nbsp;
+to go. So what we can do is that running u uh
+
+00:17:44.080 --> 00:17:47.080
+going back here
+
+00:17:47.080 --> 00:17:55.840
+[Music] local actually let me do this. Let me&nbsp;
+show you this. So before I show you how you can&nbsp;&nbsp;
+
+00:17:55.840 --> 00:18:01.680
+interact uh I can spin up an agent interactive&nbsp;
+programmatic programmatically. But because now&nbsp;&nbsp;
+
+00:18:01.680 --> 00:18:05.840
+this system is more complicated. We have three&nbsp;
+agents, right? We want something more a little&nbsp;&nbsp;
+
+00:18:05.840 --> 00:18:11.520
+bit more solid to to try to understand what is&nbsp;
+happening behind the scene. So in ADK you have&nbsp;&nbsp;
+
+00:18:11.520 --> 00:18:22.160
+this uh web UI which allows you to um debug and&nbsp;
+interact uh interact with your agent. So this is&nbsp;&nbsp;
+
+00:18:22.160 --> 00:18:29.200
+uh the web UI. So in this case this is how it&nbsp;
+looks like. So the web UI we select the agent&nbsp;&nbsp;
+
+00:18:29.200 --> 00:18:37.680
+that I want to run and this is uh so in this case&nbsp;
+it's like what we did before except that now we&nbsp;&nbsp;
+
+00:18:37.680 --> 00:18:42.720
+have the um we have the other agents we have the&nbsp;
+multi- aent system that is running behind the&nbsp;&nbsp;
+
+00:18:42.720 --> 00:18:49.600
+scene and as you can see here this UI will nicely&nbsp;
+provides you a way to see what is happening behind&nbsp;&nbsp;
+
+00:18:49.600 --> 00:18:54.960
+the scene with your agent. So while you are uh&nbsp;
+while you're running the conversation with it,&nbsp;&nbsp;
+
+00:18:54.960 --> 00:19:00.400
+you will see which agent is using for&nbsp;
+doing what. Okay, with that being said,&nbsp;&nbsp;
+
+00:19:00.400 --> 00:19:12.480
+so now you know also the web UI. Let's go back on&nbsp;
+the on the presentation. Thank you. So uh let's&nbsp;&nbsp;
+
+00:19:12.480 --> 00:19:18.080
+um for the last part of this presentation, I want&nbsp;
+to show you also how you can easily deploy uh the&nbsp;&nbsp;
+
+00:19:18.080 --> 00:19:26.000
+uh the agent on agent engine. So in order to do&nbsp;
+that um let me do this. Yeah. In order to do that&nbsp;&nbsp;
+
+00:19:26.000 --> 00:19:31.520
+um let me first introduce you what what is an&nbsp;
+a what is why why you need an agent engine like&nbsp;&nbsp;
+
+00:19:31.520 --> 00:19:36.720
+this one. Essentially when uh when you need to&nbsp;
+deploy agent at scale in order to do that you&nbsp;&nbsp;
+
+00:19:36.720 --> 00:19:41.600
+need to figure it out a lot of complexity right&nbsp;
+you need to get your agent code you need to&nbsp;&nbsp;
+
+00:19:41.600 --> 00:19:48.960
+uh um you know wrap the agent in one of those&nbsp;
+services like fast API or jungo you need to&nbsp;&nbsp;
+
+00:19:48.960 --> 00:19:53.440
+build your container and then you know you need&nbsp;
+to figure it out your environment to run it in&nbsp;&nbsp;
+
+00:19:53.440 --> 00:19:59.760
+this case it can be a GCP environment and then uh&nbsp;
+you need to uh handle all the operation related to&nbsp;&nbsp;
+
+00:19:59.760 --> 00:20:04.320
+infrastructure and at the same time you also also&nbsp;
+need to monitor this agent because at the end of&nbsp;&nbsp;
+
+00:20:04.320 --> 00:20:10.080
+the day is a is an application right. So with the&nbsp;
+agent engine what uh you can simply deploy the&nbsp;&nbsp;
+
+00:20:10.080 --> 00:20:16.240
+agent using a method like agent engine create and&nbsp;
+you will get your agent up and running as well as&nbsp;&nbsp;
+
+00:20:16.240 --> 00:20:22.320
+all these observability um all the observability&nbsp;
+capabilities and the monitoring that you need in&nbsp;&nbsp;
+
+00:20:22.320 --> 00:20:28.240
+order to deploy your agent. they are directly&nbsp;
+managed by the platform itself and uh also all&nbsp;&nbsp;
+
+00:20:28.240 --> 00:20:32.800
+the interaction that you have with the agents they&nbsp;
+are going to be automatically uh collected by our&nbsp;&nbsp;
+
+00:20:32.800 --> 00:20:38.720
+logging system and you will directly use them to&nbsp;
+run some evaluation in a way that you know you&nbsp;&nbsp;
+
+00:20:38.720 --> 00:20:45.120
+can keep improving your agent along time. So these&nbsp;
+are like this gives you an idea of the reason why&nbsp;&nbsp;
+
+00:20:45.120 --> 00:20:50.720
+you want to consider an agent engine and this give&nbsp;
+you the picture the overall picture of the agent&nbsp;&nbsp;
+
+00:20:50.720 --> 00:20:57.600
+of vertxi agent engine. So in this picture as you&nbsp;
+can see agent engine is capable of integrating you&nbsp;&nbsp;
+
+00:20:57.600 --> 00:21:04.560
+know any kind of agent framework uh ADK as you as&nbsp;
+a as I just said but if you build agent with lang&nbsp;&nbsp;
+
+00:21:04.560 --> 00:21:10.960
+graph lchain you can you can do that you can use&nbsp;
+those framework as well and then um with whatever&nbsp;&nbsp;
+
+00:21:10.960 --> 00:21:15.360
+tools and whatever model that you want and the&nbsp;
+agent engine will take care of deploying your&nbsp;&nbsp;
+
+00:21:15.360 --> 00:21:21.360
+agents and we'll enable all these observability&nbsp;
+uh capabilities or features that you need using&nbsp;&nbsp;
+
+00:21:21.360 --> 00:21:27.440
+some cloud tools and uh the evaluation part is&nbsp;
+also covered by one of our services which is the&nbsp;&nbsp;
+
+00:21:27.440 --> 00:21:35.600
+vert.x AI evaluation service. So to wrap up like&nbsp;
+the agent engine capabilities. So you can deploy&nbsp;&nbsp;
+
+00:21:35.600 --> 00:21:41.840
+any uh agent that like uh you can define agent&nbsp;
+in any framework that you want. You can use this&nbsp;&nbsp;
+
+00:21:41.840 --> 00:21:47.680
+uh manage runtime to deploy these agents and then&nbsp;
+you will automatically get you will automatically&nbsp;&nbsp;
+
+00:21:47.680 --> 00:21:54.720
+be able to observe the behavior of the agent. call&nbsp;
+the agent at scale and we uh the agent engine uh&nbsp;&nbsp;
+
+00:21:54.720 --> 00:21:59.760
+uh it also has an integration with another with&nbsp;
+another services that we provide on Google cloud&nbsp;&nbsp;
+
+00:21:59.760 --> 00:22:04.800
+which is a agent space which I'm not going to&nbsp;
+cover today but just to give an idea it's the&nbsp;&nbsp;
+
+00:22:04.800 --> 00:22:10.000
+gate that will allows your agent to go in the&nbsp;
+ends of business. So really you know have an&nbsp;&nbsp;
+
+00:22:10.000 --> 00:22:16.000
+impact of the agents that you're going to build in&nbsp;
+an enterprise context. But with that being said,&nbsp;&nbsp;
+
+00:22:16.000 --> 00:22:24.480
+uh let me jump in the last lab that we are&nbsp;
+going to cover today. So I already show you&nbsp;&nbsp;
+
+00:22:24.480 --> 00:22:32.880
+um how you can build the agent. So in this last&nbsp;
+lab what I want to show you is how you can easily&nbsp;&nbsp;
+
+00:22:32.880 --> 00:22:39.280
+deploy an agent with a few line of codes. So&nbsp;
+in the repository you will find this uh this&nbsp;&nbsp;
+
+00:22:39.280 --> 00:22:45.120
+uh module that essentially will allows you to&nbsp;
+iteratively deploy your agents. All you need to&nbsp;&nbsp;
+
+00:22:45.120 --> 00:22:50.320
+do to deploy an agent on vertxi agent engine&nbsp;
+is providing the base requirements that your&nbsp;&nbsp;
+
+00:22:50.320 --> 00:22:56.080
+agent needs in order to run and then as I said&nbsp;
+we provide already a class that will allows you&nbsp;&nbsp;
+
+00:22:56.080 --> 00:23:01.200
+to create an agent endpoint in this case on&nbsp;
+the agent engine. So in this class you have&nbsp;&nbsp;
+
+00:23:01.200 --> 00:23:06.880
+your agent that you define. In this case we are&nbsp;
+going to deploy the first agent the birth planner&nbsp;&nbsp;
+
+00:23:06.880 --> 00:23:12.640
+agent. And then here you have the requirements.&nbsp;
+You can provide extra packages if you want. But&nbsp;&nbsp;
+
+00:23:12.640 --> 00:23:18.400
+then again few line of codes to deploy your agent&nbsp;
+in in a in a manager in a managed service that is&nbsp;&nbsp;
+
+00:23:18.400 --> 00:23:24.480
+scalable and will allows you to open your agent to&nbsp;
+several users. So with that being said, let me run&nbsp;&nbsp;
+
+00:23:24.480 --> 00:23:37.360
+this script. So first of all, let me close this&nbsp;
+session. Clear. Then let me go in the repository
+
+00:23:37.360 --> 00:23:43.120
+ls
+
+00:23:43.120 --> 00:23:52.720
+ls and then here I have my module. So&nbsp;
+in this case I do python deploy agent.
+
+00:23:52.720 --> 00:23:57.680
+So what happened behind the scene is that it&nbsp;
+will start uh deploying my agent. So you can&nbsp;&nbsp;
+
+00:23:57.680 --> 00:24:02.000
+monitor the deploy on the agent directly in&nbsp;
+the Vert.exi console. Now this step is going&nbsp;&nbsp;
+
+00:24:02.000 --> 00:24:07.040
+to get some time as you can imagine because it's&nbsp;
+building the image and deploying the agents. So&nbsp;&nbsp;
+
+00:24:07.040 --> 00:24:14.640
+let me directly jump into the UI. So once you once&nbsp;
+the deployment of the agent will successfully run,&nbsp;&nbsp;
+
+00:24:14.640 --> 00:24:21.680
+what you will do is uh you will get an entry in&nbsp;
+the Vert.Ex AI agent engine UI and from this UI&nbsp;&nbsp;
+
+00:24:21.680 --> 00:24:28.400
+you will be able to monitor this agent. So the&nbsp;
+query that it receives uh the latency that uh it&nbsp;&nbsp;
+
+00:24:28.400 --> 00:24:34.640
+takes so how how long it takes to respond to the&nbsp;
+query and you will also monitor you know the CPU&nbsp;&nbsp;
+
+00:24:34.640 --> 00:24:40.240
+and the memory that the agent is using. So you&nbsp;
+can better understand if um you allocate enough&nbsp;&nbsp;
+
+00:24:40.240 --> 00:24:46.320
+uh resources to serve this agent at scale.&nbsp;
+The engine is is also manage session. So in&nbsp;&nbsp;
+
+00:24:46.320 --> 00:24:52.560
+this case I just deployed one. So we don't start a&nbsp;
+session yet. But here you will see the session and&nbsp;&nbsp;
+
+00:24:52.560 --> 00:24:56.720
+uh it will gives you all the information that you&nbsp;
+need in order you know to integrate this agent&nbsp;&nbsp;
+
+00:24:56.720 --> 00:25:02.800
+in application both in a real time or streaming&nbsp;
+depending on the method that you want to use and&nbsp;&nbsp;
+
+00:25:02.800 --> 00:25:09.920
+you can always check the details of the of the&nbsp;
+deployment. Okay. So let's go. So now you have&nbsp;&nbsp;
+
+00:25:09.920 --> 00:25:16.000
+also an idea how to deploy uh the agent. Let's&nbsp;
+go back to slide. Thank you. So as I said this&nbsp;&nbsp;
+
+00:25:16.000 --> 00:25:20.400
+was a bonus part. I don't think we are going to co&nbsp;
+we have time to cover it but what I want to tell&nbsp;&nbsp;
+
+00:25:20.400 --> 00:25:25.600
+you is that let's assume that you build your&nbsp;
+agent you deploy it on agent engine right and&nbsp;&nbsp;
+
+00:25:25.600 --> 00:25:32.160
+u right now we build all our agent using just ADK&nbsp;
+but what if you want to deploy or build your agent&nbsp;&nbsp;
+
+00:25:32.160 --> 00:25:37.920
+build and deploy your agent using lchain crew&nbsp;
+AI or whatever framework as I already said agent&nbsp;&nbsp;
+
+00:25:37.920 --> 00:25:44.080
+engine support this but what the the main problem&nbsp;
+is that you you don't have a way to connect these&nbsp;&nbsp;
+
+00:25:44.080 --> 00:25:49.120
+agents that are built with different framework&nbsp;
+together Right. So that's when you need a protocol&nbsp;&nbsp;
+
+00:25:49.120 --> 00:25:55.360
+to do that. So in a world where you have you&nbsp;
+are going to have multiple agents that they are&nbsp;&nbsp;
+
+00:25:55.360 --> 00:26:01.040
+uh they are uh built and deployed with different&nbsp;
+framework there is this need to find a common&nbsp;&nbsp;
+
+00:26:01.040 --> 00:26:06.960
+language between these agent to interact to&nbsp;
+interact and collaborate in order to achieve some&nbsp;&nbsp;
+
+00:26:06.960 --> 00:26:13.280
+task and that's why as a Google cloud we introduce&nbsp;
+uh agent to agent protocol. So again, it's an open&nbsp;&nbsp;
+
+00:26:13.280 --> 00:26:20.000
+protocol that has been designed to uh enhance to&nbsp;
+foster the agent collaboration using very simple&nbsp;&nbsp;
+
+00:26:20.000 --> 00:26:25.120
+um uh concept that I will show you in a minute.&nbsp;
+But the key thing that I want to share with you is&nbsp;&nbsp;
+
+00:26:25.120 --> 00:26:30.880
+that has been already designed to to be enterprise&nbsp;
+ready. So it has a a bunch of features that will&nbsp;&nbsp;
+
+00:26:30.880 --> 00:26:36.480
+allows you to govern and uh in a secure way&nbsp;
+your agents and we again also in this case we&nbsp;&nbsp;
+
+00:26:36.480 --> 00:26:43.440
+didn't invent the wheel because it's based on some&nbsp;
+standard protocol HTTP JSON RCP something that is&nbsp;&nbsp;
+
+00:26:43.440 --> 00:26:49.440
+common adopted in the industry. The concept that&nbsp;
+you need to know about is the concept of agent&nbsp;&nbsp;
+
+00:26:49.440 --> 00:26:55.600
+skills. So which essentially describe the function&nbsp;
+or the capability of the agents and it's it's a&nbsp;&nbsp;
+
+00:26:55.600 --> 00:27:02.080
+like a business card of your agent with respect&nbsp;
+to other agents and then you have u the the sorry&nbsp;&nbsp;
+
+00:27:02.080 --> 00:27:08.800
+the the agent skill describe what the agent is&nbsp;
+capable of doing. So uh it manage the function&nbsp;&nbsp;
+
+00:27:08.800 --> 00:27:13.920
+that the agent has and then you have the agent&nbsp;
+card that essentially is a a digital business&nbsp;&nbsp;
+
+00:27:13.920 --> 00:27:19.760
+card for the agent will allow other agent or other&nbsp;
+application to know what the skills what are the&nbsp;&nbsp;
+
+00:27:19.760 --> 00:27:24.720
+skills of the agent and how to interact with&nbsp;
+it. So one is describe the agent the other one&nbsp;&nbsp;
+
+00:27:24.720 --> 00:27:30.800
+describe what is the agent capable of doing to the&nbsp;
+other agents and then as before you have an agent&nbsp;&nbsp;
+
+00:27:30.800 --> 00:27:36.720
+executor that essentially manage the communication&nbsp;
+the request and and the response that this system&nbsp;&nbsp;
+
+00:27:36.720 --> 00:27:42.320
+generates between agents. So these three concept&nbsp;
+with this three concept you can build system like&nbsp;&nbsp;
+
+00:27:42.320 --> 00:27:48.320
+this one where you will you will essentially&nbsp;
+have multiple agents uh written with different&nbsp;&nbsp;
+
+00:27:48.320 --> 00:27:54.000
+framework communicating between each other in&nbsp;
+order to achieve a particular and more complex&nbsp;&nbsp;
+
+00:27:54.000 --> 00:28:00.080
+task rather than the one we build today of you&nbsp;
+know uh scheduling or buying a birthday gift. So&nbsp;&nbsp;
+
+00:28:00.080 --> 00:28:04.240
+we are not going to cover this today but again as&nbsp;
+I said at the beginning we are going to have a web&nbsp;&nbsp;
+
+00:28:04.240 --> 00:28:11.200
+uh live webinar at the end of the month. So I&nbsp;
+will share with you the QR code. So just recap,&nbsp;&nbsp;
+
+00:28:11.200 --> 00:28:16.480
+we start from these three main problems, right?&nbsp;
+Building agent agent that is powerful but there&nbsp;&nbsp;
+
+00:28:16.480 --> 00:28:21.280
+are several challenges when you want to put them&nbsp;
+in production. You have a fragmented landscape.&nbsp;&nbsp;
+
+00:28:21.280 --> 00:28:25.600
+Uh there are some integration complexity that&nbsp;
+you need to manage. And even if you're capable&nbsp;&nbsp;
+
+00:28:25.600 --> 00:28:31.040
+of fixing this, you have to manage all the&nbsp;
+operational overhead that uh you need to you&nbsp;&nbsp;
+
+00:28:31.040 --> 00:28:36.800
+need to handle in order to deploy these agents.&nbsp;
+And then that's when you want to enable like you&nbsp;&nbsp;
+
+00:28:36.800 --> 00:28:40.880
+want to get access to a toolkit protocols and&nbsp;
+engine platform that at the end it allows you&nbsp;&nbsp;
+
+00:28:40.880 --> 00:28:46.720
+to standardize the way you build your agent and&nbsp;
+scale them to production and to give you this&nbsp;&nbsp;
+
+00:28:46.720 --> 00:28:53.840
+kind of tool. We put together this agentic stack&nbsp;
+using ADK, MCP, agent engine and entway that will&nbsp;&nbsp;
+
+00:28:53.840 --> 00:29:01.360
+essentially allows you to confidently build um a&nbsp;
+gentic system and scale them in uh in production&nbsp;&nbsp;
+
+00:29:01.360 --> 00:29:10.160
+as uh required. Okay. So scanner alert. So uh&nbsp;
+please get your phone out. I'm going to share with&nbsp;&nbsp;
+
+00:29:10.160 --> 00:29:17.360
+you some useful uh uh uh circ codes. So the first&nbsp;
+one that I want to share with you is code. So in&nbsp;&nbsp;
+
+00:29:17.360 --> 00:29:24.640
+this in this repository you will find all the code&nbsp;
+related to ADK. So samples you know getting start&nbsp;&nbsp;
+
+00:29:24.640 --> 00:29:34.320
+everything you will find here. Three two one.&nbsp;
+Okay. And then if you want to know how if you want&nbsp;&nbsp;
+
+00:29:34.320 --> 00:29:39.760
+I mean we covered this in 30 minutes but it can&nbsp;
+be like a onehour workshop. So here you can find a&nbsp;&nbsp;
+
+00:29:39.760 --> 00:29:44.480
+webinar we are going to run together with entropic&nbsp;
+next month and where we show also the integration&nbsp;&nbsp;
+
+00:29:44.480 --> 00:29:55.840
+with gateway. So please scan this code. Three,&nbsp;
+two, one. Okay. And then I I mean I was fast. So&nbsp;&nbsp;
+
+00:29:55.840 --> 00:30:02.480
+I I I I assume that you have uh several questions.&nbsp;
+So feel free to reach out. I'm always helpful&nbsp;&nbsp;
+
+00:30:02.480 --> 00:30:07.440
+happy to answer your questions. But with that&nbsp;
+being said, I hope you enjoyed the session. I am&nbsp;&nbsp;
+
+00:30:07.440 --> 00:30:18.151
+just 20 seconds late. So, I hope you enjoyed and&nbsp;
+yeah, thank you for uh attending this [Applause]
+

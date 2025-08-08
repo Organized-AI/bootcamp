@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeCoders Bootcamp - Learn to Code WITH AI, Not Against It</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>') repeat;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100px, -100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .typing-effect {
+            display: inline-block;
+            border-right: 3px solid white;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { border-color: white; }
+            51%, 100% { border-color: transparent; }
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary-dark);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary-dark);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        /* Curriculum Section */
+        .curriculum {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .week-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .week-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .week-card:hover {
+            background: white;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+            transform: translateX(5px);
+        }
+
+        .week-number {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .week-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .week-topics {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .week-topics li {
+            padding: 0.5rem 0;
+            color: #6b7280;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .week-topics li:before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card.featured {
+            transform: scale(1.05);
+            box-shadow: 0 20px 50px rgba(99, 102, 241, 0.2);
+        }
+
+        .pricing-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--secondary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 1rem 0;
+        }
+
+        .price-subtitle {
+            color: #6b7280;
+            margin-bottom: 2rem;
+        }
+
+        .price-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .price-features li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 3rem 2rem;
+            background: var(--gradient);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #e5e7eb;
+        }
+
+        .faq-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">🚀 LIMITED EARLY BIRD PRICING - SAVE $200</div>
+            <h1>Learn to Code <span class="typing-effect">WITH AI</span></h1>
+            <p class="hero-subtitle">Not Against It</p>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                The only bootcamp teaching you to 10x your productivity by combining<br>
+                traditional engineering with cutting-edge AI development
+            </p>
+            <div class="cta-buttons">
+                <a href="registration.html" class="btn btn-primary">Start Free Session →</a>
+                <a href="#curriculum" class="btn btn-secondary">View Curriculum</a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                ⚡ Next cohort starts January 2025 • 📍 Limited to 50 students
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why VibeCoders is Different</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI-First Approach</h3>
+                    <p>Learn to use Claude, Copilot, and other AI tools as your pair programmers. Build faster, smarter, better.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3 class="feature-title">"Vibe to Production"</h3>
+                    <p>Start with rapid AI prototyping, then refine to production-quality code. Learn when to vibe and when to engineer.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3 class="feature-title">Real Industry Tools</h3>
+                    <p>MCP, Vertex AI, Claude Code - learn the tools companies are actually using in 2025.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Work It Until You Solve It</h3>
+                    <p>No hand-holding. Challenging sandbox exercises that you must complete. Build real persistence.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3 class="feature-title">10x Productivity</h3>
+                    <p>Learn to build in hours what used to take weeks. Ship real products by week 3.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">Future-Proof Career</h3>
+                    <p>While others fear AI, you'll master it. Graduate ready for AI Engineer and hybrid developer roles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section class="curriculum" id="curriculum">
+        <div class="container">
+            <h2 class="section-title">6 Weeks to AI Mastery</h2>
+            <div class="week-grid">
+                <div class="week-card">
+                    <span class="week-number">WEEK 1</span>
+                    <h3 class="week-title">AI Development Environment</h3>
+                    <p>Set up your AI-powered workspace and learn the foundations.</p>
+                    <ul class="week-topics">
+                        <li>Claude Desktop & MCP Setup</li>
+                        <li>Building AI Agents</li>
+                        <li>Headless Automation</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <span class="week-number">WEEK 2</span>
+                    <h3 class="week-title">AI-Assisted Architecture</h3>
+                    <p>Let AI help you plan and design robust systems.</p>
+                    <ul class="week-topics">
+                        <li>Claude Code Best Practices</li>
+                        <li>MCP Deep Dive</li>
+                        <li>System Design with AI</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <span class="week-number">WEEK 3</span>
+                    <h3 class="week-title">Prompting & Vibe Coding</h3>
+                    <p>Master the art of communicating with AI for maximum output.</p>
+                    <ul class="week-topics">
+                        <li>Prompt Engineering</li>
+                        <li>Agent Prompting</li>
+                        <li>Vibe Coding in Production</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <span class="week-number">WEEK 4</span>
+                    <h3 class="week-title">Real-World Applications</h3>
+                    <p>Learn from companies using AI in production.</p>
+                    <ul class="week-topics">
+                        <li>Enterprise Integration</li>
+                        <li>Startup Case Studies</li>
+                        <li>Building Products with AI</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <span class="week-number">WEEK 5</span>
+                    <h3 class="week-title">Testing & Quality</h3>
+                    <p>Ensure your AI-generated code is production-ready.</p>
+                    <ul class="week-topics">
+                        <li>Testing AI Code</li>
+                        <li>Quality Assurance</li>
+                        <li>Reliability Engineering</li>
+                    </ul>
+                </div>
+                <div class="week-card">
+                    <span class="week-number">WEEK 6</span>
+                    <h3 class="week-title">Deployment & Advanced AI</h3>
+                    <p>Ship your AI-powered applications to production.</p>
+                    <ul class="week-topics">
+                        <li>Advanced Agent Systems</li>
+                        <li>Production Deployment</li>
+                        <li>Scaling AI Applications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div>
+                <div class="stat-number">94%</div>
+                <div class="stat-label">Job Placement Rate</div>
+            </div>
+            <div>
+                <div class="stat-number">10x</div>
+                <div class="stat-label">Productivity Increase</div>
+            </div>
+            <div>
+                <div class="stat-number">$85k</div>
+                <div class="stat-label">Average Starting Salary</div>
+            </div>
+            <div>
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Alumni Network</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Investment in Your Future</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Session 1</h3>
+                    <div class="price">FREE</div>
+                    <p class="price-subtitle">Try before you buy</p>
+                    <ul class="price-features">
+                        <li>✓ Full first week access</li>
+                        <li>✓ AI environment setup</li>
+                        <li>✓ Community access</li>
+                        <li>✓ No credit card required</li>
+                    </ul>
+                    <a href="registration.html" class="btn btn-secondary" style="width: 100%;">Start Free</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Full Bootcamp</h3>
+                    <div class="price">$497</div>
+                    <p class="price-subtitle">Early bird (Save $200)</p>
+                    <ul class="price-features">
+                        <li>✓ All 6 weeks of content</li>
+                        <li>✓ Live sessions & recordings</li>
+                        <li>✓ 1-on-1 mentoring</li>
+                        <li>✓ Job placement support</li>
+                        <li>✓ Lifetime alumni access</li>
+                        <li>✓ Certificate of completion</li>
+                    </ul>
+                    <a href="registration.html" class="btn btn-primary" style="width: 100%; background: var(--primary); color: white;">Enroll Now</a>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: #6b7280;">
+                💳 Payment plans available • 💰 Scholarships for qualified candidates
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I need prior coding experience?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Basic programming knowledge is helpful but not required. If you can write HTML/CSS and understand basic programming concepts, you're ready. The AI tools will accelerate your learning.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is this just about using ChatGPT to code?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No! We teach you professional AI development using Claude, MCP, Vertex AI, and other industry tools. You'll learn when to use AI, when to code manually, and how to combine both for maximum productivity.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I can't complete a sandbox exercise?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>That's the point! "Work it until you solve it" is our philosophy. You'll have progressive hints, peer support, and mentor guidance. Everyone completes every exercise - no exceptions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What kind of job can I get after this?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Graduates land roles as AI Engineers, Full-Stack Developers, Prompt Engineers, and AI Integration Specialists. Average starting salary is $85k, with some landing $100k+ roles.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is there job placement support?</span>
+                        <span class="faq-arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide resume reviews, portfolio building, interview prep, and direct introductions to hiring partners. Our 94% placement rate speaks for itself.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="hero" style="min-height: 50vh;">
+        <div class="hero-content">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Ready to 10x Your Coding Power?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                Join the next cohort starting January 2025.<br>
+                Limited to 50 students for personalized attention.
+            </p>
+            <div class="cta-buttons">
+                <a href="registration.html" class="btn btn-primary">Claim Your Spot →</a>
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.8;">
+                🔥 17 spots already taken • ⏰ Early bird pricing ends in 5 days
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 VibeCoders Bootcamp. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+            <a href="#">Discord Community</a>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards
+        document.querySelectorAll('.feature-card, .week-card, .pricing-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1015 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:12.800 --> 00:00:17.200
+Hey, thank you for joining. Thank you for sticking&nbsp;
+around in here. I suppose it' probably be the most&nbsp;&nbsp;
+
+00:00:17.200 --> 00:00:22.240
+apppropo thing to say. Uh, thank you for joining&nbsp;
+me today. They wanted to talk a little bit about&nbsp;&nbsp;
+
+00:00:22.240 --> 00:00:29.280
+how all of this technology actually gets into the&nbsp;
+path of value inside large organizations and large&nbsp;&nbsp;
+
+00:00:29.280 --> 00:00:34.880
+businesses because as it would turn out the the&nbsp;
+ability for us to go prototype cool stuff versus&nbsp;&nbsp;
+
+00:00:34.880 --> 00:00:40.640
+us go and deliver these things into the critical&nbsp;
+path can can vary widely. I'm Craig. I lead&nbsp;&nbsp;
+
+00:00:40.640 --> 00:00:45.760
+product management for data bricks in case you&nbsp;
+hadn't figured that yet. Uh been with data bicks&nbsp;&nbsp;
+
+00:00:45.760 --> 00:00:50.560
+for about three years. before that was at Google&nbsp;
+where I was the leader of product for uh the&nbsp;&nbsp;
+
+00:00:50.560 --> 00:00:55.920
+founding of Vert.ex AI and before that I was the&nbsp;
+the founding general manager of of AWS SageMaker.&nbsp;&nbsp;
+
+00:00:55.920 --> 00:01:01.920
+So I've been I as my wife says uh continuing to&nbsp;
+strike out as I try and get better and better at&nbsp;&nbsp;
+
+00:01:01.920 --> 00:01:09.040
+helping enterprises uh build AI. But uh as we dive&nbsp;
+into this I wanted to quickly just set a little&nbsp;&nbsp;
+
+00:01:09.040 --> 00:01:14.560
+bit of context on who data bricks, why data bricks&nbsp;
+and why is data bicks here talking to you and&nbsp;&nbsp;
+
+00:01:14.560 --> 00:01:21.600
+what have you. Right? We are a uh a leading data&nbsp;
+platform, multicloud or crosscloud data platform,&nbsp;&nbsp;
+
+00:01:21.600 --> 00:01:27.520
+uh tens of thousands of customers, you know, uh&nbsp;
+billions of dollars in revenue and and moreover&nbsp;&nbsp;
+
+00:01:27.520 --> 00:01:32.720
+the creator of a number of open-source very&nbsp;
+popular open-source capabilities, Spark,&nbsp;&nbsp;
+
+00:01:32.720 --> 00:01:40.400
+uh MLflow, Delta, etc. Um, you know, we live in&nbsp;
+a world Brad just a minute ago, he talked about&nbsp;&nbsp;
+
+00:01:40.400 --> 00:01:46.480
+the importance of the model and then the data you&nbsp;
+bring to the model. And the enterprises we work&nbsp;&nbsp;
+
+00:01:46.480 --> 00:01:52.720
+with have a kind of nightmarish data scenario&nbsp;
+because you know you talk to these large bank&nbsp;&nbsp;
+
+00:01:52.720 --> 00:01:58.800
+multinational banks or something like that and&nbsp;
+they've they've done dozens if not uh scores of of&nbsp;&nbsp;
+
+00:01:58.800 --> 00:02:05.920
+of acquisitions over the years and they have data&nbsp;
+on every cloud in every possible vendor in every&nbsp;&nbsp;
+
+00:02:05.920 --> 00:02:14.160
+possible service and they're trying at this moment&nbsp;
+to figure out how to take advantage of this kind&nbsp;&nbsp;
+
+00:02:14.160 --> 00:02:19.840
+of transformational techn technological moment,&nbsp;
+but they're doing it with kind of a mess in the&nbsp;&nbsp;
+
+00:02:19.840 --> 00:02:24.400
+back end, if you will, right? And it turns out the&nbsp;
+problem is actually much worse than this because&nbsp;&nbsp;
+
+00:02:24.400 --> 00:02:29.360
+it's not like they just have one data warehouse or&nbsp;
+something like that. They often have many of them,&nbsp;&nbsp;
+
+00:02:29.360 --> 00:02:35.200
+right? And and often the the experts in one or&nbsp;
+two of these systems are only experts in one&nbsp;&nbsp;
+
+00:02:35.200 --> 00:02:40.480
+or two of these systems and they don't know the&nbsp;
+other system. So if if you're stuck and your data&nbsp;&nbsp;
+
+00:02:40.480 --> 00:02:46.000
+warehouse or your streaming person isn't a Gen&nbsp;
+AI person, you may find yourself kind of locked&nbsp;&nbsp;
+
+00:02:46.000 --> 00:02:52.240
+out of of being able to bring your data into into&nbsp;
+these systems as easily as you want to. Now I'm&nbsp;&nbsp;
+
+00:02:52.240 --> 00:02:57.200
+not going to go head on into data bricks. Data&nbsp;
+bricks ultimately we help you manage your data&nbsp;&nbsp;
+
+00:02:57.200 --> 00:03:02.320
+and then on top of that management of your data we&nbsp;
+have a whole series of capabilities and going to&nbsp;&nbsp;
+
+00:03:02.320 --> 00:03:09.920
+really focus on our AI capabilities with Mosaic&nbsp;
+AI today. Now we think of this as a difference&nbsp;&nbsp;
+
+00:03:09.920 --> 00:03:16.160
+between what we call general intelligence&nbsp;
+and data intelligence. Both of these things&nbsp;&nbsp;
+
+00:03:16.160 --> 00:03:24.080
+are extraordinarily useful and extraordinarily&nbsp;
+important. But as Brad talked about, particularly&nbsp;&nbsp;
+
+00:03:24.080 --> 00:03:30.880
+for for businesses or large enterprises, as&nbsp;
+they want to move into using this technology&nbsp;&nbsp;
+
+00:03:30.880 --> 00:03:37.920
+to automate more of their systems or drive greater&nbsp;
+insights within their organization, almost always&nbsp;&nbsp;
+
+00:03:37.920 --> 00:03:43.440
+it comes back to connecting it. We saw here&nbsp;
+Brad connecting it to the web or connecting&nbsp;&nbsp;
+
+00:03:43.440 --> 00:03:49.840
+it to MCP servers, but inevitably it comes back to&nbsp;
+trying to connect it to their data estate, right?&nbsp;&nbsp;
+
+00:03:49.840 --> 00:03:54.800
+So for a really good example of this uh Faxet, I&nbsp;
+don't know if you guys have heard of Faxet. Faxet&nbsp;&nbsp;
+
+00:03:54.800 --> 00:04:00.960
+is a financial services company that sells uh data&nbsp;
+about other companies. They sell financial data&nbsp;&nbsp;
+
+00:04:00.960 --> 00:04:08.800
+about companies to banks and hedge funds and what&nbsp;
+have you. Uh Faxet has their own query language,&nbsp;&nbsp;
+
+00:04:08.800 --> 00:04:15.120
+which is now a yellow flag to me when considering&nbsp;
+employers. If your employer has their own query&nbsp;&nbsp;
+
+00:04:15.120 --> 00:04:20.400
+language, you got to think about whether or not&nbsp;
+this is the right place to be. Having said that,&nbsp;&nbsp;
+
+00:04:20.400 --> 00:04:24.480
+I did work at Google who I think probably&nbsp;
+has a dozen of their own query languages. But&nbsp;&nbsp;
+
+00:04:24.480 --> 00:04:31.520
+uh so Faxet had this this problem and opportunity,&nbsp;
+which is that any customer they had who wanted to&nbsp;&nbsp;
+
+00:04:31.520 --> 00:04:38.800
+access their data, they had to learn FQL, Faxet&nbsp;
+query language, creative name in there. Uh,&nbsp;&nbsp;
+
+00:04:38.800 --> 00:04:43.520
+and so when this whole Genai craze started, these&nbsp;
+guys lost their minds with excitement because&nbsp;&nbsp;
+
+00:04:43.520 --> 00:04:50.160
+they thought, what if we could translate English&nbsp;
+into factet query language? And so they went to&nbsp;&nbsp;
+
+00:04:50.160 --> 00:04:55.680
+their favorite cloud of choice. They hit one the&nbsp;
+one-click rag button. I think they did a little&nbsp;&nbsp;
+
+00:04:55.680 --> 00:05:01.520
+more than the one-click rag button, but they&nbsp;
+basically showed up with this massive prompt of&nbsp;&nbsp;
+
+00:05:01.520 --> 00:05:07.680
+a bunch of examples and a bunch of documentation&nbsp;
+and then a massive vector DB of a bunch of prompts&nbsp;&nbsp;
+
+00:05:07.680 --> 00:05:12.800
+and a bunch of documentation or a bunch of uh&nbsp;
+examples and a bunch of documentation. And this&nbsp;&nbsp;
+
+00:05:12.800 --> 00:05:20.480
+is what they ended up with, right? They ended up&nbsp;
+with 59% accuracy in about 15 seconds of latency.&nbsp;&nbsp;
+
+00:05:20.480 --> 00:05:27.040
+And I share with you that latency metric not just&nbsp;
+because it's an important customer experience&nbsp;&nbsp;
+
+00:05:27.040 --> 00:05:31.520
+metric and all of these kinds of things. But in&nbsp;
+this world of Genai, it's probably the closest&nbsp;&nbsp;
+
+00:05:31.520 --> 00:05:37.040
+thing we have to a cost metric, right? You're more&nbsp;
+or less paying for compute time. And so that 15&nbsp;&nbsp;
+
+00:05:37.040 --> 00:05:43.280
+seconds is basically 15 seconds of cost, right?&nbsp;
+And 59% accuracy. With this, they they showed up.&nbsp;&nbsp;
+
+00:05:43.280 --> 00:05:50.560
+They they contacted us and said, "Hey, good news.&nbsp;
+We've got a Jedi solution. Bad news. it's just&nbsp;&nbsp;
+
+00:05:50.560 --> 00:05:56.720
+slightly better than a coin flip kind of thing,&nbsp;
+right? And so we worked with them on this problem&nbsp;&nbsp;
+
+00:05:56.720 --> 00:06:02.560
+and tried to understand what what the opportunity&nbsp;
+was, what the challenge was. And really what we&nbsp;&nbsp;
+
+00:06:02.560 --> 00:06:11.440
+did was we just decomposed the prompt into each&nbsp;
+of the individual tasks that that prompt was&nbsp;&nbsp;
+
+00:06:11.440 --> 00:06:17.120
+being asked to use. Right? So effectively what we&nbsp;
+did was we took that prompt and created kind of&nbsp;&nbsp;
+
+00:06:17.120 --> 00:06:24.560
+something of an agent of a multi-node a multi-step&nbsp;
+chain or process to be able to solve this problem&nbsp;&nbsp;
+
+00:06:24.560 --> 00:06:31.440
+more wholly. And really the reason we did that&nbsp;
+was because it allowed us the opportunity to start&nbsp;&nbsp;
+
+00:06:31.440 --> 00:06:38.960
+tuning performance at each step of this problem.&nbsp;
+Right? And you can see we got them to 85% accuracy&nbsp;&nbsp;
+
+00:06:38.960 --> 00:06:45.360
+in six seconds of latency. at 85% accuracy. They&nbsp;
+they did two things. They turned to us and they&nbsp;&nbsp;
+
+00:06:45.360 --> 00:06:51.360
+said, "Cool. We're comfortable showing this to&nbsp;
+our existing customers and they said, "We get&nbsp;&nbsp;
+
+00:06:51.360 --> 00:06:56.480
+how you're helping us. We don't want to pay you&nbsp;
+to help us anymore. We'll take it from here." Uh,&nbsp;&nbsp;
+
+00:06:56.480 --> 00:07:02.160
+last I talked to them, they had it into the '9s,&nbsp;
+and last I talked to them, uh, transitioning to&nbsp;&nbsp;
+
+00:07:02.160 --> 00:07:08.160
+Claude was one of their next roadmap items.&nbsp;
+Um, the reason I say all of this is because&nbsp;&nbsp;
+
+00:07:08.160 --> 00:07:14.400
+there's a paper out there uh from the Berkeley&nbsp;
+artificial intelligence research uh lab which&nbsp;&nbsp;
+
+00:07:14.400 --> 00:07:19.040
+uh if you look into it, yes, there's a little&nbsp;
+bit of uh cross-pollination between us and and uh&nbsp;&nbsp;
+
+00:07:19.040 --> 00:07:26.880
+Berkeley, but basically the folks at Berkeley did&nbsp;
+a right after Genai kind of really hit its stride,&nbsp;&nbsp;
+
+00:07:26.880 --> 00:07:33.200
+they went out and they looked at all the popular&nbsp;
+AI systems that are out in production today. And&nbsp;&nbsp;
+
+00:07:33.200 --> 00:07:43.120
+what they found was that none of these systems&nbsp;
+were as easy as kind of a a a a single input and a&nbsp;&nbsp;
+
+00:07:43.120 --> 00:07:52.240
+single output kind of basic system. These systems&nbsp;
+were all kind of very complex multi-node multi- uh&nbsp;&nbsp;
+
+00:07:52.240 --> 00:07:57.440
+kind of multi-art systems that were being chained&nbsp;
+together to create really fantastic outcomes.&nbsp;&nbsp;
+
+00:07:57.440 --> 00:08:04.800
+So our goal at data bricks is really to simplify&nbsp;
+the creation of these kinds of capabilities for&nbsp;&nbsp;
+
+00:08:04.800 --> 00:08:11.760
+our customers but very specifically we want to&nbsp;
+do it on the areas where there is financial and&nbsp;&nbsp;
+
+00:08:11.760 --> 00:08:16.640
+reputational risk. If what you're wanting to do&nbsp;
+is build a chatbot for you and your buddies to&nbsp;&nbsp;
+
+00:08:16.640 --> 00:08:22.800
+kind of search over your your uh you know your&nbsp;
+documents or your you know your emails or what&nbsp;&nbsp;
+
+00:08:22.800 --> 00:08:30.000
+have you your recent PRDs in my case. uh great,&nbsp;
+go for it. One click, one click rag away at that&nbsp;&nbsp;
+
+00:08:30.000 --> 00:08:35.120
+thing kind of or or prompt away at that thing. But&nbsp;
+if what you want to do is build something that you&nbsp;&nbsp;
+
+00:08:35.120 --> 00:08:40.160
+trust putting into a situation of financial or&nbsp;
+reputational risk, then it takes some additional&nbsp;&nbsp;
+
+00:08:40.160 --> 00:08:44.560
+capabilities. And not only that, but what one&nbsp;
+of the things we see, and I'm sure you've seen&nbsp;&nbsp;
+
+00:08:44.560 --> 00:08:51.600
+this as well, is that many of the folks out there&nbsp;
+who are developing these systems, they're trying&nbsp;&nbsp;
+
+00:08:51.600 --> 00:08:57.840
+to develop deterministic systems using the most&nbsp;
+probabilistic portion of their entire software&nbsp;&nbsp;
+
+00:08:57.840 --> 00:09:05.120
+stack, right? And so one of the pieces of this&nbsp;
+is how do we help them drive those levels of&nbsp;&nbsp;
+
+00:09:05.120 --> 00:09:10.240
+consistently drive those levels of repeatable&nbsp;
+determinism? And we think it comes down to two&nbsp;&nbsp;
+
+00:09:10.240 --> 00:09:16.320
+things. All else being equal, we think it comes&nbsp;
+down to governance. Making sure you can control&nbsp;&nbsp;
+
+00:09:16.320 --> 00:09:22.560
+at the tightest levels, at the lowest grain,&nbsp;
+what this thing has access to and can do. And&nbsp;&nbsp;
+
+00:09:22.560 --> 00:09:28.320
+then evaluation. I was super excited. I met with&nbsp;
+with a company this morning, a global logistics&nbsp;&nbsp;
+
+00:09:28.320 --> 00:09:33.200
+provider this morning, and it was one of the first&nbsp;
+times I had met with a customer who said, "Hey,&nbsp;&nbsp;
+
+00:09:33.200 --> 00:09:39.600
+we built this system, and it's like 85% accurate."&nbsp;
+And it was such a joy because usually people say,&nbsp;&nbsp;
+
+00:09:39.600 --> 00:09:43.040
+"Hey, we built the system. We have it in&nbsp;
+production. We're super proud of it." And I say,&nbsp;&nbsp;
+
+00:09:43.040 --> 00:09:48.320
+"How accurate is it?" And they go, "Oh, it's&nbsp;
+pretty good, right?" And so being able to really&nbsp;&nbsp;
+
+00:09:48.320 --> 00:09:52.640
+start to quantify and hill climb that we believe&nbsp;
+is critical. So governance, what are we talking&nbsp;&nbsp;
+
+00:09:52.640 --> 00:09:59.440
+about? We're talking about really governing the&nbsp;
+access, treating these agents or these prototype&nbsp;&nbsp;
+
+00:09:59.440 --> 00:10:07.040
+agents we're building as principles within our&nbsp;
+data stack and governing every single aspect of&nbsp;&nbsp;
+
+00:10:07.040 --> 00:10:14.640
+that. Now on data bricks, we don't just govern&nbsp;
+your data. We also govern access to the models,&nbsp;&nbsp;
+
+00:10:14.640 --> 00:10:20.880
+right? And we govern tools, right? And we&nbsp;
+govern queries. So we govern access to the data,&nbsp;&nbsp;
+
+00:10:20.880 --> 00:10:26.160
+we govern access to the models, we govern access&nbsp;
+all of the pieces. There is one piece we don't&nbsp;&nbsp;
+
+00:10:26.160 --> 00:10:34.080
+yet govern yet is MCP servers. But uh stick with&nbsp;
+us. We have a conference in a few weeks. You might&nbsp;&nbsp;
+
+00:10:34.080 --> 00:10:39.920
+come check it out and uh hopefully we'll have news&nbsp;
+for you there. Um so how do we get all of this to&nbsp;&nbsp;
+
+00:10:39.920 --> 00:10:45.920
+reason over your data? And uh you know we do that&nbsp;
+by injecting it with either the vector store or or&nbsp;&nbsp;
+
+00:10:45.920 --> 00:10:51.760
+the feature store. Uh, and then we, as I said, we&nbsp;
+govern all of the aspects, whether it's the data,&nbsp;&nbsp;
+
+00:10:51.760 --> 00:10:57.120
+the models, the tools. And I want to stop for&nbsp;
+a second and talk about tools and tool calling&nbsp;&nbsp;
+
+00:10:57.120 --> 00:11:02.560
+because we saw some of it just a second ago in&nbsp;
+Brad's demos. And tool calling when it comes to&nbsp;&nbsp;
+
+00:11:02.560 --> 00:11:12.880
+trying to build a deterministic system. Usually&nbsp;
+what we actually see is we see someone building&nbsp;&nbsp;
+
+00:11:12.880 --> 00:11:20.800
+uh using an LLM to as a classifier to choose one&nbsp;
+of six or eight paths, right? One of six or eight&nbsp;&nbsp;
+
+00:11:20.800 --> 00:11:26.000
+tools. And those tools may be agents, those&nbsp;
+tools may be SQL queries, those tools are any&nbsp;&nbsp;
+
+00:11:26.000 --> 00:11:30.960
+sort of parameterizable function kind of thing,&nbsp;
+right? So we see them creating access to these&nbsp;&nbsp;
+
+00:11:30.960 --> 00:11:39.680
+tools. And then what do we see? We often see the&nbsp;
+next layer another set of to of agents calling&nbsp;&nbsp;
+
+00:11:39.680 --> 00:11:44.720
+choosing between a set of tools and and so they&nbsp;
+end up with this massive decision tree which is&nbsp;&nbsp;
+
+00:11:44.720 --> 00:11:50.640
+great from a kind of deterministic perspective on&nbsp;
+really d reducing the entropy in these systems.&nbsp;&nbsp;
+
+00:11:50.640 --> 00:11:57.280
+The challenge for us was that before we had&nbsp;
+this relationship with anthropic we were&nbsp;&nbsp;
+
+00:11:57.280 --> 00:12:03.120
+talking to people about this stuff but the tool&nbsp;
+calling just wasn't where it was needed to be.&nbsp;&nbsp;
+
+00:12:03.120 --> 00:12:08.000
+You would have these moments where it would be&nbsp;
+unbelievably obvious what tool should be called&nbsp;&nbsp;
+
+00:12:08.000 --> 00:12:14.320
+and the models would consistently not necessar&nbsp;
+well would consistently not get it right. Uh with&nbsp;&nbsp;
+
+00:12:14.320 --> 00:12:22.880
+with claude that has changed completely. Right. We&nbsp;
+now see the ability for these systems to do tool&nbsp;&nbsp;
+
+00:12:22.880 --> 00:12:32.160
+calling really becomes the way in which software&nbsp;
+development engineers and and app app engineers&nbsp;&nbsp;
+
+00:12:32.160 --> 00:12:39.440
+can start building these quasi deterministic&nbsp;
+systems using a highly probabilistic backend.&nbsp;&nbsp;
+
+00:12:39.440 --> 00:12:45.840
+Cloud really in many ways completes this puzzle&nbsp;
+for us by giving us that frontier LLM available&nbsp;&nbsp;
+
+00:12:45.840 --> 00:12:53.920
+directly inside data bricks that has all of the&nbsp;
+capabilities needed to really superpower the use&nbsp;&nbsp;
+
+00:12:53.920 --> 00:12:59.040
+cases that our customers are putting together. So&nbsp;
+why cloud and data bricks together? First of all,&nbsp;&nbsp;
+
+00:12:59.040 --> 00:13:05.680
+cloud is natively available on data bicks in on&nbsp;
+any cloud, right? So on Azure, on AWS, on GCP,&nbsp;&nbsp;
+
+00:13:05.680 --> 00:13:11.600
+you can call cloud within your databicks instance.&nbsp;
+You can build uh state-of-the-art agents on data&nbsp;&nbsp;
+
+00:13:11.600 --> 00:13:16.640
+bricks powered by cloud and then fundamentally you&nbsp;
+can connect cloud. You know the vast majority of&nbsp;&nbsp;
+
+00:13:16.640 --> 00:13:21.120
+folks who are using data bricks are are much&nbsp;
+lower level data engineers and what have you&nbsp;&nbsp;
+
+00:13:21.120 --> 00:13:26.640
+building out kind of massive schemas and building&nbsp;
+out massive governance policies systems and what&nbsp;&nbsp;
+
+00:13:26.640 --> 00:13:34.720
+have you. And you can use claude as a principle&nbsp;
+within that system, right? And as you can see,&nbsp;&nbsp;
+
+00:13:34.720 --> 00:13:41.600
+uh, including MCP servers coming soon.&nbsp;
+Uh, so why use it with us, right? Well,&nbsp;&nbsp;
+
+00:13:41.600 --> 00:13:47.120
+it really comes down to really pairing the&nbsp;
+strongest model with the strongest platform,&nbsp;&nbsp;
+
+00:13:47.120 --> 00:13:51.760
+using it in a fully controlled, right? You know,&nbsp;
+when you talk to these companies, I was sitting&nbsp;&nbsp;
+
+00:13:51.760 --> 00:13:58.480
+at a a collection of of banks recently. There were&nbsp;
+10 or 12 banks at the table. We were all talking&nbsp;&nbsp;
+
+00:13:58.480 --> 00:14:04.240
+about what they were working on. I think more than&nbsp;
+half the banks in the room were were prototyping&nbsp;&nbsp;
+
+00:14:04.240 --> 00:14:08.960
+on Claude as we spoke. Uh one of the banks did&nbsp;
+raise their hand and said, "We're not allowed to&nbsp;&nbsp;
+
+00:14:08.960 --> 00:14:14.240
+use any of this generative stuff in this industry&nbsp;
+of which he was laughed at by the others in the&nbsp;&nbsp;
+
+00:14:14.240 --> 00:14:19.920
+room who were working on these things." uh and and&nbsp;
+the real difference was what that guy was saying&nbsp;&nbsp;
+
+00:14:19.920 --> 00:14:26.320
+was hey we don't have the controls in place to&nbsp;
+use this within our own organization whereas the&nbsp;&nbsp;
+
+00:14:26.320 --> 00:14:31.040
+banks the hospitals the other highly governed&nbsp;
+highly regulated areas that have gone through&nbsp;&nbsp;
+
+00:14:31.040 --> 00:14:36.880
+this now have full access to this technology and&nbsp;
+no longer need to wait for the technology to kind&nbsp;&nbsp;
+
+00:14:36.880 --> 00:14:43.360
+of come to them right you can uh commercially&nbsp;
+there's some advantages scale and and operational&nbsp;&nbsp;
+
+00:14:43.360 --> 00:14:50.880
+capabilities really add to the reasons for why&nbsp;
+to use it all together. Now we together we enable&nbsp;&nbsp;
+
+00:14:50.880 --> 00:14:58.160
+these really high value use cases and one of the&nbsp;
+great things about sitting at the intersection&nbsp;&nbsp;
+
+00:14:58.160 --> 00:15:04.480
+of Gen AI and enterprise is getting to see these&nbsp;
+highv value use cases that kind of come through&nbsp;&nbsp;
+
+00:15:04.480 --> 00:15:12.000
+and really you know give us the the confidence&nbsp;
+to see that this technology is not going to be&nbsp;&nbsp;
+
+00:15:12.000 --> 00:15:18.320
+uh another uh kind of three-year flash in the pan&nbsp;
+but is is really going to end up changing ing the&nbsp;&nbsp;
+
+00:15:18.320 --> 00:15:24.560
+way we all work and and we can now see that coming&nbsp;
+to fruition in some of these organizations we're&nbsp;&nbsp;
+
+00:15:24.560 --> 00:15:31.040
+working with. Now I had said at the beginning&nbsp;
+that this comes down to governance and evaluation,&nbsp;&nbsp;
+
+00:15:31.040 --> 00:15:37.440
+right? And for us, one is not complete without&nbsp;
+the other. You can lock these things down. You&nbsp;&nbsp;
+
+00:15:37.440 --> 00:15:41.600
+can control what they have access to. You can&nbsp;
+control how they're going to operate within&nbsp;&nbsp;
+
+00:15:41.600 --> 00:15:48.560
+your data estate. But if you're not measuring&nbsp;
+the quality of the system, then you're really&nbsp;&nbsp;
+
+00:15:48.560 --> 00:15:54.400
+not going to know whether or not this this system&nbsp;
+you've built is high enough quality to be able to&nbsp;&nbsp;
+
+00:15:54.400 --> 00:16:00.480
+start putting in to those higher risk use cases&nbsp;
+without necessarily a human approval in the loop&nbsp;&nbsp;
+
+00:16:00.480 --> 00:16:06.080
+at every step. Right? And so that's where eval&nbsp;
+comes in. This is our eval platform. By the way,&nbsp;&nbsp;
+
+00:16:06.080 --> 00:16:11.760
+you bring in a golden data set. We have a series&nbsp;
+of LLM judges that help determine whether or not&nbsp;&nbsp;
+
+00:16:11.760 --> 00:16:16.880
+your performance is what it needs to be. And&nbsp;
+uh and you can use this. By the way, this whole&nbsp;&nbsp;
+
+00:16:16.880 --> 00:16:22.800
+system has a secondary UI for your subject matter&nbsp;
+expert. Time and again, we see the app developers&nbsp;&nbsp;
+
+00:16:22.800 --> 00:16:28.240
+building these systems are not necessarily the&nbsp;
+subject matter experts on these topics. And so&nbsp;&nbsp;
+
+00:16:28.240 --> 00:16:33.600
+having a simplified UI for that subject matter&nbsp;
+expert to be able to kind of quickly and easily&nbsp;&nbsp;
+
+00:16:33.600 --> 00:16:41.200
+give uh context or or correct a correct a prompt&nbsp;
+or or create a better answer is critical. This is&nbsp;&nbsp;
+
+00:16:41.200 --> 00:16:49.360
+how we start down this path of gaining confidence&nbsp;
+that these systems can perform in robust higher&nbsp;&nbsp;
+
+00:16:49.360 --> 00:16:57.440
+risk situations is by really kind of you know I I&nbsp;
+had a a guy uh the other day who who said you know&nbsp;&nbsp;
+
+00:16:57.440 --> 00:17:02.880
+oh you're just unit testing the agent and I I kind&nbsp;
+of said well I like to think it's more clever than&nbsp;&nbsp;
+
+00:17:02.880 --> 00:17:09.440
+that but yeah you know more or less right you know&nbsp;
+really kind of searching across the the question&nbsp;&nbsp;
+
+00:17:09.440 --> 00:17:16.320
+space or that that is expected to be uh uh kind&nbsp;
+of gone after with this system and then diving&nbsp;&nbsp;
+
+00:17:16.320 --> 00:17:21.760
+in at the most granular levels to ensure that&nbsp;
+this system is performing. Now this eval system&nbsp;&nbsp;
+
+00:17:21.760 --> 00:17:28.560
+I should say uh a lot of it is open source in ML&nbsp;
+flow the uh LLM judges are not but a lot of the&nbsp;&nbsp;
+
+00:17:28.560 --> 00:17:33.760
+capabilities here can be run whether or not you're&nbsp;
+using data bricks or not you can use o open source&nbsp;&nbsp;
+
+00:17:33.760 --> 00:17:38.880
+ML flow to do these evals or you can if you're&nbsp;
+using data bricks you can hook it up and gain all&nbsp;&nbsp;
+
+00:17:38.880 --> 00:17:46.400
+the value of some of our custom judges and what&nbsp;
+have you right um so that is kind of the stack&nbsp;&nbsp;
+
+00:17:46.400 --> 00:17:54.080
+and that's how we're helping organizations bring&nbsp;
+Gen AI and particularly bringing Claude into this&nbsp;&nbsp;
+
+00:17:54.080 --> 00:18:01.040
+space. Now before we wrap up though, I wanted to&nbsp;
+share uh you know there are these these analysts&nbsp;&nbsp;
+
+00:18:01.040 --> 00:18:07.920
+out there Gartner and Forester and all these they&nbsp;
+go around and they they write report cards on how&nbsp;&nbsp;
+
+00:18:07.920 --> 00:18:13.200
+good is every how good are all the the vendors,&nbsp;
+right? Which vendors are the leaders and what&nbsp;&nbsp;
+
+00:18:13.200 --> 00:18:21.520
+have you. We do pretty well in these. Uh, but I'm&nbsp;
+really excited to say that we're now using Arya to&nbsp;&nbsp;
+
+00:18:21.520 --> 00:18:26.320
+do these. So, to give you a sense, the last time&nbsp;
+we filled out the Gartner one of these things,&nbsp;&nbsp;
+
+00:18:26.320 --> 00:18:32.560
+we ended up writing a 450 page document, right?&nbsp;
+They had 180 questions for us and it we ended up&nbsp;&nbsp;
+
+00:18:32.560 --> 00:18:42.960
+passing back to them a 450 page document. So using&nbsp;
+claude we actually have taken a whole our our&nbsp;&nbsp;
+
+00:18:42.960 --> 00:18:50.480
+uh doc our blogs our docs uh a whole bunch&nbsp;
+of the information about our system as well&nbsp;&nbsp;
+
+00:18:50.480 --> 00:18:56.000
+as past answers we've written for these types&nbsp;
+of things and we've actually gotten it so that&nbsp;&nbsp;
+
+00:18:56.000 --> 00:19:02.320
+when Gartner or Forester or what have you send us&nbsp;
+these questionnaires we just run them through the&nbsp;&nbsp;
+
+00:19:02.320 --> 00:19:11.360
+bot and you know I'll say the answers. We still&nbsp;
+read the answers over and we correct some of them&nbsp;&nbsp;
+
+00:19:11.360 --> 00:19:18.240
+some of the time, but the ability for us to do&nbsp;
+this has made it so that now instead of it being&nbsp;&nbsp;
+
+00:19:18.240 --> 00:19:23.920
+kind of hundreds of hours of product managers and&nbsp;
+engineers and marketing folks all kind of pounding&nbsp;&nbsp;
+
+00:19:23.920 --> 00:19:29.280
+on the keyboard to try and put something together.&nbsp;
+Now, we're just editing what I what I wouldn't&nbsp;&nbsp;
+
+00:19:29.280 --> 00:19:34.160
+even call a rough draft. But we're editing what's&nbsp;
+pretty darn close to a final draft coming out of&nbsp;&nbsp;
+
+00:19:34.160 --> 00:19:43.040
+Claude. And and the reason why I have this up here&nbsp;
+is because we built this uh this went through many&nbsp;&nbsp;
+
+00:19:43.040 --> 00:19:50.560
+iterations. We started with open source models.&nbsp;
+Then we went to uh non-anthropic models uh of&nbsp;&nbsp;
+
+00:19:50.560 --> 00:19:56.720
+a different vendor and then we started using&nbsp;
+claude. And it wasn't until we started using&nbsp;&nbsp;
+
+00:19:56.720 --> 00:20:02.160
+Claude that the results were good enough that we&nbsp;
+it was it was when we started using Claude that&nbsp;&nbsp;
+
+00:20:02.160 --> 00:20:08.720
+we for the first time had results that we could&nbsp;
+ship without touching them. And that was a huge&nbsp;&nbsp;
+
+00:20:08.720 --> 00:20:14.000
+win for us. Uh and so it's a a really exciting&nbsp;
+This is one of these that I'm super excited&nbsp;&nbsp;
+
+00:20:14.000 --> 00:20:20.240
+about because it makes my life way better. Uh we&nbsp;
+uh we just published a blog on this. Uh really&nbsp;&nbsp;
+
+00:20:20.240 --> 00:20:26.400
+exciting stuff. if you if you have to spend your&nbsp;
+days filling out these darn questionnaires. Um,&nbsp;&nbsp;
+
+00:20:26.400 --> 00:20:31.920
+Block is also a customer of ours and Block has&nbsp;
+built this open source system called Goose. And&nbsp;&nbsp;
+
+00:20:31.920 --> 00:20:36.000
+if you haven't given Goose a try, you should&nbsp;
+take a look. Uh, as I said, it's open source.&nbsp;&nbsp;
+
+00:20:36.000 --> 00:20:44.160
+It's a it's really a dev environment, an agentic&nbsp;
+dev environment to accelerate their developers&nbsp;&nbsp;
+
+00:20:44.160 --> 00:20:49.520
+to be able to build, you know, it has basically&nbsp;
+claude built into it and it has connections to&nbsp;&nbsp;
+
+00:20:49.520 --> 00:20:56.880
+all of their systems and all of their data so that&nbsp;
+they can much much more quickly and easily build&nbsp;&nbsp;
+
+00:20:56.880 --> 00:21:02.720
+uh you know kind of within and really accelerate&nbsp;
+the developer experience far far beyond kind&nbsp;&nbsp;
+
+00:21:02.720 --> 00:21:08.160
+of what we're all used to with code complete or&nbsp;
+something like that into a much more purpose-built&nbsp;&nbsp;
+
+00:21:08.160 --> 00:21:13.200
+system to be able to go attack uh improvement&nbsp;
+of their workflows and things like this. You&nbsp;&nbsp;
+
+00:21:13.200 --> 00:21:21.040
+can see 40 to 50% weekly user adoption increase 8&nbsp;
+to 10 hours saved per week by using this. And it's&nbsp;&nbsp;
+
+00:21:21.040 --> 00:21:27.520
+uh it's been really exciting to see block be this&nbsp;
+successful uh with data bricks on or with cloud&nbsp;&nbsp;
+
+00:21:27.520 --> 00:21:34.000
+on data bricks as well as to see uh goose start to&nbsp;
+pick up in the market and more and more people uh&nbsp;&nbsp;
+
+00:21:34.000 --> 00:21:38.720
+playing around and starting to try out goose. So&nbsp;
+those are just a couple of the areas where we've&nbsp;&nbsp;
+
+00:21:38.720 --> 00:21:44.080
+had success getting uh getting these these models&nbsp;
+and these systems in production and creating value&nbsp;&nbsp;
+
+00:21:44.080 --> 00:21:50.400
+for customers. So, I I'll just end it with, you&nbsp;
+know, uh I'm sure everyone here is is deep enough&nbsp;&nbsp;
+
+00:21:50.400 --> 00:21:55.520
+in this that I don't need to tell you to start&nbsp;
+identifying your AI use cases, but once you've&nbsp;&nbsp;
+
+00:21:55.520 --> 00:22:01.120
+identified those AI use cases and you've started&nbsp;
+to understand what success may look like, you&nbsp;&nbsp;
+
+00:22:01.120 --> 00:22:07.600
+know, contact us, reach out to data bricks, reach&nbsp;
+out to anthropic, happy to work with you either,&nbsp;&nbsp;
+
+00:22:07.600 --> 00:22:11.440
+uh, you know, kind of in your professional&nbsp;
+capacity with the organizations you work for&nbsp;&nbsp;
+
+00:22:11.440 --> 00:22:19.040
+and and really help them gain the confidence I&nbsp;
+the the meeting I was in earlier today. Uh as&nbsp;&nbsp;
+
+00:22:19.040 --> 00:22:22.480
+I was walking out of the meeting, the head&nbsp;
+of AI came running over to me and he said,&nbsp;&nbsp;
+
+00:22:22.480 --> 00:22:26.080
+"Hey, I really appreciate the session&nbsp;
+today." And I said, "No, no worries. Like,&nbsp;&nbsp;
+
+00:22:26.080 --> 00:22:29.360
+happy to happy to present. Happy to chat with&nbsp;
+you about what we're doing." He goes, "No,&nbsp;&nbsp;
+
+00:22:29.360 --> 00:22:33.920
+no, no, no. It wasn't learning about your stuff&nbsp;
+that I appreciated. It was you telling our chief&nbsp;&nbsp;
+
+00:22:33.920 --> 00:22:39.360
+data officer how hard my job is that I really&nbsp;
+appreciated." Right? And so, let us know how we&nbsp;&nbsp;
+
+00:22:39.360 --> 00:22:55.120
+can help you uh in this in this journey. With&nbsp;
+that, I wanted to open it up to any questions.
+
+00:22:55.120 --> 00:23:00.720
+Uh, no, no, no. So, the question was,&nbsp;
+is the is the safe score among our LLM&nbsp;&nbsp;
+
+00:23:00.720 --> 00:23:05.600
+judges uh kind of using a red teaming or a&nbsp;
+a kind of adversarial technique or something&nbsp;&nbsp;
+
+00:23:05.600 --> 00:23:10.000
+like that? No. It's much more of a kind of&nbsp;
+think of it more as like a guardrail type&nbsp;&nbsp;
+
+00:23:10.000 --> 00:23:16.880
+measure around you know uh was this response&nbsp;
+a green response or a a comfortable response&nbsp;&nbsp;
+
+00:23:16.880 --> 00:23:26.160
+kind of thing. Any other questions?&nbsp;
+Yeah. Would you think like Minecraft?
+
+00:23:26.160 --> 00:23:33.680
+Yeah. I mean uh you know some of the folks over&nbsp;
+you know it's tough. There's um we have a bunch&nbsp;&nbsp;
+
+00:23:33.680 --> 00:23:39.680
+of competitors for for point solutions within the&nbsp;
+genai space right you know eval you could say you&nbsp;&nbsp;
+
+00:23:39.680 --> 00:23:46.080
+know might be Galileo it might be you know uh&nbsp;
+patronis it might be others kind of thing right&nbsp;&nbsp;
+
+00:23:46.080 --> 00:23:51.760
+uh you know and so there's some point specific&nbsp;
+folks um I think the way we think about this is&nbsp;&nbsp;
+
+00:23:51.760 --> 00:23:57.600
+much more that the value comes in the connection&nbsp;
+between the AI system and the data system like&nbsp;&nbsp;
+
+00:23:57.600 --> 00:24:05.040
+having worked at both AWS and GCP I can say like&nbsp;
+uh the reason I'm at data bricks is because there&nbsp;&nbsp;
+
+00:24:05.040 --> 00:24:11.120
+was a conversation I had while at while at Vertex&nbsp;
+where we were sitting there saying hey with MLOps&nbsp;&nbsp;
+
+00:24:11.120 --> 00:24:15.680
+we had taken an order of magnitude off the&nbsp;
+development time where does the next order&nbsp;&nbsp;
+
+00:24:15.680 --> 00:24:21.120
+of magnitude off development time came from&nbsp;
+and it really I believe comes from being able&nbsp;&nbsp;
+
+00:24:21.120 --> 00:24:27.600
+to really integrate the AI and the data layers&nbsp;
+together much much more intimately and deeply&nbsp;&nbsp;
+
+00:24:27.600 --> 00:24:34.160
+than we've seen from most of the hyperscalers.&nbsp;
+Any other last questions? Yeah. In one of your&nbsp;&nbsp;
+
+00:24:34.160 --> 00:24:51.120
+earlier slides, the customer. Yeah, it&nbsp;
+looks like they have many agents. Yeah.
+
+00:24:51.120 --> 00:24:58.080
+Yeah. I I mean that's certainly, you know, we've&nbsp;
+um we often work we often encourage companies to&nbsp;&nbsp;
+
+00:24:58.080 --> 00:25:03.920
+take a more kind of composable agentic approach.&nbsp;
+And we often encourage them to do that simply&nbsp;&nbsp;
+
+00:25:03.920 --> 00:25:11.600
+because when you're trying to build these systems&nbsp;
+to behave deterministically uh in a higher risk&nbsp;&nbsp;
+
+00:25:11.600 --> 00:25:19.840
+environment, uh then you need to be able to&nbsp;
+tune them at a much more granular level. And so,&nbsp;&nbsp;
+
+00:25:19.840 --> 00:25:25.120
+you know, our goal is really to drive as much&nbsp;
+entropy out of these systems as possible in&nbsp;&nbsp;
+
+00:25:25.120 --> 00:25:32.720
+trying to get this determinism. And so, you know,&nbsp;
+yes, uh I think three, you know, 37 I I haven't&nbsp;&nbsp;
+
+00:25:32.720 --> 00:25:38.800
+gotten to play with four nearly enough yet, but&nbsp;
+I think 37 uh probably could do a lot of that,&nbsp;&nbsp;
+
+00:25:38.800 --> 00:25:44.400
+but I I I guess my only concern would be, uh if&nbsp;
+we did find errors, would we have the knobs to&nbsp;&nbsp;
+
+00:25:44.400 --> 00:25:50.000
+be able to go and get them beyond just swapping&nbsp;
+up the prompts, right? And and that's I think&nbsp;&nbsp;
+
+00:25:50.000 --> 00:25:55.680
+where you know even as these models have gotten&nbsp;
+much larger. I'll tell you one of the things 37&nbsp;&nbsp;
+
+00:25:55.680 --> 00:26:01.680
+that I've really appreciated about 37 is that&nbsp;
+uh it does a great job of taking prompts to&nbsp;&nbsp;
+
+00:26:01.680 --> 00:26:07.440
+other models and decomposing them into each of&nbsp;
+the steps. Like I can take it and say hey if I&nbsp;&nbsp;
+
+00:26:07.440 --> 00:26:14.480
+needed to rewrite this where every sing where it&nbsp;
+was as many small granular steps as possible then&nbsp;&nbsp;
+
+00:26:14.480 --> 00:26:19.520
+uh then 37 or 37 has done a great job of&nbsp;
+that. So, listen, I appreciate all the uh&nbsp;&nbsp;
+
+00:26:19.520 --> 00:26:23.760
+the time and attention today. I'll be back if&nbsp;
+you have other questions uh back by the door,&nbsp;&nbsp;
+
+00:26:23.760 --> 00:26:32.844
+back outside. And uh thanks again for&nbsp;
+coming today. Thank you. [Applause] [Music]
+
+00:26:32.844 --> 00:26:33.297
+[Music]
+

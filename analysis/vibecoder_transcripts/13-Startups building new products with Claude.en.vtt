@@ -1,0 +1,1166 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:05.440 --> 00:00:10.320
+Welcome, welcome everyone. Um, I'm Joe. I'm&nbsp;
+from the startups team here at Anthropic and&nbsp;&nbsp;
+
+00:00:10.320 --> 00:00:16.240
+we're so thrilled to have all of you&nbsp;
+here today. We have a breakout of six&nbsp;&nbsp;
+
+00:00:16.240 --> 00:00:21.360
+amazing founders uh that have really found&nbsp;
+product market fit building on cloud across&nbsp;&nbsp;
+
+00:00:21.360 --> 00:00:27.680
+a bunch of different industries across agentic&nbsp;
+coding across design across music generation.&nbsp;&nbsp;
+
+00:00:27.680 --> 00:00:33.280
+And a lot of these startups have really seen that&nbsp;
+zero to multi-million user journey within the past&nbsp;&nbsp;
+
+00:00:33.280 --> 00:00:37.920
+12 months. And I know in this crowd there's a&nbsp;
+lot of, you know, really great founders too.&nbsp;&nbsp;
+
+00:00:37.920 --> 00:00:42.880
+And so we want all of you to stay until the end&nbsp;
+of the session. Uh we have a little surprise for&nbsp;&nbsp;
+
+00:00:42.880 --> 00:00:49.600
+all of you to be able to spin up quicker uh&nbsp;
+on Claude 4 um in our new family of models.&nbsp;&nbsp;
+
+00:00:49.600 --> 00:01:02.080
+So without further ado, I want to bring up Kevin&nbsp;
+uh who is the CEO and uh co-founder of Tempo Labs.
+
+00:01:02.080 --> 00:01:06.320
+Awesome. Thanks, Joe. Everyone, nice to meet&nbsp;
+you. As uh she mentioned, my name is Kevin,&nbsp;&nbsp;
+
+00:01:06.320 --> 00:01:09.680
+one of the co-founders of Tempo, and&nbsp;
+it's an honor to be here. Um to kick off,&nbsp;&nbsp;
+
+00:01:09.680 --> 00:01:16.400
+I have a video uh that'll give you a little&nbsp;
+bit of a taste of what Tempo's all about.
+
+00:01:16.400 --> 00:01:18.640
+I don't take that fact. Won't you let me go? No,&nbsp;&nbsp;
+
+00:01:18.640 --> 00:01:33.080
+you never come back. I'mma be the best&nbsp;
+that you never never hide. [Music]&nbsp;&nbsp;
+
+00:01:40.560 --> 00:01:53.160
+I like this. [Music]&nbsp;&nbsp;
+
+00:01:59.840 --> 00:02:09.840
+But there is one more thing. [Applause] [Music]
+
+00:02:09.840 --> 00:02:14.240
+I'm never
+
+00:02:14.240 --> 00:02:20.640
+awesome. So uh what is tempo? At tempo we're&nbsp;
+building cursor for PMs and designers. Uh,&nbsp;&nbsp;
+
+00:02:20.640 --> 00:02:26.160
+Tempo is a new type of IDE that feels more like a&nbsp;
+design tool like Figma than it does VS Code. And&nbsp;&nbsp;
+
+00:02:26.160 --> 00:02:31.840
+the whole idea behind it is to give designers&nbsp;
+and PMs the ability to collaborate with Claude&nbsp;&nbsp;
+
+00:02:31.840 --> 00:02:37.200
+uh to create, you know, the first draft of pull&nbsp;
+requests and in many cases uh the actual endto-end&nbsp;&nbsp;
+
+00:02:37.200 --> 00:02:41.760
+pull request. Uh kind of pulling the engineer out&nbsp;
+of the loop in some cases, but if anything, making&nbsp;&nbsp;
+
+00:02:41.760 --> 00:02:46.640
+the process of working on code collaborative as it&nbsp;
+stands today, it's really non-engineers don't, you&nbsp;&nbsp;
+
+00:02:46.640 --> 00:02:51.520
+know, collaborate too much on code. So, I'll show&nbsp;
+you a bit of a live demo of what that looks like.&nbsp;&nbsp;
+
+00:02:51.520 --> 00:02:57.680
+Uh, this is Tempo. Uh, Tempo, as you can tell, uh,&nbsp;
+you know, has three tabs. Product, uh, a PRD tab,&nbsp;&nbsp;
+
+00:02:57.680 --> 00:03:04.400
+a design tab, and a code tab. So, imagine you're&nbsp;
+a PM, right? You generate a Airbnb app with,&nbsp;&nbsp;
+
+00:03:04.400 --> 00:03:08.560
+uh, Claude, and you're like, "Okay, great. This&nbsp;
+looks, you know, it's a it's a it's a quick and&nbsp;&nbsp;
+
+00:03:08.560 --> 00:03:13.280
+dirty prototype demo. Uh, and then you pass it off&nbsp;
+to your designer, and your designer looks at uh,&nbsp;&nbsp;
+
+00:03:13.280 --> 00:03:17.360
+the real Airbnb, and it's kind of like, hm, this&nbsp;
+is kind of off. I need to get it pixel perfect."&nbsp;&nbsp;
+
+00:03:17.360 --> 00:03:23.200
+So, uh, you come in here and you realize that,&nbsp;
+uh, you know, you spent some time working on this&nbsp;&nbsp;
+
+00:03:23.200 --> 00:03:28.560
+new animated, uh, tabs header. So, you can see,&nbsp;
+you know, just like the it's nice and pretty,&nbsp;&nbsp;
+
+00:03:28.560 --> 00:03:35.920
+just like the core, uh, Airbnb. Uh, so what I can&nbsp;
+do now is I can, uh, drag and drop this right into&nbsp;&nbsp;
+
+00:03:35.920 --> 00:03:41.280
+my header over here. Uh, give that a second.&nbsp;
+There you go. We've got it in the header. Uh,&nbsp;&nbsp;
+
+00:03:41.280 --> 00:03:47.280
+and then what I can do is just rearrange&nbsp;
+this to get it in the middle. Um, and again,&nbsp;&nbsp;
+
+00:03:47.280 --> 00:03:51.760
+every change that I'm making is actually, you&nbsp;
+know, you can see editing the original source code&nbsp;&nbsp;
+
+00:03:51.760 --> 00:03:56.320
+in the correct position. Um, so, okay, so we're&nbsp;
+kind of like starting to make some progress. Now,&nbsp;&nbsp;
+
+00:03:56.320 --> 00:04:01.920
+clearly these little new badges are not great. You&nbsp;
+know, whenever whoever designed or created that&nbsp;&nbsp;
+
+00:04:01.920 --> 00:04:08.160
+didn't do a great job. So, why don't we fix that&nbsp;
+up really quick? Um, so I'm going to open up my&nbsp;&nbsp;
+
+00:04:08.160 --> 00:04:12.320
+uh DOM tree over here, which shows me everything&nbsp;
+that's in the DOM. I'll find the new badge, and&nbsp;&nbsp;
+
+00:04:12.320 --> 00:04:18.320
+I'll I'll just click uh delete just like I would.&nbsp;
+Boom. Okay, we're getting somewhere close. Looks,&nbsp;&nbsp;
+
+00:04:18.320 --> 00:04:23.440
+you know, half decent. Now, let's compare to&nbsp;
+Airbnb. Okay, we've got some work to do. Clearly,&nbsp;&nbsp;
+
+00:04:23.440 --> 00:04:28.160
+Claude thought we need this little text header.&nbsp;
+I'm just going to delete that like I normally&nbsp;&nbsp;
+
+00:04:28.160 --> 00:04:33.920
+would in a design tool, traditional design tool&nbsp;
+like Figma. I'm going to delete this over here.&nbsp;&nbsp;
+
+00:04:33.920 --> 00:04:42.160
+And then I am going to let's compare again.&nbsp;
+I'm going to move my uh the elements in my&nbsp;&nbsp;
+
+00:04:42.160 --> 00:04:49.680
+property grid here to the center. I'm going to&nbsp;
+add a little bit of gap between them. And then&nbsp;&nbsp;
+
+00:04:49.680 --> 00:04:54.400
+maybe here I'm going to remove this uh Tailwind&nbsp;
+padding. And then I'm going to compare to core&nbsp;&nbsp;
+
+00:04:54.400 --> 00:05:00.160
+Airbnb and then the site that I built in tempo.&nbsp;
+And now you get an idea of how you know PMs,&nbsp;&nbsp;
+
+00:05:00.160 --> 00:05:03.920
+designers can collaborate together with Claude.&nbsp;
+And then again I can enter a commit message,&nbsp;&nbsp;
+
+00:05:03.920 --> 00:05:08.960
+push this to uh to GitHub. Um, and actually&nbsp;
+the really cool thing is that this actually&nbsp;&nbsp;
+
+00:05:08.960 --> 00:05:12.560
+this code isn't running locally on my machine.&nbsp;
+It's actually running on a Docker container in&nbsp;&nbsp;
+
+00:05:12.560 --> 00:05:16.160
+the cloud. So this whole thing is collaborative.&nbsp;
+I can send a link to someone just like Figma and&nbsp;&nbsp;
+
+00:05:16.160 --> 00:05:20.240
+they can come and collaboratively code uh with&nbsp;
+me and with Claude. There you go. Tempo is again&nbsp;&nbsp;
+
+00:05:20.240 --> 00:05:25.200
+it's it's an IDE for designers and developers&nbsp;
+uh to collaborate together on code. Uh we&nbsp;&nbsp;
+
+00:05:25.200 --> 00:05:29.680
+already have uh a number of customers and have&nbsp;
+been growing extremely extremely quickly. Uh,&nbsp;&nbsp;
+
+00:05:29.680 --> 00:05:34.560
+and what we're seeing for customers that adopt&nbsp;
+Tempo is designers truly are turning into design&nbsp;&nbsp;
+
+00:05:34.560 --> 00:05:38.960
+engineers. And we're seeing that, you know,&nbsp;
+approximately 10 to 15% of front-end pull&nbsp;&nbsp;
+
+00:05:38.960 --> 00:05:43.200
+requests are actually being able to be opened&nbsp;
+by designers directly. They're often able to do&nbsp;&nbsp;
+
+00:05:43.200 --> 00:05:46.560
+uh pixel pushing themselves without&nbsp;
+involving an engineer. They can just&nbsp;&nbsp;
+
+00:05:46.560 --> 00:05:52.880
+work with tempo and with claude directly.&nbsp;
+Uh, and in in about 60% of pull requests,&nbsp;&nbsp;
+
+00:05:52.880 --> 00:05:58.080
+uh, we see that a sizable chunk of the front-end&nbsp;
+code has been generated by designers, by PMs, and&nbsp;&nbsp;
+
+00:05:58.080 --> 00:06:03.200
+by claude. and it actually accelerates it's useful&nbsp;
+code that accelerates um a true front-end engineer&nbsp;&nbsp;
+
+00:06:03.200 --> 00:06:07.920
+uh in their process of going to production. And&nbsp;
+so that's tempo. Uh we are in the we're imminently&nbsp;&nbsp;
+
+00:06:07.920 --> 00:06:14.080
+about to release support for cloud 4. So I invite&nbsp;
+you all to uh give it a shot uh and empower your&nbsp;&nbsp;
+
+00:06:14.080 --> 00:06:20.560
+PMs and your designers to start to collaborate&nbsp;
+with your engineers on code. Thank you.
+
+00:06:20.560 --> 00:06:26.480
+Howdy everybody. Um my name is Andrew Ph. Um&nbsp;
+I will start uh with a little bit of a past&nbsp;&nbsp;
+
+00:06:26.480 --> 00:06:32.080
+history. I built and sold software business for&nbsp;
+more than$2 billion dollars. So I ran a team of&nbsp;&nbsp;
+
+00:06:32.080 --> 00:06:38.320
+more than thousand people and despite doing that I&nbsp;
+could tell that only about two to 5% of our ideas&nbsp;&nbsp;
+
+00:06:38.320 --> 00:06:44.080
+ever came to life. Uh because the majority of&nbsp;
+the time we spent on fairly routine work and the&nbsp;&nbsp;
+
+00:06:44.080 --> 00:06:50.160
+larger is the company the more of that routine is&nbsp;
+in your uh kind of the bigger that routine makes&nbsp;&nbsp;
+
+00:06:50.160 --> 00:06:56.720
+part of your of your day job. So I fundamentally&nbsp;
+believe that uh we can automate at least 90% of&nbsp;&nbsp;
+
+00:06:56.720 --> 00:07:01.520
+that routine work giving us opportunity to move&nbsp;
+10 times faster and bring more of our ideas to&nbsp;&nbsp;
+
+00:07:01.520 --> 00:07:09.680
+life and um I personally uh believe that a lot&nbsp;
+of their of this transformation will happen this&nbsp;&nbsp;
+
+00:07:09.680 --> 00:07:15.360
+year and we're uh actually observing it as we&nbsp;
+speak including today I think that uh this week&nbsp;&nbsp;
+
+00:07:15.360 --> 00:07:21.760
+actually demark uh demarks their transition into&nbsp;
+the next generation. So how only 12 months ago the&nbsp;&nbsp;
+
+00:07:21.760 --> 00:07:26.800
+whole industry was on the first generation of AI&nbsp;
+coding assistant. So a code completion it kind of&nbsp;&nbsp;
+
+00:07:26.800 --> 00:07:32.320
+uh was a very nice convenience uh but not a game&nbsp;
+changer to to um anybody and then October last&nbsp;&nbsp;
+
+00:07:32.320 --> 00:07:40.320
+year um thanks to Entropic we got um cloud&nbsp;
+3.5 and that was a gamecher and that allowed&nbsp;&nbsp;
+
+00:07:40.320 --> 00:07:47.040
+um us and Zen coder and cursor and windsurf and a&nbsp;
+lot of other players to build true coding agents&nbsp;&nbsp;
+
+00:07:47.040 --> 00:07:53.520
+inside of your ID. So that opened up a completely&nbsp;
+new uh use cases, completely new scenarios. We saw&nbsp;&nbsp;
+
+00:07:53.520 --> 00:07:59.600
+usage skyrocket uh 10x, 100x and we saw people&nbsp;
+uh being able to do amazing things that they&nbsp;&nbsp;
+
+00:07:59.600 --> 00:08:06.320
+haven't been able to do before. And part of that&nbsp;
+revolution was um the model support for tools&nbsp;&nbsp;
+
+00:08:06.320 --> 00:08:10.880
+and environment because behind a lot of those&nbsp;
+generational changes there are some technical&nbsp;&nbsp;
+
+00:08:10.880 --> 00:08:16.880
+capabilities that kind of unlock all of that,&nbsp;
+right? uh there was also move in the models from&nbsp;&nbsp;
+
+00:08:16.880 --> 00:08:22.160
+coding quote unquote like Olympia style stuff&nbsp;
+to through software engineering and that was&nbsp;&nbsp;
+
+00:08:22.160 --> 00:08:28.160
+uh very very very important and then uh obviously&nbsp;
+context matters um software repositories are quite&nbsp;&nbsp;
+
+00:08:28.160 --> 00:08:33.440
+large so it's good to to have a larger support&nbsp;
+and I think that uh in this year we'll actually&nbsp;&nbsp;
+
+00:08:33.440 --> 00:08:38.800
+see transition to the next generation uh for me&nbsp;
+one of the biggest enablers there is verification&nbsp;&nbsp;
+
+00:08:38.800 --> 00:08:43.520
+uh so I'm super excited about something that we&nbsp;
+haven't yet talked uh at this conference today&nbsp;&nbsp;
+
+00:08:43.520 --> 00:08:48.800
+is computer use. We saw rapid progress in those&nbsp;
+models and they uh allow us to build uh proper&nbsp;&nbsp;
+
+00:08:48.800 --> 00:08:55.600
+verification and verification is key to scaling&nbsp;
+AI uh and kind of delivering more fully autonomous&nbsp;&nbsp;
+
+00:08:55.600 --> 00:09:01.520
+cycle. And then the other thing is uh in real&nbsp;
+life in actual production work uh where you got&nbsp;&nbsp;
+
+00:09:01.520 --> 00:09:07.600
+multiple people engaged and multiple teams engaged&nbsp;
+uh typically a lot of the time is wasted in what&nbsp;&nbsp;
+
+00:09:07.600 --> 00:09:13.520
+I call in between uh kind of passing the ball. And&nbsp;
+so when we think about the problem, we think about&nbsp;&nbsp;
+
+00:09:13.520 --> 00:09:19.120
+software development life cycle as a whole uh not&nbsp;
+just about the coding and that's a big part of our&nbsp;&nbsp;
+
+00:09:19.120 --> 00:09:26.320
+um DNA. And so super happy to announce a couple&nbsp;
+of weeks ago uh came with Zen agents. So taking&nbsp;&nbsp;
+
+00:09:26.320 --> 00:09:31.360
+that concept of um coding agent and extending&nbsp;
+into custom agents that you can share across&nbsp;&nbsp;
+
+00:09:31.360 --> 00:09:36.080
+your whole organization with full support for&nbsp;
+MCP with specialized coding tools and whatnot&nbsp;&nbsp;
+
+00:09:36.080 --> 00:09:42.560
+but you can basically deploy them across your&nbsp;
+whole uh SDLC from their uh work on your PRD&nbsp;&nbsp;
+
+00:09:42.560 --> 00:09:49.040
+to to the actual coding to verification to uh&nbsp;
+code reviews and whatnot. So uh that's super&nbsp;&nbsp;
+
+00:09:49.040 --> 00:10:02.320
+exciting and I'll just uh basically show you&nbsp;
+a quick video and we'll be good to go. Heat.
+
+00:10:02.320 --> 00:10:09.920
+[Music]
+
+00:10:09.920 --> 00:10:17.200
+Heat.
+
+00:10:24.520 --> 00:10:25.520
+[Applause]
+
+00:10:25.520 --> 00:10:31.440
+We're looking forward for Entropic to bring us&nbsp;
+MCP registry. Uh but while that's not available,&nbsp;&nbsp;
+
+00:10:31.440 --> 00:10:37.520
+we offer you ours. So we got 100 um I believe&nbsp;
+about 100 MCP servers out there and obviously&nbsp;&nbsp;
+
+00:10:37.520 --> 00:10:42.560
+you can configure your own. And also as we launch&nbsp;
+Zen agents, we're excited to launch the community&nbsp;&nbsp;
+
+00:10:42.560 --> 00:10:48.160
+aspects of it. So there's an uh MIT licensed&nbsp;
+GitHub repo where you can commit your agents&nbsp;&nbsp;
+
+00:10:48.160 --> 00:10:53.600
+and if we approve your PR uh everybody will will&nbsp;
+see them. So we're excited and think that that can&nbsp;&nbsp;
+
+00:10:53.600 --> 00:10:58.880
+help kickstart the creativity process in a lot of&nbsp;
+organizations and kind of take it beyond the basic&nbsp;&nbsp;
+
+00:10:58.880 --> 00:11:06.960
+coding use uh truly across the whole software&nbsp;
+development life cycle. So thank you all. Hi,&nbsp;&nbsp;
+
+00:11:06.960 --> 00:11:11.680
+my name is Jordan. I'm the head of AI&nbsp;
+engineering at Gamma. And at Gamma,&nbsp;&nbsp;
+
+00:11:11.680 --> 00:11:16.000
+our mission is to help bring your ideas&nbsp;
+to life. Whether that's presentations,&nbsp;&nbsp;
+
+00:11:16.000 --> 00:11:21.680
+documents, websites, or even social media&nbsp;
+carousels. We do all this through AI to help&nbsp;&nbsp;
+
+00:11:21.680 --> 00:11:29.360
+build these things for you. And we love Quad. Uh&nbsp;
+throughout Gamma's kind of history of using AI,&nbsp;&nbsp;
+
+00:11:29.360 --> 00:11:36.320
+there's been two moments where a model upgrade has&nbsp;
+made significant impact to our key metrics around&nbsp;&nbsp;
+
+00:11:36.320 --> 00:11:42.240
+user satisfaction for deck generation. The first&nbsp;
+was when sonnet 3.5 came out and the second was&nbsp;&nbsp;
+
+00:11:42.240 --> 00:11:48.560
+when sonnet 3.7 came out. Um we actually saw an 8%&nbsp;
+increase in this metric which is something that we&nbsp;&nbsp;
+
+00:11:48.560 --> 00:11:54.640
+spent hundreds of hours trying to prompt engineer&nbsp;
+around and could not get such improvements. Um and&nbsp;&nbsp;
+
+00:11:54.640 --> 00:12:00.160
+one of the big reasons for this was around web&nbsp;
+search. So the built-in tool in sonnet that we&nbsp;&nbsp;
+
+00:12:00.160 --> 00:12:04.720
+can natively use web search for and not have to&nbsp;
+use a third party service. So I'm going to show&nbsp;&nbsp;
+
+00:12:04.720 --> 00:12:10.800
+you the difference what web search made in gamma&nbsp;
+by showing two decks generated with gamma. One&nbsp;&nbsp;
+
+00:12:10.800 --> 00:12:17.760
+with web search and one without. So this is gamma.&nbsp;
+Gamma used AI to generate this. It used sonnet 3.7&nbsp;&nbsp;
+
+00:12:17.760 --> 00:12:24.400
+but it did not use web search. And as you can&nbsp;
+see got a lot of things wrong. This conference&nbsp;&nbsp;
+
+00:12:24.400 --> 00:12:33.680
+isn't January 22nd 2025. It's not three days. I&nbsp;
+don't think these are the right speakers. So let's&nbsp;&nbsp;
+
+00:12:33.680 --> 00:12:41.680
+see what we can do with web search. So in gamma&nbsp;
+you can create a entire presentation, web page,&nbsp;&nbsp;
+
+00:12:41.680 --> 00:12:52.240
+document, anything from a single sentence. So&nbsp;
+I'll type in code with claude conference 2025.
+
+00:12:52.240 --> 00:12:56.640
+And it's going to first create an outline for&nbsp;
+me. It's going to search the web to figure out&nbsp;&nbsp;
+
+00:12:56.640 --> 00:13:02.160
+what should be in this outline. and it will&nbsp;
+inevitably find details about the CL code with&nbsp;&nbsp;
+
+00:13:02.160 --> 00:13:07.200
+Claude conference and put them there. So, as you&nbsp;
+can see, we're already off to a better start where&nbsp;&nbsp;
+
+00:13:07.200 --> 00:13:15.440
+we have the correct dates, we have real technical&nbsp;
+sessions, we have the right location. So, this&nbsp;&nbsp;
+
+00:13:15.440 --> 00:13:30.720
+looks much better for us. And I've even gone ahead&nbsp;
+and created an anthropic theme that we can use.
+
+00:13:30.720 --> 00:13:32.480
+So now that we have the outline generated,&nbsp;&nbsp;
+
+00:13:32.480 --> 00:13:36.160
+Gamma will take that outline and it&nbsp;
+will take the other information it has&nbsp;&nbsp;
+
+00:13:36.160 --> 00:13:44.800
+and create an entire presentation for us with&nbsp;
+hopefully the correct details. So let's check.
+
+00:13:49.440 --> 00:13:52.640
+So, I think already we're off to a&nbsp;
+better start. It has the right date,&nbsp;&nbsp;
+
+00:13:52.640 --> 00:14:00.720
+has the right location, tells us the schedule,
+
+00:14:00.720 --> 00:14:03.440
+and overall, this provides us a&nbsp;
+much better starting point if we&nbsp;&nbsp;
+
+00:14:03.440 --> 00:14:07.760
+were to say make a presentation or&nbsp;
+a website about this conference.&nbsp;&nbsp;
+
+00:14:07.760 --> 00:14:11.040
+It's not going to be perfect, but it'll get&nbsp;
+you to a point where you have the correct&nbsp;&nbsp;
+
+00:14:11.040 --> 00:14:19.040
+information and you're at a good starting&nbsp;
+point to actually finish your presentation.
+
+00:14:19.040 --> 00:14:26.800
+So, this one change from sonnet 3.5 to 3.7 with&nbsp;
+with web search was a huge lift for us and we're&nbsp;&nbsp;
+
+00:14:26.800 --> 00:14:33.680
+very excited to continue to use claude and to&nbsp;
+continue to see these improvements. Lastly, we are&nbsp;&nbsp;
+
+00:14:33.680 --> 00:14:39.040
+hiring. So if you are an engineer or product or&nbsp;
+designer and are interested in working at Gamma,&nbsp;&nbsp;
+
+00:14:39.040 --> 00:14:45.040
+you can go to careers.gamma.app. Thank you. Hi,&nbsp;
+my name is Omar Goyel. I'm the CEO and co-founder&nbsp;&nbsp;
+
+00:14:45.040 --> 00:14:52.320
+of BTO. We're building the hopefully the world's&nbsp;
+best AI code review platform. So as we all know,&nbsp;&nbsp;
+
+00:14:52.320 --> 00:15:00.480
+we're using all these cursor windserve cla uh&nbsp;
+um claude code to write massive massive amounts&nbsp;&nbsp;
+
+00:15:00.480 --> 00:15:04.480
+of code. The amount of code that developers are&nbsp;
+writing we think is going to go up 10x over the&nbsp;&nbsp;
+
+00:15:04.480 --> 00:15:09.920
+next year or two. Um but what that means is&nbsp;
+that you know vibe coding which we all talk&nbsp;&nbsp;
+
+00:15:09.920 --> 00:15:16.000
+about does not equal vibe engineering. How do you&nbsp;
+get code that's scalable, reliable, performant,&nbsp;&nbsp;
+
+00:15:16.000 --> 00:15:20.960
+fits into your architectural design patterns and&nbsp;
+that's still left to the code review process. But&nbsp;&nbsp;
+
+00:15:20.960 --> 00:15:24.960
+code review is not going to scale teams have&nbsp;
+trouble keeping up today. It's not going to&nbsp;&nbsp;
+
+00:15:24.960 --> 00:15:31.600
+scale for 10x the amount of code. BTO's built an&nbsp;
+AI code review that plugs into GitHub, GitLab,&nbsp;&nbsp;
+
+00:15:31.600 --> 00:15:37.760
+Bitbucket, works with over 50 languages. Our focus&nbsp;
+is really, especially with Sonnet, having a really&nbsp;&nbsp;
+
+00:15:37.760 --> 00:15:43.120
+high quality model that provides a human-like&nbsp;
+code review focuses on the critical things. Our&nbsp;&nbsp;
+
+00:15:43.120 --> 00:15:47.760
+biggest thing is really about more signal and less&nbsp;
+noise. How do we provide you actionable important&nbsp;&nbsp;
+
+00:15:47.760 --> 00:15:54.960
+suggestions? Let me show it to you. So, we've got&nbsp;
+a a PR here. This is GitLab. It works kind of the&nbsp;&nbsp;
+
+00:15:54.960 --> 00:16:02.800
+same in in all the platforms. So once you create&nbsp;
+a PR uh BTO's fired bid gets called and we first&nbsp;&nbsp;
+
+00:16:02.800 --> 00:16:08.560
+start by summarizing your PR. This doesn't require&nbsp;
+any documentation or any comments. We just look at&nbsp;&nbsp;
+
+00:16:08.560 --> 00:16:13.360
+the diffs. We look at your code and we summarize&nbsp;
+it. Then we give you a quick kind of overview of&nbsp;&nbsp;
+
+00:16:13.360 --> 00:16:19.280
+what we found in the PR. So here we found three&nbsp;
+actionable suggestions. some things about missing&nbsp;&nbsp;
+
+00:16:19.280 --> 00:16:25.680
+resources uh a cache implementation that needs&nbsp;
+to be impacted and then a class cast exception&nbsp;&nbsp;
+
+00:16:25.680 --> 00:16:30.320
+error which we'll talk about. Um next we provide&nbsp;
+a change list. This change list gives you it's&nbsp;&nbsp;
+
+00:16:30.320 --> 00:16:35.520
+kind of a double click on the summary summarizes&nbsp;
+the key changes in your PR and then looks at what&nbsp;&nbsp;
+
+00:16:35.520 --> 00:16:40.320
+are the diffs that comprise that. So you as a&nbsp;
+reviewer you get a quick double click on what&nbsp;&nbsp;
+
+00:16:40.320 --> 00:16:45.120
+actually matters in this PR. Now let's go through&nbsp;
+a couple of these suggestions. So this first one&nbsp;&nbsp;
+
+00:16:45.120 --> 00:16:50.320
+is really about uh this resource management&nbsp;
+uh resource manager class is talking about a&nbsp;&nbsp;
+
+00:16:50.320 --> 00:16:55.360
+permanent resource leak uh if you don't fix this.&nbsp;
+So we give you a detailed code suggestion which&nbsp;&nbsp;
+
+00:16:55.360 --> 00:17:02.080
+you can then oneclick apply as a commit or you&nbsp;
+can batch those commits. Uh the next suggestion&nbsp;&nbsp;
+
+00:17:02.080 --> 00:17:09.200
+uh that we'll look at really briefly is um this&nbsp;
+non-thread safe static cache implementation. Uh&nbsp;&nbsp;
+
+00:17:09.200 --> 00:17:14.480
+and so we again we've given you a code suggestion.&nbsp;
+We're suggesting a concurrent hashmap instead of a&nbsp;&nbsp;
+
+00:17:14.480 --> 00:17:19.920
+hashmap to avoid race conditions. Now, let's talk&nbsp;
+a little bit about this third suggestion which I&nbsp;&nbsp;
+
+00:17:19.920 --> 00:17:25.040
+think is really important and highlights how we&nbsp;
+use sonnet. So, we really use sonnet to provide&nbsp;&nbsp;
+
+00:17:25.040 --> 00:17:29.840
+that human-like code review and those reasoning&nbsp;
+capabilities. We've done a lot of work to really&nbsp;&nbsp;
+
+00:17:29.840 --> 00:17:35.040
+understand your codebase and that's where sonnet&nbsp;
+kind of comes in. So, if you look here, what we've&nbsp;&nbsp;
+
+00:17:35.040 --> 00:17:42.480
+got is this network data fetcher um class. It&nbsp;
+has been cast to a link list. Uh this is Java. If&nbsp;&nbsp;
+
+00:17:42.480 --> 00:17:46.400
+you're not familiar with Java, I'll just kind of&nbsp;
+walk you through it. But really what's happening&nbsp;&nbsp;
+
+00:17:46.400 --> 00:17:51.920
+here is that this data uh you can see there's&nbsp;
+a data processor constructor that then cast&nbsp;&nbsp;
+
+00:17:51.920 --> 00:17:58.320
+something to an array list which is going to cause&nbsp;
+a class cast exception in production. Now how did&nbsp;&nbsp;
+
+00:17:58.320 --> 00:18:03.200
+how did we find this? Well, what Bid has done is&nbsp;
+that it looked through the code and said, "Hey,&nbsp;&nbsp;
+
+00:18:03.200 --> 00:18:08.720
+for this network data fetcher, you were trying&nbsp;
+to instantiate this data processor object. this&nbsp;&nbsp;
+
+00:18:08.720 --> 00:18:13.840
+data processor object. Then well, what is that? We&nbsp;
+went and looked, crawled your code, understood it&nbsp;&nbsp;
+
+00:18:13.840 --> 00:18:18.400
+through abstract syntax trees, a symbol index, and&nbsp;
+saw its reasoning and said, "Hey, this is cast as&nbsp;&nbsp;
+
+00:18:18.400 --> 00:18:23.200
+an array list." And so now this array lists, you&nbsp;
+know, is going to collide with this link list and&nbsp;&nbsp;
+
+00:18:23.200 --> 00:18:27.680
+going to create an exception in production. This&nbsp;
+is probably an error that most humans wouldn't&nbsp;&nbsp;
+
+00:18:27.680 --> 00:18:31.680
+even find, let alone, you know, most systems. Now,&nbsp;
+if we want to shift this left, we can even bring&nbsp;&nbsp;
+
+00:18:31.680 --> 00:18:37.360
+this to your IDE. So, here's the same changes in&nbsp;
+your IDE. uh you can easily kind of rightclick and&nbsp;&nbsp;
+
+00:18:37.360 --> 00:18:43.600
+say hey I want to review my local changes stage&nbsp;
+commits etc run review those local changes the&nbsp;&nbsp;
+
+00:18:43.600 --> 00:18:50.160
+same agent runs in your IDE again being driven&nbsp;
+by sonnet um and we provide the the output and&nbsp;&nbsp;
+
+00:18:50.160 --> 00:18:58.400
+then you can oneclick apply those suggestions uh&nbsp;
+so that's uh that's a little bit about how it how&nbsp;&nbsp;
+
+00:18:58.400 --> 00:19:07.280
+it works uh maybe I'll just mention one last&nbsp;
+thing so we hundreds of customers and you know&nbsp;&nbsp;
+
+00:19:07.280 --> 00:19:12.000
+the question is well what impact is this really&nbsp;
+having so PRs are closing in onetenth the time&nbsp;&nbsp;
+
+00:19:12.000 --> 00:19:17.520
+so that PR that used to close take 50 hours to go&nbsp;
+from open to merge now goes open to merge in five&nbsp;&nbsp;
+
+00:19:17.520 --> 00:19:24.640
+hours um these are three companies hundreds of&nbsp;
+engineers um and BTO's providing 80ish% of the&nbsp;&nbsp;
+
+00:19:24.640 --> 00:19:29.840
+feedback that a PR receives so we're taking care&nbsp;
+of the vast majority of the work and it's really&nbsp;&nbsp;
+
+00:19:29.840 --> 00:19:34.240
+being driven by the fact that AI provides that&nbsp;
+feedback in three minutes or four minutes instead&nbsp;&nbsp;
+
+00:19:34.240 --> 00:19:45.280
+instead of one or two days. Thank you. Let's talk&nbsp;
+about something different. So, my name is Hike and&nbsp;&nbsp;
+
+00:19:45.280 --> 00:19:52.080
+I want to talk about Refusion. So, Refusion is&nbsp;
+a generative music startup here in San Francisco&nbsp;&nbsp;
+
+00:19:52.080 --> 00:19:57.600
+and we work on training frontier music models and&nbsp;
+then create an incredible product experience for&nbsp;&nbsp;
+
+00:19:57.600 --> 00:20:03.680
+crafting and exploring the art of music. And our&nbsp;
+song lyrics writing pipeline is powered by Claude&nbsp;&nbsp;
+
+00:20:04.320 --> 00:20:10.960
+So our core thing that we train is a diffusion&nbsp;
+transformer. Um we train this from scratch and&nbsp;&nbsp;
+
+00:20:10.960 --> 00:20:16.640
+we think it's the most creative music model in the&nbsp;
+world. We train it for quality, for diversity, for&nbsp;&nbsp;
+
+00:20:16.640 --> 00:20:22.800
+speed, for controllability. And as a fun anecdote,&nbsp;
+this square of pixels here represents 30 seconds&nbsp;&nbsp;
+
+00:20:22.800 --> 00:20:28.800
+of music in our latent space. Um, it's kind of&nbsp;
+crazy to think about how compressed that is,&nbsp;&nbsp;
+
+00:20:28.800 --> 00:20:38.720
+but uh, writing fantastic song lyrics is a crucial&nbsp;
+part of great songs. Um, and current LLMs are um,&nbsp;&nbsp;
+
+00:20:38.720 --> 00:20:43.440
+good at a very many things, but writing good song&nbsp;
+lyrics, they're they're still pretty cringy. Um,&nbsp;&nbsp;
+
+00:20:43.440 --> 00:20:49.040
+but, uh, Claude is the best for sure. And we built&nbsp;
+an agent called Ghost Writer that's essentially&nbsp;&nbsp;
+
+00:20:49.040 --> 00:20:55.760
+meant to help you write and refine song lyrics as&nbsp;
+an artist. and basically focusing on, you know,&nbsp;&nbsp;
+
+00:20:55.760 --> 00:21:00.960
+diversity, humor, taste, what flowing with&nbsp;
+the music itself. And this is a crucial tool&nbsp;&nbsp;
+
+00:21:00.960 --> 00:21:07.280
+um in our product. Uh it's been used tens of&nbsp;
+millions of times now to to write song lyrics. So,&nbsp;&nbsp;
+
+00:21:07.280 --> 00:21:13.840
+let's go demo some stuff. U if we pop over to my&nbsp;
+computer. So, this is our homepage for fusion.com.&nbsp;&nbsp;
+
+00:21:13.840 --> 00:21:18.080
+Check it out. It's really fun. There's a&nbsp;
+lot of amazing music to explore on here.&nbsp;&nbsp;
+
+00:21:18.080 --> 00:21:30.160
+Um, I will just punch in something here. Uh,&nbsp;
+let's say experimental indie trip hop about&nbsp;&nbsp;
+
+00:21:30.160 --> 00:21:38.400
+the feeling of getting better after being&nbsp;
+really sick. There's a song concept. So,&nbsp;&nbsp;
+
+00:21:38.400 --> 00:21:43.360
+we'll pop in a couple of those. Um, in the&nbsp;
+meantime, let me just play a song. And there's&nbsp;&nbsp;
+
+00:21:43.360 --> 00:21:47.840
+a there's a ton of really deep editing workflows&nbsp;
+here for getting into stuff, but also just getting&nbsp;&nbsp;
+
+00:21:47.840 --> 00:21:52.000
+started. You can just type something in and&nbsp;
+start listening to music and go from there. Um,&nbsp;&nbsp;
+
+00:21:52.000 --> 00:21:59.800
+so let me just play a song from the the homepage&nbsp;
+and then we'll go back and listen to what we made.
+
+00:21:59.800 --> 00:22:07.360
+[Music] Don't downplay my grind. I've been&nbsp;
+clocking kills since the ink dried on that&nbsp;&nbsp;
+
+00:22:07.360 --> 00:22:12.800
+line. You ain't these souls now. Limited supply.&nbsp;
+Too many lost left cold in the breeze. Then they&nbsp;&nbsp;
+
+00:22:12.800 --> 00:22:17.920
+mama selling gumbo just to cover the fees. Please&nbsp;
+flip the corner cash the equity that's the creed&nbsp;&nbsp;
+
+00:22:17.920 --> 00:22:28.000
+but most is crashing out living life on the speed&nbsp;
+in the drop breeze thick hair like a key manifest
+
+00:22:28.000 --> 00:22:34.560
+on the scene but I'm cut different.&nbsp;
+[Music] All right so let's listen&nbsp;&nbsp;
+
+00:22:34.560 --> 00:22:41.360
+to some of the songs here. Got the reawakening.
+
+00:22:41.360 --> 00:22:53.880
+Let's see what the lyrics look like here.&nbsp;
+Written by a ghost with my muscles forotreng
+
+00:22:53.880 --> 00:23:00.080
+[Music]
+
+00:23:00.080 --> 00:23:04.560
+to move.
+
+00:23:09.720 --> 00:23:10.720
+[Music]
+
+00:23:10.720 --> 00:23:22.880
+Let's see dawn fade.
+
+00:23:22.880 --> 00:23:27.440
+[Applause] [Music] So whenever Ghost Rider&nbsp;
+generates we have uh kind of an iterative process&nbsp;&nbsp;
+
+00:23:27.440 --> 00:23:32.480
+of thinking about the concept of a song ideating&nbsp;
+about actually the context of the genre you're&nbsp;&nbsp;
+
+00:23:32.480 --> 00:23:38.000
+writing for because say the lyrics of a drum and&nbsp;
+bass song are super different the lyrics of a you&nbsp;&nbsp;
+
+00:23:38.000 --> 00:23:44.640
+know a folk song that might be storytelling um and&nbsp;
+that process of just trying to get something that&nbsp;&nbsp;
+
+00:23:44.640 --> 00:23:49.680
+actually fits with the music is is actually really&nbsp;
+hard and subtle and requires a lot of iteration&nbsp;&nbsp;
+
+00:23:49.680 --> 00:23:56.160
+and and refinement. So an example of some of the&nbsp;
+kind of deep editing stuff we can do here. So we&nbsp;&nbsp;
+
+00:23:56.160 --> 00:24:02.800
+can do remixing to create variations to extend&nbsp;
+from a certain section to replace a section&nbsp;&nbsp;
+
+00:24:02.800 --> 00:24:08.320
+actually to swap the stems like the vocals and&nbsp;
+the sound while keeping the other one the same&nbsp;&nbsp;
+
+00:24:08.320 --> 00:24:14.160
+and even capturing this idea of a vibe which is&nbsp;
+like a short audio snippet that you can then use&nbsp;&nbsp;
+
+00:24:14.160 --> 00:24:18.400
+to prompt instead of text. So you can mix and&nbsp;
+match these things and just get really deep in&nbsp;&nbsp;
+
+00:24:18.400 --> 00:24:24.080
+your refinement. And then with Ghost Rider,&nbsp;
+let's say if we were to use a prompt here,&nbsp;&nbsp;
+
+00:24:24.080 --> 00:24:31.280
+um, or we were to use the lyrics here, actually,&nbsp;
+throw them up. Then we could type in here like&nbsp;&nbsp;
+
+00:24:31.280 --> 00:24:42.480
+add a spoken word intro in French and just pop&nbsp;
+that in and start start iterating. So yeah,&nbsp;&nbsp;
+
+00:24:42.480 --> 00:24:47.120
+that's the that's the app and the product&nbsp;
+and it's it's a really fun experience and&nbsp;&nbsp;
+
+00:24:47.120 --> 00:24:51.040
+um Claude's Claude's definitely the&nbsp;
+best for this kind of stuff. So yeah,&nbsp;&nbsp;
+
+00:24:51.040 --> 00:24:56.800
+come talk to me. Come talk to Henry if&nbsp;
+you're interested in music and uh thanks.
+
+00:24:56.800 --> 00:25:04.160
+[Applause] Um hey everyone, I'm Drew. I'm the&nbsp;
+co-founder and CEO of Create. Uh we're an AI&nbsp;&nbsp;
+
+00:25:04.160 --> 00:25:11.680
+textto app builder that lets anybody build working&nbsp;
+software products um on the internet and uh the&nbsp;&nbsp;
+
+00:25:11.680 --> 00:25:16.800
+exciting thing about create is it's an AI agent&nbsp;
+that can take in just natural language prompts and&nbsp;&nbsp;
+
+00:25:16.800 --> 00:25:22.320
+go end to end uh on building things. So we got&nbsp;
+our start in web apps and claude is one of the&nbsp;&nbsp;
+
+00:25:22.320 --> 00:25:28.560
+base models that powers a lot of our code writing&nbsp;
+for the agent. Um, but we're really excited about&nbsp;&nbsp;
+
+00:25:28.560 --> 00:25:33.120
+um, our new mobile app builder um, that is for the&nbsp;
+first time letting people actually build mobile&nbsp;&nbsp;
+
+00:25:33.120 --> 00:25:38.480
+apps. And so today I thought I'd just go ahead and&nbsp;
+show it off. So I'll switch over to the live demo.&nbsp;&nbsp;
+
+00:25:39.360 --> 00:25:45.600
+Um, and we're in beta, but uh, somebody just&nbsp;
+actually emailed me an idea a few weeks ago&nbsp;&nbsp;
+
+00:25:45.600 --> 00:25:52.960
+for a family memory app that lets people uh,&nbsp;
+basically store their memories on their phone,&nbsp;&nbsp;
+
+00:25:52.960 --> 00:26:04.160
+uh, upload their uh, different&nbsp;
+images and oops, live demos.
+
+00:26:09.600 --> 00:26:14.560
+uh store their different images and uh get&nbsp;
+going on building their family memories app.&nbsp;&nbsp;
+
+00:26:14.560 --> 00:26:25.840
+So let me actually go create a new project and&nbsp;
+type this in and say make an iOS app for this.
+
+00:26:25.840 --> 00:26:30.480
+Um, and as you type creates agent starts getting&nbsp;
+to work, um, it's going to start building out all&nbsp;&nbsp;
+
+00:26:30.480 --> 00:26:36.480
+the core pages, um, as well as the backend&nbsp;
+functionality for what you need. Um, and so&nbsp;&nbsp;
+
+00:26:36.480 --> 00:26:42.800
+it will also pull in other, uh, integrations&nbsp;
+you you might need to use. Um, and go ahead&nbsp;&nbsp;
+
+00:26:42.800 --> 00:26:47.760
+and get set up. I, uh, am actually going to go&nbsp;
+ahead and switch to some pre-loaded things. So,&nbsp;&nbsp;
+
+00:26:47.760 --> 00:26:54.640
+the basic idea is you prompt, uh, and you're able&nbsp;
+to actually generate full applications. Um, uh,&nbsp;&nbsp;
+
+00:26:54.640 --> 00:26:59.760
+the cool thing about create. Oh, there we go.&nbsp;
+Starting to build a little bit. Um, is that, um,&nbsp;&nbsp;
+
+00:26:59.760 --> 00:27:05.200
+it also comes built in with backends and frontends&nbsp;
+and everything you kind of need from the, uh,&nbsp;&nbsp;
+
+00:27:05.200 --> 00:27:10.800
+from the database to the actual core O. Um, and so&nbsp;
+here it's actually building out my family memories&nbsp;&nbsp;
+
+00:27:10.800 --> 00:27:15.760
+front end. U, but then in a second, you'll&nbsp;
+see that it also issues the like schemas uh,&nbsp;&nbsp;
+
+00:27:15.760 --> 00:27:21.120
+for the database and goes ahead and deploys a full&nbsp;
+database and hooks up all the functions needed to&nbsp;&nbsp;
+
+00:27:21.120 --> 00:27:26.800
+talk to this front end. Um, we are really excited&nbsp;
+about the fact that non-technical users in the&nbsp;&nbsp;
+
+00:27:26.800 --> 00:27:31.520
+hundreds of thousands are starting to pour into&nbsp;
+create to actually fully build apps um, without&nbsp;&nbsp;
+
+00:27:31.520 --> 00:27:37.440
+needing to go to the ID and truly just work from&nbsp;
+promptland. Um, and so one of the biggest things&nbsp;&nbsp;
+
+00:27:37.440 --> 00:27:42.720
+that we've been working on is actually the ability&nbsp;
+to also fully submit from create as well. Um,&nbsp;&nbsp;
+
+00:27:42.720 --> 00:27:47.440
+create after your app is done then goes ahead&nbsp;
+and submits your app straight to the app store&nbsp;&nbsp;
+
+00:27:47.440 --> 00:27:53.600
+and builds a build for you. Um there's actually&nbsp;
+an app we built uh in a day. Um you can just in&nbsp;&nbsp;
+
+00:27:53.600 --> 00:27:58.800
+one click publish it and submit to the app store.&nbsp;
+Um and this will go ahead and kick off a build.&nbsp;&nbsp;
+
+00:27:58.800 --> 00:28:03.600
+Um we actually already started uh got this app in&nbsp;
+the app store. So if anyone here wants to download&nbsp;&nbsp;
+
+00:28:03.600 --> 00:28:08.880
+it and play with it, it's an AI app that lets&nbsp;
+you very quickly take drawings and turn it into&nbsp;&nbsp;
+
+00:28:08.880 --> 00:28:13.920
+uh AI images called Draw Daily. Um and then in&nbsp;
+the beta, the thing that's been the most exciting&nbsp;&nbsp;
+
+00:28:13.920 --> 00:28:18.880
+uh for us is just seeing all the cool apps that&nbsp;
+are being created. We just hosted a demo day and&nbsp;&nbsp;
+
+00:28:18.880 --> 00:28:25.120
+this is William um and he is making an app to&nbsp;
+help you memor memorize meaningful connections&nbsp;&nbsp;
+
+00:28:25.120 --> 00:28:31.120
+um and details of uh people's lives uh and pull&nbsp;
+it up. And so you just talk to the app um and&nbsp;&nbsp;
+
+00:28:31.120 --> 00:28:38.640
+it pulls up special information about your contact&nbsp;
+info um and uh and helps you remember anything for&nbsp;&nbsp;
+
+00:28:38.640 --> 00:28:45.680
+sales calls or anything else you want. Um or uh&nbsp;
+we also had a student at Berkeley who's building&nbsp;&nbsp;
+
+00:28:45.680 --> 00:28:51.920
+the scholarship app that he's always wanted um&nbsp;
+where he's constantly filling out grants um and&nbsp;&nbsp;
+
+00:28:51.920 --> 00:28:57.520
+unable to kind of do it automatically and so he's&nbsp;
+building scholar GPT um and a lot of these like&nbsp;&nbsp;
+
+00:28:57.520 --> 00:29:02.000
+the core agent of how they built were using you&nbsp;
+know prompt caching tool calling a lot of the&nbsp;&nbsp;
+
+00:29:02.000 --> 00:29:06.640
+core primitives that enthropic makes available to&nbsp;
+actually get them to success u and just to show a&nbsp;&nbsp;
+
+00:29:06.640 --> 00:29:12.720
+few more um blaze is actually a basketball coach&nbsp;
+and for the first time ever he's using create to&nbsp;&nbsp;
+
+00:29:12.720 --> 00:29:20.240
+get rid of all of these spreadsheets and drills&nbsp;
+he does for his uh coaches. Um and instead uh you&nbsp;&nbsp;
+
+00:29:20.240 --> 00:29:27.040
+build a full player coach app that lets them uh&nbsp;
+download uh drills uh put their lesson plan out&nbsp;&nbsp;
+
+00:29:27.040 --> 00:29:34.720
+and then uh see animations um in the app of how&nbsp;
+they uh should be uh getting used. Um and then&nbsp;&nbsp;
+
+00:29:34.720 --> 00:29:40.400
+finally uh we've also had personal finance apps&nbsp;
+being created. Um, so like a personal AI money&nbsp;&nbsp;
+
+00:29:40.400 --> 00:29:47.760
+coach for Gen Z with full rag um that also has a&nbsp;
+cloudpowered uh assistant that can figure out your&nbsp;&nbsp;
+
+00:29:47.760 --> 00:29:52.720
+monthly income and give you personalized financial&nbsp;
+recommendations. And so part of what we're like&nbsp;&nbsp;
+
+00:29:52.720 --> 00:29:58.400
+most excited about is just the explosion of who&nbsp;
+and how uh software will be made um when you give&nbsp;&nbsp;
+
+00:29:58.400 --> 00:30:05.760
+people these tools and very excited to partner&nbsp;
+with uh Claude to power all this. Thank you.
+

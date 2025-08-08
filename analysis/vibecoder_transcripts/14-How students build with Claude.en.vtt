@@ -1,0 +1,935 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:06.080 --> 00:00:11.920
+All right. Hey everybody. How are you doing? Uh&nbsp;
+my name is Greg. I lead student outreach here at&nbsp;&nbsp;
+
+00:00:11.920 --> 00:00:16.400
+Anthropic and I am so excited to be sharing the&nbsp;
+stage with some of the brightest young minds in&nbsp;&nbsp;
+
+00:00:16.400 --> 00:00:22.960
+AI. Um just a little context for this panel. So&nbsp;
+uh at Anthropic, we've given out uh API credits&nbsp;&nbsp;
+
+00:00:22.960 --> 00:00:28.480
+to thousands of students to help them build things&nbsp;
+at school. Um, and so what you're about to see is&nbsp;&nbsp;
+
+00:00:28.480 --> 00:00:34.400
+a very small glimpse at what students have been&nbsp;
+creating with those API credits. Um, it's a very&nbsp;&nbsp;
+
+00:00:34.400 --> 00:00:39.680
+wide variety of things as you're about to notice.&nbsp;
+Some of these projects are very humorous and&nbsp;&nbsp;
+
+00:00:39.680 --> 00:00:44.480
+funny. Some of these projects are very serious and&nbsp;
+important. Um, some of these students are working&nbsp;&nbsp;
+
+00:00:44.480 --> 00:00:48.400
+on one project and some of these students&nbsp;
+have been building an app every single week&nbsp;&nbsp;
+
+00:00:48.400 --> 00:00:54.880
+throughout all of 2025. Um, so, uh, I think if I&nbsp;
+was going to sum up what I've learned from running&nbsp;&nbsp;
+
+00:00:54.880 --> 00:00:59.520
+this program, it's that the the future is really&nbsp;
+really bright in the hands of these students. So,&nbsp;&nbsp;
+
+00:00:59.520 --> 00:01:10.880
+without further ado, I'm going to invite up&nbsp;
+our first speaker, Isabelle from Stanford.
+
+00:01:10.880 --> 00:01:14.800
+All right, thank you for having me. It's a&nbsp;
+privilege to be here. My name is Isabelle. I'm&nbsp;&nbsp;
+
+00:01:14.800 --> 00:01:18.720
+a senior at Stanford where I study aeronautics&nbsp;
+and astronautics and I'm doing my honors in&nbsp;&nbsp;
+
+00:01:18.720 --> 00:01:23.200
+international security and today I'm here to&nbsp;
+talk to you about my honors work which is on&nbsp;&nbsp;
+
+00:01:23.200 --> 00:01:31.680
+finding nuclear weapons in outer space and how I&nbsp;
+used Claude to help me do it. Um so for those of&nbsp;&nbsp;
+
+00:01:31.680 --> 00:01:36.640
+you that may not know article 4 of the outer space&nbsp;
+treaty bans the placement of nuclear weapons in&nbsp;&nbsp;
+
+00:01:36.640 --> 00:01:41.520
+outer space. Now other arms control agreements&nbsp;
+that you may have heard of like start and new&nbsp;&nbsp;
+
+00:01:41.520 --> 00:01:46.800
+start include provisions for verification&nbsp;
+and monitoring. So nations are shown to be&nbsp;&nbsp;
+
+00:01:46.800 --> 00:01:51.680
+compliant with their treaty obligations using&nbsp;
+inspection systems. We have on-site inspections&nbsp;&nbsp;
+
+00:01:51.680 --> 00:01:56.240
+where inspectors will go and look at each other's&nbsp;
+delivery vehicles and inspect for the presence of&nbsp;&nbsp;
+
+00:01:56.240 --> 00:02:00.480
+nuclear warheads. We don't have anything like&nbsp;
+that for outer space mostly because we signed&nbsp;&nbsp;
+
+00:02:00.480 --> 00:02:06.320
+the outer space treaty in 1967 and there were no&nbsp;
+technologies to do that kind of inspection. Right?&nbsp;&nbsp;
+
+00:02:06.320 --> 00:02:11.040
+How would you go about approaching a satellite&nbsp;
+in orbit that might be carrying a nuclear&nbsp;&nbsp;
+
+00:02:11.040 --> 00:02:15.600
+weapon and inspecting it for the presence&nbsp;
+of such a device? Daunting for the 1960s,&nbsp;&nbsp;
+
+00:02:15.600 --> 00:02:24.960
+daunting today. Um, and this became a problem&nbsp;
+recently in 2024 in April of last year. Um,&nbsp;&nbsp;
+
+00:02:24.960 --> 00:02:30.400
+the Biden administration announced that the United&nbsp;
+States assesses that Russia is developing a space&nbsp;&nbsp;
+
+00:02:30.400 --> 00:02:35.680
+vehicle that carries a nuclear weapon. Now, this&nbsp;
+was pretty destabilizing for the international&nbsp;&nbsp;
+
+00:02:35.680 --> 00:02:41.360
+community. We've had a lot of dispute in the UN&nbsp;
+Security Council recently about how to handle this&nbsp;&nbsp;
+
+00:02:41.360 --> 00:02:45.920
+um potential violation of the Outer Space Treaty.&nbsp;
+Given that we don't have a verification mechanism&nbsp;&nbsp;
+
+00:02:45.920 --> 00:02:49.840
+for compliance with the Outer Space Treaty, I&nbsp;
+started to wonder if it would be possible to&nbsp;&nbsp;
+
+00:02:49.840 --> 00:02:55.760
+implement such a system, particularly given that&nbsp;
+the US Space Force tracks 44,800 space objects&nbsp;&nbsp;
+
+00:02:55.760 --> 00:03:03.440
+today. How would you begin to know which one of&nbsp;
+those is the suspected nuclear weapon? So this&nbsp;&nbsp;
+
+00:03:03.440 --> 00:03:09.440
+brings me to my research question. Is it feasible&nbsp;
+to perform an inspace inspection mission where you&nbsp;&nbsp;
+
+00:03:09.440 --> 00:03:14.560
+inspect a target satellite for the presence of a&nbsp;
+nuclear warhead on board? Daunting question. Um&nbsp;&nbsp;
+
+00:03:14.560 --> 00:03:20.000
+has a lot of interesting technical and political&nbsp;
+facets to it. Um but for one particular aspect of&nbsp;&nbsp;
+
+00:03:20.000 --> 00:03:26.240
+it, I was able to use claude to my advantage. Um&nbsp;
+so I looked at the specifically the feasibility&nbsp;&nbsp;
+
+00:03:26.240 --> 00:03:34.160
+of detecting the nuclear weapon with an X-ray&nbsp;
+system. So you fly an X-ray source and detector on&nbsp;&nbsp;
+
+00:03:34.160 --> 00:03:39.760
+two different inspector satellites in space, have&nbsp;
+them rendevous with the suspected nuclear warhead&nbsp;&nbsp;
+
+00:03:39.760 --> 00:03:44.640
+target and scan it for the presence of a nuclear&nbsp;
+weapon in board. I wanted to know if this was ever&nbsp;&nbsp;
+
+00:03:44.640 --> 00:03:48.960
+would ever be possible. No one's ever tried using&nbsp;
+X-rays in space. There are interesting questions&nbsp;&nbsp;
+
+00:03:48.960 --> 00:03:53.840
+around whether the space background environment&nbsp;
+is there's too much noise in space to detect&nbsp;&nbsp;
+
+00:03:53.840 --> 00:03:59.760
+the source signal. Um so I built a computational&nbsp;
+simulation to see if this would ever be possible&nbsp;&nbsp;
+
+00:03:59.760 --> 00:04:06.560
+and to do it I used claude. I used this very&nbsp;
+complicated CERN um software package called Gant&nbsp;&nbsp;
+
+00:04:06.560 --> 00:04:11.840
+4. I am not a particle physicist. I did not know&nbsp;
+how to approach this software package um and write&nbsp;&nbsp;
+
+00:04:11.840 --> 00:04:18.160
+this C++ code. But I was able to make a desktop&nbsp;
+application to do my simulation using claude. Um&nbsp;&nbsp;
+
+00:04:18.160 --> 00:04:25.360
+and it was incredibly exciting. It worked. So what&nbsp;
+you're seeing in this picture is like a very very&nbsp;&nbsp;
+
+00:04:25.360 --> 00:04:33.200
+quick snapshot of an X-ray image taken in space.&nbsp;
+Um and you see a little hole in the middle that&nbsp;&nbsp;
+
+00:04:33.200 --> 00:04:37.520
+shows you that there's very very dense file&nbsp;
+material on board the target of the scan. So&nbsp;&nbsp;
+
+00:04:37.520 --> 00:04:43.920
+indeed in this simulation there was a simulated&nbsp;
+nuclear warhead on board this satellite target.&nbsp;&nbsp;
+
+00:04:43.920 --> 00:04:48.320
+Um the outcomes for this are pretty significant&nbsp;
+and interesting, right? There are a lot of&nbsp;&nbsp;
+
+00:04:48.320 --> 00:04:51.760
+um people in the national security intelligence&nbsp;
+community in this country that are interested in&nbsp;&nbsp;
+
+00:04:51.760 --> 00:04:56.880
+developing this kind of capability to inspect&nbsp;
+adversary spacecraft on orbit to understand&nbsp;&nbsp;
+
+00:04:56.880 --> 00:05:02.160
+their capabilities, particularly whether they&nbsp;
+might carry a weapon of mass destruction. Um so&nbsp;&nbsp;
+
+00:05:02.160 --> 00:05:06.880
+having done this research, I actually am going&nbsp;
+to be able to brief it in Washington DC to some&nbsp;&nbsp;
+
+00:05:06.880 --> 00:05:11.920
+policy makers at the Pentagon um and state. I'm&nbsp;
+really thrilled about that opportunity. Um and&nbsp;&nbsp;
+
+00:05:11.920 --> 00:05:16.640
+certainly the desktop application with this level&nbsp;
+of fidelity would not have been possible without&nbsp;&nbsp;
+
+00:05:16.640 --> 00:05:24.960
+modern AI tools um to make this kind of research&nbsp;
+accessible to an undergrad in less than a year. My&nbsp;&nbsp;
+
+00:05:24.960 --> 00:05:32.240
+takeaways for you um kind of as a student um doing&nbsp;
+research in the era of AI is just that primarily&nbsp;&nbsp;
+
+00:05:32.240 --> 00:05:38.000
+there is no learning curve that is too steep&nbsp;
+any longer. Right? even the toughest problems,&nbsp;&nbsp;
+
+00:05:38.000 --> 00:05:43.200
+space technologies, notoriously hard, nuclear&nbsp;
+weapons, existential threats. Um, we can address&nbsp;&nbsp;
+
+00:05:43.200 --> 00:05:48.960
+these critical crises um with the tools that we&nbsp;
+have today with emerging technology. Um, and so I&nbsp;&nbsp;
+
+00:05:48.960 --> 00:05:53.200
+want to challenge all of the minds here and other&nbsp;
+students to think about like what are the world's&nbsp;&nbsp;
+
+00:05:53.200 --> 00:05:58.960
+toughest problems like what are the problems&nbsp;
+that you thought were unadressable um that feel&nbsp;&nbsp;
+
+00:05:58.960 --> 00:06:03.360
+like existential crises to you um for the next&nbsp;
+generation? Those are the ones that we should be&nbsp;&nbsp;
+
+00:06:03.360 --> 00:06:09.840
+using our brand new shiny exciting AI assistants&nbsp;
+um to work on um because that's how we're going&nbsp;&nbsp;
+
+00:06:09.840 --> 00:06:21.120
+to help make the world safer and more secure or&nbsp;
+at least outer space more secure. So, thank you.
+
+00:06:21.120 --> 00:06:23.040
+I'm going to pass it off&nbsp;
+to the next presenter now,&nbsp;&nbsp;
+
+00:06:23.040 --> 00:06:30.320
+but if you have any questions, I'd&nbsp;
+love to talk after the presentation.
+
+00:06:32.800 --> 00:06:37.600
+Okay, so it's kind of tough to follow up finding&nbsp;
+nuclear objects in space. So I'm going to tell you&nbsp;&nbsp;
+
+00:06:37.600 --> 00:06:42.000
+about how I did not know the difference between&nbsp;
+the terminal and the code editor and why claude&nbsp;&nbsp;
+
+00:06:42.000 --> 00:06:46.000
+is the reason why I was able to learn how to&nbsp;
+code. I'm a student at UC Berkeley. My name is&nbsp;&nbsp;
+
+00:06:46.000 --> 00:06:51.680
+Mason Arditi and I'll go ahead and get started.&nbsp;
+So I want to talk about what we think of as the&nbsp;&nbsp;
+
+00:06:51.680 --> 00:06:56.640
+traditional way to approach learning how to code.&nbsp;
+I'm going to call this the bottom up way where we&nbsp;&nbsp;
+
+00:06:56.640 --> 00:07:01.600
+start by taking basic classes, learn our basic&nbsp;
+skills, and then build apps with those skills.&nbsp;&nbsp;
+
+00:07:01.600 --> 00:07:06.640
+Slowly but surely, we level up our skill set and&nbsp;
+build apps that are more complicated. I learned a&nbsp;&nbsp;
+
+00:07:06.640 --> 00:07:14.640
+little bit differently. I'm going to call this&nbsp;
+the top down approach where I had an idea as I&nbsp;&nbsp;
+
+00:07:14.640 --> 00:07:20.400
+get inspired and I had no idea how to solve it. It&nbsp;
+was software I've never coded before. So, I try to&nbsp;&nbsp;
+
+00:07:20.400 --> 00:07:25.760
+have AI make it for me. Hey, make this app for me.&nbsp;
+And then when it inevitably fails, I learn how to&nbsp;&nbsp;
+
+00:07:25.760 --> 00:07:30.960
+do it myself. Slowly but surely, learning through&nbsp;
+different layers of abstraction until I actually&nbsp;&nbsp;
+
+00:07:30.960 --> 00:07:36.400
+understand what's going on. Now, where did this&nbsp;
+leave me 7 months ago? It left me not knowing&nbsp;&nbsp;
+
+00:07:36.400 --> 00:07:40.880
+what the terminal uh what the difference between&nbsp;
+the terminal and the code editor was. I put npx&nbsp;&nbsp;
+
+00:07:40.880 --> 00:07:46.640
+create next app latest uh in my page file. I had&nbsp;
+no idea what I was doing. But slowly but surely,&nbsp;&nbsp;
+
+00:07:46.640 --> 00:07:51.920
+I asked, why is this happening? What am I doing&nbsp;
+wrong? and I was able to learn more complicated&nbsp;&nbsp;
+
+00:07:51.920 --> 00:07:58.080
+skills. Let me show you a demo of something I'm&nbsp;
+capable of doing now. Okay. Welcome to CalgBt,&nbsp;&nbsp;
+
+00:07:58.080 --> 00:08:03.120
+which is a better way to schedule your Cal courses&nbsp;
+using AI. Asking a question like, "Show me math&nbsp;&nbsp;
+
+00:08:03.120 --> 00:08:09.920
+classes with a high average grade since I want to&nbsp;
+be lazy in my math and get an easy curve." Here,&nbsp;&nbsp;
+
+00:08:09.920 --> 00:08:14.240
+it's going to show us five different classes that&nbsp;
+have an average of A or more. And in fact, it even&nbsp;&nbsp;
+
+00:08:14.240 --> 00:08:19.200
+showed us classes with a grade point average of&nbsp;
+4.0. Can't really get much better than that. Now,&nbsp;&nbsp;
+
+00:08:19.200 --> 00:08:22.720
+let's say it's getting late in the enrollment&nbsp;
+cycle and I want to see classes that still have&nbsp;&nbsp;
+
+00:08:22.720 --> 00:08:30.320
+open seats. Show me history classes that still&nbsp;
+have open seats. And this is drawing directly&nbsp;&nbsp;
+
+00:08:30.320 --> 00:08:34.880
+from Berkeley time. So, it's live data. And&nbsp;
+here it is. It's showing you history classes,&nbsp;&nbsp;
+
+00:08:34.880 --> 00:08:40.480
+five seats, 20 seats, or three seats. We can even&nbsp;
+ask it questions that are more deep like what is&nbsp;&nbsp;
+
+00:08:40.480 --> 00:08:49.920
+the meaning of life? And do with that answer as&nbsp;
+you will. But this is CalgBt. My name is Mason and&nbsp;&nbsp;
+
+00:08:49.920 --> 00:08:55.760
+enjoy your day. I'll show you another one which&nbsp;
+I developed at the pair and anthropic hackathon&nbsp;&nbsp;
+
+00:08:55.760 --> 00:09:03.280
+as well. Okay, welcome to get ready which is&nbsp;
+a new way to visualize and understand new code&nbsp;&nbsp;
+
+00:09:03.280 --> 00:09:10.720
+bases. Let's take a look at anthropics uh SDK&nbsp;
+for TypeScript for example. You'll see soon and&nbsp;&nbsp;
+
+00:09:10.720 --> 00:09:16.560
+we'll be able to interact with the chart and see&nbsp;
+how all of these files interact with each other.&nbsp;&nbsp;
+
+00:09:16.560 --> 00:09:22.240
+So here we have a mapping of some of the most&nbsp;
+important files. We chose not to display all&nbsp;&nbsp;
+
+00:09:22.240 --> 00:09:26.320
+of them. Uh just the most important ones&nbsp;
+that the user will interact with the most.&nbsp;&nbsp;
+
+00:09:26.320 --> 00:09:30.080
+And we have these lines to show how they're&nbsp;
+interconnected. And we do this through the&nbsp;&nbsp;
+
+00:09:30.080 --> 00:09:34.880
+function calls that are actually like in each&nbsp;
+file. So like if this demo TypeScript file is&nbsp;&nbsp;
+
+00:09:34.880 --> 00:09:39.840
+uh referencing the batch results, that's where&nbsp;
+the line comes in. And then over here we have&nbsp;&nbsp;
+
+00:09:39.840 --> 00:09:45.680
+just a quick description on what the file actually&nbsp;
+does. And we have our comments on the codebase.
+
+00:09:48.000 --> 00:09:52.560
+Okay. And on top of these two, I built many&nbsp;
+projects over the course of my learning how&nbsp;&nbsp;
+
+00:09:52.560 --> 00:09:57.200
+to code. Uh, now what is the point of me showing&nbsp;
+you all of this? I'm not here to brag. I'm here&nbsp;&nbsp;
+
+00:09:57.200 --> 00:10:02.720
+to say that Claude is the reason why I was able to&nbsp;
+learn how to code. Without Claude, without these&nbsp;&nbsp;
+
+00:10:02.720 --> 00:10:06.720
+AI tools, including Cursor, Windsurf, whatever&nbsp;
+you guys want to use, none of this would have&nbsp;&nbsp;
+
+00:10:06.720 --> 00:10:12.080
+been possible. And the key takeaway for me is&nbsp;
+that you can build anything you want nowadays.&nbsp;&nbsp;
+
+00:10:12.080 --> 00:10:18.080
+You just have to ask the right questions, learn&nbsp;
+through the different layers of abstraction. I&nbsp;&nbsp;
+
+00:10:18.080 --> 00:10:24.000
+think this is representative of a new style of&nbsp;
+building and a new class of builders. Uh where&nbsp;&nbsp;
+
+00:10:24.000 --> 00:10:29.040
+my flow personally is I find a problem that&nbsp;
+I'm inspired by and want to fix. I realize the&nbsp;&nbsp;
+
+00:10:29.040 --> 00:10:34.480
+solution is something that I have no idea how to&nbsp;
+do. Uh, and then I have a highle chat with Claude,&nbsp;&nbsp;
+
+00:10:34.480 --> 00:10:39.520
+execute steps in the actual editor. Uh, and then&nbsp;
+record and post a demo when it's not perfect,&nbsp;&nbsp;
+
+00:10:39.520 --> 00:10:44.960
+hopefully bringing users and revenue later on.&nbsp;
+But this iteration cycle instead of taking years&nbsp;&nbsp;
+
+00:10:44.960 --> 00:10:49.920
+for an undergraduate degree or doing other&nbsp;
+things uh can be one day to one week maximum&nbsp;&nbsp;
+
+00:10:49.920 --> 00:10:54.960
+if you really want to. So I'll keep it short and&nbsp;
+sweet and leave you guys with a couple of things&nbsp;&nbsp;
+
+00:10:54.960 --> 00:11:01.040
+to think about which are on my mind right now. uh&nbsp;
+which is how can we build to get users and revenue&nbsp;&nbsp;
+
+00:11:01.040 --> 00:11:06.960
+uh not for technical perfection and impressiveness&nbsp;
+uh how can I build things as fast and as simply&nbsp;&nbsp;
+
+00:11:06.960 --> 00:11:11.440
+as possible as demonstrated by this prompt&nbsp;
+uh give it to me in the simplest and most&nbsp;&nbsp;
+
+00:11:11.440 --> 00:11:16.800
+concise way possible is what I'm always&nbsp;
+doing uh what ideas actually inspire you&nbsp;&nbsp;
+
+00:11:16.800 --> 00:11:22.160
+and how can we build it today and lastly not&nbsp;
+on the slide but what does it mean to really&nbsp;&nbsp;
+
+00:11:22.160 --> 00:11:27.120
+know how to code does it mean understanding&nbsp;
+every single line and every single function&nbsp;&nbsp;
+
+00:11:27.120 --> 00:11:31.600
+or does it mean being able to build something&nbsp;
+that actually improves people's lives? Uh,&nbsp;&nbsp;
+
+00:11:31.600 --> 00:11:35.680
+I'm going to continue to post more information. If&nbsp;
+you want to connect with me, you can scan this QR&nbsp;&nbsp;
+
+00:11:35.680 --> 00:11:47.280
+code. Uh, but my name is M. My name is Mason.&nbsp;
+Uh, thank you guys. And, uh, yeah. [Applause]
+
+00:11:47.280 --> 00:11:54.080
+All right. What is up, everyone? How are we all&nbsp;
+doing? We good? Yeah. Um, my name is Rohill. Um,&nbsp;&nbsp;
+
+00:11:54.080 --> 00:11:59.280
+I'm a freshman or just finished freshman year at&nbsp;
+UC Berkeley in the ME program studying EEKES and&nbsp;&nbsp;
+
+00:11:59.280 --> 00:12:04.960
+business. So, CS and business and I'm here to&nbsp;
+talk to you guys today about SideQuest, which&nbsp;&nbsp;
+
+00:12:04.960 --> 00:12:12.240
+is a project that a couple friends and I made at&nbsp;
+uh the pair xanthropic hackathon recently. So,&nbsp;&nbsp;
+
+00:12:12.240 --> 00:12:19.600
+let me tell you guys about a big problem today&nbsp;
+is AI embodiment. So, we see like in hacker news,&nbsp;&nbsp;
+
+00:12:19.600 --> 00:12:25.200
+in the newest news all around that we're trying to&nbsp;
+create bots that interact with our world. And most&nbsp;&nbsp;
+
+00:12:25.200 --> 00:12:30.080
+recently, we've seen these robot dogs that are&nbsp;
+able to like deliver you a water cup or something&nbsp;&nbsp;
+
+00:12:30.080 --> 00:12:38.640
+like that. But these systems like do not compete&nbsp;
+with humans ourselves. Humans are like built to&nbsp;&nbsp;
+
+00:12:38.640 --> 00:12:47.520
+interact with our world. And that brings me to&nbsp;
+here, which is that today we have humans hiring&nbsp;&nbsp;
+
+00:12:47.520 --> 00:12:53.120
+AI agents to do their work for them. I'm sure all&nbsp;
+of you guys have probably employed some sort of AI&nbsp;&nbsp;
+
+00:12:53.120 --> 00:13:01.520
+agent to do your work for you. But today with Side&nbsp;
+Quest, we are flipping the script. And we have AI&nbsp;&nbsp;
+
+00:13:01.520 --> 00:13:10.720
+agents hiring humans to do their work for them.&nbsp;
+So AI agents obviously are amazing at interacting&nbsp;&nbsp;
+
+00:13:10.720 --> 00:13:16.880
+with the digital world and humans are amazing at&nbsp;
+dig at interacting with the physical world. So&nbsp;&nbsp;
+
+00:13:16.880 --> 00:13:24.080
+why can't these AI agents just hire the humans?&nbsp;
+So that brings me to the architecture of side&nbsp;&nbsp;
+
+00:13:24.080 --> 00:13:29.680
+quest which is basically like let me give you&nbsp;
+a hypothetical example. Let's say an AI agent&nbsp;&nbsp;
+
+00:13:29.680 --> 00:13:36.880
+is trying to host a hackathon. So now they have&nbsp;
+all the logistics covered, but they need to um&nbsp;&nbsp;
+
+00:13:36.880 --> 00:13:41.120
+put some advertising material up. They need some&nbsp;
+flyers up so that people can find out where this&nbsp;&nbsp;
+
+00:13:41.120 --> 00:13:45.920
+hackathon is, where to go. Um but they don't have&nbsp;
+any physical means to do that. So what they do is&nbsp;&nbsp;
+
+00:13:45.920 --> 00:13:52.080
+that they ping the nearest human to that area and&nbsp;
+tell them, "Oh, pick up this flyer, put it in this&nbsp;&nbsp;
+
+00:13:52.080 --> 00:13:58.400
+location, and live stream that video to me, and as&nbsp;
+soon as I can see that you did it, then I'll give&nbsp;&nbsp;
+
+00:13:58.400 --> 00:14:09.920
+you money." So, that's exactly what's happening&nbsp;
+in Side Quest. And I I'll show you a short demo.
+
+00:14:09.920 --> 00:14:15.840
+Hello world. My AI friends and I are hosting an&nbsp;
+hackathon. Let's check if the flyers are up. So,&nbsp;&nbsp;
+
+00:14:15.840 --> 00:14:22.720
+we see a flyer here. Flyer detected. But we do&nbsp;
+not see a flyer here. No flyer detected. Bro,&nbsp;&nbsp;
+
+00:14:22.720 --> 00:14:35.840
+I need a human to put on some flyers in&nbsp;
+room two. Let's do this. Baring baram.
+
+00:14:35.840 --> 00:14:41.840
+It looks like there's a quest. So, I have to&nbsp;
+collect three posters from table 8. Let's do&nbsp;&nbsp;
+
+00:14:41.840 --> 00:14:47.120
+it. So, over here there's a live video&nbsp;
+stream that Claude is actively looking&nbsp;&nbsp;
+
+00:14:47.120 --> 00:14:54.160
+at and verifying whether you're doing I&nbsp;
+found table eight. Let's see the posters.
+
+00:14:58.000 --> 00:15:07.200
+Boom. Scanned. It says I have&nbsp;
+to set them up in Strong. Yes.
+
+00:15:07.200 --> 00:15:13.520
+We're here at Strong. Yes. Now, let's set up&nbsp;
+the poster. And perfect. I think that should&nbsp;&nbsp;
+
+00:15:13.520 --> 00:15:22.240
+be good. Let's scan it. Booyah. I made 100&nbsp;
+bucks. Let's go. And boom. We're done. We're&nbsp;&nbsp;
+
+00:15:22.240 --> 00:15:29.120
+ready for the hackathon. Yep. And that's side&nbsp;
+quest. So, let me talk a little bit about what&nbsp;&nbsp;
+
+00:15:29.120 --> 00:15:35.600
+I learned with building with Claude is that&nbsp;
+first Claude is really smart as with like any&nbsp;&nbsp;
+
+00:15:35.600 --> 00:15:41.680
+of these AI systems these days and they can reason&nbsp;
+through many messy edge cases. So, we as humans,&nbsp;&nbsp;
+
+00:15:41.680 --> 00:15:47.200
+we don't need to prompt every little nitty-gritty&nbsp;
+thing. We can start thinking about bigger picture&nbsp;&nbsp;
+
+00:15:47.200 --> 00:15:54.240
+um parts of building products. Secondly, we&nbsp;
+should design um like with a back and forth&nbsp;&nbsp;
+
+00:15:54.240 --> 00:16:00.720
+workflow with these AI systems. Like originally&nbsp;
+we are thinking like upfront, oh, how should I&nbsp;&nbsp;
+
+00:16:00.720 --> 00:16:05.520
+build this whole big thing? But that's a really&nbsp;
+big task. You can break it down, ask Claude,&nbsp;&nbsp;
+
+00:16:05.520 --> 00:16:10.400
+oh like what are the different things that I need&nbsp;
+to do to to work on something and let's build this&nbsp;&nbsp;
+
+00:16:10.400 --> 00:16:16.880
+step by step. So with this iterative process,&nbsp;
+you can build um like very robust systems.&nbsp;&nbsp;
+
+00:16:17.680 --> 00:16:24.160
+So bottom line is that you should trust AI and&nbsp;
+trust claude. Um that they aren't things that&nbsp;&nbsp;
+
+00:16:24.160 --> 00:16:30.400
+you have to micromanage. They can think on their&nbsp;
+own as well. And now some takeaways for builders&nbsp;&nbsp;
+
+00:16:30.400 --> 00:16:37.760
+to be like this cool guy, not this grumpy guy.&nbsp;
+Is that um is that you should think of AI as&nbsp;&nbsp;
+
+00:16:37.760 --> 00:16:43.600
+a system rather than just a feature builder.&nbsp;
+that this is someone that you can like talk to,&nbsp;&nbsp;
+
+00:16:43.600 --> 00:16:50.400
+reason with. And secondly, as like thinking&nbsp;
+bigger picture about us as humans is that we&nbsp;&nbsp;
+
+00:16:50.400 --> 00:16:57.760
+should be system designers first or architects um&nbsp;
+of like the things that we're building because in&nbsp;&nbsp;
+
+00:16:57.760 --> 00:17:02.800
+the future we aren't going to be the ones writing&nbsp;
+the small code. We'll be the ones dictating what&nbsp;&nbsp;
+
+00:17:02.800 --> 00:17:09.680
+code to write. So that brings me to the end. Um&nbsp;
+thank you guys so much. Have a great day. Byebye.
+
+00:17:14.080 --> 00:17:17.520
+All right, good afternoon everyone.&nbsp;
+I'm Daniel. I study computer science&nbsp;&nbsp;
+
+00:17:17.520 --> 00:17:23.840
+at USC and I've also built projects across&nbsp;
+Amazon, IBM and various startups. Um, yeah,&nbsp;&nbsp;
+
+00:17:23.840 --> 00:17:28.400
+very honored to be here as a student speaker&nbsp;
+today. For more context, I help USC lead some&nbsp;&nbsp;
+
+00:17:28.400 --> 00:17:33.360
+of the entrepreneurship programs and over the&nbsp;
+past year, Claude has been integral to many&nbsp;&nbsp;
+
+00:17:33.360 --> 00:17:38.720
+of our projects, powering innovative solutions&nbsp;
+across various domains. When Anthropic announced&nbsp;&nbsp;
+
+00:17:38.720 --> 00:17:43.280
+the hackathon at USC, a lot of the students,&nbsp;
+including my teammates Vishnu, Shabbayan,&nbsp;&nbsp;
+
+00:17:43.280 --> 00:17:48.640
+and myself were naturally very eager to join in&nbsp;
+and explore new directions with Claude. Today,&nbsp;&nbsp;
+
+00:17:48.640 --> 00:17:53.200
+I'm honored to share our journey and insights&nbsp;
+with you. So, let's first start by looking at&nbsp;&nbsp;
+
+00:17:53.200 --> 00:17:58.560
+the problem. Current LLMs are great at giving&nbsp;
+answers, but when decisions really matter,&nbsp;&nbsp;
+
+00:17:58.560 --> 00:18:04.160
+one general response just isn't enough most of&nbsp;
+the time. Whether it's business, healthcare,&nbsp;&nbsp;
+
+00:18:04.160 --> 00:18:11.280
+or policy, high stakes decisions require&nbsp;
+diverse input and deep analysis. Today,&nbsp;&nbsp;
+
+00:18:11.280 --> 00:18:16.640
+getting those perspectives means prompting an LLM&nbsp;
+multiple times, which could be slow, inconsistent,&nbsp;&nbsp;
+
+00:18:16.640 --> 00:18:22.400
+and very manual. Knowing that Claude excels at&nbsp;
+complex reasoning as one of its most impressive&nbsp;&nbsp;
+
+00:18:22.400 --> 00:18:28.800
+capabilities, that's the gap that we aim to solve&nbsp;
+for our hackathon. Introducing Claude Cortex,&nbsp;&nbsp;
+
+00:18:28.800 --> 00:18:34.240
+a system designed to emulate a panel of experts.&nbsp;
+each analyzing the problem from a different angle.&nbsp;&nbsp;
+
+00:18:34.240 --> 00:18:39.680
+It dynamically creates specialized agents tailored&nbsp;
+to your problem context and enables parallel&nbsp;&nbsp;
+
+00:18:39.680 --> 00:18:45.040
+processing for diverse insights. The output&nbsp;
+here is a more synthesized and well-rounded&nbsp;&nbsp;
+
+00:18:45.040 --> 00:18:51.120
+recommendation enhancing output quality for&nbsp;
+decision-m. It's basically like having your&nbsp;&nbsp;
+
+00:18:51.120 --> 00:18:56.800
+own strategy team for each prompt. So yeah, let&nbsp;
+me show you how it works with a really simple&nbsp;&nbsp;
+
+00:18:56.800 --> 00:19:01.440
+example to test out the agents. So let's say I&nbsp;
+want to learn how to use langraph specifically&nbsp;&nbsp;
+
+00:19:01.440 --> 00:19:06.320
+by researching its documentation. I also want&nbsp;
+to share that finding with my teammates. I would&nbsp;&nbsp;
+
+00:19:06.320 --> 00:19:10.480
+type that in as a single prompt and let the&nbsp;
+master agent interpret that request and spin&nbsp;&nbsp;
+
+00:19:10.480 --> 00:19:14.640
+a different agents which in this case will&nbsp;
+need a browser agent to search and extract&nbsp;&nbsp;
+
+00:19:14.640 --> 00:19:20.320
+relevant information from langraph documentation.&nbsp;
+a research agent to summarize the key concepts in&nbsp;&nbsp;
+
+00:19:20.320 --> 00:19:26.960
+plain link language as well as a notes agent to&nbsp;
+generate clear explanations which it then shares&nbsp;&nbsp;
+
+00:19:26.960 --> 00:19:31.920
+with my teammates automatically. Each agent will&nbsp;
+work independently but they can communicate with&nbsp;&nbsp;
+
+00:19:31.920 --> 00:19:38.480
+one another creating a multi- aent system&nbsp;
+that gives more comprehensive insights.
+
+00:19:38.480 --> 00:19:43.680
+Now for sectors where data security and compliance&nbsp;
+are paramount cloud cortex offers a secured mode&nbsp;&nbsp;
+
+00:19:43.680 --> 00:19:49.360
+by integrating with AWS bedrock. It ensures that&nbsp;
+all operations meet privacy standards making it&nbsp;&nbsp;
+
+00:19:49.360 --> 00:19:54.640
+ideal for sensitive environments. The rest of&nbsp;
+our architecture is also very straightforward.&nbsp;&nbsp;
+
+00:19:54.640 --> 00:19:59.360
+The front end was built with Nex and Tailwind.&nbsp;
+The backend leverages fast API in lane graph&nbsp;&nbsp;
+
+00:19:59.360 --> 00:20:04.160
+for orchestrating multi-agent workflows. And&nbsp;
+claude of course powers our agents reasoning&nbsp;&nbsp;
+
+00:20:04.160 --> 00:20:09.040
+with the addition of browser use which allows&nbsp;
+agents to fetch real-time web data and enhance&nbsp;&nbsp;
+
+00:20:09.040 --> 00:20:14.880
+their analytical capabilities. Claude Cortex&nbsp;
+represents a shift in the way we use language&nbsp;&nbsp;
+
+00:20:14.880 --> 00:20:20.160
+models. Moving away from simply generating&nbsp;
+responses to structuring parallel reasoning&nbsp;&nbsp;
+
+00:20:20.160 --> 00:20:25.440
+pathways and delivering more comprehensive&nbsp;
+insights. It's versatile making it valuable&nbsp;&nbsp;
+
+00:20:25.440 --> 00:20:31.680
+across various sectors from corporate strategy&nbsp;
+to public health safety. Now the key takeaways&nbsp;&nbsp;
+
+00:20:31.680 --> 00:20:36.480
+from building cloud cortex are very intuitive.&nbsp;
+But the main two points here that I want to&nbsp;&nbsp;
+
+00:20:36.480 --> 00:20:42.320
+emphasize are that when agent outputs were more&nbsp;
+focused and well structured like JSON format um&nbsp;&nbsp;
+
+00:20:42.320 --> 00:20:49.280
+cloud synthesis became more nuanced and high high&nbsp;
+quality. It struggled however when upstream agents&nbsp;&nbsp;
+
+00:20:49.280 --> 00:20:55.840
+were more vague and just dumped text blobs into&nbsp;
+the into the uh stream and then uh dynamic task&nbsp;&nbsp;
+
+00:20:55.840 --> 00:21:00.880
+creation allows for flexibility. What that&nbsp;
+means is we first started off by creating&nbsp;&nbsp;
+
+00:21:00.880 --> 00:21:06.080
+um five predefined agents for every scenario.&nbsp;
+However, we later realized that having a master&nbsp;&nbsp;
+
+00:21:06.080 --> 00:21:10.480
+agent to decide what tasks and agents&nbsp;
+to create allowed for more accurate and&nbsp;&nbsp;
+
+00:21:10.480 --> 00:21:16.160
+relevant information. What we're building&nbsp;
+with Claude Cortex sets at a broader trend.&nbsp;&nbsp;
+
+00:21:16.160 --> 00:21:21.040
+Claude is powering a large number of studentled&nbsp;
+products at USC. We've seen tools for lawyers to&nbsp;&nbsp;
+
+00:21:21.040 --> 00:21:26.400
+process case files faster, apps that help people&nbsp;
+retain and connect knowledge more effectively,&nbsp;&nbsp;
+
+00:21:26.400 --> 00:21:31.760
+and software that can automate documentation and&nbsp;
+progress updates. Claude's ability to read deeply,&nbsp;&nbsp;
+
+00:21:31.760 --> 00:21:38.080
+summarize clearly, and follow structure is what&nbsp;
+makes all of this possible. Looking ahead, as a&nbsp;&nbsp;
+
+00:21:38.080 --> 00:21:42.640
+student building with Claude, the most powerful&nbsp;
+applications I've seen aren't just asking Claude&nbsp;&nbsp;
+
+00:21:42.640 --> 00:21:47.120
+for answers. They're using it as infrastructure,&nbsp;
+something that you can wire into your workflows&nbsp;&nbsp;
+
+00:21:47.120 --> 00:21:52.080
+and something that you can orchestrate like a&nbsp;
+system. And that's the shift that we see as well.&nbsp;&nbsp;
+
+00:21:52.080 --> 00:21:57.200
+We we imagine agent agents that can collaborate&nbsp;
+with one another, tools that can reflect and&nbsp;&nbsp;
+
+00:21:57.200 --> 00:22:02.480
+context that can compound. In summary,&nbsp;
+Claude Cortex isn't another AI tool. It's&nbsp;&nbsp;
+
+00:22:02.480 --> 00:22:08.080
+a leap towards a more intelligent, secure, and&nbsp;
+multi-dimensional decision-making process. As we&nbsp;&nbsp;
+
+00:22:08.080 --> 00:22:12.800
+continue to refine and expand its capabilities,&nbsp;
+we invite you to explore its potential and join&nbsp;&nbsp;
+
+00:22:12.800 --> 00:22:18.560
+us in shaping the future of AIdriven solutions.&nbsp;
+Here's the team behind Cloud Cortex. We're all&nbsp;&nbsp;
+
+00:22:18.560 --> 00:22:23.280
+student builders and we're all Yeah. builders&nbsp;
+and student leaders at USC and we would love to&nbsp;&nbsp;
+
+00:22:23.280 --> 00:22:28.080
+discuss more. So, please feel free to reach&nbsp;
+out to us whenever. I'm Daniel Gao and it's&nbsp;&nbsp;
+
+00:22:28.080 --> 00:22:34.080
+been a pleasure sharing our work with you.&nbsp;
+Thank you for your time and attention today.
+
+00:22:34.080 --> 00:22:37.440
+Thank you.
+

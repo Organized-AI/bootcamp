@@ -1,0 +1,1019 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:14.951 --> 00:00:15.446
+[Music]
+
+00:00:15.446 --> 00:00:16.720
+[Music] [Applause]
+
+00:00:16.720 --> 00:00:21.920
+good afternoon and welcome back from lunch you&nbsp;
+know whenever I do a tech conference I always ask&nbsp;&nbsp;
+
+00:00:21.920 --> 00:00:28.800
+to do the session right after a lunch because I&nbsp;
+know only the most motivated hardworking smartest&nbsp;&nbsp;
+
+00:00:28.800 --> 00:00:35.120
+most beautiful people come right am I right so&nbsp;
+thank you thank you for being here um I'm Brad&nbsp;&nbsp;
+
+00:00:35.120 --> 00:00:40.400
+Abrams i'm a product manager at Enthropic uh and&nbsp;
+we're going to talk about components for building&nbsp;&nbsp;
+
+00:00:40.400 --> 00:00:47.040
+agents today you saw Michael in the keynote talk&nbsp;
+about our Anthropic developer platform here and&nbsp;&nbsp;
+
+00:00:47.040 --> 00:00:52.960
+today we're going to build uh drill into this&nbsp;
+agenic components when we think about building&nbsp;&nbsp;
+
+00:00:52.960 --> 00:00:58.800
+agents there's really three key parts of this&nbsp;
+first is fundamentally building the agent and&nbsp;&nbsp;
+
+00:00:58.800 --> 00:01:05.200
+starting with our foundational models with the&nbsp;
+Claude 4 family of models with enhanced reasoning&nbsp;&nbsp;
+
+00:01:05.200 --> 00:01:11.760
+memory support much improved tool calling and long&nbsp;
+range planning is a great way to start there's&nbsp;&nbsp;
+
+00:01:11.760 --> 00:01:17.920
+also a set of components that you can reuse that&nbsp;
+saves your precious engineering resources to work&nbsp;&nbsp;
+
+00:01:17.920 --> 00:01:24.480
+on different things but we know regardless of how&nbsp;
+good our models are they're only as intelligent&nbsp;&nbsp;
+
+00:01:24.480 --> 00:01:29.120
+is the data that you bring to them and that's&nbsp;
+what the connect pillar is all about how can we&nbsp;&nbsp;
+
+00:01:29.120 --> 00:01:34.720
+help you bring more context in that helps the&nbsp;
+intelligence of the model and finally none of&nbsp;&nbsp;
+
+00:01:34.720 --> 00:01:42.400
+that matters if you can't deliver a service that's&nbsp;
+reliable that's stable that's performant uh and&nbsp;&nbsp;
+
+00:01:42.400 --> 00:01:47.600
+cost-effective and that's what optimize is so this&nbsp;
+is sort of our agenda for today let's drill into&nbsp;&nbsp;
+
+00:01:47.600 --> 00:01:56.560
+build so with build I want to talk about the code&nbsp;
+execution tool customers have told us that while&nbsp;&nbsp;
+
+00:01:56.560 --> 00:02:02.800
+uh large language models can do many amazing&nbsp;
+things there's still some tasks that require&nbsp;&nbsp;
+
+00:02:02.800 --> 00:02:07.120
+uh traditional software development when&nbsp;
+you're doing advanced data analytics you&nbsp;&nbsp;
+
+00:02:07.120 --> 00:02:13.840
+have a giant spreadsheet need to understand&nbsp;
+uh do deep analysis of that data that's still&nbsp;&nbsp;
+
+00:02:13.840 --> 00:02:21.520
+the domain where a human might need to write code&nbsp;
+because that code is auditable uh it's performant&nbsp;&nbsp;
+
+00:02:21.520 --> 00:02:28.240
+uh it's repeatable it does the same every time&nbsp;
+so um so some some of those use cases are still&nbsp;&nbsp;
+
+00:02:28.240 --> 00:02:34.080
+better done with code but you know our models&nbsp;
+are actually pretty good at writing code so we&nbsp;&nbsp;
+
+00:02:34.080 --> 00:02:40.320
+thought why not give Claude a computer and let&nbsp;
+it write and execute that code and that's what&nbsp;&nbsp;
+
+00:02:40.320 --> 00:02:49.040
+code execution is all about let me explain it by&nbsp;
+drilling in uh one level deep on an example so&nbsp;&nbsp;
+
+00:02:49.040 --> 00:02:55.840
+we have a client here it calls claude and and&nbsp;
+then that goes to a container we have a whole&nbsp;&nbsp;
+
+00:02:55.840 --> 00:03:03.200
+uh set of containers so every organization gets um&nbsp;
+a ded a dedicated container um and here the client&nbsp;&nbsp;
+
+00:03:03.200 --> 00:03:09.840
+is actually requesting container ID one your&nbsp;
+client can decide uh how to use the containers&nbsp;&nbsp;
+
+00:03:09.840 --> 00:03:15.600
+how to allocate them uh the client has this prompt&nbsp;
+i don't know if anybody's already figured out the&nbsp;&nbsp;
+
+00:03:15.600 --> 00:03:21.520
+answer to this i'll let you noodle on that for&nbsp;
+a second um Claude uh thinks about that for a&nbsp;&nbsp;
+
+00:03:21.520 --> 00:03:26.720
+minute and decides you know actually this is be&nbsp;
+best best done by writing code so Claude chooses&nbsp;&nbsp;
+
+00:03:26.720 --> 00:03:33.840
+the code execution tool writes a set of Python&nbsp;
+code that will answer that question um and then&nbsp;&nbsp;
+
+00:03:33.840 --> 00:03:40.320
+we hand it over to the container the container&nbsp;
+executes that and then we get some uh results back&nbsp;&nbsp;
+
+00:03:40.320 --> 00:03:47.600
+so all of standard out comes back standard error&nbsp;
+comes back uh and any files that were created in&nbsp;&nbsp;
+
+00:03:47.600 --> 00:03:53.840
+while executing on that container come back and&nbsp;
+then the model then reasons over that results and&nbsp;&nbsp;
+
+00:03:53.840 --> 00:04:00.800
+comes up with a quippy answer so the answer was&nbsp;
+42 and Opus with its uh insightful humor here has&nbsp;&nbsp;
+
+00:04:00.800 --> 00:04:07.840
+come up with a good good joke about that so that's&nbsp;
+generally how code execution works and it's very&nbsp;&nbsp;
+
+00:04:07.840 --> 00:04:13.680
+simple to set up those of you that are already&nbsp;
+customers will recognize the messages API it's&nbsp;&nbsp;
+
+00:04:13.680 --> 00:04:19.920
+the core way to use our models so it's the exact&nbsp;
+same API you've been using before we've just added&nbsp;&nbsp;
+
+00:04:19.920 --> 00:04:27.040
+a new tools block um and keep in mind this is&nbsp;
+really all you need to do to to set this up it's&nbsp;&nbsp;
+
+00:04:27.040 --> 00:04:35.760
+uh one method call brings all of this power and&nbsp;
+that's just what Shopify found was interesting&nbsp;&nbsp;
+
+00:04:35.760 --> 00:04:42.160
+uh as they experiment with this with this&nbsp;
+code execution tool we're building they have a&nbsp;&nbsp;
+
+00:04:42.160 --> 00:04:47.440
+uh sidekick agents that helps merchant&nbsp;
+merchants build their storefronts and&nbsp;&nbsp;
+
+00:04:47.440 --> 00:04:52.800
+they're building AB testing experience there&nbsp;
+and having the power of this code execution&nbsp;&nbsp;
+
+00:04:52.800 --> 00:05:00.800
+tool is helping them bring that insight so to&nbsp;
+really understand let's switch over to a demo&nbsp;&nbsp;
+
+00:05:02.560 --> 00:05:08.320
+yeah let's switch over to the demo so doing&nbsp;
+a demo in a tech conference at any time is a&nbsp;&nbsp;
+
+00:05:08.320 --> 00:05:14.320
+harrowing experience but when you're launching a&nbsp;
+brand new model with a bunch of new features uh&nbsp;&nbsp;
+
+00:05:14.320 --> 00:05:20.160
+in front of a live stream it's it's particularly&nbsp;
+crazy so hopefully this will work well so what&nbsp;&nbsp;
+
+00:05:20.160 --> 00:05:28.480
+we have here we've uh Thank you thank you we we&nbsp;
+have uh vibecoded a little command line client&nbsp;&nbsp;
+
+00:05:28.480 --> 00:05:36.720
+just to explain how the system works very very&nbsp;
+basic system here and we're using um opus 4 uh&nbsp;&nbsp;
+
+00:05:36.720 --> 00:05:42.320
+so what I'm going to do here is just give a very&nbsp;
+simple query here i'll let you think about what&nbsp;&nbsp;
+
+00:05:42.320 --> 00:05:49.920
+the answer to this one is so we pass this query&nbsp;
+to claude 4 and it has the code execution tool&nbsp;&nbsp;
+
+00:05:49.920 --> 00:05:55.280
+enabled um Claude's going to reason about that&nbsp;
+for a second decide to call the code execution&nbsp;&nbsp;
+
+00:05:55.280 --> 00:06:02.880
+tool and then we get streaming results so this is&nbsp;
+one one uh HTTP call but we're getting streaming&nbsp;&nbsp;
+
+00:06:02.880 --> 00:06:09.440
+responses back the code gets written by the model&nbsp;
+passed to the tool the tool is executed the the&nbsp;&nbsp;
+
+00:06:09.440 --> 00:06:15.280
+code and we got that standard out there that's the&nbsp;
+100th prime number and then the model gives its&nbsp;&nbsp;
+
+00:06:15.280 --> 00:06:23.840
+its quippy answer here thank you first demo worked&nbsp;
+i'm feeling I'm feeling good let's let's push it&nbsp;&nbsp;
+
+00:06:23.840 --> 00:06:30.400
+a little bit harder okay so I have some AB test&nbsp;
+results here uh I have to make uh shop my Shopify&nbsp;&nbsp;
+
+00:06:30.400 --> 00:06:36.720
+friends happy um I have some AB test results here&nbsp;
+i've uploaded those with the files API which we&nbsp;&nbsp;
+
+00:06:36.720 --> 00:06:44.080
+also announced today uh and then what I'm going&nbsp;
+to do now is do some uh analysis of it so you&nbsp;&nbsp;
+
+00:06:44.080 --> 00:06:50.800
+can see this prompt says analyze the uploaded AB&nbsp;
+tests and compare control and treatment calculate&nbsp;&nbsp;
+
+00:06:50.800 --> 00:06:57.360
+the statistical significance and key metrics and&nbsp;
+make a recommendation so using all parts of the&nbsp;&nbsp;
+
+00:06:57.360 --> 00:07:03.760
+model here we're doing some code execution notice&nbsp;
+in this first turn the model has never seen this&nbsp;&nbsp;
+
+00:07:03.760 --> 00:07:09.120
+this spreadsheet before so it first has to analyze&nbsp;
+the types in the spreadsheet what's there it gets&nbsp;&nbsp;
+
+00:07:09.120 --> 00:07:15.680
+those results back and then since it understands&nbsp;
+them it now writes deeper code to go understand&nbsp;&nbsp;
+
+00:07:15.680 --> 00:07:22.640
+uh what's really happening here and pull out some&nbsp;
+insights so we're now we're executing that code&nbsp;&nbsp;
+
+00:07:22.640 --> 00:07:29.840
+on the VM um and we get all the results back in&nbsp;
+standard out and I got to say I just love Opus&nbsp;&nbsp;
+
+00:07:29.840 --> 00:07:35.600
+because it doesn't give up he didn't get exactly&nbsp;
+what he wanted out of that analysis so it's look&nbsp;&nbsp;
+
+00:07:35.600 --> 00:07:40.320
+I need to drill in more i need to understand&nbsp;
+a little bit more before I can do this so it&nbsp;&nbsp;
+
+00:07:40.320 --> 00:07:45.760
+um drills in more uh writes some additional&nbsp;
+data analysis code and see here it's writing&nbsp;&nbsp;
+
+00:07:45.760 --> 00:07:50.880
+the output for itself to read so all these&nbsp;
+print statements are going to come back&nbsp;&nbsp;
+
+00:07:50.880 --> 00:07:56.400
+to standard out and then we're going to pass&nbsp;
+that to the model so those came back and now&nbsp;&nbsp;
+
+00:07:56.400 --> 00:08:01.440
+the model is reasoning about what its response&nbsp;
+is and it makes that business recommendation&nbsp;&nbsp;
+
+00:08:01.440 --> 00:08:07.840
+that we asked for and justifies it with the&nbsp;
+analysis of all that data so pretty pretty
+
+00:08:07.840 --> 00:08:18.160
+good great let's switch back to the slides&nbsp;
+okay so that's the first live demo great&nbsp;&nbsp;
+
+00:08:18.160 --> 00:08:24.160
+code execution tool um the codeex code&nbsp;
+execution tool is an enthropic hosted&nbsp;&nbsp;
+
+00:08:24.160 --> 00:08:30.240
+computing environment um and it's flexible&nbsp;
+developer controlled so you don't need to&nbsp;&nbsp;
+
+00:08:30.240 --> 00:08:35.680
+tie to threads or whatever like devel you can&nbsp;
+control which request goes to what container&nbsp;&nbsp;
+
+00:08:35.680 --> 00:08:42.640
+and your containers are isolated from everybody&nbsp;
+else's um and you get 50 free container hours&nbsp;&nbsp;
+
+00:08:42.640 --> 00:08:48.400
+today which is a good amount to get started&nbsp;
+and then love to scale with you so we have&nbsp;&nbsp;
+
+00:08:48.400 --> 00:08:53.120
+some pricing to to let that scale and the&nbsp;
+best part is that's available for you to use
+
+00:08:53.120 --> 00:09:02.320
+today wow this is a good audience good okay let's&nbsp;
+move on and talk about the connect uh pillar here&nbsp;&nbsp;
+
+00:09:02.320 --> 00:09:10.400
+how you can bring data into the into the model&nbsp;
+so many of our customers have told us that again&nbsp;&nbsp;
+
+00:09:10.400 --> 00:09:16.240
+while the model's reasoning is great it was&nbsp;
+trained at some specific time um and maybe they&nbsp;&nbsp;
+
+00:09:16.240 --> 00:09:22.640
+need more recent information whether that's for&nbsp;
+financial use cases say the latest stock prices&nbsp;&nbsp;
+
+00:09:22.640 --> 00:09:29.520
+or for in the legal case maybe there's some case&nbsp;
+law rulings that need to be kept up to date or&nbsp;&nbsp;
+
+00:09:29.520 --> 00:09:34.960
+um even in coding you may need to get the latest&nbsp;
+API documentation to make sure your code works&nbsp;&nbsp;
+
+00:09:34.960 --> 00:09:39.840
+uh beautifully so in all those cases that real-&nbsp;
+time information is is very important and that's&nbsp;&nbsp;
+
+00:09:39.840 --> 00:09:48.000
+the role that web search plays so let's drill in&nbsp;
+uh in a similar example and check in how how web&nbsp;&nbsp;
+
+00:09:48.000 --> 00:09:55.840
+search works in our system so again I have the&nbsp;
+same sort of setup a client gives this prompt&nbsp;&nbsp;
+
+00:09:55.840 --> 00:10:01.120
+um what are the most significant technological&nbsp;
+breakthroughs announced in the past three months&nbsp;&nbsp;
+
+00:10:01.120 --> 00:10:06.640
+and what publicly traded companies uh would&nbsp;
+benefit from them so that's actually a pretty&nbsp;&nbsp;
+
+00:10:06.640 --> 00:10:11.680
+complicated problem i mean you might pay an&nbsp;
+analyst money to actually answer this question&nbsp;&nbsp;
+
+00:10:11.680 --> 00:10:16.960
+what Claude does is it doesn't transform that&nbsp;
+prompt into a query it actually reasons about&nbsp;&nbsp;
+
+00:10:16.960 --> 00:10:22.800
+the overall task that you've been uh asked claude&nbsp;
+to do and it decides well the first thing I need&nbsp;&nbsp;
+
+00:10:22.800 --> 00:10:29.520
+to do is do a broad query and really understand&nbsp;
+the technological breakthroughs um it issues&nbsp;&nbsp;
+
+00:10:29.520 --> 00:10:34.960
+that query we pass it to a search engine and&nbsp;
+get a set of search results back so just think&nbsp;&nbsp;
+
+00:10:34.960 --> 00:10:41.040
+about the standard tin blue links so we get&nbsp;
+title URL and content from each of the websi&nbsp;&nbsp;
+
+00:10:41.040 --> 00:10:48.240
+uh these uh websites and so all that context goes&nbsp;
+into the model and then the model says okay given&nbsp;&nbsp;
+
+00:10:48.240 --> 00:10:54.560
+the prompt that I was given and this additional&nbsp;
+context what do I need to do now so it says okay&nbsp;&nbsp;
+
+00:10:54.560 --> 00:11:01.200
+well I need to drill into one of those particular&nbsp;
+trends so it it um picks this small language model&nbsp;&nbsp;
+
+00:11:01.200 --> 00:11:07.760
+drills in and and finds companies that are related&nbsp;
+to that gets the same search results and content&nbsp;&nbsp;
+
+00:11:07.760 --> 00:11:13.360
+back into the model and then the model decides&nbsp;
+again to do another search now this one I don't&nbsp;&nbsp;
+
+00:11:13.360 --> 00:11:19.200
+really know is a a techn a trend that I'm aware of&nbsp;
+but we learn new things with Claude every day so&nbsp;&nbsp;
+
+00:11:19.200 --> 00:11:26.960
+it's really fantastic um and keep in mind all&nbsp;
+of these things are happening in that one API&nbsp;&nbsp;
+
+00:11:26.960 --> 00:11:33.760
+call that I showed you one API call and all the&nbsp;
+you get all of this power so we get the search&nbsp;&nbsp;
+
+00:11:33.760 --> 00:11:42.000
+results back um and then this is an interesting&nbsp;
+case it does this one final search um to to go&nbsp;&nbsp;
+
+00:11:42.000 --> 00:11:48.880
+one level deeper into the small language models to&nbsp;
+get a really deep insight into this particular one&nbsp;&nbsp;
+
+00:11:48.880 --> 00:11:55.440
+um and gets the results from that and then it&nbsp;
+produces uh its report so it reports a complete&nbsp;&nbsp;
+
+00:11:55.440 --> 00:12:02.800
+report and all of the data is now cited so there's&nbsp;
+actually footnotes citations for every fact so&nbsp;&nbsp;
+
+00:12:02.800 --> 00:12:09.200
+that you can go back and verify make sure there's&nbsp;
+no hallucinations and it is exactly what you want&nbsp;&nbsp;
+
+00:12:10.000 --> 00:12:19.120
+uh and this is uh again as I mentioned one API&nbsp;
+call messages API and there's a tool very similar&nbsp;&nbsp;
+
+00:12:19.120 --> 00:12:25.280
+to the code execution tool we showed earlier um&nbsp;
+in this case you can actually restrict the domain&nbsp;&nbsp;
+
+00:12:25.280 --> 00:12:32.640
+so say you're building uh customer support agents&nbsp;
+you might want to restrict the domain to just the&nbsp;&nbsp;
+
+00:12:32.640 --> 00:12:38.720
+uh just one domain so you get accurate answers&nbsp;
+and you can also control the max turns if you&nbsp;&nbsp;
+
+00:12:38.720 --> 00:12:42.560
+want to be a little conservative on how many&nbsp;
+tokens you spend although it's my business&nbsp;&nbsp;
+
+00:12:42.560 --> 00:12:49.360
+that you spend a lot of tokens so feel free&nbsp;
+um okay and that's what Kora has really found&nbsp;&nbsp;
+
+00:12:49.360 --> 00:12:55.440
+interesting they're building a consumer agent and&nbsp;
+they really value that live upto-date information&nbsp;&nbsp;
+
+00:12:55.440 --> 00:13:01.040
+because consu consumers oftentimes ask about&nbsp;
+what's going on uh contemporarily and and so&nbsp;&nbsp;
+
+00:13:01.040 --> 00:13:06.880
+they're they're really valuing that and again&nbsp;
+we're seeing customers across legal coding tools&nbsp;&nbsp;
+
+00:13:06.880 --> 00:13:15.280
+um find this very valuable so let's do another&nbsp;
+demo so let's switch back to the demo machine okay&nbsp;&nbsp;
+
+00:13:15.280 --> 00:13:23.200
+so now let's try a search query um what are the&nbsp;
+bench scores for all of anthropics models since&nbsp;&nbsp;
+
+00:13:23.200 --> 00:13:30.720
+35 uh so this is a a contemporary one this is one&nbsp;
+that's sort of real time right now so we'll see&nbsp;&nbsp;
+
+00:13:30.720 --> 00:13:37.840
+how well this this works um so what it's doing now&nbsp;
+is it's actually considering that query looking at&nbsp;&nbsp;
+
+00:13:37.840 --> 00:13:46.720
+all the tools it has available um you know we saw&nbsp;
+before it whoa that's good times um let's try that&nbsp;&nbsp;
+
+00:13:46.720 --> 00:13:56.240
+one again we know it's real if um so it's looking&nbsp;
+at all the tools it has available and deciding&nbsp;&nbsp;
+
+00:13:56.240 --> 00:14:02.160
+which one to call um so in this case it calls the&nbsp;
+search tool and it starts with 35 because that's&nbsp;&nbsp;
+
+00:14:02.160 --> 00:14:09.200
+the data that we gave it so it does that search&nbsp;
+for 35 um and then it does a more general search&nbsp;&nbsp;
+
+00:14:09.200 --> 00:14:15.680
+so Claude's not satisfied with the answer from&nbsp;
+the first turn so we're not like structuring oh&nbsp;&nbsp;
+
+00:14:15.680 --> 00:14:20.080
+do three searches these are the searches claude's&nbsp;
+deciding what searches to do how many of searches&nbsp;&nbsp;
+
+00:14:20.080 --> 00:14:26.720
+when to stop what to drill in on um and here&nbsp;
+it looked like it it this gets to get updated&nbsp;&nbsp;
+
+00:14:26.720 --> 00:14:34.480
+we don't quite have the Sonnet four scores up but&nbsp;
+they will be there very soon okay but can we put&nbsp;&nbsp;
+
+00:14:34.480 --> 00:14:42.400
+these things together um so this is a question&nbsp;
+I have wondered with for a long time and that's&nbsp;&nbsp;
+
+00:14:42.400 --> 00:14:48.640
+how many elephants can travel over the Golden Gate&nbsp;
+Bridge in an hour if you think about this question&nbsp;&nbsp;
+
+00:14:48.640 --> 00:14:52.400
+uh which is a very important question you know&nbsp;
+there's actually some pieces of data you need&nbsp;&nbsp;
+
+00:14:52.400 --> 00:14:58.560
+to know you might need to know um how what the&nbsp;
+weight capacity of the Golden Gate Bridge is&nbsp;&nbsp;
+
+00:14:58.560 --> 00:15:03.280
+uh the walking speed of an elephant but then&nbsp;
+even once you have that data you need to do&nbsp;&nbsp;
+
+00:15:03.280 --> 00:15:09.520
+some computational work to go understand so&nbsp;
+Claude's doing all the did all the searches&nbsp;&nbsp;
+
+00:15:09.520 --> 00:15:14.720
+now it's doing the computational work or at&nbsp;
+least it's writing the code for that and as&nbsp;&nbsp;
+
+00:15:14.720 --> 00:15:21.760
+soon as it finishes writing the code um it will&nbsp;
+we pass this over to the code execution tool and&nbsp;&nbsp;
+
+00:15:21.760 --> 00:15:29.520
+it will execute that code there we go it executes&nbsp;
+it um and gets this data and that goes back into&nbsp;&nbsp;
+
+00:15:29.520 --> 00:15:38.240
+the model uh the model sees that data and it&nbsp;
+forms its answer which is 7,000 can go does&nbsp;&nbsp;
+
+00:15:38.240 --> 00:15:44.960
+that that seems plausible right okay so that's&nbsp;
+uh web search with with code executor it's good
+
+00:15:44.960 --> 00:15:55.440
+okay okay uh let's go back to slides if&nbsp;
+we can okay so that's web search um and&nbsp;&nbsp;
+
+00:15:55.440 --> 00:16:00.480
+it's it's anthropic's agentic search&nbsp;
+capability so it's not just simply&nbsp;&nbsp;
+
+00:16:00.480 --> 00:16:04.640
+passing a search query and getting a&nbsp;
+result the model is actually deciding&nbsp;&nbsp;
+
+00:16:04.640 --> 00:16:10.480
+uh how to search how many times to search doing&nbsp;
+that loop over and over again uh and that's&nbsp;&nbsp;
+
+00:16:10.480 --> 00:16:16.240
+done with our citation support so everything&nbsp;
+there is fully grounded and auditable and it's&nbsp;&nbsp;
+
+00:16:16.240 --> 00:16:22.720
+uh highly composable developer controlled so it's&nbsp;
+very easy to add you can have a lot of controls as&nbsp;&nbsp;
+
+00:16:22.720 --> 00:16:27.760
+developers and then it's reasonably priced so you&nbsp;
+can you can use that at scale and that's available
+
+00:16:27.760 --> 00:16:36.400
+today so let's talk about MCP connector next&nbsp;
+uh we've just been blown away at the industry&nbsp;&nbsp;
+
+00:16:36.400 --> 00:16:44.400
+excitement around MCPs i see a new MCP launch&nbsp;
+literally every day so that ecosystem is growing&nbsp;&nbsp;
+
+00:16:44.400 --> 00:16:52.000
+uh very quickly and in fact just last two week&nbsp;
+last week uh Claude Aai launched support for&nbsp;&nbsp;
+
+00:16:52.000 --> 00:16:57.360
+remote MCPs and claude AAI and many of our&nbsp;
+customers have been wondering how they can&nbsp;&nbsp;
+
+00:16:57.360 --> 00:17:04.160
+take advantage of that ecosystem of MCPs within&nbsp;
+their own agents and MCP connector is the answer&nbsp;&nbsp;
+
+00:17:04.160 --> 00:17:11.280
+to that so let's take a look at how that looks&nbsp;
+under the covers so this is a little bit more&nbsp;&nbsp;
+
+00:17:11.280 --> 00:17:18.240
+uh complicated setup we have our client and we&nbsp;
+have three different MCPs connected uh and that's&nbsp;&nbsp;
+
+00:17:18.240 --> 00:17:22.400
+because we're serving query our agent's going&nbsp;
+to serve queries like like this one that like&nbsp;&nbsp;
+
+00:17:22.400 --> 00:17:28.000
+a product manager might need to do for a team&nbsp;
+after a after a launch uh create an email with&nbsp;&nbsp;
+
+00:17:28.000 --> 00:17:35.200
+a creative and motivational image about my Asana&nbsp;
+project status and send it to the team so there's&nbsp;&nbsp;
+
+00:17:35.200 --> 00:17:42.240
+several components here um and Claude's got&nbsp;
+these three MCPs to go figure out how to do that&nbsp;&nbsp;
+
+00:17:42.240 --> 00:17:50.000
+so the first thing Claude decides to do is to&nbsp;
+call the Asana MCP and a specific tool there uh&nbsp;&nbsp;
+
+00:17:50.000 --> 00:17:55.280
+the Asana MCP has got tens of tools that you&nbsp;
+can call but Claude has picked out the right&nbsp;&nbsp;
+
+00:17:55.280 --> 00:18:02.560
+one this list workspaces and notice we're doing&nbsp;
+this call my Asana task are are authenticated&nbsp;&nbsp;
+
+00:18:02.560 --> 00:18:09.440
+not everybody can see them so we actually have&nbsp;
+to do a ooth request to the MCP server so when&nbsp;&nbsp;
+
+00:18:09.440 --> 00:18:16.720
+you make this API call you pass a ooth token into&nbsp;
+the messages API we exchange that OOTH token for&nbsp;&nbsp;
+
+00:18:16.720 --> 00:18:26.160
+access token and then make the call to the Asana's&nbsp;
+MCP server in a secure way so we do that call we&nbsp;&nbsp;
+
+00:18:26.160 --> 00:18:33.200
+get the results back and we say okay uh this this&nbsp;
+is this is the workspace that that user has assign&nbsp;&nbsp;
+
+00:18:33.200 --> 00:18:39.680
+uh Claude then decides to drill in it picks&nbsp;
+this um search method to search for this code&nbsp;&nbsp;
+
+00:18:39.680 --> 00:18:48.400
+with Claude in MCP demo that's one I set up in&nbsp;
+context is knowing what my uh project is we find&nbsp;&nbsp;
+
+00:18:48.400 --> 00:18:56.240
+the project ID um Claude gets that project gets&nbsp;
+details about that project ID finally finds this&nbsp;&nbsp;
+
+00:18:56.240 --> 00:19:04.000
+um the actual project ID for this and it can call&nbsp;
+get tasks just pausing for a second a complicated&nbsp;&nbsp;
+
+00:19:04.000 --> 00:19:10.960
+software enterprise software project uh like Asana&nbsp;
+you know has a complicated API structure and even&nbsp;&nbsp;
+
+00:19:10.960 --> 00:19:16.160
+you as a developer or I as a developer might take&nbsp;
+some time to go understand that but notice how&nbsp;&nbsp;
+
+00:19:16.160 --> 00:19:21.440
+Claude is whipping through this very quickly and&nbsp;
+it gets right at the tasks so all that happened&nbsp;&nbsp;
+
+00:19:21.440 --> 00:19:28.160
+very quickly but we're not done with the overall&nbsp;
+prompt so Claude's using that long range planning&nbsp;&nbsp;
+
+00:19:28.160 --> 00:19:35.600
+that um capability to figure out what to do next&nbsp;
+so it's got the tasks next what it needs to do&nbsp;&nbsp;
+
+00:19:35.600 --> 00:19:42.400
+is to create an image if you remember the prompt&nbsp;
+I said to create an image about that so no we're&nbsp;&nbsp;
+
+00:19:42.400 --> 00:19:50.720
+not going to announce a image creation model from&nbsp;
+Anthropic uh today but there are uh tons of MCP&nbsp;&nbsp;
+
+00:19:50.720 --> 00:19:57.600
+servers out there that do image creation um and if&nbsp;
+you're really deep in this MCP space you know that&nbsp;&nbsp;
+
+00:19:57.600 --> 00:20:03.760
+most of those are actually local MCP servers like&nbsp;
+intended to run on your local machine but this&nbsp;&nbsp;
+
+00:20:03.760 --> 00:20:12.000
+support and the cloud AAI support is all about&nbsp;
+remote MCPs so look luckily Cloudflare offers&nbsp;&nbsp;
+
+00:20:12.000 --> 00:20:18.960
+an MCP remote service where you can take any of&nbsp;
+these local MCPs and host it on Cloudflare in a&nbsp;&nbsp;
+
+00:20:18.960 --> 00:20:25.280
+secure way and that's what we've done we've taken&nbsp;
+one of the open source um MCP providers hosted it&nbsp;&nbsp;
+
+00:20:25.280 --> 00:20:30.880
+on Cloudflare and then made that available to&nbsp;
+the model and so the model chooses to call that&nbsp;&nbsp;
+
+00:20:30.880 --> 00:20:36.000
+with uh when I made these slides the project was&nbsp;
+definitely not in good shape so which is why the&nbsp;&nbsp;
+
+00:20:36.000 --> 00:20:44.160
+the query is what it is um and we call that MCP&nbsp;
+server and get a result back get both the image uh&nbsp;&nbsp;
+
+00:20:44.160 --> 00:20:50.240
+URL as well as the actual image comes back in the&nbsp;
+result and that both of those go back to Claude so&nbsp;&nbsp;
+
+00:20:50.240 --> 00:20:56.560
+Claude now has the tasks it now has the image the&nbsp;
+next thing it needs to do is send that email so&nbsp;&nbsp;
+
+00:20:56.560 --> 00:21:03.200
+Claude will compose a email with all of that data&nbsp;
+and then it needs to send it so in this case we're&nbsp;&nbsp;
+
+00:21:03.200 --> 00:21:09.840
+going to use the Zapier MCP server zapier has&nbsp;
+got hundreds of enterprise connections and a very&nbsp;&nbsp;
+
+00:21:09.840 --> 00:21:17.120
+well-designed MCP system that lets you enable or&nbsp;
+disable expose just exactly what you need and have&nbsp;&nbsp;
+
+00:21:17.120 --> 00:21:24.880
+um uh enterprise control over that so we've set&nbsp;
+it up to just expose Gmail uh and we've and the&nbsp;&nbsp;
+
+00:21:24.880 --> 00:21:31.520
+model has chosen to use this subject and whatnot&nbsp;
+to to make that work and so we get the response it&nbsp;&nbsp;
+
+00:21:31.520 --> 00:21:38.880
+has it has sent that email and this is what this&nbsp;
+is what it looked like more recently a little bit&nbsp;&nbsp;
+
+00:21:38.880 --> 00:21:45.760
+happier a little bit happier picture but we did&nbsp;
+we did actually get the email and this is very&nbsp;&nbsp;
+
+00:21:45.760 --> 00:21:51.840
+easy to set up hopefully you're getting a little&nbsp;
+bit of a pattern here a very composable system&nbsp;&nbsp;
+
+00:21:51.840 --> 00:21:59.200
+it uses the existing messages API at this time&nbsp;
+we're just using this new MCP servers attribute&nbsp;&nbsp;
+
+00:21:59.200 --> 00:22:05.040
+and you can list as many MCP servers as you&nbsp;
+need here um you just give the URL and a and a&nbsp;&nbsp;
+
+00:22:05.040 --> 00:22:12.240
+name um and then you pass if you need if it's an&nbsp;
+OOTH service pass the authorization token there&nbsp;&nbsp;
+
+00:22:13.360 --> 00:22:19.360
+so we're very fortunate to have several&nbsp;
+uh remote MCPs that are live today that&nbsp;&nbsp;
+
+00:22:19.360 --> 00:22:26.480
+uh you can use with the MCP API whether you're&nbsp;
+doing task management or you're doing payments&nbsp;&nbsp;
+
+00:22:26.480 --> 00:22:32.080
+you're creating a video you're doing machine&nbsp;
+management there's an MCP for you to get those&nbsp;&nbsp;
+
+00:22:32.080 --> 00:22:36.720
+done uh so these are all available today&nbsp;
+and then I'm sure tomorrow there's going&nbsp;&nbsp;
+
+00:22:36.720 --> 00:22:42.880
+to be a ton a ton more and that's really what&nbsp;
+Zapier has found interesting uh because with&nbsp;&nbsp;
+
+00:22:42.880 --> 00:22:49.040
+our mutual customers we can now their their&nbsp;
+customers can now build really powerful agents&nbsp;&nbsp;
+
+00:22:49.040 --> 00:22:58.720
+very easily with a combination of our MCP API&nbsp;
+support and and their MCP so let's look at a
+
+00:22:58.720 --> 00:23:09.200
+demo okay so let's use this one um what are my&nbsp;
+open task in a sauna just to warm us up make&nbsp;&nbsp;
+
+00:23:09.200 --> 00:23:17.840
+sure we can get this so again what you're going&nbsp;
+to see this time is that it calls the get asauna&nbsp;&nbsp;
+
+00:23:17.840 --> 00:23:26.960
+um tasks so it's passing this and then we get that&nbsp;
+nice list of ASA tasks and uh a nice response but&nbsp;&nbsp;
+
+00:23:26.960 --> 00:23:32.800
+you know I thought maybe we should like pull all&nbsp;
+of the pieces together here so hang with me with&nbsp;&nbsp;
+
+00:23:32.800 --> 00:23:40.080
+this query create an email with a creative and&nbsp;
+motivational image about my Asana project status&nbsp;&nbsp;
+
+00:23:40.080 --> 00:23:47.360
+including some analysis on the percentage&nbsp;
+complete and any news on the web about those&nbsp;&nbsp;
+
+00:23:47.360 --> 00:23:55.520
+tasks and send it to the team so that starts by&nbsp;
+going through uh a sauna getting the tasks uh out&nbsp;&nbsp;
+
+00:23:55.520 --> 00:24:03.120
+of there um and then it's got to do it's got to&nbsp;
+use code executor so it's now it's writing code&nbsp;&nbsp;
+
+00:24:03.120 --> 00:24:09.760
+uh to analyze the status of all those tasks and&nbsp;
+get our percent complete that being done it knows&nbsp;&nbsp;
+
+00:24:09.760 --> 00:24:15.840
+what all the tasks are so now it does a search for&nbsp;
+our conference finds the latest information maybe&nbsp;&nbsp;
+
+00:24:15.840 --> 00:24:22.240
+a tweet from one of you will show up there um and&nbsp;
+it decides to drill in a little bit more on cloud&nbsp;&nbsp;
+
+00:24:22.240 --> 00:24:29.440
+for opus and sonnet so now it decides to create&nbsp;
+that motivational image and notice the prompt it's&nbsp;&nbsp;
+
+00:24:29.440 --> 00:24:35.680
+uh giving to our MCP so that's that's pretty&nbsp;
+nice the rocket launching uh looks beautiful&nbsp;&nbsp;
+
+00:24:36.240 --> 00:24:42.160
+now what it needs to do is take all the data&nbsp;
+that you just saw um and pull that together&nbsp;&nbsp;
+
+00:24:42.160 --> 00:24:48.400
+into like a really nicely formatted email and&nbsp;
+that's going to take the model just a minute to&nbsp;&nbsp;
+
+00:24:48.400 --> 00:24:57.440
+uh build this this entire email but it's going to&nbsp;
+take that email and call the uh Zapier MCP service&nbsp;&nbsp;
+
+00:24:57.440 --> 00:25:10.080
+and send it so hopefully any minute it will get&nbsp;
+that email it's almost I can feel it okay there&nbsp;&nbsp;
+
+00:25:10.080 --> 00:25:17.440
+it is so it's it's almost done thanks we have to&nbsp;
+have that moment we have we have to have it um&nbsp;&nbsp;
+
+00:25:17.440 --> 00:25:23.920
+so it's a little uh funny formatting here because&nbsp;
+it's uh JSON HTML in this JSON viewer that we're&nbsp;&nbsp;
+
+00:25:23.920 --> 00:25:30.400
+using here but it's generating this whole email&nbsp;
+um and then of course the real tests if this was&nbsp;&nbsp;
+
+00:25:30.400 --> 00:25:39.760
+like an actual live demo we'd expect like to&nbsp;
+get an email so let's see if we actually get&nbsp;&nbsp;
+
+00:25:39.760 --> 00:25:45.120
+this email so you can see we've been practicing&nbsp;
+but yeah this is the one that we just Oh that&nbsp;&nbsp;
+
+00:25:45.120 --> 00:25:50.080
+was 44 minutes ago let's see if there's a more&nbsp;
+recent one yeah here we go this one zero minutes&nbsp;&nbsp;
+
+00:25:50.080 --> 00:25:59.360
+ago there it is oh we got to show you real look i&nbsp;
+mean we did zero prompt engineering on this thing&nbsp;&nbsp;
+
+00:25:59.360 --> 00:26:06.480
+look how nicely formatted Opus comes up with this&nbsp;
+email so really fantastic okay let's move back to&nbsp;&nbsp;
+
+00:26:06.480 --> 00:26:15.760
+the slides um and I think I have to finish up&nbsp;
+very quickly um MCB connector is uh remote MCP&nbsp;&nbsp;
+
+00:26:15.760 --> 00:26:22.240
+simple to set up ooth support only standard&nbsp;
+token prices okay let's drill into optimize&nbsp;&nbsp;
+
+00:26:22.240 --> 00:26:27.520
+you can't really talk about optimization without&nbsp;
+talking about prompt caching um prompt caching&nbsp;&nbsp;
+
+00:26:27.520 --> 00:26:34.160
+lets you reuse part of your prompts uh that are&nbsp;
+used frequently that saves capacity cost and&nbsp;&nbsp;
+
+00:26:34.160 --> 00:26:41.680
+um latency and we've had customers say well your&nbsp;
+five minutes of time between cache hits uh isn't&nbsp;&nbsp;
+
+00:26:41.680 --> 00:26:46.480
+enough for some humans maybe walk away from&nbsp;
+the computer and come back or some longrunning&nbsp;&nbsp;
+
+00:26:46.480 --> 00:26:51.680
+agents so we've added a new option in addition to&nbsp;
+the five minutes we launch with a new option of&nbsp;&nbsp;
+
+00:26:51.680 --> 00:27:00.560
+extending that to one hour with the same um 90%&nbsp;
+discount on cash hits um and batch processing&nbsp;&nbsp;
+
+00:27:00.560 --> 00:27:07.760
+um is a great way to effectively process large&nbsp;
+amounts of data and now that batch supports&nbsp;&nbsp;
+
+00:27:07.760 --> 00:27:13.440
+web search code execution and MCP connector&nbsp;
+it's not just for batch processing anymore&nbsp;&nbsp;
+
+00:27:13.440 --> 00:27:21.200
+it's your async agentic uh API so you can get&nbsp;
+a 50% discount for using that and you can build&nbsp;&nbsp;
+
+00:27:21.200 --> 00:27:28.160
+async agents very quickly but we've also had&nbsp;
+customers tell us that they need dedicated&nbsp;&nbsp;
+
+00:27:28.160 --> 00:27:35.280
+uh they need um reliability dedicated capacity&nbsp;
+to make sure that they can serve the needs of&nbsp;&nbsp;
+
+00:27:35.280 --> 00:27:43.040
+their users so we offer as of today we're offering&nbsp;
+customers the ability to com to buy uh a month's&nbsp;&nbsp;
+
+00:27:43.040 --> 00:27:50.560
+worth of capacity uh at a discount uh and with&nbsp;
+this 99% reliability so a discount for longer&nbsp;&nbsp;
+
+00:27:50.560 --> 00:28:00.240
+commits okay so uh that's a wrap so we talked&nbsp;
+about uh build clawed for long range planning&nbsp;&nbsp;
+
+00:28:00.240 --> 00:28:06.160
+and code execution we talked about bringing your&nbsp;
+data in with web search and MCP connector and then&nbsp;&nbsp;
+
+00:28:06.160 --> 00:28:12.560
+we talked about how to optimize that with prompt&nbsp;
+caching batch and priority tier so unfortunately&nbsp;&nbsp;
+
+00:28:12.560 --> 00:28:26.240
+we're out of time but I will be out there for&nbsp;
+questions so thank you very much for coming
+
+00:28:32.440 --> 00:28:33.440
+[Music]&nbsp;&nbsp;
+
+00:28:33.440 --> 00:28:52.280
+go go go go go [Music]&nbsp;&nbsp;
+
+00:29:00.080 --> 00:29:03.600
+yep yep
+
