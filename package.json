@@ -1,7 +1,7 @@
 {
   "name": "vibecoder-bootcamp",
   "version": "1.0.0",
-  "description": "6-Week Engineering Principles Bootcamp for VibeCoders",
+  "description": "6-Week Engineering Principles Bootcamp for VibeCoders with SliDev Presentation",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -17,14 +17,23 @@
     "sandbox:week6": "node sandbox-exercises/week-6/index.js",
     "docker:build": "docker-compose build",
     "docker:up": "docker-compose up",
-    "docker:down": "docker-compose down"
+    "docker:down": "docker-compose down",
+    "slides:dev": "slidev --open",
+    "slides:build": "slidev build",
+    "slides:export": "slidev export",
+    "slides:preview": "slidev preview",
+    "slides:deploy": "slidev build --base /bootcamp/ && npm run deploy:gh-pages"
   },
   "keywords": [
     "bootcamp",
     "engineering",
     "education",
     "coding",
-    "vibecoder"
+    "vibecoder",
+    "mcp",
+    "ai-development",
+    "slidev",
+    "presentation"
   ],
   "author": "VibeCoders Bootcamp",
   "license": "MIT",
@@ -37,7 +46,11 @@
     "jest": "^29.5.0",
     "nodemon": "^3.0.0",
     "prettier": "^3.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "@iconify-json/carbon": "^1.1.28",
+    "@iconify-json/mdi": "^1.1.64",
+    "playwright-chromium": "^1.40.0",
+    "vite": "^5.0.0"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -53,7 +66,10 @@
     "redis": "^4.6.0",
     "socket.io": "^4.6.0",
     "winston": "^3.8.0",
-    "zod": "^3.21.0"
+    "zod": "^3.21.0",
+    "@slidev/cli": "^0.48.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest"
   },
   "engines": {
     "node": ">=18.0.0",
